@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour {
 
     public Image[] itemImages = new Image[numItemSlots];
     public Item[] items = new Item[numItemSlots];
-    private string clickedItem;
 
 
-    public const int numItemSlots = 5;
+    public const int numItemSlots = 4;
 
     public void AddItem(Item itemToAdd)
     {
@@ -20,6 +18,7 @@ public class Inventory : MonoBehaviour {
             if(items[i] == null)
             {
                 items[i] = itemToAdd;
+
                 itemImages[i].sprite = itemToAdd.sprite;
                 itemImages[i].enabled = true;
                 return;
@@ -40,4 +39,6 @@ public class Inventory : MonoBehaviour {
             }
         }
     }
+
+
 }

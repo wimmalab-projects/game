@@ -22,26 +22,7 @@ public class GUIScript : MonoBehaviour
         itemSprite = Resources.Load<Sprite>("New Piskel (3)");
         inventoryCanvas = GameObject.Find("Inventory");
         inventoryScript = inventoryCanvas.GetComponent<Inventory>();
-        Item item = ScriptableObject.CreateInstance<Item>();
-        item.sprite = itemSprite;
-        item.itemName = "homo";
-        item.itemType = "Seed";
-        inventoryScript.AddItem(item);
-        Item item2 = ScriptableObject.CreateInstance<Item>();
-        item2.sprite = itemSprite;
-        item2.itemName = "homoo";
-        item.itemType = "Seed";
-        inventoryScript.AddItem(item);
-        Item item3 = ScriptableObject.CreateInstance<Item>();
-        item3.sprite = itemSprite;
-        item3.itemName = "homooo";
-        item.itemType = "Seed";
-        inventoryScript.AddItem(item);
-        Item item4 = ScriptableObject.CreateInstance<Item>();
-        item4.sprite = itemSprite;
-        item4.itemName = "homoooo";
-        item.itemType = "Seed";
-        inventoryScript.AddItem(item);
+        inventoryScript.AddItem(new Item(itemSprite, "homo", "asd"));
     }
 
     // Update is called once per frame
@@ -57,14 +38,12 @@ public class GUIScript : MonoBehaviour
         }
     }
 
-    public void itemClicked()
-    {
-
-    }
-
     public void ButtonClicked()
     {
-        button = EventSystem.current.currentSelectedGameObject.name;
+        GameObject clicked = EventSystem.current.currentSelectedGameObject;
+
+        Debug.Log(clicked);
+
         switch (button)
         {
             case "Exit":
@@ -73,6 +52,5 @@ public class GUIScript : MonoBehaviour
             case "Plant":
                 break;
         }
-        
     }
 }
