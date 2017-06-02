@@ -1,44 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
 
-    public Image[] itemImages = new Image[numItemSlots];
-    public Item[] items = new Item[numItemSlots];
+    public List<GameObject> slots = new List<GameObject>();
+    public List<Item> items = new List<Item>();
+    public ItemDatabase database;
 
-
-    public const int numItemSlots = 4;
-
-    public void AddItem(Item itemToAdd)
+    // Use this for initialization
+    void Start()
     {
-        for (int i = 0; i < items.Length; i++)
-        {
-            if(items[i] == null)
-            {
-                items[i] = itemToAdd;
+        int slotAmount = 0;
 
-                itemImages[i].sprite = itemToAdd.sprite;
-                itemImages[i].enabled = true;
-                return;
+        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
+        foreach (Transform child in transform)
+        {
+            slots.Add(child.gameObject);
+            child.GetComponent<SlotScript>().slotNumber = slotAmount;
+            items.Add(new Item());
+            slotAmount++;
+        }
+
+        addItem(0);
+        addItem(1);
+        addItem(2);
+        addItem(3);
+        addItem(0);
+    }
+
+    void addItem(int id)
+    {
+        for (int i = 0; i < database.items.Count; i++)
+        {
+            if(database.items[i].itemID == id)
+            {
+                Item item = database.items[i];
+                addItemToEmptySlot(item);
+                break;
             }
         }
     }
 
-    public void RemoveItem(Item itemToRemove)
+    void addItemToEmptySlot(Item item)
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < items.Count; i++)
         {
-            if (items[i] == itemToRemove)
+            if(items[i].itemName == null)
             {
-                items[i] = itemToRemove;
-                itemImages[i].sprite = null;
-                itemImages[i].enabled = false;
-                return;
+                items[i] = item;
+                break;
             }
         }
     }
-
 
 }

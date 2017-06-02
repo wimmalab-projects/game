@@ -2,18 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class Item : ScriptableObject {
-
-    public Sprite sprite;
-    public GameObject itemObject;
+public class Item
+{
     public string itemName;
-    public string itemType;
+    public int itemID;
+    public string itemDesc;
+    public Sprite itemSprite;
+    public GameObject itemModel;
+    public int itemValue;
+    public ItemType itemType;
 
-    public Item (Sprite _sprite, string _itemName, string _itemType)
+    public enum ItemType
     {
-        sprite = _sprite;
-        itemName = _itemName;
-        itemType = _itemType;
+        GRAPE,
+        SEED,
+        JUICE,
+        BOTTLE,
+    }
+
+    public Item(string name, int id, string desc, int value, ItemType type)
+    {
+        itemName = name;
+        itemID = id;
+        itemDesc = desc;
+        itemValue = value;
+        itemType = type;
+        itemSprite = Resources.Load<Sprite>("" + name);
+    }
+
+    public Item()
+    {
+
     }
 }

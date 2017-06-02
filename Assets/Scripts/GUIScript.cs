@@ -8,21 +8,13 @@ public class GUIScript : MonoBehaviour
 {
 
     public CanvasGroup inventory;
-    private Sprite itemSprite;
     private Animator animator;
     private string button;
-    private GameObject inventoryCanvas;
-    private Inventory inventoryScript;
-    private ScriptableObject scriptableItem;
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
-        itemSprite = Resources.Load<Sprite>("New Piskel (3)");
-        inventoryCanvas = GameObject.Find("Inventory");
-        inventoryScript = inventoryCanvas.GetComponent<Inventory>();
-        inventoryScript.AddItem(new Item(itemSprite, "homo", "asd"));
     }
 
     // Update is called once per frame
@@ -40,10 +32,7 @@ public class GUIScript : MonoBehaviour
 
     public void ButtonClicked()
     {
-        GameObject clicked = EventSystem.current.currentSelectedGameObject;
-
-        Debug.Log(clicked);
-
+        button = EventSystem.current.currentSelectedGameObject.name;
         switch (button)
         {
             case "Exit":
