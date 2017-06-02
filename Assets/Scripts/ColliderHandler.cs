@@ -27,7 +27,7 @@ public class ColliderHandler : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-        if (hit && hit.collider != null && inventory.alpha == 0)
+        if (hit && hit.collider != null)
         {
             parent = hit.collider.gameObject.transform.parent;
             parentGameObject = parent.gameObject;
