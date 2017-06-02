@@ -4,7 +4,7 @@ using System.Collections;
 public class ColliderHandler : MonoBehaviour
 {
     private Transform parent;
-    private GameObject parentGameObject;
+    public static GameObject parentGameObject;
     private CanvasGroup inventory;
     public static bool hitDetected;
 
