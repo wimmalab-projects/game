@@ -28,12 +28,16 @@ public class Inventory : MonoBehaviour
 
         addItem(0);
         addItem(1);
-        addItem(2);
-        addItem(3);
         addItem(0);
         addItem(1);
-        addItem(2);
-        addItem(3);
+        addItem(0);
+        addItem(1);
+        addItem(0);
+        addItem(1);
+        addItem(0);
+        addItem(1);
+        addItem(0);
+        addItem(1);
     }
 
     void addItem(int id)

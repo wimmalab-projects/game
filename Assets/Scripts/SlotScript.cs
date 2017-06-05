@@ -9,11 +9,14 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     public List<GameObject> slots = new List<GameObject>();
     public Item item;
     public Text uiItemCount;
+    public Text uiItemName;
     public static bool didPlant;
     public int slotNumber;
 
     private Image itemImage;
     private static Inventory inventory;
+    private GameObject infoPanel;
+    private GUIScript guiScript;
     private int itemCount;
     private static int currentlySelectedID;
     private static int returnCount;
@@ -23,6 +26,9 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     // Use this for initialization
     void Start()
     {
+        infoPanel = GameObject.FindGameObjectWithTag("InventoryCanvas");
+        guiScript = infoPanel.GetComponent<GUIScript>();
+        Debug.Log(infoPanel);
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
     }
@@ -37,6 +43,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
             itemImage.sprite = inventory.items[slotNumber].itemSprite;
             itemCount = inventory.items[slotNumber].itemCount;
             uiItemCount.text = itemCount.ToString();
+            uiItemName.text = inventory.items[slotNumber].itemName;
         }
         else
         {
@@ -50,6 +57,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
         clearHighlight();
         if (inventory.items[slotNumber] != null)
         {
+            Debug.Log(item);
             inventory.slots[slotNumber].GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
             currentlySelectedID = inventory.items[slotNumber].returnID();
             currentlySelectedName = inventory.items[slotNumber].returnName();
@@ -61,20 +69,26 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     public void Plant()
     {
         didPlant = false;
+        GameObject parent = ColliderHandler.parentGameObject;
+        PlantGround groundScript = parent.GetComponent<PlantGround>();
 
-        // IF HELVETTI, KORJAA!!!!!
+        // IF HELVETTI + HELVETIN RUMAA KOODIA..... KORJAA!!!!!
         if (returnCount > 0)
         {
             if (currentlySelectedName != null)
             {
-                if (currentlySelectedTag == "SEED")
+                if (currentlySelectedTag == "VINE")
                 {
-                    Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
-                    ColliderHandler.parentGameObject.GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture>("Bottle");
-                    ColliderHandler.parentGameObject.tag = "Planted";
+                    //Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
+                    parent.GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture>("Bottle");
+                    parent.tag = "Planted";
+                    groundScript.isPlanted = true;
+                    groundScript.plantName = currentlySelectedName;
+                    guiScript.initializeInfoPanel(groundScript.plantName);
                     inventory.removeItem(currentlySelectedID);
                     didPlant = true;
                     clearHighlight();
+
                 }
                 else
                     Debug.Log("Youre trying to plant something else than seed");

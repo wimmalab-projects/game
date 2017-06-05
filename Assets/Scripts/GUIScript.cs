@@ -14,10 +14,13 @@ public class GUIScript : MonoBehaviour
     private string button;
     private GameObject[] temp;
     private SlotScript script;
+    private Text infoPanelText;
 
     // Use this for initialization
     void Start()
     {
+        infoPanel = GameObject.FindGameObjectWithTag("InfoPanel").GetComponent<CanvasGroup>();
+        infoPanelText = infoPanel.GetComponentInChildren<Text>();
         temp = GameObject.FindGameObjectsWithTag("Slot");
         foreach (GameObject scripts in temp)
         {
@@ -47,6 +50,11 @@ public class GUIScript : MonoBehaviour
         }
     }
 
+    public void initializeInfoPanel(string name)
+    {
+        infoPanelText.text = name + " is growing!";
+    }
+
     public void ButtonClicked()
     {
         button = EventSystem.current.currentSelectedGameObject.name;
@@ -54,11 +62,12 @@ public class GUIScript : MonoBehaviour
         switch (button)
         {
             case "Exit":
+                infoPanel.alpha = 0;
                 animator.SetBool("showInventory", false);
                 break;
             case "Plant":
                 script.GetComponent<SlotScript>().Plant();
-                if (SlotScript.didPlant == true)
+                if (SlotScript.didPlant)
                 {
                     animator.SetBool("showInventory", false);
                 }
