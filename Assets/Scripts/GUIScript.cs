@@ -10,10 +10,17 @@ public class GUIScript : MonoBehaviour
     public CanvasGroup inventory;
     private Animator animator;
     private string button;
+    private GameObject[] temp;
+    private SlotScript script;
 
     // Use this for initialization
     void Start()
     {
+        temp = GameObject.FindGameObjectsWithTag("Slot");
+        foreach (GameObject scripts in temp)
+        {
+            script = scripts.GetComponent<SlotScript>();
+        }
         animator = GetComponent<Animator>();
     }
 
@@ -33,12 +40,15 @@ public class GUIScript : MonoBehaviour
     public void ButtonClicked()
     {
         button = EventSystem.current.currentSelectedGameObject.name;
+        Debug.Log(button);
         switch (button)
         {
             case "Exit":
                 animator.SetBool("showInventory", false);
                 break;
             case "Plant":
+                SlotScript.Plant();
+                animator.SetBool("showInventory", false);
                 break;
         }
     }

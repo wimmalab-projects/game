@@ -10,7 +10,12 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     public Item item;
     Image itemImage;
     public int slotNumber;
-    Inventory inventory;
+    static Inventory inventory;
+    public Text uiItemCount;
+    int itemCount;
+    private static int currentlySelectedID;
+    private static string currentlySelectedName;
+    public static int returnCount;
 
     // Use this for initialization
     void Start()
@@ -27,10 +32,13 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
             item = inventory.items[slotNumber];
             itemImage.enabled = true;
             itemImage.sprite = inventory.items[slotNumber].itemSprite;
+            itemCount = inventory.items[slotNumber].itemCount;
+            uiItemCount.text = itemCount.ToString();
         }
         else
         {
             itemImage.enabled = false;
+            uiItemCount.text = "";
         }
     }
 
@@ -38,13 +46,37 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     {
         if (inventory.items[slotNumber] != null)
         {
-            switch(inventory.items[slotNumber].itemName)
+            currentlySelectedID = inventory.items[slotNumber].returnID();
+            currentlySelectedName = inventory.items[slotNumber].returnName();
+            returnCount = itemCount;
+            /*switch (inventory.items[slotNumber].itemName)
             {
                 case "Seed":
                     Debug.Log("Planted " + inventory.items[slotNumber].itemName + " on " +
                         ColliderHandler.parentGameObject);
-                    break;         
-            }
+                    break;
+            }*/
         }
+    }
+
+    public static void Plant()
+    {
+        if (returnCount > 0)
+        {
+            if (currentlySelectedName != null)
+            {
+                Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
+                inventory.removeItem(currentlySelectedID);
+                currentlySelectedName = null;
+            }
+            else
+                Debug.Log("no seed selected");
+        }
+        else
+        {
+            Debug.Log(returnCount);
+            Debug.Log("Not enough seeds");
+        }
+
     }
 }

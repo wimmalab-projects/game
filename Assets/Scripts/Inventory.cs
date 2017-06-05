@@ -17,10 +17,13 @@ public class Inventory : MonoBehaviour
         database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
         foreach (Transform child in transform)
         {
-            slots.Add(child.gameObject);
-            child.GetComponent<SlotScript>().slotNumber = slotAmount;
-            items.Add(new Item());
-            slotAmount++;
+            if (child.gameObject.name == "Slot")
+            {
+                slots.Add(child.gameObject);
+                child.GetComponent<SlotScript>().slotNumber = slotAmount;
+                items.Add(new Item());
+                slotAmount++;
+            }
         }
 
         addItem(0);
@@ -28,6 +31,9 @@ public class Inventory : MonoBehaviour
         addItem(2);
         addItem(3);
         addItem(0);
+        addItem(1);
+        addItem(2);
+        addItem(3);
     }
 
     void addItem(int id)
@@ -38,6 +44,20 @@ public class Inventory : MonoBehaviour
             {
                 Item item = database.items[i];
                 addItemToEmptySlot(item);
+                item.itemCount++;
+                break;
+            }
+        }
+    }
+
+    public void removeItem(int id)
+    {
+        for (int i = 0; i < database.items.Count; i++)
+        {
+            if (database.items[i].itemID == id)
+            {
+                Item item = database.items[i];
+                item.itemCount--;
                 break;
             }
         }
@@ -47,7 +67,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < items.Count; i++)
         {
-            if(items[i].itemName == null)
+            if(items[i].itemName == item.itemName || items[i].itemName == null)
             {
                 items[i] = item;
                 break;
