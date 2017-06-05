@@ -3,10 +3,11 @@ using System.Collections;
 
 public class ColliderHandler : MonoBehaviour
 {
-    private Transform parent;
     public static GameObject parentGameObject;
-    private CanvasGroup inventory;
     public static bool hitDetected;
+
+    private CanvasGroup inventory;
+    private Transform parent;
 
     void Start()
     {

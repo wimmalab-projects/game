@@ -8,14 +8,17 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
 {
     public List<GameObject> slots = new List<GameObject>();
     public Item item;
-    Image itemImage;
-    public int slotNumber;
-    static Inventory inventory;
     public Text uiItemCount;
-    int itemCount;
+    public static bool didPlant;
+    public int slotNumber;
+
+    private Image itemImage;
+    private static Inventory inventory;
+    private int itemCount;
     private static int currentlySelectedID;
+    private static int returnCount;
     private static string currentlySelectedName;
-    public static int returnCount;
+    private static string currentlySelectedTag;
 
     // Use this for initialization
     void Start()
@@ -44,39 +47,54 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData data)
     {
+        clearHighlight();
         if (inventory.items[slotNumber] != null)
         {
+            inventory.slots[slotNumber].GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
             currentlySelectedID = inventory.items[slotNumber].returnID();
             currentlySelectedName = inventory.items[slotNumber].returnName();
+            currentlySelectedTag = inventory.items[slotNumber].returnItemType(inventory.items[slotNumber].itemType);
             returnCount = itemCount;
-            /*switch (inventory.items[slotNumber].itemName)
-            {
-                case "Seed":
-                    Debug.Log("Planted " + inventory.items[slotNumber].itemName + " on " +
-                        ColliderHandler.parentGameObject);
-                    break;
-            }*/
         }
     }
 
-    public static void Plant()
+    public void Plant()
     {
+        didPlant = false;
+
+        // IF HELVETTI, KORJAA!!!!!
         if (returnCount > 0)
         {
             if (currentlySelectedName != null)
             {
-                Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
-                inventory.removeItem(currentlySelectedID);
-                currentlySelectedName = null;
+                if (currentlySelectedTag == "SEED")
+                {
+                    Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
+                    ColliderHandler.parentGameObject.GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture>("Bottle");
+                    ColliderHandler.parentGameObject.tag = "Planted";
+                    inventory.removeItem(currentlySelectedID);
+                    didPlant = true;
+                    clearHighlight();
+                }
+                else
+                    Debug.Log("Youre trying to plant something else than seed");
             }
             else
-                Debug.Log("no seed selected");
+                Debug.Log("No seed selected");
         }
         else
         {
-            Debug.Log(returnCount);
             Debug.Log("Not enough seeds");
         }
 
+        currentlySelectedName = null;
+    }
+
+    void clearHighlight()
+    {
+        foreach (GameObject asd in inventory.slots)
+        {
+            asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
+        }
     }
 }

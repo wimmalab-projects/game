@@ -8,8 +8,9 @@ public class Item
     public int itemID;
     public string itemDesc;
     public Sprite itemSprite;
-    private int itemValue;
     public ItemType itemType;
+
+    private int itemValue;
 
     public Item(string name, int id, string desc, int value, ItemType type)
     {
@@ -19,6 +20,11 @@ public class Item
         itemValue = value;
         itemType = type;
         itemSprite = Resources.Load<Sprite>("" + name);
+    }
+
+    public Item()
+    {
+
     }
 
     public int itemCount
@@ -57,8 +63,8 @@ public class Item
         return itemName;
     }
 
-    public Item()
+    public string returnItemType(ItemType itemType)
     {
-
+        return itemType.ToString();
     }
 }

@@ -8,6 +8,8 @@ public class GUIScript : MonoBehaviour
 {
 
     public CanvasGroup inventory;
+    public CanvasGroup infoPanel;
+
     private Animator animator;
     private string button;
     private GameObject[] temp;
@@ -27,12 +29,20 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //IF HELVETTI.. KORJAA!!!
         if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
         {
             if (ColliderHandler.hitDetected == true)
             {
-                inventory.alpha = 1;
-                animator.SetBool("showInventory", true);
+                if(ColliderHandler.parentGameObject.tag == "NotPlanted")
+                {
+                    inventory.alpha = 1;
+                    animator.SetBool("showInventory", true);
+                }
+                else if(ColliderHandler.parentGameObject.tag == "Planted")
+                {
+                    infoPanel.alpha = 1;
+                }
             }
         }
     }
@@ -47,8 +57,13 @@ public class GUIScript : MonoBehaviour
                 animator.SetBool("showInventory", false);
                 break;
             case "Plant":
-                SlotScript.Plant();
-                animator.SetBool("showInventory", false);
+                script.GetComponent<SlotScript>().Plant();
+                if (SlotScript.didPlant == true)
+                {
+                    animator.SetBool("showInventory", false);
+                }
+                else
+                    return;
                 break;
         }
     }
