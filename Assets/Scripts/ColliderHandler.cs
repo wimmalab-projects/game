@@ -6,13 +6,18 @@ public class ColliderHandler : MonoBehaviour
     public static GameObject parentGameObject;
     public static bool hitDetected;
 
-    private CanvasGroup inventory;
+    //private CanvasGroup inventory;
     private Transform parent;
+
+    private void Awake()
+    {
+        /*GameObject temp = GameObject.Find("Inventory");
+        inventory = temp.GetComponent<CanvasGroup>();*/
+    }
 
     void Start()
     {
-        GameObject temp = GameObject.Find("Inventory");
-        inventory = temp.GetComponent<CanvasGroup>();
+
     }
 
     // Update is called once per frame

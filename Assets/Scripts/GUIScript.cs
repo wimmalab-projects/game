@@ -15,13 +15,21 @@ public class GUIScript : MonoBehaviour
     private GameObject[] temp;
     private SlotScript script;
     private Text infoPanelText;
+    private PlantGround groundScript;
+    private GameObject parent;
+    private Image infoPanelSprite;
+
+    void Awake()
+    {
+        infoPanel = GameObject.FindGameObjectWithTag("InfoPanel").GetComponent<CanvasGroup>();
+        infoPanelText = infoPanel.GetComponentInChildren<Text>();
+        infoPanelSprite = infoPanel.GetComponentInChildren<Image>();
+        temp = GameObject.FindGameObjectsWithTag("Slot");
+    }
 
     // Use this for initialization
     void Start()
     {
-        infoPanel = GameObject.FindGameObjectWithTag("InfoPanel").GetComponent<CanvasGroup>();
-        infoPanelText = infoPanel.GetComponentInChildren<Text>();
-        temp = GameObject.FindGameObjectsWithTag("Slot");
         foreach (GameObject scripts in temp)
         {
             script = scripts.GetComponent<SlotScript>();
@@ -32,12 +40,16 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //IF HELVETTI.. KORJAA!!!
         if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
         {
             if (ColliderHandler.hitDetected == true)
             {
-                if(ColliderHandler.parentGameObject.tag == "NotPlanted")
+                parent = ColliderHandler.parentGameObject;
+                groundScript = parent.GetComponent<PlantGround>();
+
+                if (ColliderHandler.parentGameObject.tag == "NotPlanted")
                 {
                     inventory.alpha = 1;
                     animator.SetBool("showInventory", true);
@@ -45,6 +57,7 @@ public class GUIScript : MonoBehaviour
                 else if(ColliderHandler.parentGameObject.tag == "Planted")
                 {
                     infoPanel.alpha = 1;
+                    initializeInfoPanel(groundScript.plantName);
                 }
             }
         }
@@ -53,6 +66,7 @@ public class GUIScript : MonoBehaviour
     public void initializeInfoPanel(string name)
     {
         infoPanelText.text = name + " is growing!";
+        infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
     }
 
     public void ButtonClicked()

@@ -23,14 +23,18 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
     private static string currentlySelectedName;
     private static string currentlySelectedTag;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         infoPanel = GameObject.FindGameObjectWithTag("InventoryCanvas");
         guiScript = infoPanel.GetComponent<GUIScript>();
-        Debug.Log(infoPanel);
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
@@ -84,7 +88,6 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
                     parent.tag = "Planted";
                     groundScript.isPlanted = true;
                     groundScript.plantName = currentlySelectedName;
-                    guiScript.initializeInfoPanel(groundScript.plantName);
                     inventory.removeItem(currentlySelectedID);
                     didPlant = true;
                     clearHighlight();

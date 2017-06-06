@@ -6,6 +6,7 @@ public class PlantGround : MonoBehaviour {
 
     public bool isPlanted;
     public string plantName;
+    public Sprite plantSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,7 @@ public class PlantGround : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
 	}
 }
