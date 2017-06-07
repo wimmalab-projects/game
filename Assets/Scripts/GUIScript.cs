@@ -9,21 +9,21 @@ public class GUIScript : MonoBehaviour
 
     public CanvasGroup inventory;
     public CanvasGroup infoPanel;
+    public Text infoPanelText;
+    public Text infoPanelTimer;
 
     private Animator animator;
     private string button;
     private GameObject[] temp;
-    private SlotScript script;
-    private Text infoPanelText;
+    private SlotScript slotScript;
     private PlantGround groundScript;
     private GameObject parent;
     private Image infoPanelSprite;
+    private string timer;
 
     void Awake()
     {
-        infoPanel = GameObject.FindGameObjectWithTag("InfoPanel").GetComponent<CanvasGroup>();
-        infoPanelText = infoPanel.GetComponentInChildren<Text>();
-        infoPanelSprite = infoPanel.GetComponentInChildren<Image>();
+        infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
         temp = GameObject.FindGameObjectsWithTag("Slot");
     }
 
@@ -32,7 +32,7 @@ public class GUIScript : MonoBehaviour
     {
         foreach (GameObject scripts in temp)
         {
-            script = scripts.GetComponent<SlotScript>();
+            slotScript = scripts.GetComponent<SlotScript>();
         }
         animator = GetComponent<Animator>();
     }
@@ -40,7 +40,6 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //IF HELVETTI.. KORJAA!!!
         if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
         {
@@ -49,17 +48,24 @@ public class GUIScript : MonoBehaviour
                 parent = ColliderHandler.parentGameObject;
                 groundScript = parent.GetComponent<PlantGround>();
 
-                if (ColliderHandler.parentGameObject.tag == "NotPlanted")
+                switch(parent.tag)
                 {
-                    inventory.alpha = 1;
-                    animator.SetBool("showInventory", true);
-                }
-                else if(ColliderHandler.parentGameObject.tag == "Planted")
-                {
-                    infoPanel.alpha = 1;
-                    initializeInfoPanel(groundScript.plantName);
+                    case "NotPlanted":
+                        inventory.alpha = 1;
+                        animator.SetBool("showInventory", true);
+                        break;
+                    case "Planted":
+                        infoPanel.alpha = 1;
+                        initializeInfoPanel(groundScript.plantName);
+                        break;
                 }
             }
+        }
+
+        if(infoPanel.alpha == 1)
+        {
+            timer = groundScript.niceTime;
+            infoPanelTimer.text = timer;
         }
     }
 
@@ -80,7 +86,7 @@ public class GUIScript : MonoBehaviour
                 animator.SetBool("showInventory", false);
                 break;
             case "Plant":
-                script.GetComponent<SlotScript>().Plant();
+                slotScript.GetComponent<SlotScript>().Plant();
                 if (SlotScript.didPlant)
                 {
                     animator.SetBool("showInventory", false);
