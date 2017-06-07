@@ -7,21 +7,19 @@ using UnityEngine.EventSystems;
 public class SlotScript : MonoBehaviour, IPointerClickHandler
 {
     public List<GameObject> slots = new List<GameObject>();
-    public Item item;
     public Text uiItemCount;
     public Text uiItemName;
     public static bool didPlant;
     public int slotNumber;
-
+    private int itemCount;
     private Image itemImage;
     private static Inventory inventory;
     private GameObject infoPanel;
     private GUIScript guiScript;
-    private int itemCount;
     private static int currentlySelectedID;
     private static int returnCount;
     private static string currentlySelectedName;
-    private static string currentlySelectedTag;
+    private static Item.ItemType currentlySelectedTag;
 
     private void Awake()
     {
@@ -31,43 +29,13 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
         itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
     }
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (inventory.items[slotNumber].itemName != null)
-        {
-            item = inventory.items[slotNumber];
-            itemImage.enabled = true;
-            itemImage.sprite = inventory.items[slotNumber].itemSprite;
-            itemCount = inventory.items[slotNumber].itemCount;
-            uiItemCount.text = itemCount.ToString();
-            uiItemName.text = inventory.items[slotNumber].itemName;
-        }
-        else
-        {
-            itemImage.enabled = false;
-            uiItemCount.text = "";
-        }
-    }
-
-    public void OnPointerClick(PointerEventData data)
-    {
-        clearHighlight();
-        if (inventory.items[slotNumber] != null)
-        {
-            Debug.Log(item);
-            inventory.slots[slotNumber].GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
-            currentlySelectedID = inventory.items[slotNumber].returnID();
-            currentlySelectedName = inventory.items[slotNumber].returnName();
-            currentlySelectedTag = inventory.items[slotNumber].returnItemType(inventory.items[slotNumber].itemType);
-            returnCount = itemCount;
-        }
+        uiItemName.text = inventory.items[slotNumber].returnName();
+        uiItemCount.text = inventory.items[slotNumber].itemCount.ToString();
+        itemImage.sprite = inventory.items[slotNumber].ItemSprite;
+        itemCount = inventory.items[slotNumber].itemCount;
     }
 
     public void Plant()
@@ -76,19 +44,22 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
         GameObject parent = ColliderHandler.parentGameObject;
         PlantGround groundScript = parent.GetComponent<PlantGround>();
 
+
+        Debug.Log(inventory.items[slotNumber].itemCount);
         // IF HELVETTI + HELVETIN RUMAA KOODIA..... KORJAA!!!!!
         if (returnCount > 0)
         {
+            
             if (currentlySelectedName != null)
             {
-                if (currentlySelectedTag == "VINE")
+                if (currentlySelectedTag == Item.ItemType.VINE)
                 {
                     //Debug.Log("Planted " + currentlySelectedName + " on " + ColliderHandler.parentGameObject);
                     parent.GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture>("Bottle");
                     parent.tag = "Planted";
                     groundScript.isPlanted = true;
                     groundScript.plantName = currentlySelectedName;
-                    inventory.removeItem(currentlySelectedID);
+                    inventory.items[slotNumber].PopItem();
                     didPlant = true;
                     clearHighlight();
 
@@ -105,6 +76,19 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler
         }
 
         currentlySelectedName = null;
+    }
+
+    public void OnPointerClick(PointerEventData data)
+    {
+        clearHighlight();
+        if (inventory.items[slotNumber] != null)
+        {
+            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
+            currentlySelectedID = inventory.items[slotNumber].returnID();
+            currentlySelectedName = inventory.items[slotNumber].returnName();
+            currentlySelectedTag = inventory.items[slotNumber].returnItemType();
+            returnCount = itemCount;
+        }
     }
 
     void clearHighlight()

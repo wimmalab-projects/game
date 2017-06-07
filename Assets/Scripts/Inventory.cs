@@ -9,74 +9,35 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public ItemDatabase database;
 
+    public GameObject slot;
+
     // Use this for initialization
     void Start()
     {
-        int slotAmount = 0;
-
-        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
-        foreach (Transform child in transform)
+        foreach (Item item in database.items)
         {
-            if (child.gameObject.name == "Slot")
-            {
-                slots.Add(child.gameObject);
-                child.GetComponent<SlotScript>().slotNumber = slotAmount;
-                items.Add(new Item());
-                slotAmount++;
-            }
+            items.Add(item);
         }
 
-        addItem(0);
-        addItem(1);
-        addItem(0);
-        addItem(1);
-        addItem(0);
-        addItem(1);
-        addItem(0);
-        addItem(1);
-        addItem(0);
-        addItem(1);
-        addItem(0);
-        addItem(1);
-    }
-
-    void addItem(int id)
-    {
         for (int i = 0; i < database.items.Count; i++)
         {
-            if(database.items[i].itemID == id)
-            {
-                Item item = database.items[i];
-                addItemToEmptySlot(item);
-                item.itemCount++;
-                break;
-            }
+
+            GameObject temp = Instantiate(slot);
+            SlotScript ss = temp.GetComponent<SlotScript>();
+            temp.transform.SetParent(gameObject.transform);
+            ss.slotNumber = i;
+            slots.Add(temp);
         }
     }
 
-    public void removeItem(int id)
+    private void OnGUI()
     {
-        for (int i = 0; i < database.items.Count; i++)
+        GUILayout.BeginArea(new Rect(10, 10, 100, 100));
+        if (GUILayout.Button("Add index 0"))
         {
-            if (database.items[i].itemID == id)
-            {
-                Item item = database.items[i];
-                item.itemCount--;
-                break;
-            }
+            items[1].AddItem();
         }
-    }
-
-    void addItemToEmptySlot(Item item)
-    {
-        for (int i = 0; i < items.Count; i++)
-        {
-            if(items[i].itemName == item.itemName || items[i].itemName == null)
-            {
-                items[i] = item;
-                break;
-            }
-        }
+        GUILayout.EndArea();
     }
 
 }
