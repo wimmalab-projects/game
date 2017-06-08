@@ -37,7 +37,6 @@ public class ColliderHandler : MonoBehaviour
         {
             parent = hit.collider.gameObject.transform.parent;
             parentGameObject = parent.gameObject;
-            Debug.Log(parentGameObject);
             hitDetected = true;
         }
         else

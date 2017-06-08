@@ -23,7 +23,6 @@ public class Item
         get { return itemSprite; }
     }
 
-
     public Item(string name, int id, string desc, ItemType type)
     {
         itemName = name;
@@ -31,11 +30,6 @@ public class Item
         itemDesc = desc;
         itemType = type;
         itemSprite = Resources.Load<Sprite>("" + name);
-    }
-
-    public Item()
-    {
-
     }
 
     public int itemCount
@@ -90,7 +84,6 @@ public class Item
 
     public void AddItem ()
     {
-        itemCount = itemCount + 1;
-        Debug.Log(itemCount);
+        itemCount++;
     }
 }

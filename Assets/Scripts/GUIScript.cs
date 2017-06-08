@@ -21,17 +21,19 @@ public class GUIScript : MonoBehaviour
     private Image infoPanelSprite;
     private string timer;
 
+    private GameObject gameManager;
 
     // Use this for initialization
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+
+
         infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
         temp = GameObject.FindGameObjectsWithTag("Slot");
 
-        foreach (GameObject scripts in temp)
-        {
-            slotScript = scripts.GetComponent<SlotScript>();
-        }
+        slotScript = gameManager.GetComponent<SlotScript>();
+
         animator = GetComponent<Animator>();
     }
 
