@@ -100,13 +100,15 @@ public class CurtainControls : MonoBehaviour {
     private void cameraADisable ()
     {
         if (fromCamera != null)
-            fromCamera.gameObject.SetActive(false);
+            //fromCamera.gameObject.SetActive(false);
+            fromCamera.enabled = false;
     }
 
     private void cameraBEnable()
     {
         if (toCamera != null)
-            toCamera.gameObject.SetActive(true);
+            //toCamera.gameObject.SetActive(true);
+            toCamera.enabled = true;
     }
 }
 
