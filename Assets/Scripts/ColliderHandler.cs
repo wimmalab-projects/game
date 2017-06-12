@@ -3,43 +3,91 @@ using System.Collections;
 
 public class ColliderHandler : MonoBehaviour
 {
-    public static GameObject parentGameObject;
     public static bool hitDetected;
+
+    public static GameObject parentGameObject;
 
     //private CanvasGroup inventory;
     private Transform parent;
 
-    private void Awake()
-    {
-        /*GameObject temp = GameObject.Find("Inventory");
-        inventory = temp.GetComponent<CanvasGroup>();*/
-    }
+    RuntimePlatform platform = Application.platform;
+    public GameObject gameMaster;
+    private GameMaster gm;
 
-    void Start()
+    private void Start()
     {
-
+        gm = gameMaster.GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
+        if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
-            CastRay();
+            if (Input.touchCount > 0)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    checkTouch(Input.GetTouch(0).position);
+                }
+            }
+        }
+        else if (platform == RuntimePlatform.WindowsEditor)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                checkTouch(Input.mousePosition);
+            }
         }
     }
 
-    void CastRay()
+    private void checkTouch(Vector2 pos)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-        if (hit && hit.collider != null)
+        Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+
+        Vector2 touchPos = new Vector2(wp.x, wp.y);
+
+        Collider2D hit = Physics2D.OverlapPoint(touchPos);
+
+
+        switch (gm.State)
         {
-            parent = hit.collider.gameObject.transform.parent;
-            parentGameObject = parent.gameObject;
-            hitDetected = true;
+            case GameMaster.GameState.Farm:
+                if (hit && gm.IsInventoryOpen == false)
+                {
+                    //gm.IsInventoryOpen = true;
+                    //hitDetected = true;
+                    parentGameObject = hit.gameObject;
+                    MethodCallerHandler mch = parentGameObject.GetComponent<MethodCallerHandler>();
+                    mch.CallMethod();
+                }
+                break;
+            case GameMaster.GameState.Town:
+                if (hit && gm.IsInventoryOpen == false)
+                {
+                    gm.IsInventoryOpen = true;
+                    hitDetected = true;
+                    Debug.Log(hit.transform.gameObject.name);
+                }
+                break;
+            case GameMaster.GameState.Brewery:
+                if (hit && gm.IsInventoryOpen == false)
+                {
+                    gm.IsInventoryOpen = true;
+                    hitDetected = true;
+                    Debug.Log(hit.transform.gameObject.name);
+                }
+                break;
+            case GameMaster.GameState.GrapeCrush:
+                if (hit && gm.IsInventoryOpen == false)
+                {
+                    gm.IsInventoryOpen = true;
+                    hitDetected = true;
+                    Debug.Log(hit.transform.gameObject.name);
+                }
+                break;
+            default:
+                break;
         }
-        else
-            hitDetected = false;
     }
 }

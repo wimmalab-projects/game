@@ -9,6 +9,13 @@ public class TestTouch : MonoBehaviour
 {
 
     RuntimePlatform platform = Application.platform;
+    public GameObject gameMaster;
+    private GameMaster gm;
+
+    private void Start()
+    {
+        gm = gameMaster.GetComponent<GameMaster>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,7 +47,27 @@ public class TestTouch : MonoBehaviour
 
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
 
-        if (hit)
-            Debug.Log(hit.transform.gameObject.name);
+
+        switch (gm.State)
+        {
+            case GameMaster.GameState.Farm:
+                if (hit && gm.IsInventoryOpen == false)
+                    Debug.Log("farmview " + hit.transform.gameObject.name);
+                break;
+            case GameMaster.GameState.Town:
+                if (hit && gm.IsInventoryOpen == false)
+                    Debug.Log("town " + hit.transform.gameObject.name);
+                break;
+            case GameMaster.GameState.Brewery:
+                if (hit && gm.IsInventoryOpen == false)
+                    Debug.Log("brewery " + hit.transform.gameObject.name);
+                break;
+            case GameMaster.GameState.GrapeCrush:
+                if (hit && gm.IsInventoryOpen == false)
+                    Debug.Log("grapecrush " + hit.transform.gameObject.name);
+                break;
+            default:
+                break;
+        }
     }
 }

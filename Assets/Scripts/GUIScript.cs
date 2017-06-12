@@ -43,12 +43,12 @@ public class GUIScript : MonoBehaviour
         //IF HELVETTI.. KORJAA!!!
         if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
         {
-            if (ColliderHandler.hitDetected == true)
+            if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen == true)
             {
                 parent = ColliderHandler.parentGameObject;
                 groundScript = parent.GetComponent<PlantGround>();
 
-                switch(parent.tag)
+                switch (parent.tag)
                 {
                     case "NotPlanted":
                         inventory.alpha = 1;
@@ -78,10 +78,10 @@ public class GUIScript : MonoBehaviour
     public void ButtonClicked()
     {
         button = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log(button);
         switch (button)
         {
             case "Exit":
+                
                 infoPanel.alpha = 0;
                 animator.SetBool("showInventory", false);
                 break;
@@ -95,5 +95,6 @@ public class GUIScript : MonoBehaviour
                     return;
                 break;
         }
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
 }
