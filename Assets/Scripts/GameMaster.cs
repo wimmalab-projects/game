@@ -65,7 +65,8 @@ public class GameMaster : MonoBehaviour
     }
     void PlayGrapeCrush()
     {
-        throw new NotImplementedException();
+        curtainControls.FadeToBlack(Camera.main, grapeCrush);
+        State = GameState.GrapeCrush;
     }
 
     void ViewInventory(GameObject go)
