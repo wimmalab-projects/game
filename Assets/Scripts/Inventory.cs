@@ -10,22 +10,26 @@ public class Inventory : MonoBehaviour
     public SortedList<string, Item> items = new SortedList<string, Item>();
     public Canvas canvas;
     public GameObject go;
+    public GameObject slot; // place prefab in editor
 
-    // place prefab in editor
-    public GameObject slot;
+    private const int maxRows = 5;
+    private const int maxColumns = 5;
+
+    void Awake()
+    {
+        go = canvas.transform.Find("Inventory").gameObject;
+    }
 
     // Use this for initialization
     void Start()
     {
-        go = canvas.transform.Find("Inventory").gameObject;
-
         // add items
-        items.Add("Black grape vine",   new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
-        items.Add("White grape vine",   new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
-        items.Add("Grape",              new Item("Grape", 2, "This is a grape", Item.ItemType.GRAPE));
-        items.Add("Juice",              new Item("Juice", 3, "This is juice from grapes", Item.ItemType.JUICE));
-        items.Add("Bottle",             new Item("Bottle", 4, "This is a bottle", Item.ItemType.BOTTLE));
-        
+        items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
+        items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
+        items.Add("Grape", new Item("Grape", 2, "This is a grape", Item.ItemType.GRAPE));
+        items.Add("Juice", new Item("Juice", 3, "This is juice from grapes", Item.ItemType.JUICE));
+        items.Add("Bottle", new Item("Bottle", 4, "This is a bottle", Item.ItemType.BOTTLE));
+
         // create inventory buttons
         for (int i = 0; i < items.Count; i++)
         {
@@ -37,9 +41,9 @@ public class Inventory : MonoBehaviour
         }
 
         // set inventory button positions
-        for (int i = 0, y = 0; i < 10; y++)
+        for (int i = 0, y = 0; i < maxRows; y++)
         {
-            for (int x = 0; x < 4; x++, i++)
+            for (int x = 0; x < maxColumns; x++, i++)
             {
                 if (slots[i] != null)
                 {
@@ -49,13 +53,19 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // debug testi lisäys valkonen siemen
-    private void OnGUI()
+    // debug testi lisäys valkonen ja musta siemen
+    void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 100, 100));
         if (GUILayout.Button("Add index 0"))
         {
             items["White grape vine"].AddItem();
+        }
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(10, 50, 100, 100));
+        if (GUILayout.Button("Add index 1"))
+        {
+            items["Black grape vine"].AddItem();
         }
         GUILayout.EndArea();
     }

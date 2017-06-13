@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Item
 {
+    public string itemDesc;
+
     private string itemName;
     private int itemID;
-    public string itemDesc;
     private Sprite itemSprite;
     private ItemType itemType;
-
     private int itemValue;
-    
+
 
     public ItemType iType
     {
@@ -77,12 +77,12 @@ public class Item
         return itemType;
     }
 
-    public void PopItem ()
+    public void PopItem()
     {
         itemCount--;
     }
 
-    public void AddItem ()
+    public void AddItem()
     {
         itemCount++;
     }

@@ -20,20 +20,15 @@ public class GUIScript : MonoBehaviour
     private GameObject parent;
     private Image infoPanelSprite;
     private string timer;
-
     private GameObject gameManager;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
-
-
         infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
         temp = GameObject.FindGameObjectsWithTag("Slot");
-
         slotScript = gameManager.GetComponent<SlotScript>();
-
         animator = GetComponent<Animator>();
     }
 
@@ -43,26 +38,9 @@ public class GUIScript : MonoBehaviour
         //IF HELVETTI.. KORJAA!!!
         if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
         {
-            if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen == true)
-            {
-                parent = ColliderHandler.parentGameObject;
-                groundScript = parent.GetComponent<PlantGround>();
-
-                switch (parent.tag)
-                {
-                    case "NotPlanted":
-                        inventory.alpha = 1;
-                        animator.SetBool("showInventory", true);
-                        break;
-                    case "Planted":
-                        infoPanel.alpha = 1;
-                        initializeInfoPanel(groundScript.plantName);
-                        break;
-                }
-            }
         }
 
-        if(infoPanel.alpha == 1)
+        if (infoPanel.alpha == 1)
         {
             timer = groundScript.niceTime;
             infoPanelTimer.text = timer;
@@ -81,7 +59,6 @@ public class GUIScript : MonoBehaviour
         switch (button)
         {
             case "Exit":
-                
                 infoPanel.alpha = 0;
                 animator.SetBool("showInventory", false);
                 break;
@@ -96,5 +73,23 @@ public class GUIScript : MonoBehaviour
                 break;
         }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
+    }
+
+    public void showInventory()
+    {
+        parent = ColliderHandler.parentGameObject;
+        groundScript = parent.GetComponent<PlantGround>();
+
+        switch (parent.tag)
+        {
+            case "NotPlanted":
+                inventory.alpha = 1;
+                animator.SetBool("showInventory", true);
+                break;
+            case "Planted":
+                infoPanel.alpha = 1;
+                initializeInfoPanel(groundScript.plantName);
+                break;
+        }
     }
 }

@@ -7,22 +7,26 @@ using UnityEngine.EventSystems;
 public class SlotScript : MonoBehaviour
 {
     public static bool didPlant;
+    public string seedName;
 
     private static Inventory inventory;
     private static int returnCount;
     private static string currentlySelectedName;
     private static Item.ItemType currentlySelectedTag;
-    public string seedName;
+    private GameObject guiTemp;
+    private GUIScript guiScript;
 
     GameObject parent;
     PlantGround groundScript;
     List<GameObject> vinePositions = new List<GameObject>();
 
+
     // called before start
-    private void Awake()
+    void Awake()
     {
+        guiTemp = GameObject.FindGameObjectWithTag("InventoryCanvas");
+        guiScript = guiTemp.GetComponent<GUIScript>();
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
-        
     }
 
     public void Plant()
@@ -47,7 +51,8 @@ public class SlotScript : MonoBehaviour
 
                 parent.tag = "Planted";
                 groundScript.plantState = GameMaster.PlantState.JustPlanted;
-                groundScript.plantName = currentlySelectedName;
+                groundScript.plantName = inventory.items[seedName].returnName();
+                guiScript.initializeInfoPanel(groundScript.plantName);
                 inventory.items[seedName].PopItem();
                 didPlant = true;
 
@@ -57,7 +62,6 @@ public class SlotScript : MonoBehaviour
         {
             Debug.Log("Not enough seeds");
         }
-
         currentlySelectedName = null;
     }
 

@@ -10,21 +10,30 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Text uiItemCount;
     public Text uiItemName;
     public Image itemImage;
-    private int itemCount;
 
+    private int itemCount;
     private Inventory inventory;
 
-    public void Start()
+    void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
-        
+
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         itemCount = inventory.items[uiItemName.text].itemCount;
         uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
         itemImage.sprite = inventory.items[uiItemName.text].ItemSprite;
+    }
+
+    void clearHighlight()
+    {
+        foreach (GameObject asd in inventory.slots)
+        {
+            asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
+        }
     }
 
     public void OnPointerClick(PointerEventData data)
@@ -34,14 +43,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().seedName = uiItemName.text;
-        }
-    }
-
-    void clearHighlight()
-    {
-        foreach (GameObject asd in inventory.slots)
-        {
-            asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
         }
     }
 }

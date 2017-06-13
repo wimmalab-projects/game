@@ -4,17 +4,17 @@ using System.Collections;
 public class ColliderHandler : MonoBehaviour
 {
     public static bool hitDetected;
-
+    public GameObject gameMaster;
     public static GameObject parentGameObject;
 
     //private CanvasGroup inventory;
     private Transform parent;
+    private GameMaster gm;
+    private LayerMask layerMask;
 
     RuntimePlatform platform = Application.platform;
-    public GameObject gameMaster;
-    private GameMaster gm;
 
-    private void Start()
+    void Awake()
     {
         gm = gameMaster.GetComponent<GameMaster>();
     }
@@ -39,55 +39,64 @@ public class ColliderHandler : MonoBehaviour
                 checkTouch(Input.mousePosition);
             }
         }
+        if (gm.IsInventoryOpen == true)
+            layerMask.value = 32;
+        else
+            layerMask.value = 256;
     }
 
-    private void checkTouch(Vector2 pos)
+    void checkTouch(Vector2 pos)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
-
-        Vector2 touchPos = new Vector2(wp.x, wp.y);
-
-        Collider2D hit = Physics2D.OverlapPoint(touchPos);
-
-
-        switch (gm.State)
+        if (layerMask.value == 256)
         {
-            case GameMaster.GameState.Farm:
-                if (hit && gm.IsInventoryOpen == false)
+            Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+
+            Vector2 touchPos = new Vector2(wp.x, wp.y);
+
+            Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
+
+            if (hit && hit.name != null)
+            {
+                switch (gm.State)
                 {
-                    //gm.IsInventoryOpen = true;
-                    //hitDetected = true;
-                    parentGameObject = hit.gameObject;
-                    MethodCallerHandler mch = parentGameObject.GetComponent<MethodCallerHandler>();
-                    mch.CallMethod();
+                    case GameMaster.GameState.Farm:
+                        if (hit && gm.IsInventoryOpen == false)
+                        {
+                            //gm.IsInventoryOpen = true;
+                            //hitDetected = true;
+                            parentGameObject = hit.gameObject;
+                            MethodCallerHandler mch = parentGameObject.GetComponent<MethodCallerHandler>();
+                            mch.CallMethod();
+                        }
+                        break;
+                    case GameMaster.GameState.Town:
+                        if (hit && gm.IsInventoryOpen == false)
+                        {
+                            gm.IsInventoryOpen = true;
+                            hitDetected = true;
+                            Debug.Log(hit.transform.gameObject.name);
+                        }
+                        break;
+                    case GameMaster.GameState.Brewery:
+                        if (hit && gm.IsInventoryOpen == false)
+                        {
+                            gm.IsInventoryOpen = true;
+                            hitDetected = true;
+                            Debug.Log(hit.transform.gameObject.name);
+                        }
+                        break;
+                    case GameMaster.GameState.GrapeCrush:
+                        if (hit && gm.IsInventoryOpen == false)
+                        {
+                            gm.IsInventoryOpen = true;
+                            hitDetected = true;
+                            Debug.Log(hit.transform.gameObject.name);
+                        }
+                        break;
+                    default:
+                        break;
                 }
-                break;
-            case GameMaster.GameState.Town:
-                if (hit && gm.IsInventoryOpen == false)
-                {
-                    gm.IsInventoryOpen = true;
-                    hitDetected = true;
-                    Debug.Log(hit.transform.gameObject.name);
-                }
-                break;
-            case GameMaster.GameState.Brewery:
-                if (hit && gm.IsInventoryOpen == false)
-                {
-                    gm.IsInventoryOpen = true;
-                    hitDetected = true;
-                    Debug.Log(hit.transform.gameObject.name);
-                }
-                break;
-            case GameMaster.GameState.GrapeCrush:
-                if (hit && gm.IsInventoryOpen == false)
-                {
-                    gm.IsInventoryOpen = true;
-                    hitDetected = true;
-                    Debug.Log(hit.transform.gameObject.name);
-                }
-                break;
-            default:
-                break;
+            }
         }
     }
 }
