@@ -9,15 +9,20 @@ public class CrushScript : MonoBehaviour
     public GameObject grape;
     public LayerMask layerMask;
     public float grapeScore;
+    public int missedGrapes;
     public Image fillBar;
     public Text fillText;
     public Text gameOverText;
+    public Text missedText;
 
+    private const int maxMissedGrapes = 10;
     private Vector2 mousePos;
     private GameObject temp;
-    private float startTime, refire = 0.3f;
+    private float startTime, refire = 0.4f;
     private GameObject grapeSplash;
     private MethodCallerHandler mch;
+    private bool asd = false;
+    private bool isStarted = false;
 
     GameObject[] spawnpoint;
 
@@ -30,6 +35,7 @@ public class CrushScript : MonoBehaviour
         fillBar.fillAmount = 0;
         fillText.text = "0%";
         gameOverText.text = "";
+        missedText.text = "0/10";
     }
 
     void Start()
@@ -37,11 +43,14 @@ public class CrushScript : MonoBehaviour
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
         startTime = Time.time;
         spawnpoint = GameObject.FindGameObjectsWithTag("Respawn");
+        mch = GetComponent<MethodCallerHandler>();
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        handleUI();
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
             if (Input.touchCount > 0)
@@ -68,7 +77,7 @@ public class CrushScript : MonoBehaviour
             startTime = Time.time;
         }
 
-        if (fillBar.fillAmount == 1)
+        if (fillBar.fillAmount == 1 || missedGrapes == maxMissedGrapes)
         {
             GameObject[] grapesLeft = GameObject.FindGameObjectsWithTag("Grape");
             GameObject[] grapeSplashLeft = GameObject.FindGameObjectsWithTag("GrapeSplash");
@@ -80,26 +89,33 @@ public class CrushScript : MonoBehaviour
                     Destroy(splash);
                 }
             }
-            gameOverText.text = "Good job!";
             gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+            if(!isStarted)
+            {
+                isStarted = true;
+                StartCoroutine("Wait");
+            }          
         }
     }
 
     void checkTouch(Vector2 pos)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
-
-        Vector2 touchPos = new Vector2(wp.x, wp.y);
-
-        Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
-
-        if (hit && hit.tag == "Grape")
+        if(layerMask.value == 2048)
         {
-            Destroy(hit.gameObject);
-            Instantiate(grapeSplash, touchPos, Quaternion.identity);
-            grapeScore++;
-            handleUI();
-            Debug.Log(fillBar.fillAmount);
+            Debug.Log("asd");
+            Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+
+            Vector2 touchPos = new Vector2(wp.x, wp.y);
+
+            Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
+
+            if (hit && hit.tag == "Grape")
+            {
+                Destroy(hit.gameObject);
+                Instantiate(grapeSplash, touchPos, Quaternion.identity);
+                grapeScore++;
+                Debug.Log(fillBar.fillAmount);
+            }
         }
     }
 
@@ -107,5 +123,18 @@ public class CrushScript : MonoBehaviour
     {
         fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
         fillBar.fillAmount = (grapeScore * 1.5f) / 100;
+        missedText.text = missedGrapes + "/" + maxMissedGrapes;
+    }
+
+    IEnumerator Wait()
+    {
+        GameObject asd = GameObject.Find("Canvas");
+        yield return new WaitForSeconds(3);
+        mch.CallMethod();
+        yield return new WaitForSeconds(1);
+        asd.SetActive(false);
+        gameObject.GetComponent<CrushScript>().enabled = false;
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
 
     // Cameras for different views
     public Camera townCamera, farmCamera, breweryCamera, grapeCrush;
+    public GameObject playGrapeCrush;
 
     private GameObject guiTemp;
     private GUIScript guiScript;
@@ -47,6 +48,7 @@ public class GameMaster : MonoBehaviour
         curtainControls = GameObject.FindGameObjectWithTag("Curtain").GetComponent<CurtainControls>();
         guiTemp = GameObject.FindGameObjectWithTag("InventoryCanvas");
         guiScript = guiTemp.GetComponent<GUIScript>();
+        playGrapeCrush.SetActive(false);
     }
     void GoToTown()
     {
@@ -63,15 +65,24 @@ public class GameMaster : MonoBehaviour
         curtainControls.FadeToBlack(Camera.main, breweryCamera);
         State = GameState.Brewery;
     }
+
     void PlayGrapeCrush()
     {
         curtainControls.FadeToBlack(Camera.main, grapeCrush);
-        State = GameState.GrapeCrush;
+        StartCoroutine("Wait", 0.5f);
     }
 
     void ViewInventory(GameObject go)
     {
         guiScript.showInventory();
         IsInventoryOpen = true;
+    }
+
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameObject obj = Instantiate(playGrapeCrush);
+        State = GameState.GrapeCrush;
+        obj.SetActive(true);
     }
 }

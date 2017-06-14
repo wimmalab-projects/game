@@ -11,6 +11,7 @@ public class GUIScript : MonoBehaviour
     public CanvasGroup infoPanel;
     public Text infoPanelText;
     public Text infoPanelTimer;
+    public Button harvestButton;
 
     private Animator animator;
     private string button;
@@ -63,13 +64,21 @@ public class GUIScript : MonoBehaviour
                 animator.SetBool("showInventory", false);
                 break;
             case "Plant":
-                slotScript.GetComponent<SlotScript>().Plant();
+                slotScript.Plant();
                 if (SlotScript.didPlant)
                 {
                     animator.SetBool("showInventory", false);
                 }
                 else
                     return;
+                break;
+            case "Harvest":
+                if (groundScript.Timer <= 0)
+                {
+                    slotScript.Harvest();
+                }
+                else
+                    Debug.Log("Not ready yet");
                 break;
         }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;

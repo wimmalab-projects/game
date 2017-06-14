@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     public GameObject go;
     public GameObject slot; // place prefab in editor
 
-    private const int maxRows = 5;
+    private const int maxRows = 6;
     private const int maxColumns = 5;
 
     void Awake()
@@ -23,6 +23,9 @@ public class Inventory : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+
+
         // add items
         items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
         items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
@@ -47,7 +50,7 @@ public class Inventory : MonoBehaviour
             {
                 if (slots[i] != null)
                 {
-                    slots[i].transform.localPosition = new Vector3(125 + 1280 / 2 * -1 + 200 * x, (720 / 2 - 25) - 310 * y);
+                    slots[i].transform.localPosition = new Vector3(125 + 1280 / 2 * -1 + 200 * x, (720 / 2 - 25) - 350 * y);
                 }
             }
         }

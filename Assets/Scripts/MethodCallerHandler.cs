@@ -10,6 +10,11 @@ public class MethodCallerHandler : MonoBehaviour
     public GameMaster gm;
     public string MethodName;
 
+    void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
+    }
+
     public void CallMethod()
     {
         gm.SendMessage(MethodName, gameObject);

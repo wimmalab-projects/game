@@ -97,7 +97,7 @@ public class ColliderHandler : MonoBehaviour
             MethodCallerHandler mch;
             mch = parentGameObject.GetComponent<MethodCallerHandler>();
             mch.CallMethod();
-            
+
         }
     }
 }

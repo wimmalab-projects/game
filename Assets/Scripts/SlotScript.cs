@@ -65,4 +65,16 @@ public class SlotScript : MonoBehaviour
         currentlySelectedName = null;
     }
 
+    public void Harvest()
+    {
+        parent = ColliderHandler.parentGameObject;
+        groundScript = parent.GetComponent<PlantGround>();
+
+        parent.tag = "NotPlanted";
+        groundScript.plantState = GameMaster.PlantState.NotPlanted;
+        groundScript.plantName = null;
+        inventory.items["Grape"].AddItem();
+        didPlant = true;
+    }
+
 }
