@@ -10,7 +10,7 @@ public class ColliderHandler : MonoBehaviour
     //private CanvasGroup inventory;
     private Transform parent;
     private GameMaster gm;
-    private LayerMask layerMask;
+    private LayerMask layerMask = 0;
 
     RuntimePlatform platform = Application.platform;
 
@@ -39,64 +39,65 @@ public class ColliderHandler : MonoBehaviour
                 checkTouch(Input.mousePosition);
             }
         }
+
         if (gm.IsInventoryOpen == true)
-            layerMask.value = 32;
-        else
+            layerMask.value = 5;
+        else if (gm.State == GameMaster.GameState.Farm)
+        {
             layerMask.value = 256;
+        }
+        else if (gm.State == GameMaster.GameState.Brewery)
+        {
+            layerMask.value = 512;
+        }
+        else if (gm.State == GameMaster.GameState.Town)
+        {
+            layerMask.value = 1024;
+        }
+        else if (gm.State == GameMaster.GameState.GrapeCrush)
+        {
+            layerMask.value = 2048;
+        }
+        else
+            layerMask.value = 0;
+
+        //Debug.Log(layerMask.value);
     }
 
     void checkTouch(Vector2 pos)
     {
-        if (layerMask.value == 256)
+
+        if (layerMask.value == 256) // farmview
         {
-            Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+            hitterMethod(pos);
+        }
+        if (layerMask.value == 512) // breweryview
+        {
+            hitterMethod(pos);
+        }
+        if (layerMask.value == 1024) // townview
+        {
+            hitterMethod(pos);
+        }
+        if (layerMask.value == 2048) // crushview
+        {
+            hitterMethod(pos);
+        }
+    }
 
-            Vector2 touchPos = new Vector2(wp.x, wp.y);
+    public void hitterMethod(Vector2 pos)
+    {
+        Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+        Vector2 touchPos = new Vector2(wp.x, wp.y);
+        Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
 
-            Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
-
-            if (hit && hit.name != null)
-            {
-                switch (gm.State)
-                {
-                    case GameMaster.GameState.Farm:
-                        if (hit && gm.IsInventoryOpen == false)
-                        {
-                            //gm.IsInventoryOpen = true;
-                            //hitDetected = true;
-                            parentGameObject = hit.gameObject;
-                            MethodCallerHandler mch = parentGameObject.GetComponent<MethodCallerHandler>();
-                            mch.CallMethod();
-                        }
-                        break;
-                    case GameMaster.GameState.Town:
-                        if (hit && gm.IsInventoryOpen == false)
-                        {
-                            gm.IsInventoryOpen = true;
-                            hitDetected = true;
-                            Debug.Log(hit.transform.gameObject.name);
-                        }
-                        break;
-                    case GameMaster.GameState.Brewery:
-                        if (hit && gm.IsInventoryOpen == false)
-                        {
-                            gm.IsInventoryOpen = true;
-                            hitDetected = true;
-                            Debug.Log(hit.transform.gameObject.name);
-                        }
-                        break;
-                    case GameMaster.GameState.GrapeCrush:
-                        if (hit && gm.IsInventoryOpen == false)
-                        {
-                            gm.IsInventoryOpen = true;
-                            hitDetected = true;
-                            Debug.Log(hit.transform.gameObject.name);
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
+        if (hit)
+        {
+            parentGameObject = hit.gameObject;
+            MethodCallerHandler mch;
+            mch = parentGameObject.GetComponent<MethodCallerHandler>();
+            mch.CallMethod();
+            
         }
     }
 }
