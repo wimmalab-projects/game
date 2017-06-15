@@ -23,9 +23,6 @@ public class Inventory : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-
-
         // add items
         items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
         items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
@@ -43,7 +40,7 @@ public class Inventory : MonoBehaviour
             slots.Add(temp);
         }
 
-        // set inventory button positions
+        // set inventory button positions /////// Muuta tämä vastaamaan shopin grid layout tyyppistä ratkaisua.
         for (int i = 0, y = 0; i < maxRows; y++)
         {
             for (int x = 0; x < maxColumns; x++, i++)
@@ -54,22 +51,5 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-    }
-
-    // debug testi lisäys valkonen ja musta siemen
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 100, 100));
-        if (GUILayout.Button("Add index 0"))
-        {
-            items["White grape vine"].AddItem();
-        }
-        GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(10, 50, 100, 100));
-        if (GUILayout.Button("Add index 1"))
-        {
-            items["Black grape vine"].AddItem();
-        }
-        GUILayout.EndArea();
     }
 }

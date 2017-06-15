@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class Item
 {
-    public string itemDesc;
-
+    #region attributes
+    private string itemDesc;
     private string itemName;
     private int itemID;
     private Sprite itemSprite;
     private ItemType itemType;
     private int itemValue;
 
+    public enum ItemType
+    {
+        GRAPE,
+        VINE,
+        JUICE,
+        BOTTLE,
+    }
+
+    #endregion
+
+    #region gettersetter
+
+    public string ItemDesc
+    {
+        get { return itemDesc; }
+    }
 
     public ItemType iType
     {
@@ -23,22 +39,13 @@ public class Item
         get { return itemSprite; }
     }
 
-    public Item(string name, int id, string desc, ItemType type)
-    {
-        itemName = name;
-        itemID = id;
-        itemDesc = desc;
-        itemType = type;
-        itemSprite = Resources.Load<Sprite>("" + name);
-    }
-
     public int itemCount
     {
         get
         {
             return itemValue;
         }
-        set
+        private set // keep private so item stack can only be changed from methods inside this class
         {
             if (value < 0)
             {
@@ -52,14 +59,6 @@ public class Item
                 itemValue = value;
             }
         }
-    }
-
-    public enum ItemType
-    {
-        GRAPE,
-        VINE,
-        JUICE,
-        BOTTLE,
     }
 
     public int returnID()
@@ -76,7 +75,9 @@ public class Item
     {
         return itemType;
     }
+    #endregion
 
+    #region methods
     public void PopItem()
     {
         itemCount--;
@@ -86,4 +87,16 @@ public class Item
     {
         itemCount++;
     }
+    #endregion
+
+    #region constructors
+    public Item(string name, int id, string desc, ItemType type)
+    {
+        itemName = name;
+        itemID = id;
+        itemDesc = desc;
+        itemType = type;
+        itemSprite = Resources.Load<Sprite>("" + name);
+    }
+#endregion
 }
