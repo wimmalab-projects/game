@@ -77,7 +77,48 @@ public class CrushScript : MonoBehaviour
             startTime = Time.time;
         }
 
-        if (fillBar.fillAmount == 1 || missedGrapes == maxMissedGrapes)
+        if (fillBar.fillAmount == 1)
+        {
+            gameOverText.text = "Good job!";
+            gameOver();
+            //GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>().items["Juice"].AddItem();
+        }
+        else if (missedGrapes == maxMissedGrapes)
+        {
+            gameOverText.text = "You lost!";
+            gameOver();
+        }
+    }
+
+        void checkTouch(Vector2 pos)
+        {
+            if (layerMask.value == 2048)
+            {
+                Debug.Log("asd");
+                Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+
+                Vector2 touchPos = new Vector2(wp.x, wp.y);
+
+                Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
+
+                if (hit && hit.tag == "Grape")
+                {
+                    Destroy(hit.gameObject);
+                    Instantiate(grapeSplash, touchPos, Quaternion.identity);
+                    grapeScore++;
+                    Debug.Log(fillBar.fillAmount);
+                }
+            }
+        }
+
+        void handleUI()
+        {
+            fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
+            fillBar.fillAmount = (grapeScore * 1.5f) / 100;
+            missedText.text = missedGrapes + "/" + maxMissedGrapes;
+        }
+
+        void gameOver()
         {
             GameObject[] grapesLeft = GameObject.FindGameObjectsWithTag("Grape");
             GameObject[] grapeSplashLeft = GameObject.FindGameObjectsWithTag("GrapeSplash");
@@ -90,51 +131,22 @@ public class CrushScript : MonoBehaviour
                 }
             }
             gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
-            if(!isStarted)
+            if (!isStarted)
             {
                 isStarted = true;
                 StartCoroutine("Wait");
-            }          
-        }
-    }
-
-    void checkTouch(Vector2 pos)
-    {
-        if(layerMask.value == 2048)
-        {
-            Debug.Log("asd");
-            Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
-
-            Vector2 touchPos = new Vector2(wp.x, wp.y);
-
-            Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
-
-            if (hit && hit.tag == "Grape")
-            {
-                Destroy(hit.gameObject);
-                Instantiate(grapeSplash, touchPos, Quaternion.identity);
-                grapeScore++;
-                Debug.Log(fillBar.fillAmount);
             }
         }
-    }
 
-    void handleUI()
-    {
-        fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        fillBar.fillAmount = (grapeScore * 1.5f) / 100;
-        missedText.text = missedGrapes + "/" + maxMissedGrapes;
+        IEnumerator Wait()
+        {
+            GameObject asd = GameObject.Find("Canvas");
+            yield return new WaitForSeconds(3);
+            mch.CallMethod();
+            yield return new WaitForSeconds(1);
+            asd.SetActive(false);
+            gameObject.GetComponent<CrushScript>().enabled = false;
+            yield return new WaitForSeconds(1);
+            Destroy(gameObject);
+        }
     }
-
-    IEnumerator Wait()
-    {
-        GameObject asd = GameObject.Find("Canvas");
-        yield return new WaitForSeconds(3);
-        mch.CallMethod();
-        yield return new WaitForSeconds(1);
-        asd.SetActive(false);
-        gameObject.GetComponent<CrushScript>().enabled = false;
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
-    }
-}
