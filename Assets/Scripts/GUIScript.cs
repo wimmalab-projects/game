@@ -89,6 +89,8 @@ public class GUIScript : MonoBehaviour
                 }
                 break;
         }
+        plantButton.name = "Plant";
+        plantButton.GetComponentInChildren<Text>().text = "Plant";
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
 
@@ -113,7 +115,8 @@ public class GUIScript : MonoBehaviour
                 plantButton.name = "Crush";
                 plantButton.GetComponentInChildren<Text>().text = "Crush";
                 break;
-
         }
     }
+
+
 }

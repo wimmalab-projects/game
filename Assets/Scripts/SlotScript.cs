@@ -86,7 +86,7 @@ public class SlotScript : MonoBehaviour
         currentlySelectedName = selectedGrape;
         GameObject grape = Resources.Load<GameObject>("Grape");
         grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-        Resources.UnloadAsset(grape);
+        //Resources.UnloadAsset(grape);
         string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
         parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
         didPlant = true;
