@@ -79,10 +79,10 @@ public class ColliderHandler : MonoBehaviour
         {
             hitterMethod(pos);
         }
-        if (layerMask.value == 2048) // crushview
-        {
-            hitterMethod(pos);
-        }
+        //if (layerMask.value == 2048) // crushview
+        //{
+        //    hitterMethod(pos);
+        //}
     }
 
     public void hitterMethod(Vector2 pos)

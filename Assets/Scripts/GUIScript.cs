@@ -12,6 +12,7 @@ public class GUIScript : MonoBehaviour
     public Text infoPanelText;
     public Text infoPanelTimer;
     public Button harvestButton;
+    public Button plantButton;
 
     private Animator animator;
     private string button;
@@ -80,6 +81,13 @@ public class GUIScript : MonoBehaviour
                 else
                     Debug.Log("Not ready yet");
                 break;
+            case "Crush":
+                slotScript.selectGrape();
+                if (SlotScript.didPlant)
+                {
+                    animator.SetBool("showInventory", false);
+                }
+                break;
         }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
@@ -99,6 +107,13 @@ public class GUIScript : MonoBehaviour
                 infoPanel.alpha = 1;
                 initializeInfoPanel(groundScript.plantName);
                 break;
+            case "GoToGrape":
+                inventory.alpha = 1;
+                animator.SetBool("showInventory", true);
+                plantButton.name = "Crush";
+                plantButton.GetComponentInChildren<Text>().text = "Crush";
+                break;
+
         }
     }
 }

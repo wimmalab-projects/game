@@ -8,10 +8,10 @@ public class SlotScript : MonoBehaviour
 {
     public static bool didPlant;
     public string seedName;
+    public string currentlySelectedName;
 
     private static Inventory inventory;
     private static int returnCount;
-    private static string currentlySelectedName;
     private static Item.ItemType currentlySelectedTag;
     private GameObject guiTemp;
     private GUIScript guiScript;
@@ -62,7 +62,6 @@ public class SlotScript : MonoBehaviour
         {
             Debug.Log("Not enough seeds");
         }
-        currentlySelectedName = null;
     }
 
     public void Harvest()
@@ -75,6 +74,23 @@ public class SlotScript : MonoBehaviour
         groundScript.plantName = null;
         inventory.items["Grape"].AddItem();
         didPlant = true;
+    }
+
+    public void selectGrape()
+    {
+        parent = ColliderHandler.parentGameObject;
+
+        currentlySelectedName = inventory.items[seedName].returnName();
+        inventory.items[currentlySelectedName].PopItem();
+        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+        currentlySelectedName = selectedGrape;
+        GameObject grape = Resources.Load<GameObject>("Grape");
+        grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
+        Resources.UnloadAsset(grape);
+        string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
+        parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
+        didPlant = true;
+        method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
     }
 
 }

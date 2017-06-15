@@ -52,4 +52,20 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(10, 10, 100, 100));
+        if (GUILayout.Button("Add index 0"))
+        {
+            items["White grape vine"].AddItem();
+        }
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(10, 50, 100, 100));
+        if (GUILayout.Button("Add index 1"))
+        {
+            items["Black grape vine"].AddItem();
+        }
+        GUILayout.EndArea();
+    }
 }
