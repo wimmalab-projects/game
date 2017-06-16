@@ -8,16 +8,16 @@ public class Inventory : MonoBehaviour
 
     public List<GameObject> slots = new List<GameObject>();
     public SortedList<string, Item> items = new SortedList<string, Item>();
-    public Canvas canvas;
-    public GameObject go;
+    public Canvas canvas; // place prefab in editor
     public GameObject slot; // place prefab in editor
 
     private const int maxRows = 6;
     private const int maxColumns = 5;
+    private GameObject InventoryGO;
 
     void Awake()
     {
-        go = canvas.transform.Find("Inventory").gameObject;
+        InventoryGO = canvas.transform.Find("Inventory").gameObject;
     }
 
     // Use this for initialization
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         {
 
             GameObject temp = Instantiate(slot);
-            temp.transform.SetParent(go.transform);
+            temp.transform.SetParent(InventoryGO.transform);
             temp.GetComponent<Slot>().uiItemName.text = items[items.Keys[i]].returnName();
             slots.Add(temp);
         }

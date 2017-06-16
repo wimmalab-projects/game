@@ -6,32 +6,18 @@ using UnityEngine.UI;
 
 public class ShopSlot : MonoBehaviour, IPointerClickHandler
 {
-    public Text uiItemName;
-    public Image itemImage;
-    
-    private Inventory inventory;
+    private Shop shop;
 
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
-        itemImage.sprite = inventory.items[uiItemName.text].ItemSprite;
-    }
-
-    void clearHighlight()
-    {
-        foreach (GameObject asd in inventory.slots)
-        {
-            asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
-        }
+        shop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Shop>();
     }
 
     public void OnPointerClick(PointerEventData data)
     {
-        clearHighlight();
-        if (inventory.items[uiItemName.text] != null)
+        if (shop.items[gameObject.name] != null)
         {
-            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().seedName = uiItemName.text;
+            shop.SelectItem(gameObject.name);
         }
     }
 }
