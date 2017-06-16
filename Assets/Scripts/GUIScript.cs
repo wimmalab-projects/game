@@ -37,10 +37,10 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //IF HELVETTI.. KORJAA!!!
-        if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
-        {
-        }
+        ////IF HELVETTI.. KORJAA!!!
+        //if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
+        //{
+        //}
 
         if (infoPanel.alpha == 1)
         {
@@ -57,41 +57,45 @@ public class GUIScript : MonoBehaviour
 
     public void ButtonClicked()
     {
-        button = EventSystem.current.currentSelectedGameObject.name;
-        switch (button)
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen == true)
         {
-            case "Exit":
-                infoPanel.alpha = 0;
-                animator.SetBool("showInventory", false);
-                break;
-            case "Plant":
-                slotScript.Plant();
-                if (SlotScript.didPlant)
-                {
+            button = EventSystem.current.currentSelectedGameObject.name;
+            switch (button)
+            {
+                case "Exit":
+                    infoPanel.alpha = 0;
                     animator.SetBool("showInventory", false);
-                }
-                else
-                    return;
-                break;
-            case "Harvest":
-                if (groundScript.Timer <= 0)
-                {
-                    slotScript.Harvest();
-                }
-                else
-                    Debug.Log("Not ready yet");
-                break;
-            case "Crush":
-                slotScript.selectGrape();
-                if (SlotScript.didPlant)
-                {
-                    animator.SetBool("showInventory", false);
-                }
-                break;
+                    break;
+                case "Plant":
+                    slotScript.Plant();
+                    if (SlotScript.didPlant)
+                    {
+                        animator.SetBool("showInventory", false);
+                    }
+                    else
+                        return;
+                    break;
+                case "Harvest":
+                    if (groundScript.Timer <= 0)
+                    {
+                        slotScript.Harvest();
+                        infoPanel.alpha = 0;
+                    }
+                    else
+                        return;
+                    break;
+                case "Crush":
+                    slotScript.selectGrape();
+                    if (SlotScript.didPlant)
+                    {
+                        animator.SetBool("showInventory", false);
+                    }
+                    break;
+            }
+            //plantButton.name = "Plant";
+            //plantButton.GetComponentInChildren<Text>().text = "Plant";
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         }
-        plantButton.name = "Plant";
-        plantButton.GetComponentInChildren<Text>().text = "Plant";
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
 
     public void showInventory()
@@ -117,6 +121,4 @@ public class GUIScript : MonoBehaviour
                 break;
         }
     }
-
-
 }

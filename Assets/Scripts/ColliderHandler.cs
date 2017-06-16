@@ -8,7 +8,6 @@ public class ColliderHandler : MonoBehaviour
     public static GameObject parentGameObject;
 
     //private CanvasGroup inventory;
-    private Transform parent;
     private GameMaster gm;
     private LayerMask layerMask = 0;
 

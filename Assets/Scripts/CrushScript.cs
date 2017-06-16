@@ -16,7 +16,6 @@ public class CrushScript : MonoBehaviour
     public Text missedText;
 
     private const int maxMissedGrapes = 10;
-    private Vector2 mousePos;
     private GameObject temp;
     private float startTime, refire = 0.4f;
     private GameObject grapeSplash;
@@ -34,20 +33,20 @@ public class CrushScript : MonoBehaviour
     void Awake()
     {
         mch = GetComponent<MethodCallerHandler>();
-        fillBar.fillAmount = 0;
-        fillText.text = "0%";
-        gameOverText.text = "";
-        missedText.text = "0/10";
         slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
+        spawnpoint = GameObject.FindGameObjectsWithTag("Respawn");
+        mch = GetComponent<MethodCallerHandler>();
     }
 
     void Start()
     {
-        grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
+        fillBar.fillAmount = 0;
+        fillText.text = "0%";
+        gameOverText.text = "";
+        missedText.text = "0/10";
         startTime = Time.time;
-        spawnpoint = GameObject.FindGameObjectsWithTag("Respawn");
-        mch = GetComponent<MethodCallerHandler>();
     }
 
 

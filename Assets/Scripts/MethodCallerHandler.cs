@@ -10,7 +10,7 @@ public class MethodCallerHandler : MonoBehaviour
     public GameMaster gm;
     public string MethodName;
 
-    void Start()
+    void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
     }

@@ -17,7 +17,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
-
     }
 
     // Update is called once per frame

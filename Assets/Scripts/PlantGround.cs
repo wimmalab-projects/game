@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class PlantGround : MonoBehaviour
 {
-
+    public List<Sprite> Sprites = new List<Sprite>();
+    public GameMaster.PlantState plantState = GameMaster.PlantState.NotPlanted;
     public bool isPlanted;
     public string plantName;
     public Sprite plantSprite;
+    public string niceTime;
+
     private float timer = 10;
     private int harvestTimeMinutes;
     private int harvestTimeSeconds;
-    public string niceTime;
 
-    public List<Sprite> Sprites = new List<Sprite>();
-
-
-    public GameMaster.PlantState plantState = GameMaster.PlantState.NotPlanted;
 
     public float Timer
     {
@@ -62,5 +60,10 @@ public class PlantGround : MonoBehaviour
         }
         else
             niceTime = string.Format("0:00");
+    }
+
+    public void resetTimer()
+    {
+        timer = 10;
     }
 }

@@ -10,9 +10,9 @@ public class SlotScript : MonoBehaviour
     public string seedName;
     public string currentlySelectedName;
 
-    private static Inventory inventory;
-    private static int returnCount;
-    private static Item.ItemType currentlySelectedTag;
+    private Inventory inventory;
+    //private static int returnCount;
+    //private static Item.ItemType currentlySelectedTag;
     private GameObject guiTemp;
     private GUIScript guiScript;
 
@@ -57,6 +57,10 @@ public class SlotScript : MonoBehaviour
                 didPlant = true;
 
             }
+            else
+            {
+                Debug.Log("Not a seed");
+            }
         }
         else
         {
@@ -73,9 +77,10 @@ public class SlotScript : MonoBehaviour
         groundScript.plantState = GameMaster.PlantState.NotPlanted;
         groundScript.plantName = null;
         inventory.items["Grape"].AddItem();
-        didPlant = true;
+        groundScript.resetTimer();
     }
 
+    //Tee paremmin?
     public void selectGrape()
     {
         parent = ColliderHandler.parentGameObject;
@@ -86,7 +91,7 @@ public class SlotScript : MonoBehaviour
         currentlySelectedName = selectedGrape;
         GameObject grape = Resources.Load<GameObject>("Grape");
         grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-        //Resources.UnloadAsset(grape);
+        Resources.UnloadAsset(grape);
         string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
         parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
         didPlant = true;
