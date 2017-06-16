@@ -66,11 +66,6 @@ public class Item
         return itemID;
     }
 
-    public string returnName()
-    {
-        return itemName;
-    }
-
     public Item.ItemType returnItemType()
     {
         return itemType;
@@ -86,6 +81,11 @@ public class Item
     public void AddItem()
     {
         itemCount++;
+    }
+
+    public string returnName()
+    {
+        return itemName;
     }
     #endregion
 

@@ -10,8 +10,13 @@ public class Shop : MonoBehaviour {
     public List<GameObject> slots = new List<GameObject>();
     public GameObject ShopSlot;
 
+    public GameObject InfoPanel;
+
+
     private GridLayoutGroup glg;
     private Item currentlySelectedItem; 
+
+
 
     private void Start()
     {
@@ -31,6 +36,7 @@ public class Shop : MonoBehaviour {
 
         // set selecteditem as first item
         SelectItem(items.Keys[0]);
+        refreshInfo();
 
         // scale content
         glg = ContentPanel.GetComponent<GridLayoutGroup>();
@@ -48,5 +54,21 @@ public class Shop : MonoBehaviour {
         // set current item here
         currentlySelectedItem = items[key];
         Debug.Log(currentlySelectedItem.returnName());
+        refreshInfo();
+    }
+    private void refreshInfo()
+    {
+        GameObject go1 = InfoPanel.transform.Find("SelectedItemName").gameObject;
+        GameObject go2 = InfoPanel.transform.Find("SelectedIitemDesc").gameObject;
+        GameObject go3 = InfoPanel.transform.Find("SelectedItemImage").gameObject;
+
+        go1.GetComponent<Text>().text = currentlySelectedItem.returnName();
+        go2.GetComponent<Text>().text = currentlySelectedItem.ItemDesc;
+        go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
+    }
+
+    public void BuyItem ()
+    {
+        currentlySelectedItem.AddItem();
     }
 }
