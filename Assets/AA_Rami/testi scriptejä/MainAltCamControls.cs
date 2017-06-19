@@ -13,6 +13,11 @@ public class MainAltCamControls : MonoBehaviour {
     public Transform CamPos1, CamPos2; // drag in editor, i used two empty game objects as placeholders from where i can just take position and lerp x axis.
     private bool transition = false, cam1 = false;
 
+    private void Start()
+    {
+        Camera.transform.position = CamPos1.position;
+    }
+
     public void Update()
     {
         if (transition == true)

@@ -7,7 +7,8 @@ public class GameMaster : MonoBehaviour
 {
 
     // Cameras for different views
-    public Camera townCamera, farmCamera, breweryCamera, grapeCrush;
+    public GameObject townCamera, farmCamera, breweryCamera;
+    public Camera grapeCrush;
     public GameObject playGrapeCrush;
 
     private GameObject guiTemp;
@@ -52,17 +53,17 @@ public class GameMaster : MonoBehaviour
     }
     void GoToTown()
     {
-        curtainControls.FadeToBlack(Camera.main, townCamera);
+        curtainControls.FadeToBlack(Camera.main, townCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Town;
     }
     void GoToFarm()
     {
-        curtainControls.FadeToBlack(Camera.main, farmCamera);
+        curtainControls.FadeToBlack(Camera.main, farmCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Farm;
     }
     void GoToBrewery()
     {
-        curtainControls.FadeToBlack(Camera.main, breweryCamera);
+        curtainControls.FadeToBlack(Camera.main, breweryCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Brewery;
     }
 
