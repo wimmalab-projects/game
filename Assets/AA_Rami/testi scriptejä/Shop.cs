@@ -56,7 +56,7 @@ public class Shop : MonoBehaviour {
     {
         // set current item here
         currentlySelectedItem = items[key];
-        Debug.Log(currentlySelectedItem.returnName());
+        //Debug.Log(currentlySelectedItem.returnName());
         refreshInfo();
     }
     private void refreshInfo()

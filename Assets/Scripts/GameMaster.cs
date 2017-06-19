@@ -40,6 +40,14 @@ public class GameMaster : MonoBehaviour
         Grapes
     };
 
+    public enum FermentationState
+    {
+        NotFermentating,
+        WhiteWine,
+        RoseWine,    
+        RedWine
+    }
+
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen = false;
@@ -70,6 +78,7 @@ public class GameMaster : MonoBehaviour
     void PlayGrapeCrush()
     {
         curtainControls.FadeToBlack(Camera.main, grapeCrush);
+        State = GameState.GrapeCrush;
         StartCoroutine("Wait", 0.5f);
     }
 

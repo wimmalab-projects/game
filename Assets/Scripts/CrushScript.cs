@@ -14,14 +14,14 @@ public class CrushScript : MonoBehaviour
     public Text fillText;
     public Text gameOverText;
     public Text missedText;
+    public bool didWin;
 
     private const int maxMissedGrapes = 10;
     private GameObject temp;
     private float startTime, refire = 0.4f;
     private GameObject grapeSplash;
     private MethodCallerHandler mch;
-    private bool didWin = false;
-    private bool isStarted = false;
+    private bool isStarted;
     private SlotScript slotScript;
     private Inventory inventory;
 
@@ -42,6 +42,8 @@ public class CrushScript : MonoBehaviour
 
     void Start()
     {
+        didWin = false;
+        isStarted = false;
         fillBar.fillAmount = 0;
         fillText.text = "0%";
         gameOverText.text = "";

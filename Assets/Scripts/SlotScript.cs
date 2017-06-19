@@ -102,5 +102,4 @@ public class SlotScript : MonoBehaviour
         else
             Debug.Log("Not enough");
     }
-
 }
