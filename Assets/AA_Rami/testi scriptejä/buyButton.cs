@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class buyButton : MonoBehaviour, IPointerClickHandler
 {
+    /// <summary>
+    /// Place this script to shop buy button.
+    /// </summary>
     Shop shop;
     void Start()
     {

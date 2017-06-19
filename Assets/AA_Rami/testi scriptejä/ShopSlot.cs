@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class ShopSlot : MonoBehaviour, IPointerClickHandler
 {
+    /// <summary>
+    /// Place this script in shop slot prefab.
+    /// </summary>
     private Shop shop;
 
     void Start()
