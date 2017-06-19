@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// place this script inside gamescene objects you want to be able to click and have effects
+/// like camera transitions or open / close shop
+/// </summary>
 public class MethodCallerHandler : MonoBehaviour
 {
 

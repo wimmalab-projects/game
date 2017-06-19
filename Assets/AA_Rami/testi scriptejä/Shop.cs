@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Place this script in game manager
+/// </summary>
 public class Shop : MonoBehaviour {
 
-    public GameObject shop;
-    public GameObject ShopSlot;
+    public GameObject shop; // drag shop prefab in editor
+    public GameObject ShopSlot; // drag shopslot prefab in editor
 
     public SortedList<string, Item> items = new SortedList<string, Item>();
     public List<GameObject> slots = new List<GameObject>();
@@ -15,17 +18,13 @@ public class Shop : MonoBehaviour {
     private GameObject InfoPanel;
     private GridLayoutGroup glg;
     private Item currentlySelectedItem; 
-
-
-
+    
     private void Start()
     {
 
-        // get items and create buttons
-        items = gameObject.GetComponent<Inventory>().items;
-        InfoPanel = shop.transform.Find("Info").gameObject;
-        ContentPanel = shop.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject;
-        //ContentPanel = shop.transform.Find("Content").gameObject;
+        items = gameObject.GetComponent<Inventory>().items; // get items and create buttons
+        InfoPanel = shop.transform.Find("Info").gameObject; // find our infopanel inside shop
+        ContentPanel = shop.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject; // find content panel inside shop
 
         // create shop buttons
         for (int i = 0; i < items.Count; i++)
@@ -46,12 +45,19 @@ public class Shop : MonoBehaviour {
         scaleContent();
     }
 
+    /// <summary>
+    /// use this method to scale shop content panel to fit all the buttons inside it
+    /// </summary>
     private void scaleContent ()
     {
         float y = (ContentPanel.transform.childCount+1) / glg.constraintCount * glg.cellSize.y + (glg.cellSize.y*2);
         ContentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(ContentPanel.GetComponent<RectTransform>().sizeDelta.x, y);
     }
 
+    /// <summary>
+    /// set selected item so we can buy it and or set infopanel objects
+    /// </summary>
+    /// <param name="key"></param>
     public void SelectItem(string key)
     {
         // set current item here
@@ -59,6 +65,10 @@ public class Shop : MonoBehaviour {
         Debug.Log(currentlySelectedItem.returnName());
         refreshInfo();
     }
+
+    /// <summary>
+    /// refresh icon, name and description in infopanel.
+    /// </summary>
     private void refreshInfo()
     {
         GameObject go1 = InfoPanel.transform.Find("SelectedItemName").gameObject;
@@ -70,22 +80,34 @@ public class Shop : MonoBehaviour {
         go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
     }
 
+    /// <summary>
+    /// buy currently selected item.
+    /// </summary>
     public void BuyItem ()
     {
         currentlySelectedItem.AddItem();
     }
 
+    /// <summary>
+    /// open shop panel (call this outside of this script from game master
+    /// </summary>
     public void OpenShop()
     {
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = true;
         shop.SetActive(true);
     }
+
+    /// <summary>
+    /// close shop panel (call this outside of this script from game master
+    /// </summary>
     public void CloseShop()
     {
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         shop.SetActive(false);
     }
 
+
+    // temp can remove later
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(Screen.width-150,Screen.height - 150,150,150));
@@ -99,7 +121,4 @@ public class Shop : MonoBehaviour {
         }
         GUILayout.EndArea();
     }
-
-
-
 }
