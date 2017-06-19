@@ -83,19 +83,24 @@ public class SlotScript : MonoBehaviour
     //Tee paremmin?
     public void selectGrape()
     {
-        parent = ColliderHandler.parentGameObject;
+        if(inventory.items[seedName].itemCount > 0)
+        {
+            parent = ColliderHandler.parentGameObject;
 
-        currentlySelectedName = inventory.items[seedName].returnName();
-        inventory.items[currentlySelectedName].PopItem();
-        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
-        currentlySelectedName = selectedGrape;
-        GameObject grape = Resources.Load<GameObject>("Grape");
-        grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-        Resources.UnloadAsset(grape);
-        string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
-        parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
-        didPlant = true;
-        method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
+            currentlySelectedName = inventory.items[seedName].returnName();
+            inventory.items[currentlySelectedName].PopItem();
+            string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+            currentlySelectedName = selectedGrape;
+            GameObject grape = Resources.Load<GameObject>("Grape");
+            grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
+            Resources.UnloadAsset(grape);
+            string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
+            parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
+            didPlant = true;
+            method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
+        }
+        else
+            Debug.Log("Not enough");
     }
 
 }

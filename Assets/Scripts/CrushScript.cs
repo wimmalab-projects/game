@@ -148,11 +148,11 @@ public class CrushScript : MonoBehaviour
         {
             inventory.items["Juice"].AddItem();
         }
-        GameObject asd = GameObject.Find("Canvas");
+        GameObject canvas = GameObject.Find("Canvas");
         yield return new WaitForSeconds(3);
         mch.CallMethod();
         yield return new WaitForSeconds(1);
-        asd.SetActive(false);
+        canvas.SetActive(false);
         gameObject.GetComponent<CrushScript>().enabled = false;
         yield return new WaitForSeconds(1);
         Destroy(gameObject);

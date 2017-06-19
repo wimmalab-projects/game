@@ -25,6 +25,7 @@ public class GUIScript : MonoBehaviour
     private GameObject gameManager;
 
     // Use this for initialization
+
     void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
@@ -46,6 +47,10 @@ public class GUIScript : MonoBehaviour
         {
             timer = groundScript.niceTime;
             infoPanelTimer.text = timer;
+            if (groundScript.Timer <= 0)
+            {
+                infoPanelTimer.text = "Ready!";
+            }
         }
     }
 
@@ -57,7 +62,7 @@ public class GUIScript : MonoBehaviour
 
     public void ButtonClicked()
     {
-        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen == true)
+        if (gameManager.GetComponent<GameMaster>().IsInventoryOpen == true)
         {
             button = EventSystem.current.currentSelectedGameObject.name;
             switch (button)
@@ -90,10 +95,12 @@ public class GUIScript : MonoBehaviour
                     {
                         animator.SetBool("showInventory", false);
                     }
+                    else
+                        return;
                     break;
             }
-            //plantButton.name = "Plant";
-            //plantButton.GetComponentInChildren<Text>().text = "Plant";
+            plantButton.name = "Plant";
+            plantButton.GetComponentInChildren<Text>().text = "Plant";
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         }
     }
