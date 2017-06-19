@@ -23,6 +23,7 @@ public class GUIScript : MonoBehaviour
     private Image infoPanelSprite;
     private string timer;
     private GameObject gameManager;
+    private FermentorScript fermentorScript;
 
     // Use this for initialization
 
@@ -38,26 +39,42 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ////IF HELVETTI.. KORJAA!!!
-        //if (Input.touchSupported == true || Input.GetMouseButton(0) == true)
-        //{
-        //}
-
         if (infoPanel.alpha == 1)
         {
-            timer = groundScript.niceTime;
-            infoPanelTimer.text = timer;
-            if (groundScript.Timer <= 0)
+            if(parent.tag == "Planted")
             {
-                infoPanelTimer.text = "Ready!";
+                timer = groundScript.niceTime;
+                infoPanelTimer.text = timer;
+                if (groundScript.Timer <= 0)
+                {
+                    infoPanelTimer.text = "Ready!";
+                }
+            }
+            else if(parent.tag == "Fermenting")
+            {
+                timer = fermentorScript.niceTime;
+                infoPanelTimer.text = timer;
+                if (fermentorScript.Timer <= 0)
+                {
+                    infoPanelTimer.text = "Ready!";
+                }
             }
         }
     }
 
     public void initializeInfoPanel(string name)
     {
-        infoPanelText.text = name + " is growing!";
-        infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+        if(parent.tag == "Planted")
+        {
+            infoPanelText.text = name + " is growing!";
+            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+        }
+
+        else if(parent.tag == "Fermenting")
+        {
+            infoPanelText.text = name + " is fermenting";
+            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+        }
     }
 
     public void ButtonClicked()
@@ -98,9 +115,20 @@ public class GUIScript : MonoBehaviour
                     else
                         return;
                     break;
+                case "Collect":
+                    if (fermentorScript.Timer <= 0)
+                    {
+                        slotScript.Collect();
+                        infoPanel.alpha = 0;
+                    }
+                    else
+                        return;
+                    break;
             }
             plantButton.name = "Plant";
             plantButton.GetComponentInChildren<Text>().text = "Plant";
+            harvestButton.name = "Harvest";
+            harvestButton.GetComponentInChildren<Text>().text = "Harvest";
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         }
     }
@@ -109,6 +137,7 @@ public class GUIScript : MonoBehaviour
     {
         parent = ColliderHandler.parentGameObject;
         groundScript = parent.GetComponent<PlantGround>();
+        fermentorScript = parent.GetComponent<FermentorScript>();
 
         switch (parent.tag)
         {
@@ -120,11 +149,17 @@ public class GUIScript : MonoBehaviour
                 infoPanel.alpha = 1;
                 initializeInfoPanel(groundScript.plantName);
                 break;
-            case "GoToGrape":
+            case "NotFermenting":
                 inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
                 plantButton.name = "Crush";
                 plantButton.GetComponentInChildren<Text>().text = "Crush";
+                break;
+            case "Fermenting":
+                infoPanel.alpha = 1;
+                initializeInfoPanel(fermentorScript.grapeName);
+                harvestButton.name = "Collect";
+                harvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
         }
     }

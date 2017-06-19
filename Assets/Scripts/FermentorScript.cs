@@ -18,11 +18,15 @@ public class FermentorScript : MonoBehaviour
     private CrushScript crushScript;
     private GameMaster gameMaster;
     private SlotScript slotScript;
+    private GameObject parent;
+    private FermentorScript thisScript;
+    private bool isStarted;
 
     private void Awake()
     {
         gameMaster = GameObject.Find("GameManager").GetComponent<GameMaster>();
         slotScript = GameObject.Find("GameManager").GetComponent<SlotScript>();
+        isStarted = false;
     }
 
 
@@ -37,52 +41,52 @@ public class FermentorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameMaster.State == GameMaster.GameState.GrapeCrush)
+        if (gameMaster.CrushisActive)
         {
-            crushScript = GameObject.Find("CrushView(Clone)").GetComponent<CrushScript>();
-
-            if(crushScript && crushScript.didWin)
+            if (isStarted == false)
             {
-                crushScript.didWin = false;
-                grapeName = slotScript.currentlySelectedName;
-                Debug.Log(grapeName);
+                parent = ColliderHandler.parentGameObject;
+                thisScript = parent.GetComponent<FermentorScript>();
+                crushScript = GameObject.Find("CrushView(Clone)").GetComponent<CrushScript>();
+                isStarted = true;
+            }
+            Debug.Log(CrushScript.didWin);
+            if (CrushScript.didWin)
+            {
+                slotScript.Ferment();
+                switch (FermentationState)
+                {
+                    case GameMaster.FermentationState.WhiteWine:
+                        timer = 10;
+                        break;
+                    case GameMaster.FermentationState.RoseWine:
+                        timer = 100;
+                        break;
+                    case GameMaster.FermentationState.RedWine:
+                        timer = 150;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        if (FermentationState != GameMaster.FermentationState.NotFermentating && FermentationState != GameMaster.FermentationState.Fermented)
+        {
+            if (timer >= 0)
+            {
+                timer -= Time.deltaTime;
+                fermentTimeMinutes = Mathf.FloorToInt(timer / 60F);
+                fermentTimeSeconds = Mathf.FloorToInt(timer - fermentTimeMinutes * 60);
+                niceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
-            //if (timer >= 0)
-            //{
-            //    timer -= Time.deltaTime;
-            //    fermentTimeMinutes = Mathf.FloorToInt(timer / 60F);
-            //    fermentTimeSeconds = Mathf.FloorToInt(timer - fermentTimeMinutes * 60);
-            //    niceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
-            //}
-
-            //if (timer <= 0)
-            //{
-            //    //GetComponent<SpriteRenderer>().sprite = Sprites[0];
-            //    FermentationState = GameMaster.PlantState.Grapes;
-            //}
-            //else if (timer < 60)
-            //{
-            //    //GetComponent<SpriteRenderer>().sprite = Sprites[0];
-            //    FermentationState = GameMaster.PlantState.Trimmed;
-            //}
-            //else if (timer < 120)
-            //{
-            //    //GetComponent<SpriteRenderer>().sprite = Sprites[0];
-            //    FermentationState = GameMaster.PlantState.Overgrowth;
-            //}
-            //else if (timer < 200)
-            //{
-            //    GetComponent<SpriteRenderer>().sprite = Sprites[0];
-            //    FermentationState = GameMaster.PlantState.JustPlanted;
-            //}
+            if(timer <= 0)
+            {
+                FermentationState = GameMaster.FermentationState.Fermented;
+            }
         }
         else
-            Debug.Log("Nope");
-    }
-
-    public void resetTimer()
-    {
-        timer = 10;
+            niceTime = string.Format("0:00");
     }
 }

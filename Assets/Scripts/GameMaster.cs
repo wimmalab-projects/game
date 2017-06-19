@@ -10,6 +10,7 @@ public class GameMaster : MonoBehaviour
     public GameObject townCamera, farmCamera, breweryCamera;
     public Camera grapeCrush;
     public GameObject playGrapeCrush;
+    public bool CrushisActive;
 
     private GameObject guiTemp;
     private GUIScript guiScript;
@@ -45,7 +46,8 @@ public class GameMaster : MonoBehaviour
         NotFermentating,
         WhiteWine,
         RoseWine,    
-        RedWine
+        RedWine,
+        Fermented
     }
 
     // set and reset when inventory opens closes
@@ -58,6 +60,7 @@ public class GameMaster : MonoBehaviour
         guiTemp = GameObject.FindGameObjectWithTag("InventoryCanvas");
         guiScript = guiTemp.GetComponent<GUIScript>();
         playGrapeCrush.SetActive(false);
+        CrushisActive = false;
     }
     void GoToTown()
     {
@@ -94,5 +97,7 @@ public class GameMaster : MonoBehaviour
         GameObject obj = Instantiate(playGrapeCrush);
         State = GameState.GrapeCrush;
         obj.SetActive(true);
+        CrushisActive = true;
+
     }
 }

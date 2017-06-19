@@ -18,6 +18,7 @@ public class SlotScript : MonoBehaviour
 
     GameObject parent;
     PlantGround groundScript;
+    FermentorScript fermentorScript;
     List<GameObject> vinePositions = new List<GameObject>();
 
 
@@ -83,7 +84,7 @@ public class SlotScript : MonoBehaviour
     //Tee paremmin?
     public void selectGrape()
     {
-        if(inventory.items[seedName].itemCount > 0)
+        if (inventory.items[seedName].itemCount > 0)
         {
             parent = ColliderHandler.parentGameObject;
 
@@ -93,7 +94,7 @@ public class SlotScript : MonoBehaviour
             currentlySelectedName = selectedGrape;
             GameObject grape = Resources.Load<GameObject>("Grape");
             grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-            Resources.UnloadAsset(grape);
+            //Resources.UnloadAsset(grape);
             string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
             parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
             didPlant = true;
@@ -101,5 +102,27 @@ public class SlotScript : MonoBehaviour
         }
         else
             Debug.Log("Not enough");
+    }
+
+    public void Ferment()
+    {
+        parent = ColliderHandler.parentGameObject;
+        fermentorScript = parent.GetComponent<FermentorScript>();
+        parent.tag = "Fermenting";
+        fermentorScript.FermentationState = GameMaster.FermentationState.WhiteWine;
+        fermentorScript.grapeName = currentlySelectedName;
+        fermentorScript.isFermenting = true;
+    }
+
+    public void Collect()
+    {
+        parent = ColliderHandler.parentGameObject;
+        fermentorScript = parent.GetComponent<FermentorScript>();
+
+        parent.tag = "NotFermenting";
+        fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
+        fermentorScript.isFermenting = false;
+        fermentorScript.grapeName = null;
+        inventory.items["Wine"].AddItem();
     }
 }

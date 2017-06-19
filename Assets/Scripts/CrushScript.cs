@@ -14,7 +14,7 @@ public class CrushScript : MonoBehaviour
     public Text fillText;
     public Text gameOverText;
     public Text missedText;
-    public bool didWin;
+    public static bool didWin;
 
     private const int maxMissedGrapes = 10;
     private GameObject temp;
@@ -120,7 +120,7 @@ public class CrushScript : MonoBehaviour
     void handleUI()
     {
         fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        fillBar.fillAmount = (grapeScore * 1.5f) / 100;
+        fillBar.fillAmount = (grapeScore * 1.5f)/* / 100*/;
         missedText.text = missedGrapes + "/" + maxMissedGrapes;
     }
 
@@ -148,6 +148,7 @@ public class CrushScript : MonoBehaviour
     {
         if (didWin)
         {
+            didWin = false;
             inventory.items["Juice"].AddItem();
         }
         GameObject canvas = GameObject.Find("Canvas");
@@ -158,5 +159,6 @@ public class CrushScript : MonoBehaviour
         gameObject.GetComponent<CrushScript>().enabled = false;
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false;
     }
 }
