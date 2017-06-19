@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour {
 
-    public GameObject ContentPanel;
-    public SortedList<string, Item> items = new SortedList<string, Item>();
-    public List<GameObject> slots = new List<GameObject>();
+    public GameObject shop;
     public GameObject ShopSlot;
 
-    public GameObject InfoPanel;
+    public SortedList<string, Item> items = new SortedList<string, Item>();
+    public List<GameObject> slots = new List<GameObject>();
 
-
+    private GameObject ContentPanel;
+    private GameObject InfoPanel;
     private GridLayoutGroup glg;
     private Item currentlySelectedItem; 
 
@@ -23,6 +23,9 @@ public class Shop : MonoBehaviour {
 
         // get items and create buttons
         items = gameObject.GetComponent<Inventory>().items;
+        InfoPanel = shop.transform.Find("Info").gameObject;
+        ContentPanel = shop.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject;
+        //ContentPanel = shop.transform.Find("Content").gameObject;
 
         // create shop buttons
         for (int i = 0; i < items.Count; i++)
@@ -71,4 +74,32 @@ public class Shop : MonoBehaviour {
     {
         currentlySelectedItem.AddItem();
     }
+
+    public void OpenShop()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = true;
+        shop.SetActive(true);
+    }
+    public void CloseShop()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
+        shop.SetActive(false);
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(Screen.width-150,Screen.height - 150,150,150));
+        if (GUILayout.Button("open shop"))
+        {
+            OpenShop();
+        }
+        if (GUILayout.Button("CLOSE shop"))
+        {
+            CloseShop();
+        }
+        GUILayout.EndArea();
+    }
+
+
+
 }
