@@ -1,19 +1,18 @@
 ﻿/// <summary>
 /// Inherited class for restaurant client and farm client
 /// </summary>
-public abstract class Client
+using UnityEngine;
+
+public abstract class Client : MonoBehaviour
 {
-    private string name;
+    public string Name;
+    public string Explanation = "diipadaipa";
 
-    public string Name
-    {
-        get { return name; }
-    }
-
-    public Client (string clientName)
-    {
-        name = clientName;
-    }
+    //public Client (string clientName, string clientExplanation)
+    //{
+    //    name = clientName;
+    //    explanation = clientExplanation;
+    //}
 
     // tarvitsee hahmo muuttujan joka edustaa classia 2d avaruudessa. lisää kun hahmoja saatavilla
     // mitä muuta voisi olla?

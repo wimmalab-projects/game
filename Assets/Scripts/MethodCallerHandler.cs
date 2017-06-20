@@ -10,8 +10,10 @@ using UnityEngine;
 public class MethodCallerHandler : MonoBehaviour
 {
 
-    // set gamemaster in editor and the method to be called
-    public GameMaster gm;
+    // find gamemaster in scene
+    private GameMaster gm;
+
+    // method name to be called. set in editor
     public string MethodName;
 
     void Awake()

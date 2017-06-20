@@ -100,4 +100,21 @@ public class GameMaster : MonoBehaviour
         CrushisActive = true;
 
     }
+
+    #region CustomerSystem
+    public GameObject CustomerSystem;
+    void ClientClick(GameObject go)
+    {
+        Debug.Log(go.ToString());
+        CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
+        CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
+        CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
+    }
+    #endregion
+
+    // debug tarkoituksissa voi poistaa myöhemmin
+    void DebugMethod ()
+    {
+        Debug.Log("HEARHEAR!!");
+    }
 }
