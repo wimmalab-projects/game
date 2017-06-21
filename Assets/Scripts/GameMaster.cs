@@ -102,7 +102,9 @@ public class GameMaster : MonoBehaviour
     }
 
     #region CustomerSystem
-    public GameObject CustomerSystem;
+    public GameObject CurrentClient; // set by cpFarmButton.cs load this into farmview client
+    public GameObject CustomerSystem; // set in editor.
+
     void ClientClick(GameObject go)
     {
         Debug.Log(go.ToString());
@@ -110,6 +112,11 @@ public class GameMaster : MonoBehaviour
         CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
         CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
     }
+    public enum ClientType
+    {
+        Farmer,
+        Restaurant
+    };
     #endregion
 
     // debug tarkoituksissa voi poistaa myöhemmin

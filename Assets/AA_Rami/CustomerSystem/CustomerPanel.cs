@@ -6,56 +6,60 @@ using UnityEngine.UI;
 
 public class CustomerPanel : MonoBehaviour {
 
-    public Client clientSender = null;
+    public Client clientSender = null; // this is set by the gamemaster clientclick method
 
-	// Use this for initialization
-	void Start () {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    /// <summary>
+    /// This method here replaces the white boxes in customer panel to hold the sprite of the customer
+    /// this also sets the proper button for the ccustomer panel depending on client type pressed.
+    /// </summary>
     public void ActivatePanel () 
     {
         if (clientSender != null)
         {
-            Debug.Log(clientSender.Explanation);
             this.gameObject.transform.Find("Scroll View").Find("Viewport").Find("Content").Find("CustomerExplanation").GetComponent<Text>().text = clientSender.Explanation;
-            //ScaleExplanationContent();
+            if (clientSender.clientType == GameMaster.ClientType.Farmer)
+            {
+                gameObject.transform.Find("LeftSidePanel").Find("FarmButton").gameObject.SetActive(true);
+                gameObject.transform.Find("LeftSidePanel").Find("RestaurantButton").gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.transform.Find("LeftSidePanel").Find("FarmButton").gameObject.SetActive(false);
+                gameObject.transform.Find("LeftSidePanel").Find("RestaurantButton").gameObject.SetActive(true);
+            }
+
+            gameObject.transform.Find("LeftSidePanel").Find("CustomerImage").GetComponent<Image>().sprite = clientSender.GetComponent<SpriteRenderer>().sprite;
+
             gameObject.SetActive(true);
         }
     }
 
+    /// <summary>
+    /// Scales customerpanels scrollview content to match the size of the text
+    /// inside it.
+    /// </summary>
     public void ScaleExplanationContent()
     {
         Canvas.ForceUpdateCanvases(); // without this the content won't update properly.
 
-        // tarvii siivousta + startista kutsuttuna ei toimi
+        // tarvii siivousta
         this.gameObject.transform.Find("Scroll View").Find("Viewport").Find("Content").GetComponent<RectTransform>().sizeDelta =
             new Vector2(this.gameObject.transform.Find("Scroll View").Find("Viewport").Find("Content").GetComponent<RectTransform>().sizeDelta.x,
             this.gameObject.transform.Find("Scroll View").Find("Viewport").Find("Content").Find("CustomerExplanation").GetComponent<RectTransform>().sizeDelta.y);
     }
 
-    // debug poista joskus
-    private void OnGUI()
+    // self explanatory
+    public void DeactivatePanel()
     {
-        GUILayout.BeginArea(new Rect(300, 300, 100, 25));
-        if (GUILayout.Button("teststtest"))
+        gameObject.SetActive(false);
+    }
+
+    public void AcceptFarmer()
+    {
+        if (clientSender != null)
         {
-            ActivatePanel();
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CurrentClient = clientSender.gameObject;
+            DeactivatePanel();
         }
-        GUILayout.EndArea();
     }
 }
-
-/*
-        public client asiakas => restaurantclient TAI farmclient
-
-        customerpanel script has gameobject Client
-
-        customer prefab has script attached to it that once clicked
-        sends it's own prefab to customerpanel and activates it. 
- */
