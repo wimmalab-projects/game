@@ -18,6 +18,7 @@ public class Wine
         SparklingRedWine
     };
 
+
     // Wine attributes
     // tanniinisuus
     // hedelmäisyys

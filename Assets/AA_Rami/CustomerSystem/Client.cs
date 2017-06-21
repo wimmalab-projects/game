@@ -3,20 +3,23 @@
 /// </summary>
 using UnityEngine;
 
-public abstract class Client : MonoBehaviour
+public class Client : MonoBehaviour
 {
+    public GameMaster.ClientType clientType;
+
     public string Name;
-    public string Explanation = "diipadaipa";
+    public string Explanation;
 
-    //public Client (string clientName, string clientExplanation)
-    //{
-    //    name = clientName;
-    //    explanation = clientExplanation;
-    //}
+    // these can be either feedback from restaurant, or farmer reaction to the feedback the wine gets
+    public string GoodReview;
+    public string AverageReview;
+    public string BadReview;
+    
+    // restaurant client
+    public Wine WineIWant;
+    public Wine WineIGet;
 
-    // tarvitsee hahmo muuttujan joka edustaa classia 2d avaruudessa. lisää kun hahmoja saatavilla
-    // mitä muuta voisi olla?
-
-
+    // farm client
+    public int Budget;
 
 }
