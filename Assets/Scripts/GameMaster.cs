@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour
@@ -44,12 +46,14 @@ public class GameMaster : MonoBehaviour
     public enum FermentationState
     {
         NotFermentating,
+        [Description("White Wine")]
         WhiteWine,
-        RoseWine,    
+        [Description("Rose Wine")]
+        RoseWine,
+        [Description("Red Wine")]
         RedWine,
         Fermented
     }
-
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen = false;
@@ -101,6 +105,18 @@ public class GameMaster : MonoBehaviour
 
     }
 
+    // Get fermentation state enums description for nicer name
+    public string GetDescription(Enum value)
+    {
+        FieldInfo field = value.GetType().GetField(value.ToString());
+
+        DescriptionAttribute attribute
+                = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
+                    as DescriptionAttribute;
+
+        return attribute == null ? value.ToString() : attribute.Description;
+    }
+
     #region CustomerSystem
     public GameObject CurrentClient; // set by cpFarmButton.cs load this into farmview client
     public GameObject CustomerSystem; // set in editor.
@@ -120,8 +136,9 @@ public class GameMaster : MonoBehaviour
     #endregion
 
     // debug tarkoituksissa voi poistaa myöhemmin
-    void DebugMethod ()
+    void DebugMethod()
     {
         Debug.Log("HEARHEAR!!");
     }
 }
+

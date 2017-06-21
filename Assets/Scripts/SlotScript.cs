@@ -109,9 +109,25 @@ public class SlotScript : MonoBehaviour
         parent = ColliderHandler.parentGameObject;
         fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
-        fermentorScript.FermentationState = GameMaster.FermentationState.WhiteWine;
         fermentorScript.grapeName = currentlySelectedName;
         fermentorScript.isFermenting = true;
+        fermentorScript.FermentationState = GameMaster.FermentationState.WhiteWine;
+        fermentorScript.timer = 4;
+
+        //switch (fermentorScript.FermentationState)
+        //{
+        //    case GameMaster.FermentationState.WhiteWine:
+        //        fermentorScript.timer = 10;
+        //        break;
+        //    case GameMaster.FermentationState.RoseWine:
+        //        fermentorScript.timer = 100;
+        //        break;
+        //    case GameMaster.FermentationState.RedWine:
+        //        fermentorScript.timer = 150;
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     public void Collect()
@@ -123,6 +139,7 @@ public class SlotScript : MonoBehaviour
         fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
         fermentorScript.isFermenting = false;
         fermentorScript.grapeName = null;
-        inventory.items["Wine"].AddItem();
+        fermentorScript.timer = 0;
+        inventory.items["Bottle"].AddItem();
     }
 }

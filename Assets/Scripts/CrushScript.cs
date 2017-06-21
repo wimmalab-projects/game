@@ -86,14 +86,13 @@ public class CrushScript : MonoBehaviour
         {
             didWin = true;
             gameOverText.text = "Good job!";
-            gameOverText.fontSize = 30;
-            gameOverText.text += "\n" + slotScript.currentlySelectedName + " juice added to your inventory";
+            gameOverText.text += "\nYour wine is now fermenting";
             gameOver();
         }
         else if (missedGrapes == maxMissedGrapes)
         {
             didWin = false;
-            gameOverText.text = "You lost!";
+            gameOverText.text = "You lost your grapes!";
             gameOver();
         }
     }
@@ -146,11 +145,7 @@ public class CrushScript : MonoBehaviour
 
     IEnumerator Wait()
     {
-        if (didWin)
-        {
-            didWin = false;
-            inventory.items["Juice"].AddItem();
-        }
+        didWin = false;
         GameObject canvas = GameObject.Find("Canvas");
         yield return new WaitForSeconds(3);
         mch.CallMethod();
