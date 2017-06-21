@@ -24,12 +24,14 @@ public class GUIScript : MonoBehaviour
     private string timer;
     private GameObject gameManager;
     private FermentorScript fermentorScript;
+    private GameMaster gameMaster;
 
     // Use this for initialization
 
     void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gameMaster = gameManager.GetComponent<GameMaster>();
         infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
         temp = GameObject.FindGameObjectsWithTag("Slot");
         slotScript = gameManager.GetComponent<SlotScript>();
@@ -157,7 +159,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Fermenting":
                 infoPanel.alpha = 1;
-                initializeInfoPanel(fermentorScript.grapeName);
+                initializeInfoPanel(gameMaster.GetDescription(fermentorScript.FermentationState));
                 harvestButton.name = "Collect";
                 harvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

@@ -10,16 +10,14 @@ public class FermentorScript : MonoBehaviour
     public bool isFermenting;
     public string grapeName;
     public Sprite grapeSprite;
+    public float timer;
     public string niceTime;
 
-    private float timer;
     private int fermentTimeMinutes;
     private int fermentTimeSeconds;
     private CrushScript crushScript;
     private GameMaster gameMaster;
     private SlotScript slotScript;
-    private GameObject parent;
-    private FermentorScript thisScript;
     private bool isStarted;
 
     private void Awake()
@@ -38,6 +36,7 @@ public class FermentorScript : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -45,8 +44,6 @@ public class FermentorScript : MonoBehaviour
         {
             if (isStarted == false)
             {
-                parent = ColliderHandler.parentGameObject;
-                thisScript = parent.GetComponent<FermentorScript>();
                 crushScript = GameObject.Find("CrushView(Clone)").GetComponent<CrushScript>();
                 isStarted = true;
             }
@@ -54,20 +51,6 @@ public class FermentorScript : MonoBehaviour
             if (CrushScript.didWin)
             {
                 slotScript.Ferment();
-                switch (FermentationState)
-                {
-                    case GameMaster.FermentationState.WhiteWine:
-                        timer = 10;
-                        break;
-                    case GameMaster.FermentationState.RoseWine:
-                        timer = 100;
-                        break;
-                    case GameMaster.FermentationState.RedWine:
-                        timer = 150;
-                        break;
-                    default:
-                        break;
-                }
             }
         }
 
@@ -81,7 +64,7 @@ public class FermentorScript : MonoBehaviour
                 niceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
-            if(timer <= 0)
+            if (timer <= 0)
             {
                 FermentationState = GameMaster.FermentationState.Fermented;
             }
