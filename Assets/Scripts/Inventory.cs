@@ -26,9 +26,12 @@ public class Inventory : MonoBehaviour
         // add items
         items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
         items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
-        items.Add("Grape", new Item("Grape", 2, "This is a grape", Item.ItemType.GRAPE));
-        items.Add("Juice", new Item("Juice", 3, "This is juice from grapes", Item.ItemType.JUICE));
-        items.Add("Bottle", new Item("Bottle", 4, "This is a bottle", Item.ItemType.BOTTLE));
+        items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPE));
+        items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPE));
+        items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
+        items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
+        items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));
+        items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.BOTTLE));
 
         // create inventory buttons
         for (int i = 0; i < items.Count; i++)

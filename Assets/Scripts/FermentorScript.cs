@@ -7,15 +7,14 @@ public class FermentorScript : MonoBehaviour
 
     public List<Sprite> Sprites = new List<Sprite>();
     public GameMaster.FermentationState FermentationState;
+    public GameMaster.Winetype WineType;
     public bool isFermenting;
     public string grapeName;
-    public Sprite grapeSprite;
     public float timer;
     public string niceTime;
 
     private int fermentTimeMinutes;
     private int fermentTimeSeconds;
-    private CrushScript crushScript;
     private GameMaster gameMaster;
     private SlotScript slotScript;
     private bool isStarted;
@@ -44,10 +43,8 @@ public class FermentorScript : MonoBehaviour
         {
             if (isStarted == false)
             {
-                crushScript = GameObject.Find("CrushView(Clone)").GetComponent<CrushScript>();
                 isStarted = true;
             }
-            Debug.Log(CrushScript.didWin);
             if (CrushScript.didWin)
             {
                 slotScript.Ferment();

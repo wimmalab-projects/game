@@ -16,7 +16,7 @@ public class Item
     {
         GRAPE,
         VINE,
-        JUICE,
+        WINE,
         BOTTLE,
     }
 

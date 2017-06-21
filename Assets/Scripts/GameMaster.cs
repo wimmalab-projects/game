@@ -46,13 +46,18 @@ public class GameMaster : MonoBehaviour
     public enum FermentationState
     {
         NotFermentating,
-        [Description("White Wine")]
-        WhiteWine,
-        [Description("Rose Wine")]
-        RoseWine,
-        [Description("Red Wine")]
-        RedWine,
+        Fermenting,
         Fermented
+    }
+
+    public enum Winetype
+    {
+        [Description("White wine")]
+        WhiteWine,
+        [Description("Rose wine")]
+        RoseWine,
+        [Description("Red wine")]
+        RedWine,
     }
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui

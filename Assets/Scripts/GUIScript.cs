@@ -159,7 +159,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Fermenting":
                 infoPanel.alpha = 1;
-                initializeInfoPanel(gameMaster.GetDescription(fermentorScript.FermentationState));
+                initializeInfoPanel(gameMaster.GetDescription(fermentorScript.WineType));
                 harvestButton.name = "Collect";
                 harvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

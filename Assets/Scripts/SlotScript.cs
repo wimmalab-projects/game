@@ -20,6 +20,7 @@ public class SlotScript : MonoBehaviour
     PlantGround groundScript;
     FermentorScript fermentorScript;
     List<GameObject> vinePositions = new List<GameObject>();
+    GameMaster gameMaster;
 
 
     // called before start
@@ -28,6 +29,7 @@ public class SlotScript : MonoBehaviour
         guiTemp = GameObject.FindGameObjectWithTag("InventoryCanvas");
         guiScript = guiTemp.GetComponent<GUIScript>();
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        gameMaster = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
     }
 
     public void Plant()
@@ -76,25 +78,25 @@ public class SlotScript : MonoBehaviour
 
         parent.tag = "NotPlanted";
         groundScript.plantState = GameMaster.PlantState.NotPlanted;
+        currentlySelectedName = groundScript.plantName;
+        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+        currentlySelectedName = selectedGrape;
         groundScript.plantName = null;
-        inventory.items["Grape"].AddItem();
+        inventory.items[currentlySelectedName].AddItem();
         groundScript.resetTimer();
     }
 
     //Tee paremmin?
     public void selectGrape()
     {
-        if (inventory.items[seedName].itemCount > 0)
+        if (inventory.items[seedName].itemCount > 0 && inventory.items[seedName].iType == Item.ItemType.GRAPE)
         {
             parent = ColliderHandler.parentGameObject;
 
             currentlySelectedName = inventory.items[seedName].returnName();
             inventory.items[currentlySelectedName].PopItem();
-            string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
-            currentlySelectedName = selectedGrape;
             GameObject grape = Resources.Load<GameObject>("Grape");
             grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-            //Resources.UnloadAsset(grape);
             string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
             parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
             didPlant = true;
@@ -110,9 +112,17 @@ public class SlotScript : MonoBehaviour
         fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
         fermentorScript.grapeName = currentlySelectedName;
+        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+        currentlySelectedName = selectedGrape;
+        if (currentlySelectedName == "White grape")
+        {
+            fermentorScript.WineType = GameMaster.Winetype.WhiteWine;
+        }
+        else
+            fermentorScript.WineType = GameMaster.Winetype.RedWine;
+        fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
+        fermentorScript.timer = 5;
         fermentorScript.isFermenting = true;
-        fermentorScript.FermentationState = GameMaster.FermentationState.WhiteWine;
-        fermentorScript.timer = 4;
 
         //switch (fermentorScript.FermentationState)
         //{
@@ -136,10 +146,10 @@ public class SlotScript : MonoBehaviour
         fermentorScript = parent.GetComponent<FermentorScript>();
 
         parent.tag = "NotFermenting";
+        inventory.items[gameMaster.GetDescription(fermentorScript.WineType)].AddItem();
         fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
         fermentorScript.isFermenting = false;
         fermentorScript.grapeName = null;
         fermentorScript.timer = 0;
-        inventory.items["Bottle"].AddItem();
     }
 }
