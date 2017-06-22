@@ -25,6 +25,7 @@ public class GUIScript : MonoBehaviour
     private GameObject gameManager;
     private FermentorScript fermentorScript;
     private GameMaster gameMaster;
+    private ClarificationScript clarificationScript;
 
     // Use this for initialization
 
@@ -43,7 +44,7 @@ public class GUIScript : MonoBehaviour
     {
         if (infoPanel.alpha == 1)
         {
-            if(parent.tag == "Planted")
+            if (parent.tag == "Planted")
             {
                 timer = groundScript.niceTime;
                 infoPanelTimer.text = timer;
@@ -52,11 +53,20 @@ public class GUIScript : MonoBehaviour
                     infoPanelTimer.text = "Ready!";
                 }
             }
-            else if(parent.tag == "Fermenting")
+            else if (parent.tag == "Fermenting")
             {
                 timer = fermentorScript.niceTime;
                 infoPanelTimer.text = timer;
                 if (fermentorScript.Timer <= 0)
+                {
+                    infoPanelTimer.text = "Ready!";
+                }
+            }
+            else if (parent.tag == "Clarificating")
+            {
+                timer = clarificationScript.niceTime;
+                infoPanelTimer.text = timer;
+                if (clarificationScript.Timer <= 0)
                 {
                     infoPanelTimer.text = "Ready!";
                 }
@@ -66,15 +76,20 @@ public class GUIScript : MonoBehaviour
 
     public void initializeInfoPanel(string name)
     {
-        if(parent.tag == "Planted")
+        if (parent.tag == "Planted")
         {
             infoPanelText.text = name + " is growing!";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
 
-        else if(parent.tag == "Fermenting")
+        else if (parent.tag == "Fermenting")
         {
             infoPanelText.text = name + " is fermenting";
+            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+        }
+        else if (parent.tag == "Clarificating")
+        {
+            infoPanelText.text = name + " is being clarificated";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
     }
@@ -117,8 +132,20 @@ public class GUIScript : MonoBehaviour
                     else
                         return;
                     break;
+                case "Clarificate":
+                    slotScript.Clarificate();
+                    if(SlotScript.didPlant)
+                    {
+                        animator.SetBool("showInventory", false);
+                    }
+                    break;
                 case "Collect":
-                    if (fermentorScript.Timer <= 0)
+                    if (parent.tag == "Fermenting" && fermentorScript.Timer <= 0)
+                    {
+                        slotScript.Collect();
+                        infoPanel.alpha = 0;
+                    }
+                    else if (parent.tag == "Clarificating" && clarificationScript.Timer <= 0)
                     {
                         slotScript.Collect();
                         infoPanel.alpha = 0;
@@ -140,6 +167,8 @@ public class GUIScript : MonoBehaviour
         parent = ColliderHandler.parentGameObject;
         groundScript = parent.GetComponent<PlantGround>();
         fermentorScript = parent.GetComponent<FermentorScript>();
+        clarificationScript = parent.GetComponent<ClarificationScript>();
+        Debug.Log(clarificationScript);
 
         switch (parent.tag)
         {
@@ -160,6 +189,18 @@ public class GUIScript : MonoBehaviour
             case "Fermenting":
                 infoPanel.alpha = 1;
                 initializeInfoPanel(gameMaster.GetDescription(fermentorScript.WineType));
+                harvestButton.name = "Collect";
+                harvestButton.GetComponentInChildren<Text>().text = "Collect";
+                break;
+            case "NotClarificating":
+                inventory.alpha = 1;
+                animator.SetBool("showInventory", true);
+                plantButton.name = "Clarificate";
+                plantButton.GetComponentInChildren<Text>().text = "Clarificate";
+                break;
+            case "Clarificating":
+                infoPanel.alpha = 1;
+                initializeInfoPanel(clarificationScript.wineName);
                 harvestButton.name = "Collect";
                 harvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

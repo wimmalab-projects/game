@@ -10,7 +10,7 @@ public class FermentorScript : MonoBehaviour
     public GameMaster.Winetype WineType;
     public bool isFermenting;
     public string grapeName;
-    public float timer;
+    private float timer;
     public string niceTime;
 
     private int fermentTimeMinutes;
@@ -32,6 +32,10 @@ public class FermentorScript : MonoBehaviour
         get
         {
             return timer;
+        }
+        set
+        {
+            timer = value;
         }
     }
 

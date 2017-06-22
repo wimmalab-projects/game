@@ -50,6 +50,13 @@ public class GameMaster : MonoBehaviour
         Fermented
     }
 
+    public enum ClarificationState
+    {
+        NotClarificating,
+        Clarificating,
+        Clarificated
+    }
+
     public enum Winetype
     {
         [Description("White wine")]

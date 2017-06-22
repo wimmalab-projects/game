@@ -19,6 +19,7 @@ public class SlotScript : MonoBehaviour
     GameObject parent;
     PlantGround groundScript;
     FermentorScript fermentorScript;
+    ClarificationScript clarificationScript;
     List<GameObject> vinePositions = new List<GameObject>();
     GameMaster gameMaster;
 
@@ -89,21 +90,33 @@ public class SlotScript : MonoBehaviour
     //Tee paremmin?
     public void selectGrape()
     {
-        if (inventory.items[seedName].itemCount > 0 && inventory.items[seedName].iType == Item.ItemType.GRAPE)
+        if (inventory.items[seedName].itemCount > 0)
         {
-            parent = ColliderHandler.parentGameObject;
+            if (inventory.items[seedName].iType == Item.ItemType.GRAPE)
+            {
+                parent = ColliderHandler.parentGameObject;
 
-            currentlySelectedName = inventory.items[seedName].returnName();
-            inventory.items[currentlySelectedName].PopItem();
-            GameObject grape = Resources.Load<GameObject>("Grape");
-            grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-            string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
-            parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
-            didPlant = true;
-            method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
+                currentlySelectedName = inventory.items[seedName].returnName();
+                inventory.items[currentlySelectedName].PopItem();
+                GameObject grape = Resources.Load<GameObject>("Grape");
+                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
+                string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
+                parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
+                didPlant = true;
+                method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
+            }
+            else
+            {
+                didPlant = false;
+                Debug.Log("Not grape");
+            }
         }
         else
+        {
+            didPlant = false;
             Debug.Log("Not enough");
+        }
+
     }
 
     public void Ferment()
@@ -121,7 +134,7 @@ public class SlotScript : MonoBehaviour
         else
             fermentorScript.WineType = GameMaster.Winetype.RedWine;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
-        fermentorScript.timer = 5;
+        fermentorScript.Timer = 5;
         fermentorScript.isFermenting = true;
 
         //switch (fermentorScript.FermentationState)
@@ -143,13 +156,38 @@ public class SlotScript : MonoBehaviour
     public void Collect()
     {
         parent = ColliderHandler.parentGameObject;
-        fermentorScript = parent.GetComponent<FermentorScript>();
+        if (parent.tag == "Fermenting")
+        {
+            fermentorScript = parent.GetComponent<FermentorScript>();
+            parent.tag = "NotFermenting";
+            inventory.items[gameMaster.GetDescription(fermentorScript.WineType)].AddItem();
+            fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
+            fermentorScript.isFermenting = false;
+            fermentorScript.grapeName = null;
+            fermentorScript.Timer = 0;
+        }
+        else if (parent.tag == "Clarificating")
+        {
+            clarificationScript = parent.GetComponent<ClarificationScript>();
+            parent.tag = "NotClarificating";
+            clarificationScript.clarificationState = GameMaster.ClarificationState.NotClarificating;
+            clarificationScript.wineName = null;
+            clarificationScript.Timer = 0;
+        }
+    }
 
-        parent.tag = "NotFermenting";
-        inventory.items[gameMaster.GetDescription(fermentorScript.WineType)].AddItem();
-        fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
-        fermentorScript.isFermenting = false;
-        fermentorScript.grapeName = null;
-        fermentorScript.timer = 0;
+    public void Clarificate()
+    {
+        parent = ColliderHandler.parentGameObject;
+        clarificationScript = parent.GetComponent<ClarificationScript>();
+
+        parent.tag = "Clarificating";
+        currentlySelectedName = inventory.items[seedName].returnName();
+        clarificationScript.wineName = currentlySelectedName;
+        inventory.items[currentlySelectedName].PopItem();
+        guiScript.initializeInfoPanel(clarificationScript.wineName);
+        clarificationScript.clarificationState = GameMaster.ClarificationState.Clarificating;
+        clarificationScript.Timer = 10;
+        didPlant = true;
     }
 }
