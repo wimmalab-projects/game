@@ -181,13 +181,29 @@ public class SlotScript : MonoBehaviour
         parent = ColliderHandler.parentGameObject;
         clarificationScript = parent.GetComponent<ClarificationScript>();
 
-        parent.tag = "Clarificating";
-        currentlySelectedName = inventory.items[seedName].returnName();
-        clarificationScript.wineName = currentlySelectedName;
-        inventory.items[currentlySelectedName].PopItem();
-        guiScript.initializeInfoPanel(clarificationScript.wineName);
-        clarificationScript.clarificationState = GameMaster.ClarificationState.Clarificating;
-        clarificationScript.Timer = 10;
-        didPlant = true;
+        if (inventory.items[seedName].itemCount > 0)
+        {
+            if (inventory.items[seedName].iType == Item.ItemType.WINE)
+            {
+                parent.tag = "Clarificating";
+                currentlySelectedName = inventory.items[seedName].returnName();
+                clarificationScript.wineName = currentlySelectedName;
+                inventory.items[currentlySelectedName].PopItem();
+                guiScript.initializeInfoPanel(clarificationScript.wineName);
+                clarificationScript.clarificationState = GameMaster.ClarificationState.Clarificating;
+                clarificationScript.Timer = 10;
+                didPlant = true;
+            }
+            else
+            {
+                didPlant = false;
+                Debug.Log("Not wine");
+            }
+        }
+        else
+        {
+            didPlant = false;
+            Debug.Log("Not enough");
+        }
     }
 }

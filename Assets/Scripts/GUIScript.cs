@@ -134,10 +134,12 @@ public class GUIScript : MonoBehaviour
                     break;
                 case "Clarificate":
                     slotScript.Clarificate();
-                    if(SlotScript.didPlant)
+                    if (SlotScript.didPlant)
                     {
                         animator.SetBool("showInventory", false);
                     }
+                    else
+                        return;
                     break;
                 case "Collect":
                     if (parent.tag == "Fermenting" && fermentorScript.Timer <= 0)
