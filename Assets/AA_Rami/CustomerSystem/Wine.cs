@@ -1,16 +1,89 @@
-﻿/// <summary>
+﻿using System;
+/// <summary>
 /// using WSET Level 2 Systematic Approach to Tasting Wine
 /// 2W-Version 1.0
 /// </summary>
 public class Wine
 {
+
     // Matrices
-    // Basicinfo matrix
-    // aroma charasteristics matrix
-    // PalateFlavourCharasteristics matrix
+    // Basic matrix
+    // Aroma matrix
+    // Flavour matrix
 
+    #region GetSets
+    private AppearanceClarity aClarity;
+    public AppearanceClarity AClarity
+    {
+        get { return aClarity; }
+        set { aClarity = value; }
+    }
 
+    private AppearanceIntensity aIntensity;
+    public AppearanceIntensity AIntensity
+    {
+        get { return aIntensity; }
+        set { aIntensity = value; }
+    }
 
+    private NoseCondition nCondition;
+    public NoseCondition NCondition
+    {
+        get { return nCondition; }
+        set { nCondition = value; }
+    }
+
+    private NoseIntensity nIntensity;
+    public NoseIntensity NIntensity
+    {
+        get { return nIntensity; }
+        set { nIntensity = value; }
+    }
+
+    private PalateSweetness pSweetness;
+    public PalateSweetness PSweetness
+    {
+        get { return pSweetness; }
+        set { pSweetness = value; }
+    }
+
+    private PalateAcidity pAcidity;
+    public PalateAcidity PAcidity
+    {
+        get { return pAcidity; }
+        set { pAcidity = value; }
+    }
+
+    private PalateTannin pTannin;
+    public PalateTannin PTannin
+    {
+        get { return pTannin; }
+        set { pTannin = value; }
+    }
+
+    private PalateBody pBody;
+    public PalateBody PBody
+    {
+        get { return pBody; }
+        set { pBody = value; }
+    }
+
+    private PalateFinish pFinish;
+    public PalateFinish PFinish
+    {
+        get { return pFinish; }
+        set { pFinish = value; }
+    }
+
+    private Quality wineQuality;
+    public Quality WineQuality
+    {
+        get { return wineQuality; }
+        set { wineQuality = value; }
+    }
+    #endregion
+
+    #region enums
     public enum MainGategories
     {
         Appearance,
@@ -321,19 +394,10 @@ public class Wine
         VeryGood,
         Outstanding
     };
+#endregion
 
+    public int[,] GetMatrixes ()
+    {
+        throw new NotImplementedException();
+    }
 }
-
-/*
- wine : class
-	Appearance (Enum keyValue, Enum value) : sortedlist
-	Nose (Enum keyValue, Enum value) : sortedlist
-	Palate (Enum keyValue, Enum value) : sortedlist
-	Conclusions (Enum keyValue, Enum value) : sortedlist
-	AromaAndFlavor(Enum keyValue, Enum value) : sortedlist
-	SpiceSlashVegetable (Enum keyValue, Enum value) : sortedlist
-	OakSlashOther (Enum keyValue, Enum value) : sortedlist
-
-    usage:
-    Debug.Log(wine.Appearance(keyValue.Value)); == enum value.clear 
-     */
