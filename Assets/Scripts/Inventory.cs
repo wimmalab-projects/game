@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Script that adds item database and inventory slots */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +19,7 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
+        // Get the inventory reference
         InventoryGO = canvas.transform.Find("Inventory").gameObject;
     }
 
@@ -56,6 +59,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    // Debug button that adds grape vines.
     void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 100, 100));

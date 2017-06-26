@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/* Script that handles actions to be done for the wine */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,26 +36,22 @@ public class SlotScript : MonoBehaviour
         gameMaster = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
     }
 
+    // Plants the grape accordingly to what parent was selected.
     public void Plant()
     {
         didPlant = false;
 
         parent = ColliderHandler.parentGameObject;
 
-        for (int i = 0; i < parent.transform.childCount; i++)
-        {
-            vinePositions.Add(parent.transform.GetChild(i).gameObject);
-        }
-
         groundScript = parent.GetComponent<PlantGround>();
 
-        // IF HELVETTI + HELVETIN RUMAA KOODIA..... KORJAA!!!!!
+        // If the item count is zero dont plant and show error
         if (inventory.items[seedName].itemCount > 0)
         {
+            // If the item is not a vine display error and dont plant
             if (inventory.items[seedName].returnItemType() == Item.ItemType.VINE)
             {
-                ////parent.GetComponent<MeshRenderer>().material.mainTexture = Resources.Load();
-
+                // Set the groundscript, so that it is planted and remove the vine item
                 parent.tag = "Planted";
                 groundScript.plantState = GameMaster.PlantState.JustPlanted;
                 groundScript.plantName = inventory.items[seedName].returnName();
@@ -73,6 +71,7 @@ public class SlotScript : MonoBehaviour
         }
     }
 
+    // Harvest the ready grapes and set the groundscript so that there can be planted again.
     public void Harvest()
     {
         parent = ColliderHandler.parentGameObject;
@@ -81,14 +80,14 @@ public class SlotScript : MonoBehaviour
         parent.tag = "NotPlanted";
         groundScript.plantState = GameMaster.PlantState.NotPlanted;
         currentlySelectedName = groundScript.plantName;
-        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1]; // Get the name right so we can add correct item from the item database
         currentlySelectedName = selectedGrape;
         groundScript.plantName = null;
         inventory.items[currentlySelectedName].AddItem();
         groundScript.resetTimer();
     }
 
-    //Tee paremmin?
+    // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
         if (inventory.items[seedName].itemCount > 0)
@@ -99,12 +98,12 @@ public class SlotScript : MonoBehaviour
 
                 currentlySelectedName = inventory.items[seedName].returnName();
                 inventory.items[currentlySelectedName].PopItem();
-                GameObject grape = Resources.Load<GameObject>("Grape");
-                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName);
-                string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush";
-                parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod();
+                GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
+                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedName); // Change the sprite accordingly to what was selected
+                string method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush"; // set the methodname so that we can go to grapecrush view
+                parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod(); // Call the method PlayGrapeCrush
                 didPlant = true;
-                method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory";
+                method = parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory"; // Set the methodname default so we can open inventory again after.
             }
             else
             {
@@ -120,13 +119,14 @@ public class SlotScript : MonoBehaviour
 
     }
 
+    // Start the fermentation process, by setting the fermentorscript so it is fermenting
     public void Ferment()
     {
         parent = ColliderHandler.parentGameObject;
         fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
         fermentorScript.grapeName = currentlySelectedName;
-        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1];
+        string selectedGrape = currentlySelectedName.Split(' ')[0] + " " + currentlySelectedName.Split(' ')[1]; // Get the name right so we can set winetype correctly
         currentlySelectedName = selectedGrape;
         if (currentlySelectedName == "White grape")
         {
@@ -137,23 +137,9 @@ public class SlotScript : MonoBehaviour
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
         fermentorScript.Timer = 5;
         fermentorScript.isFermenting = true;
-
-        //switch (fermentorScript.FermentationState)
-        //{
-        //    case GameMaster.FermentationState.WhiteWine:
-        //        fermentorScript.timer = 10;
-        //        break;
-        //    case GameMaster.FermentationState.RoseWine:
-        //        fermentorScript.timer = 100;
-        //        break;
-        //    case GameMaster.FermentationState.RedWine:
-        //        fermentorScript.timer = 150;
-        //        break;
-        //    default:
-        //        break;
-        //}
     }
 
+    // Collect the item accordingly what tag the parent has and also set the parent so it can be used again to ferment / clarificate or bottling.
     public void Collect()
     {
         parent = ColliderHandler.parentGameObject;
@@ -187,6 +173,7 @@ public class SlotScript : MonoBehaviour
         }
     }
 
+    // Start the clarification process and set the clarification script so it is clarificating.
     public void Clarificate()
     {
         parent = ColliderHandler.parentGameObject;
@@ -218,6 +205,7 @@ public class SlotScript : MonoBehaviour
         }
     }
 
+    // Start the bottling process and set the bottlingscript so that it is bottling.
     public void Bottling()
     {
         parent = ColliderHandler.parentGameObject;
@@ -232,7 +220,7 @@ public class SlotScript : MonoBehaviour
                 bottlingScript.wineName = currentlySelectedName;
                 inventory.items[currentlySelectedName].PopItem();
                 guiScript.initializeInfoPanel(bottlingScript.wineName);
-                bottlingScript.bottlingState= GameMaster.BottlingState.Bottling;
+                bottlingScript.bottlingState = GameMaster.BottlingState.Bottling;
                 bottlingScript.Timer = 10;
                 didPlant = true;
             }

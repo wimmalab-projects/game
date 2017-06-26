@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿/* Script that handles the collision between touch/mouse position and colliders */
+
+using UnityEngine;
 using System.Collections;
 
 public class ColliderHandler : MonoBehaviour

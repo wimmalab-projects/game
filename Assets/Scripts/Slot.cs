@@ -22,11 +22,13 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
+        // Update the items count text and sprites
         itemCount = inventory.items[uiItemName.text].itemCount;
         uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
         itemImage.sprite = inventory.items[uiItemName.text].ItemSprite;
     }
 
+    // Clear the highlight effect around the inventory block
     void clearHighlight()
     {
         foreach (GameObject asd in inventory.slots)
@@ -35,6 +37,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    // Create hightlight effect around the inventory block
     public void OnPointerClick(PointerEventData data)
     {
         clearHighlight();

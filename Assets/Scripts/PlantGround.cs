@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/* Script that runs the plant process */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +39,7 @@ public class PlantGround : MonoBehaviour
                 niceTime = string.Format("{0:0}:{1:00}", harvestTimeMinutes, harvestTimeSeconds);
             }
 
+            // Different states for growth, and change the sprite accordingly to that
             if (timer <= 0)
             {
                 //GetComponent<SpriteRenderer>().sprite = Sprites[0];

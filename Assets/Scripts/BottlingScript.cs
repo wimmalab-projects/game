@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿/* Script that runs the bottling process*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BottlingScript : MonoBehaviour {
+public class BottlingScript : MonoBehaviour
+{
 
     public GameMaster.BottlingState bottlingState;
     private float timer;

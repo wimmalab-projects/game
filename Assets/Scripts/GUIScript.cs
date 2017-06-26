@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/* Script that handles the inventory/infopanel visibilty, texts, sprites, actions and calls the right methods depending on what was clicked */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +16,7 @@ public class GUIScript : MonoBehaviour
     public Button harvestButton;
     public Button plantButton;
 
-    private Animator animator;
+    private Animator animator; // Animate the Inventory, but scrap this.
     private string button;
     private GameObject[] temp;
     private SlotScript slotScript;
@@ -32,6 +34,7 @@ public class GUIScript : MonoBehaviour
 
     void Awake()
     {
+        // Get script/animator/sprite references
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         gameMaster = gameManager.GetComponent<GameMaster>();
         infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
@@ -43,6 +46,7 @@ public class GUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // In the update, check the time left for each state, then update the timer accordingly to the infopanel timer text.
         if (infoPanel.alpha == 1)
         {
             if (parent.tag == "Planted")
@@ -76,7 +80,7 @@ public class GUIScript : MonoBehaviour
             {
                 timer = bottlingScript.niceTime;
                 infoPanelTimer.text = timer;
-                if(bottlingScript.Timer <= 0)
+                if (bottlingScript.Timer <= 0)
                 {
                     infoPanelTimer.text = "Ready!";
                 }
@@ -84,6 +88,7 @@ public class GUIScript : MonoBehaviour
         }
     }
 
+    // Initialize the infopanel text and sprite to match the current state.
     public void initializeInfoPanel(string name)
     {
         if (parent.tag == "Planted")
@@ -109,6 +114,7 @@ public class GUIScript : MonoBehaviour
         }
     }
 
+    // Check what button was pressed and perform action accordingly to that button. didPlant hides the inventory / infopanel if the action was succesfully executed. If not the inventory/infopanel stays open.
     public void ButtonClicked()
     {
         if (gameManager.GetComponent<GameMaster>().IsInventoryOpen == true)
@@ -175,6 +181,7 @@ public class GUIScript : MonoBehaviour
                         return;
                     break;
             }
+            // Return the names and texts to default.
             plantButton.name = "Plant";
             plantButton.GetComponentInChildren<Text>().text = "Plant";
             harvestButton.name = "Harvest";
@@ -183,6 +190,7 @@ public class GUIScript : MonoBehaviour
         }
     }
 
+    // Shows the inventory or the infopanel depending on what was clicked. Also changes the button name and text so that the right action can be performed
     public void showInventory()
     {
         parent = ColliderHandler.parentGameObject;
@@ -190,7 +198,6 @@ public class GUIScript : MonoBehaviour
         fermentorScript = parent.GetComponent<FermentorScript>();
         clarificationScript = parent.GetComponent<ClarificationScript>();
         bottlingScript = parent.GetComponent<BottlingScript>();
-        Debug.Log(clarificationScript);
 
         switch (parent.tag)
         {
@@ -230,7 +237,7 @@ public class GUIScript : MonoBehaviour
                 inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
                 plantButton.name = "Bottle";
-                plantButton.GetComponentInChildren<Text>().text = "´Bottle";
+                plantButton.GetComponentInChildren<Text>().text = "Bottle";
                 break;
             case "Bottling":
                 infoPanel.alpha = 1;

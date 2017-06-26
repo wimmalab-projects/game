@@ -98,5 +98,5 @@ public class Item
         itemType = type;
         itemSprite = Resources.Load<Sprite>("" + name);
     }
-#endregion
+    #endregion
 }

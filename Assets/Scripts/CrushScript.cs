@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/* This is the script that runs the grape crush minigame.
+ * It spawns grapes and checks if the player has crushed them.
+ * It also contains states for losing and winning*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,9 +20,9 @@ public class CrushScript : MonoBehaviour
     public Text missedText;
     public static bool didWin;
 
-    private const int maxMissedGrapes = 10;
+    private const int maxMissedGrapes = 10; // How many grapes can be missed
     private GameObject temp;
-    private float startTime, refire = 0.4f;
+    private float startTime, refire = 0.4f; // How ofen a new grape is respawned
     private GameObject grapeSplash;
     private MethodCallerHandler mch;
     private bool isStarted;
@@ -32,16 +36,18 @@ public class CrushScript : MonoBehaviour
 
     void Awake()
     {
+        // Get script / gameobject references.
         mch = GetComponent<MethodCallerHandler>();
         slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
-        spawnpoint = GameObject.FindGameObjectsWithTag("Respawn");
+        spawnpoint = GameObject.FindGameObjectsWithTag("Respawn"); // Get the spawn points for the grapes
         mch = GetComponent<MethodCallerHandler>();
     }
 
     void Start()
     {
+        // Set everything to default
         didWin = false;
         isStarted = false;
         fillBar.fillAmount = 0;
@@ -55,7 +61,9 @@ public class CrushScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Handle ui updates the ui accordingly to how many missed grapes and hits.
         handleUI();
+        // If touch supported, use touch position else use mouse position then do the checktouch function
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
             if (Input.touchCount > 0)
@@ -74,6 +82,7 @@ public class CrushScript : MonoBehaviour
             }
         }
 
+        // Respawn grapes
         if (startTime + refire <= Time.time)
         {
             temp = Instantiate(grape);
@@ -82,6 +91,7 @@ public class CrushScript : MonoBehaviour
             startTime = Time.time;
         }
 
+        // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
         if (fillBar.fillAmount == 1)
         {
             didWin = true;
@@ -97,6 +107,7 @@ public class CrushScript : MonoBehaviour
         }
     }
 
+    // Checks if the touch position collides with the grape collider. If it does the grape is destroyed and grapescore is added
     void checkTouch(Vector2 pos)
     {
         if (layerMask.value == 2048)
@@ -116,6 +127,7 @@ public class CrushScript : MonoBehaviour
         }
     }
 
+    // Handles the fillbar filling and missed grapes count. Is being updated in Update().
     void handleUI()
     {
         fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
@@ -123,6 +135,7 @@ public class CrushScript : MonoBehaviour
         missedText.text = missedGrapes + "/" + maxMissedGrapes;
     }
 
+    // When the game is over destroy all remaining gameobjects and display the gameover text. Also starts the wait coroutine to end the game.
     void gameOver()
     {
         GameObject[] grapesLeft = GameObject.FindGameObjectsWithTag("Grape");
@@ -143,6 +156,7 @@ public class CrushScript : MonoBehaviour
         }
     }
 
+    // Coroutine to smoothly end the game and transistion back to brewery view. Destroys the view at the end.
     IEnumerator Wait()
     {
         didWin = false;

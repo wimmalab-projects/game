@@ -13,6 +13,7 @@ public class ClarificationScript : MonoBehaviour
     private int clarificationTimeMinutes;
     private int clarificationTimeSeconds;
 
+    // Timer getter / setter
     public float Timer
     {
         get
@@ -23,15 +24,16 @@ public class ClarificationScript : MonoBehaviour
         set
         {
             timer = value;
-        }                  
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // If wine is being clarificated run the timer or check if its below 0.
         if (clarificationState != GameMaster.ClarificationState.NotClarificating && clarificationState != GameMaster.ClarificationState.Clarificated)
         {
+            // If timer is running, start counting down and format the time to mins/seconds nicely.
             if (timer >= 0)
             {
                 timer -= Time.deltaTime;
@@ -40,6 +42,7 @@ public class ClarificationScript : MonoBehaviour
                 niceTime = string.Format("{0:0}:{1:00}", clarificationTimeMinutes, clarificationTimeSeconds);
             }
 
+            // If timer goes to zero or below it, stop the timer and set the state to ready.
             if (timer <= 0)
             {
                 clarificationState = GameMaster.ClarificationState.Clarificated;

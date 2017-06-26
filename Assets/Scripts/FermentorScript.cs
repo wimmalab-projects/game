@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/* Script that runs the fermentation process */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,6 +51,7 @@ public class FermentorScript : MonoBehaviour
             {
                 isStarted = true;
             }
+            // Check if the grape crush minigame was won and start the fermentation process.
             if (CrushScript.didWin)
             {
                 slotScript.Ferment();

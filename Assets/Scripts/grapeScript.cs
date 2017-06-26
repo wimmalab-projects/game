@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Script that handles the grapes that hit the floor */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
