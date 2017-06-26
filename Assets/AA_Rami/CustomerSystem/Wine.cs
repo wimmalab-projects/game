@@ -1,4 +1,5 @@
-﻿/// <summary>
+﻿using System;
+/// <summary>
 /// using WSET Level 2 Systematic Approach to Tasting Wine
 /// 2W-Version 1.0
 /// https://github.com/wimmalab-projects/wine-game/raw/master/WikiAssets/example_wine_made_with_wine_class.xlsx
@@ -7,10 +8,10 @@
 public class Wine
 {
 
-    // Matrices
-    // Basic matrix
-    // Aroma matrix
-    // Flavour matrix
+    public static int MaximumTastesAndScents = 3;
+
+    public int[][] Aromas = new int[MaximumTastesAndScents][];
+    public int[][] Flavours = new int[MaximumTastesAndScents][];
 
     #region GetSets
     private AppearanceClarity aClarity;
@@ -27,15 +28,15 @@ public class Wine
         set { aIntensity = value; }
     }
 
-    private ColorGategories aColor;
-    public ColorGategories AColor
-    {
-        get { return aColor; }
-        set { aColor = value; }
-    }
+    //private ColorGategories aColor;
+    //public ColorGategories AColor
+    //{
+    //    get { return aColor; }
+    //    set { aColor = value; }
+    //}
 
-    private ColorGategories aColorGategory;
-    public ColorGategories AColorGategory
+    private AppearanceColorGategories aColorGategory;
+    public AppearanceColorGategories AColorGategory
     {
         get { return aColorGategory; }
         set { aColorGategory = value; }
@@ -74,14 +75,14 @@ public class Wine
     }
 
     // aroma charasteristics
-    private AromaAndFlavourGategories[] aromaGategory = new AromaAndFlavourGategories[3]; // three distinct smells in the wine
+    private AromaAndFlavourGategories[] aromaGategory = new AromaAndFlavourGategories[MaximumTastesAndScents]; // three distinct smells in the wine
     public AromaAndFlavourGategories[] AromaGategory
     {
         get { return aromaGategory; }
         set { aromaGategory = value; }
     }
     // flavour charasteristics
-    private AromaAndFlavourGategories[] flavourGategory = new AromaAndFlavourGategories[3]; // three distinct tastes in the wine
+    private AromaAndFlavourGategories[] flavourGategory = new AromaAndFlavourGategories[MaximumTastesAndScents]; // three distinct tastes in the wine
     public AromaAndFlavourGategories[] FlavourGategory
     {
         get { return flavourGategory; }
@@ -89,65 +90,65 @@ public class Wine
     }
 
     #region Floral / Fruit
-    private FloralFruitGategories aromaFloralGategory;
-    public FloralFruitGategories AromaFloralGategory
+    private FloralFruitGategories[] aromaFloralGategory = new FloralFruitGategories[MaximumTastesAndScents];
+    public FloralFruitGategories[] AromaFloralGategory
     {
         get { return aromaFloralGategory; }
         set { aromaFloralGategory = value; }
     }
 
     // Floral
-    private AromaAndFlavourFloral aromaFloral;
-    public AromaAndFlavourFloral AromaFloral
+    private AromaAndFlavourFloral[] aromaFloral = new AromaAndFlavourFloral[MaximumTastesAndScents];
+    public AromaAndFlavourFloral[] AromaFloral
     {
         get { return aromaFloral; }
         set { aromaFloral = value; }
-    }        
+    }
     // GreenFruit
-    private AromaAndFlavourGreenFruit aromaGreenFruit;
-    public AromaAndFlavourGreenFruit AromaGreenFruit
+    private AromaAndFlavourGreenFruit[] aromaGreenFruit = new AromaAndFlavourGreenFruit[MaximumTastesAndScents];
+    public AromaAndFlavourGreenFruit[] AromaGreenFruit
     {
         get { return aromaGreenFruit; }
         set { aromaGreenFruit = value; }
     }
     // CitrusFruit
-    private AromaAndFlavourCitrusFruit aromaCitrusFruit;
-    public AromaAndFlavourCitrusFruit AromaCitrusFruit
+    private AromaAndFlavourCitrusFruit[] aromaCitrusFruit = new AromaAndFlavourCitrusFruit[MaximumTastesAndScents];
+    public AromaAndFlavourCitrusFruit[] AromaCitrusFruit
     {
         get { return aromaCitrusFruit; }
         set { aromaCitrusFruit = value; }
     }
     // StoneFruit
-    private AromaAndFlavourStoneFruit aromaStoneFruit;
-    public AromaAndFlavourStoneFruit AromaStoneFruit
+    private AromaAndFlavourStoneFruit[] aromaStoneFruit = new AromaAndFlavourStoneFruit[MaximumTastesAndScents];
+    public AromaAndFlavourStoneFruit[] AromaStoneFruit
     {
         get { return aromaStoneFruit; }
         set { aromaStoneFruit = value; }
     }
     // TropicalFruit
-    private AromaAndFlavourTropicalFruit aromaTropicalFruit;
-    public AromaAndFlavourTropicalFruit AromaTropicalFruit
+    private AromaAndFlavourTropicalFruit[] aromaTropicalFruit = new AromaAndFlavourTropicalFruit[MaximumTastesAndScents];
+    public AromaAndFlavourTropicalFruit[] AromaTropicalFruit
     {
         get { return aromaTropicalFruit; }
         set { aromaTropicalFruit = value; }
     }
     // RedFruit
-    private AromaAndFlavourRedFruit aromaRedFruit;
-    public AromaAndFlavourRedFruit AromaRedFruit
+    private AromaAndFlavourRedFruit[] aromaRedFruit = new AromaAndFlavourRedFruit[MaximumTastesAndScents];
+    public AromaAndFlavourRedFruit[] AromaRedFruit
     {
         get { return aromaRedFruit; }
         set { aromaRedFruit = value; }
     }
     // BlackFruit
-    private AromaAndFlavourBlackFruit aromaBlackFruit;
-    public AromaAndFlavourBlackFruit AromaBlackFruit
+    private AromaAndFlavourBlackFruit[] aromaBlackFruit = new AromaAndFlavourBlackFruit[MaximumTastesAndScents];
+    public AromaAndFlavourBlackFruit[] AromaBlackFruit
     {
         get { return aromaBlackFruit; }
         set { aromaBlackFruit = value; }
     }
     // DriedFruit
-    private AromaAndFlavourDriedFruit aromaDriedFruit;
-    public AromaAndFlavourDriedFruit AromaDriedFruit
+    private AromaAndFlavourDriedFruit[] aromaDriedFruit = new AromaAndFlavourDriedFruit[MaximumTastesAndScents];
+    public AromaAndFlavourDriedFruit[] AromaDriedFruit
     {
         get { return aromaDriedFruit; }
         set { aromaDriedFruit = value; }
@@ -156,50 +157,50 @@ public class Wine
         
         #region Spice / Vegetable
 
-    private SpiceVegetableGategories aromaSpiceVegetableGategory;
-    public SpiceVegetableGategories AromaSpiceVegetableGategory
+    private SpiceVegetableGategories[] aromaSpiceVegetableGategory = new SpiceVegetableGategories[MaximumTastesAndScents];
+    public SpiceVegetableGategories[] AromaSpiceVegetableGategory
     {
         get { return aromaSpiceVegetableGategory; }
         set { aromaSpiceVegetableGategory = value; }
     }
     // Underripeness
-    private AromaAndFlavourUnderripeness aromaUnderripeness;
-    public AromaAndFlavourUnderripeness AromaUnderripeness
+    private AromaAndFlavourUnderripeness[] aromaUnderripeness = new AromaAndFlavourUnderripeness[MaximumTastesAndScents];
+    public AromaAndFlavourUnderripeness[] AromaUnderripeness
     {
         get { return aromaUnderripeness; }
         set { aromaUnderripeness = value; }
     }
     // Herbaceous
-    private AromaAndFlavourHerbaceous aromaHerbaceous;
-    public AromaAndFlavourHerbaceous AromaHerbaceous
+    private AromaAndFlavourHerbaceous[] aromaHerbaceous = new AromaAndFlavourHerbaceous[MaximumTastesAndScents];
+    public AromaAndFlavourHerbaceous[] AromaHerbaceous
     {
         get { return aromaHerbaceous; }
         set { aromaHerbaceous = value; }
     }
     // Herbal
-    private AromaAndFlavourHerbal aromaHerbal;
-    public AromaAndFlavourHerbal AromaHerbal
+    private AromaAndFlavourHerbal[] aromaHerbal = new AromaAndFlavourHerbal[MaximumTastesAndScents];
+    public AromaAndFlavourHerbal[] AromaHerbal
     {
         get { return aromaHerbal; }
         set { aromaHerbal = value; }
     }
     // Vegetable
-    private AromaAndFlavourVegetable aromaVegetable;
-    public AromaAndFlavourVegetable AromaVegetable
+    private AromaAndFlavourVegetable[] aromaVegetable = new AromaAndFlavourVegetable[MaximumTastesAndScents];
+    public AromaAndFlavourVegetable[] AromaVegetable
     {
         get { return aromaVegetable; }
         set { aromaVegetable = value; }
     }
     // SweetSpice
-    private AromaAndFlavourSweetSpice aromaSweetSpice;
-    public AromaAndFlavourSweetSpice AromaSweetSpice
+    private AromaAndFlavourSweetSpice[] aromaSweetSpice = new AromaAndFlavourSweetSpice[MaximumTastesAndScents];
+    public AromaAndFlavourSweetSpice[] AromaSweetSpice
     {
         get { return aromaSweetSpice; }
         set { aromaSweetSpice = value; }
     }
     // PungentSpice
-    private SpiceVegetableGategories aromaPungentSpice;
-    public SpiceVegetableGategories AromaPungentSpice
+    private SpiceVegetableGategories[] aromaPungentSpice = new SpiceVegetableGategories[MaximumTastesAndScents];
+    public SpiceVegetableGategories[] AromaPungentSpice
     {
         get { return aromaPungentSpice; }
         set { aromaPungentSpice = value; }
@@ -208,65 +209,65 @@ public class Wine
 
         #region Oak / Other
 
-    private OakOtherGategories aromaOakOtherGategory;
-    public OakOtherGategories AromaOakOtherGategory
+    private OakOtherGategories[] aromaOakOtherGategory = new OakOtherGategories[MaximumTastesAndScents];
+    public OakOtherGategories[] AromaOakOtherGategory
     {
         get { return aromaOakOtherGategory; }
         set { aromaOakOtherGategory = value; }
     }
 
     // SimplicityNeutrality
-    private AromaAndFlavourSimplicityNeutrality aromaSimplicityNeutrality;
-    public AromaAndFlavourSimplicityNeutrality AromaSimplicityNeutrality
+    private AromaAndFlavourSimplicityNeutrality[] aromaSimplicityNeutrality = new AromaAndFlavourSimplicityNeutrality[MaximumTastesAndScents];
+    public AromaAndFlavourSimplicityNeutrality[] AromaSimplicityNeutrality
     {
         get { return aromaSimplicityNeutrality; }
         set { aromaSimplicityNeutrality = value; }
     }
     // Autolytic
-    private AromaAndFlavourAutolytic aromaAutolytic;
-    public AromaAndFlavourAutolytic AromaAutolytic
+    private AromaAndFlavourAutolytic[] aromaAutolytic = new AromaAndFlavourAutolytic[MaximumTastesAndScents];
+    public AromaAndFlavourAutolytic[] AromaAutolytic
     {
         get { return aromaAutolytic; }
         set { aromaAutolytic = value; }
     }
     // Dairy
-    private AromaAndFlavourDairy aromaDairy;
-    public AromaAndFlavourDairy AromaDairy
+    private AromaAndFlavourDairy[] aromaDairy = new AromaAndFlavourDairy[MaximumTastesAndScents];
+    public AromaAndFlavourDairy[] AromaDairy
     {
         get { return aromaDairy; }
         set { aromaDairy = value; }
     }
     // Oak
-    private AromaAndFlavourOak aromaOak;
-    public AromaAndFlavourOak AromaOak
+    private AromaAndFlavourOak[] aromaOak = new AromaAndFlavourOak[MaximumTastesAndScents];
+    public AromaAndFlavourOak[] AromaOak
     {
         get { return aromaOak; }
         set { aromaOak = value; }
     }
     // Kernel
-    private AromaAndFlavourKernel aromaKernel;
-    public AromaAndFlavourKernel AromaKernel
+    private AromaAndFlavourKernel[] aromaKernel = new AromaAndFlavourKernel[MaximumTastesAndScents];
+    public AromaAndFlavourKernel[] AromaKernel
     {
         get { return aromaKernel; }
         set { aromaKernel = value; }
     }
     // Animal
-    private AromaAndFlavourAnimal aromaAnimal;
-    public AromaAndFlavourAnimal AromaAnimal
+    private AromaAndFlavourAnimal[] aromaAnimal = new AromaAndFlavourAnimal[MaximumTastesAndScents];
+    public AromaAndFlavourAnimal[] AromaAnimal
     {
         get { return aromaAnimal; }
         set { aromaAnimal = value; }
     }
     // Maturity
-    private AromaAndFlavourMaturity aromaMaturity;
-    public AromaAndFlavourMaturity AromaMaturity
+    private AromaAndFlavourMaturity[] aromaMaturity = new AromaAndFlavourMaturity[MaximumTastesAndScents];
+    public AromaAndFlavourMaturity[] AromaMaturity
     {
         get { return aromaMaturity; }
         set { aromaMaturity = value; }
     }
     // Mineral
-    private AromaAndFlavourMineral aromaMineral;
-    public AromaAndFlavourMineral AromaMineral
+    private AromaAndFlavourMineral[] aromaMineral = new AromaAndFlavourMineral[MaximumTastesAndScents];
+    public AromaAndFlavourMineral[] AromaMineral
     {
         get { return aromaMineral; }
         set { aromaMineral = value; }
@@ -343,7 +344,7 @@ public class Wine
         Medium,
         Deep
     };
-    public enum ColorGategories
+    public enum AppearanceColorGategories
     {
         WhiteWineColour,
         RoseWineColour,
@@ -375,7 +376,6 @@ public class Wine
         Intensity,
         Aroma
     };
-
     public enum NoseCondition
     {
         Clean,
@@ -383,8 +383,8 @@ public class Wine
     };
     public enum NoseIntensity
     {
-        Pale,
-        medium,
+        Light,
+        Medium,
         Deep
     };
 
@@ -657,11 +657,13 @@ public class Wine
         VeryGood,
         Outstanding
     };
-#endregion
+    #endregion
 
+    #region HIDE
+    // Generate matrix arrays for comparison.
     public int[][] GetMatrixes ()
     {
-        int[][] ComparisonMatrix = new int[100][];
+        int[][] ComparisonMatrix = new int[17][];
 
         // appearance clarity
         ComparisonMatrix[0] = new int[3];
@@ -679,22 +681,22 @@ public class Wine
         ComparisonMatrix[2] = new int[4];
         switch (AColorGategory)
         {
-            case ColorGategories.WhiteWineColour:
+            case AppearanceColorGategories.WhiteWineColour:
                 ComparisonMatrix[2][0] = (int)MainGategories.Appearance;
                 ComparisonMatrix[2][1] = (int)AppearanceGategories.Color;
-                ComparisonMatrix[2][2] = (int)ColorGategories.WhiteWineColour;
+                ComparisonMatrix[2][2] = (int)AppearanceColorGategories.WhiteWineColour;
                 ComparisonMatrix[2][3] = (int)AWhiteWineColor;
                 break;
-            case ColorGategories.RoseWineColour:
+            case AppearanceColorGategories.RoseWineColour:
                 ComparisonMatrix[2][0] = (int)MainGategories.Appearance;
                 ComparisonMatrix[2][1] = (int)AppearanceGategories.Color;
-                ComparisonMatrix[2][2] = (int)ColorGategories.RoseWineColour;
+                ComparisonMatrix[2][2] = (int)AppearanceColorGategories.RoseWineColour;
                 ComparisonMatrix[2][3] = (int)ARoseWineColor;
                 break;
-            case ColorGategories.RedWineColour:
+            case AppearanceColorGategories.RedWineColour:
                 ComparisonMatrix[2][0] = (int)MainGategories.Appearance;
                 ComparisonMatrix[2][1] = (int)AppearanceGategories.Color;
-                ComparisonMatrix[2][2] = (int)ColorGategories.RedWineColour;
+                ComparisonMatrix[2][2] = (int)AppearanceColorGategories.RedWineColour;
                 ComparisonMatrix[2][3] = (int)ARedWineColor;
                 break;
         }
@@ -712,10 +714,9 @@ public class Wine
         ComparisonMatrix[4][2] = (int)NIntensity;
 
         // Nose Aroma
-        ComparisonMatrix[5] = AromaFlavourMethod(AromaGategory, 0);
-        ComparisonMatrix[6] = AromaFlavourMethod(AromaGategory, 1); 
-        ComparisonMatrix[7] = AromaFlavourMethod(AromaGategory, 2); 
-
+        ComparisonMatrix[5] = Aromas[0];
+        ComparisonMatrix[6] = Aromas[1];
+        ComparisonMatrix[7] = Aromas[2];
 
         // Palate
         ComparisonMatrix[8] = new int[3];
@@ -739,9 +740,9 @@ public class Wine
         ComparisonMatrix[11][2] = (int)PBody;
 
         // Palate Flavor
-        ComparisonMatrix[12] = AromaFlavourMethod(FlavourGategory, 0);
-        ComparisonMatrix[13] = AromaFlavourMethod(FlavourGategory, 1); 
-        ComparisonMatrix[14] = AromaFlavourMethod(FlavourGategory, 2); 
+        ComparisonMatrix[12] = Flavours[0];
+        ComparisonMatrix[13] = Flavours[1];
+        ComparisonMatrix[14] = Flavours[2];
 
         ComparisonMatrix[15] = new int[3];
         ComparisonMatrix[15][0] = (int)MainGategories.Palate;
@@ -757,184 +758,62 @@ public class Wine
         return ComparisonMatrix;
     }
 
-    int[] AromaFlavourMethod(AromaAndFlavourGategories[] afg ,int i)
+    #endregion
+
+    public int[] Aroma (int MainGategory, int SecondaryGategory, int AromaFlavorGategory, int AromaFlavorSubGategory, int FinalValue)
     {
-        int[] array = new int[5];
-        
-        switch (afg[i])
+        int[] temp = new int[5];
+
+        if (Enum.GetValues(typeof(MainGategories)).Length > MainGategory)
+            temp[0] = MainGategory;
+
+        // make sure secondarygategory can't go over. // does this even work??
+        switch (MainGategory)
         {
-            case AromaAndFlavourGategories.FloralFruit:
-                switch (AromaFloralGategory)
-                {
-                    case FloralFruitGategories.Floral:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.Floral;
-                        array[4] = (int) AromaFloral;
-                        break;
-                    case FloralFruitGategories.GreenFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.GreenFruit;
-                        array[4] = (int) AromaGreenFruit;
-                        break;
-                    case FloralFruitGategories.CitrusFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.CitrusFruit;
-                        array[4] = (int) AromaCitrusFruit;
-                        break;
-                    case FloralFruitGategories.StoneFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.StoneFruit;
-                        array[4] = (int) AromaStoneFruit;
-                        break;
-                    case FloralFruitGategories.TropicalFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.TropicalFruit;
-                        array[4] = (int) AromaTropicalFruit;
-                        break;
-                    case FloralFruitGategories.RedFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.RedFruit;
-                        array[4] = (int) AromaRedFruit;
-                        break;
-                    case FloralFruitGategories.BlackFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.BlackFruit;
-                        array[4] = (int) AromaBlackFruit;
-                        break;
-                    case FloralFruitGategories.DriedFruit:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.FloralFruit;
-                        array[3] = (int) FloralFruitGategories.DriedFruit;
-                        array[4] = (int) AromaDriedFruit;
-                        break;
-                }
+            case (int)MainGategories.Nose:
+                if (Enum.GetValues(typeof(NoseGategories)).Length > SecondaryGategory)
+                    temp[1] = SecondaryGategory;
                 break;
-            case AromaAndFlavourGategories.SpiceVegetable:
-                switch (AromaSpiceVegetableGategory)
-                {
-                    case SpiceVegetableGategories.Underripeness:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.Underripeness;
-                        array[4] = (int) AromaUnderripeness;
-                        break;
-                    case SpiceVegetableGategories.Herbaceous:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.Herbaceous;
-                        array[4] = (int) AromaHerbaceous;
-                        break;
-                    case SpiceVegetableGategories.Herbal:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.Herbal;
-                        array[4] = (int) AromaHerbal;
-                        break;
-                    case SpiceVegetableGategories.Vegetable:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.Vegetable;
-                        array[4] = (int) AromaVegetable;
-                        break;
-                    case SpiceVegetableGategories.SweetSpice:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.SweetSpice;
-                        array[4] = (int) AromaSweetSpice;
-                        break;
-                    case SpiceVegetableGategories.PungentSpice:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.SpiceVegetable;
-                        array[3] = (int) SpiceVegetableGategories.PungentSpice;
-                        array[4] = (int) AromaPungentSpice;
-                        break;
-                }
-                break;
-            case AromaAndFlavourGategories.OakOther:
-                switch (AromaOakOtherGategory)
-                {
-                    case OakOtherGategories.SimplicityNeutrality:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.SimplicityNeutrality;
-                        array[4] = (int) AromaSimplicityNeutrality;
-                        break;
-                    case OakOtherGategories.Autolytic:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Autolytic;
-                        array[4] = (int) AromaAutolytic;
-                        break;
-                    case OakOtherGategories.Dairy:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Dairy;
-                        array[4] = (int) AromaDairy;
-                        break;
-                    case OakOtherGategories.Oak:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Oak;
-                        array[4] = (int) AromaOak;
-                        break;
-                    case OakOtherGategories.Kernel:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Kernel;
-                        array[4] = (int) AromaKernel;
-                        break;
-                    case OakOtherGategories.Animal:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Animal;
-                        array[4] = (int) AromaAnimal;
-                        break;
-                    case OakOtherGategories.Maturity:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Maturity;
-                        array[4] = (int) AromaMaturity;
-                        break;
-                    case OakOtherGategories.Mineral:
-                        array[0] = (int) MainGategories.Nose;
-                        array[1] = (int) NoseGategories.Aroma;
-                        array[2] = (int) AromaAndFlavourGategories.OakOther;
-                        array[3] = (int) OakOtherGategories.Mineral;
-                        array[4] = (int) AromaMineral;
-                        break;
-                    default:
-                        break;
-                }
+            case (int)MainGategories.Palate:
+                if (Enum.GetValues(typeof(PalateGategories)).Length > SecondaryGategory)
+                    temp[1] = SecondaryGategory;
                 break;
         }
-        return array;
+
+        if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
+            temp[2] = AromaFlavorGategory;
+
+        // miten tämän tarkastaa kun subgatecory voi olla läjä eri enumeja?
+        temp[3] = AromaFlavorSubGategory;
+
+        // miten tämän tarkastaa kun FinalValue voi olla läjä eri enumeja?
+        temp[4] = FinalValue;
+
+        return temp;
     }
+
+    public void Color (AppearanceColorGategories acg, int ColorGatecoryColorAsInt)
+    {
+        AColorGategory = acg;
+        switch (acg)
+        {
+            case AppearanceColorGategories.WhiteWineColour:
+                if (Enum.GetValues(typeof(AppearanceWhiteWineColor)).Length > ColorGatecoryColorAsInt)
+                    AWhiteWineColor = (AppearanceWhiteWineColor)ColorGatecoryColorAsInt;
+                break;
+            case AppearanceColorGategories.RoseWineColour:
+                if (Enum.GetValues(typeof(AppearanceRoseWineColor)).Length > ColorGatecoryColorAsInt)
+                    ARoseWineColor = (AppearanceRoseWineColor)ColorGatecoryColorAsInt;
+                break;
+            case AppearanceColorGategories.RedWineColour:
+                if (Enum.GetValues(typeof(AppearanceRedWineColor)).Length > ColorGatecoryColorAsInt)
+                    ARedWineColor = (AppearanceRedWineColor)ColorGatecoryColorAsInt;
+                break;
+        }
+    }
+
+    // Randomize wine method for restaurant customer
+
+    // compare two different wines.
+
 }
