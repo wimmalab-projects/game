@@ -26,6 +26,7 @@ public class GUIScript : MonoBehaviour
     private FermentorScript fermentorScript;
     private GameMaster gameMaster;
     private ClarificationScript clarificationScript;
+    private BottlingScript bottlingScript;
 
     // Use this for initialization
 
@@ -71,6 +72,15 @@ public class GUIScript : MonoBehaviour
                     infoPanelTimer.text = "Ready!";
                 }
             }
+            else if (parent.tag == "Bottling")
+            {
+                timer = bottlingScript.niceTime;
+                infoPanelTimer.text = timer;
+                if(bottlingScript.Timer <= 0)
+                {
+                    infoPanelTimer.text = "Ready!";
+                }
+            }
         }
     }
 
@@ -90,6 +100,11 @@ public class GUIScript : MonoBehaviour
         else if (parent.tag == "Clarificating")
         {
             infoPanelText.text = name + " is being clarificated";
+            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+        }
+        else if (parent.tag == "Bottling")
+        {
+            infoPanelText.text = name + " is being bottled";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
     }
@@ -141,13 +156,17 @@ public class GUIScript : MonoBehaviour
                     else
                         return;
                     break;
-                case "Collect":
-                    if (parent.tag == "Fermenting" && fermentorScript.Timer <= 0)
+                case "Bottle":
+                    slotScript.Bottling();
+                    if (SlotScript.didPlant)
                     {
-                        slotScript.Collect();
-                        infoPanel.alpha = 0;
+                        animator.SetBool("showInventory", false);
                     }
-                    else if (parent.tag == "Clarificating" && clarificationScript.Timer <= 0)
+                    else
+                        return;
+                    break;
+                case "Collect":
+                    if ((parent.tag == "Fermenting" && fermentorScript.Timer <= 0) || (parent.tag == "Clarificating" && clarificationScript.Timer <= 0) || (parent.tag == "Bottling" && bottlingScript.Timer <= 0))
                     {
                         slotScript.Collect();
                         infoPanel.alpha = 0;
@@ -170,6 +189,7 @@ public class GUIScript : MonoBehaviour
         groundScript = parent.GetComponent<PlantGround>();
         fermentorScript = parent.GetComponent<FermentorScript>();
         clarificationScript = parent.GetComponent<ClarificationScript>();
+        bottlingScript = parent.GetComponent<BottlingScript>();
         Debug.Log(clarificationScript);
 
         switch (parent.tag)
@@ -203,6 +223,18 @@ public class GUIScript : MonoBehaviour
             case "Clarificating":
                 infoPanel.alpha = 1;
                 initializeInfoPanel(clarificationScript.wineName);
+                harvestButton.name = "Collect";
+                harvestButton.GetComponentInChildren<Text>().text = "Collect";
+                break;
+            case "NotBottling":
+                inventory.alpha = 1;
+                animator.SetBool("showInventory", true);
+                plantButton.name = "Bottle";
+                plantButton.GetComponentInChildren<Text>().text = "´Bottle";
+                break;
+            case "Bottling":
+                infoPanel.alpha = 1;
+                initializeInfoPanel(bottlingScript.wineName);
                 harvestButton.name = "Collect";
                 harvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

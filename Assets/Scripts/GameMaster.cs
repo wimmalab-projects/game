@@ -66,6 +66,14 @@ public class GameMaster : MonoBehaviour
         [Description("Red wine")]
         RedWine,
     }
+
+    public enum BottlingState
+    {
+        NotBottling,
+        Bottling,
+        Bottled
+    }
+
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen = false;

@@ -20,6 +20,7 @@ public class SlotScript : MonoBehaviour
     PlantGround groundScript;
     FermentorScript fermentorScript;
     ClarificationScript clarificationScript;
+    BottlingScript bottlingScript;
     List<GameObject> vinePositions = new List<GameObject>();
     GameMaster gameMaster;
 
@@ -171,8 +172,18 @@ public class SlotScript : MonoBehaviour
             clarificationScript = parent.GetComponent<ClarificationScript>();
             parent.tag = "NotClarificating";
             clarificationScript.clarificationState = GameMaster.ClarificationState.NotClarificating;
+            inventory.items[clarificationScript.wineName].AddItem();
             clarificationScript.wineName = null;
             clarificationScript.Timer = 0;
+        }
+        else if (parent.tag == "Bottling")
+        {
+            bottlingScript = parent.GetComponent<BottlingScript>();
+            parent.tag = "NotBottling";
+            bottlingScript.bottlingState = GameMaster.BottlingState.NotBottling;
+            inventory.items["Bottle"].AddItem();
+            bottlingScript.wineName = null;
+            bottlingScript.Timer = 0;
         }
     }
 
@@ -192,6 +203,37 @@ public class SlotScript : MonoBehaviour
                 guiScript.initializeInfoPanel(clarificationScript.wineName);
                 clarificationScript.clarificationState = GameMaster.ClarificationState.Clarificating;
                 clarificationScript.Timer = 10;
+                didPlant = true;
+            }
+            else
+            {
+                didPlant = false;
+                Debug.Log("Not wine");
+            }
+        }
+        else
+        {
+            didPlant = false;
+            Debug.Log("Not enough");
+        }
+    }
+
+    public void Bottling()
+    {
+        parent = ColliderHandler.parentGameObject;
+        bottlingScript = parent.GetComponent<BottlingScript>();
+
+        if (inventory.items[seedName].itemCount > 0)
+        {
+            if (inventory.items[seedName].iType == Item.ItemType.WINE)
+            {
+                parent.tag = "Bottling";
+                currentlySelectedName = inventory.items[seedName].returnName();
+                bottlingScript.wineName = currentlySelectedName;
+                inventory.items[currentlySelectedName].PopItem();
+                guiScript.initializeInfoPanel(bottlingScript.wineName);
+                bottlingScript.bottlingState= GameMaster.BottlingState.Bottling;
+                bottlingScript.Timer = 10;
                 didPlant = true;
             }
             else
