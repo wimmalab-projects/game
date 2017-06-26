@@ -14,10 +14,12 @@ public class Client : MonoBehaviour
     public string GoodReview;
     public string AverageReview;
     public string BadReview;
-    
+
     // restaurant client
     public Wine WineIWant;
     public Wine WineIGet;
+
+    
 
     // farm client
     public int Budget;
