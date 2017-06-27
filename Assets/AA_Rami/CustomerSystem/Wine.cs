@@ -10,7 +10,7 @@ public class Wine
 
     public static int MaximumTastesAndScents = 3;
 
-    public int[][] Aromas = new int[MaximumTastesAndScents][];
+    public int[][] Aromas = new int[MaximumTastesAndScents][]; // vois olla lista arraysta jossa useita makuja eli: List <int[]> Aromas; ???
     public int[][] Flavours = new int[MaximumTastesAndScents][];
 
     #region GetSets
@@ -764,66 +764,131 @@ public class Wine
     {
         int[] temp = new int[5];
 
-        if (Enum.GetValues(typeof(MainGategories)).Length > MainGategory)
+        if (MainGategory == (int)MainGategories.Nose || MainGategory == (int)MainGategories.Palate)
             temp[0] = MainGategory;
 
-        if (SecondaryGategory == (int)MainGategories.Nose || SecondaryGategory == (int)MainGategories.Palate)
+        if (SecondaryGategory == (int)NoseGategories.Aroma || SecondaryGategory == (int)PalateGategories.FlavourCharasteristics)
             temp[1] = SecondaryGategory;
 
-            // make sure secondarygategory can't go over. // does this even work??
-        switch (temp[0])
+        if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory) // check aromaflavorgategory maximum
+            temp[2] = AromaFlavorGategory;
+
+        switch (temp[2])
         {
-            case (int)MainGategories.Nose:
-                if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
-                    temp[2] = AromaFlavorGategory;
+            case (int)AromaAndFlavourGategories.FloralFruit:
+                if (Enum.GetValues(typeof(FloralFruitGategories)).Length > AromaFlavorSubGategory)
+                    temp[3] = AromaFlavorSubGategory;
 
-                switch (temp[2])
+                switch (temp[3]) // check the final value max
                 {
-                    case (int)AromaAndFlavourGategories.FloralFruit:
-                        if (Enum.GetValues(typeof(FloralFruitGategories)).Length > AromaFlavorSubGategory)
-                            temp[3] = AromaFlavorSubGategory;
-
-                        switch (temp[3])
-                        {
-                            case (int)FloralFruitGategories.Floral:
-                                break;
-                            case (int)FloralFruitGategories.GreenFruit:
-                                break;
-                            case (int)FloralFruitGategories.CitrusFruit:
-                                break;
-                            case (int)FloralFruitGategories.StoneFruit:
-                                break;
-                            case (int)FloralFruitGategories.TropicalFruit:
-                                break;
-                            case (int)FloralFruitGategories.RedFruit:
-                                break;
-                            case (int)FloralFruitGategories.BlackFruit:
-                                break;
-                            case (int)FloralFruitGategories.DriedFruit:
-                                break;
-                        }
+                    case (int)FloralFruitGategories.Floral:
+                        if (Enum.GetValues(typeof(AromaAndFlavourFloral)).Length > FinalValue)
+                            temp[4] = FinalValue;
                         break;
-
-                    case (int)AromaAndFlavourGategories.SpiceVegetable:
+                    case (int)FloralFruitGategories.GreenFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourGreenFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
                         break;
+                    case (int)FloralFruitGategories.CitrusFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourCitrusFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)FloralFruitGategories.StoneFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourStoneFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)FloralFruitGategories.TropicalFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourTropicalFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)FloralFruitGategories.RedFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourRedFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)FloralFruitGategories.BlackFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourBlackFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)FloralFruitGategories.DriedFruit:
+                        if (Enum.GetValues(typeof(AromaAndFlavourDriedFruit)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                }
+                break;
+            case (int)AromaAndFlavourGategories.SpiceVegetable:
+                if (Enum.GetValues(typeof(SpiceVegetableGategories)).Length > AromaFlavorSubGategory)
+                    temp[3] = AromaFlavorSubGategory;
 
-                    case (int)AromaAndFlavourGategories.OakOther:
+                switch (temp[3])
+                {
+                    case (int)SpiceVegetableGategories.Underripeness:
+                        if (Enum.GetValues(typeof(AromaAndFlavourUnderripeness)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)SpiceVegetableGategories.Herbaceous:
+                        if (Enum.GetValues(typeof(AromaAndFlavourHerbaceous)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)SpiceVegetableGategories.Herbal:
+                        if (Enum.GetValues(typeof(AromaAndFlavourHerbal)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)SpiceVegetableGategories.Vegetable:
+                        if (Enum.GetValues(typeof(AromaAndFlavourVegetable)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)SpiceVegetableGategories.SweetSpice:
+                        if (Enum.GetValues(typeof(AromaAndFlavourSweetSpice)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)SpiceVegetableGategories.PungentSpice:
+                        if (Enum.GetValues(typeof(AromaAndFlavourPungentSpice)).Length > FinalValue)
+                            temp[4] = FinalValue;
                         break;
                 }
                 break;
 
-            case (int)MainGategories.Palate:
-                if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
-                    temp[2] = AromaFlavorGategory;
+            case (int)AromaAndFlavourGategories.OakOther:
+                if (Enum.GetValues(typeof(OakOtherGategories)).Length > AromaFlavorSubGategory)
+                    temp[3] = AromaFlavorSubGategory;
+
+                switch (temp[3])
+                {
+                    case (int)OakOtherGategories.SimplicityNeutrality:
+                        if (Enum.GetValues(typeof(AromaAndFlavourSimplicityNeutrality)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Autolytic:
+                        if (Enum.GetValues(typeof(AromaAndFlavourAutolytic)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Dairy:
+                        if (Enum.GetValues(typeof(AromaAndFlavourDairy)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Oak:
+                        if (Enum.GetValues(typeof(AromaAndFlavourOak)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Kernel:
+                        if (Enum.GetValues(typeof(AromaAndFlavourKernel)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Animal:
+                        if (Enum.GetValues(typeof(AromaAndFlavourAnimal)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Maturity:
+                        if (Enum.GetValues(typeof(AromaAndFlavourMaturity)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                    case (int)OakOtherGategories.Mineral:
+                        if (Enum.GetValues(typeof(AromaAndFlavourMineral)).Length > FinalValue)
+                            temp[4] = FinalValue;
+                        break;
+                }
                 break;
         }
-
-        // miten tämän tarkastaa kun subgatecory voi olla läjä eri enumeja?
-        temp[3] = AromaFlavorSubGategory;
-
-        // miten tämän tarkastaa kun FinalValue voi olla läjä eri enumeja?
-        temp[4] = FinalValue;
-
         return temp;
     }
 
@@ -851,4 +916,8 @@ public class Wine
 
     // compare two different wines.
 
+    public void CompareWines(Wine wine)
+    {
+
+    }
 }
