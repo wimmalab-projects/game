@@ -11,12 +11,11 @@ public class cpRestaurantButton : MonoBehaviour, IPointerClickHandler
     CustomerPanel cp;
     void Start()
     {
-        cp = gameObject.transform.parent.GetComponent<CustomerPanel>();
+        cp = gameObject.transform.parent.parent.GetComponent<CustomerPanel>();
     }
 
     public void OnPointerClick(PointerEventData data)
     {
-        Debug.Log("Sell wine to restaurant client");
-        // cp.acceptrestaurantclient()
+        cp.AcceptRestaurantClient();
     }
 }

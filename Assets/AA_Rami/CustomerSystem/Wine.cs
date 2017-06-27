@@ -767,21 +767,56 @@ public class Wine
         if (Enum.GetValues(typeof(MainGategories)).Length > MainGategory)
             temp[0] = MainGategory;
 
-        // make sure secondarygategory can't go over. // does this even work??
-        switch (MainGategory)
+        if (SecondaryGategory == (int)MainGategories.Nose || SecondaryGategory == (int)MainGategories.Palate)
+            temp[1] = SecondaryGategory;
+
+            // make sure secondarygategory can't go over. // does this even work??
+        switch (temp[0])
         {
             case (int)MainGategories.Nose:
-                if (Enum.GetValues(typeof(NoseGategories)).Length > SecondaryGategory)
-                    temp[1] = SecondaryGategory;
+                if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
+                    temp[2] = AromaFlavorGategory;
+
+                switch (temp[2])
+                {
+                    case (int)AromaAndFlavourGategories.FloralFruit:
+                        if (Enum.GetValues(typeof(FloralFruitGategories)).Length > AromaFlavorSubGategory)
+                            temp[3] = AromaFlavorSubGategory;
+
+                        switch (temp[3])
+                        {
+                            case (int)FloralFruitGategories.Floral:
+                                break;
+                            case (int)FloralFruitGategories.GreenFruit:
+                                break;
+                            case (int)FloralFruitGategories.CitrusFruit:
+                                break;
+                            case (int)FloralFruitGategories.StoneFruit:
+                                break;
+                            case (int)FloralFruitGategories.TropicalFruit:
+                                break;
+                            case (int)FloralFruitGategories.RedFruit:
+                                break;
+                            case (int)FloralFruitGategories.BlackFruit:
+                                break;
+                            case (int)FloralFruitGategories.DriedFruit:
+                                break;
+                        }
+                        break;
+
+                    case (int)AromaAndFlavourGategories.SpiceVegetable:
+                        break;
+
+                    case (int)AromaAndFlavourGategories.OakOther:
+                        break;
+                }
                 break;
+
             case (int)MainGategories.Palate:
-                if (Enum.GetValues(typeof(PalateGategories)).Length > SecondaryGategory)
-                    temp[1] = SecondaryGategory;
+                if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
+                    temp[2] = AromaFlavorGategory;
                 break;
         }
-
-        if (Enum.GetValues(typeof(AromaAndFlavourGategories)).Length > AromaFlavorGategory)
-            temp[2] = AromaFlavorGategory;
 
         // miten tämän tarkastaa kun subgatecory voi olla läjä eri enumeja?
         temp[3] = AromaFlavorSubGategory;

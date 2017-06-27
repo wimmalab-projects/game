@@ -62,4 +62,14 @@ public class CustomerPanel : MonoBehaviour {
             DeactivatePanel();
         }
     }
+    public void AcceptRestaurantClient () // placeholder
+    {
+        Item wine = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().items["Bottle"];
+
+        if (wine.itemCount > 0)
+        {
+            wine.PopItem();
+            Debug.Log("wine sold");
+        }
+    }
 }
