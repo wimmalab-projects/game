@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TestWineOne : MonoBehaviour {
 
     Wine wineTest;
 
+    public GameObject go;
+    Wine wineTwo;
+
     // Use this for initialization
     void Start () {
+
+        wineTwo = go.GetComponent<TestWineTwo>().wineTest;
+
         wineTest = new Wine();
         
         wineTest.AClarity = Wine.AppearanceClarity.Clear;
@@ -35,5 +42,13 @@ public class TestWineOne : MonoBehaviour {
         wineTest.PFinish = Wine.PalateFinish.Medium;
 
         wineTest.WineQuality = Wine.Quality.Acceptable;
+
+        wineTest.readyMatrix = wineTest.GetMatrixes();
+        wineTwo.readyMatrix = wineTwo.GetMatrixes();
+        int i = wineTest.CompareWines(wineTwo);
+
+        Debug.Log("Wines had " + i + " similiarities");
     }
+
+    
 }

@@ -7,6 +7,7 @@
 /// 
 public class Wine
 {
+    public int[][] readyMatrix;
 
     public static int MaximumTastesAndScents = 3;
 
@@ -14,311 +15,37 @@ public class Wine
     public int[][] Flavours = new int[MaximumTastesAndScents][];
 
     #region GetSets
-    private AppearanceClarity aClarity;
-    public AppearanceClarity AClarity
-    {
-        get { return aClarity; }
-        set { aClarity = value; }
-    }
+    public AppearanceClarity AClarity { get; set; }
 
-    private AppearanceIntensity aIntensity;
-    public AppearanceIntensity AIntensity
-    {
-        get { return aIntensity; }
-        set { aIntensity = value; }
-    }
+    public AppearanceIntensity AIntensity { get; set; }
 
-    //private ColorGategories aColor;
-    //public ColorGategories AColor
-    //{
-    //    get { return aColor; }
-    //    set { aColor = value; }
-    //}
+    public AppearanceColorGategories AColorGategory { get; set; }
 
-    private AppearanceColorGategories aColorGategory;
-    public AppearanceColorGategories AColorGategory
-    {
-        get { return aColorGategory; }
-        set { aColorGategory = value; }
-    }
-    private AppearanceWhiteWineColor aWhiteWineColor;
-    public AppearanceWhiteWineColor AWhiteWineColor
-    {
-        get { return aWhiteWineColor; }
-        set { aWhiteWineColor = value; }
-    }
-    private AppearanceRoseWineColor aRoseWineColor;
-    public AppearanceRoseWineColor ARoseWineColor
-    {
-        get { return aRoseWineColor; }
-        set { aRoseWineColor = value; }
-    }
-    private AppearanceRedWineColor aRedWineColor;
-    public AppearanceRedWineColor ARedWineColor
-    {
-        get { return aRedWineColor; }
-        set { aRedWineColor = value; }
-    }
+    public AppearanceWhiteWineColor AWhiteWineColor { get; set; }
 
-    private NoseCondition nCondition;
-    public NoseCondition NCondition
-    {
-        get { return nCondition; }
-        set { nCondition = value; }
-    }
+    public AppearanceRoseWineColor ARoseWineColor { get; set; }
 
-    private NoseIntensity nIntensity;
-    public NoseIntensity NIntensity
-    {
-        get { return nIntensity; }
-        set { nIntensity = value; }
-    }
+    public AppearanceRedWineColor ARedWineColor { get; set; }
 
-    // aroma charasteristics
-    private AromaAndFlavourGategories[] aromaGategory = new AromaAndFlavourGategories[MaximumTastesAndScents]; // three distinct smells in the wine
-    public AromaAndFlavourGategories[] AromaGategory
-    {
-        get { return aromaGategory; }
-        set { aromaGategory = value; }
-    }
-    // flavour charasteristics
-    private AromaAndFlavourGategories[] flavourGategory = new AromaAndFlavourGategories[MaximumTastesAndScents]; // three distinct tastes in the wine
-    public AromaAndFlavourGategories[] FlavourGategory
-    {
-        get { return flavourGategory; }
-        set { flavourGategory = value; }
-    }
+    public NoseCondition NCondition { get; set; }
 
-    #region Floral / Fruit
-    private FloralFruitGategories[] aromaFloralGategory = new FloralFruitGategories[MaximumTastesAndScents];
-    public FloralFruitGategories[] AromaFloralGategory
-    {
-        get { return aromaFloralGategory; }
-        set { aromaFloralGategory = value; }
-    }
+    public NoseIntensity NIntensity { get; set; }
 
-    // Floral
-    private AromaAndFlavourFloral[] aromaFloral = new AromaAndFlavourFloral[MaximumTastesAndScents];
-    public AromaAndFlavourFloral[] AromaFloral
-    {
-        get { return aromaFloral; }
-        set { aromaFloral = value; }
-    }
-    // GreenFruit
-    private AromaAndFlavourGreenFruit[] aromaGreenFruit = new AromaAndFlavourGreenFruit[MaximumTastesAndScents];
-    public AromaAndFlavourGreenFruit[] AromaGreenFruit
-    {
-        get { return aromaGreenFruit; }
-        set { aromaGreenFruit = value; }
-    }
-    // CitrusFruit
-    private AromaAndFlavourCitrusFruit[] aromaCitrusFruit = new AromaAndFlavourCitrusFruit[MaximumTastesAndScents];
-    public AromaAndFlavourCitrusFruit[] AromaCitrusFruit
-    {
-        get { return aromaCitrusFruit; }
-        set { aromaCitrusFruit = value; }
-    }
-    // StoneFruit
-    private AromaAndFlavourStoneFruit[] aromaStoneFruit = new AromaAndFlavourStoneFruit[MaximumTastesAndScents];
-    public AromaAndFlavourStoneFruit[] AromaStoneFruit
-    {
-        get { return aromaStoneFruit; }
-        set { aromaStoneFruit = value; }
-    }
-    // TropicalFruit
-    private AromaAndFlavourTropicalFruit[] aromaTropicalFruit = new AromaAndFlavourTropicalFruit[MaximumTastesAndScents];
-    public AromaAndFlavourTropicalFruit[] AromaTropicalFruit
-    {
-        get { return aromaTropicalFruit; }
-        set { aromaTropicalFruit = value; }
-    }
-    // RedFruit
-    private AromaAndFlavourRedFruit[] aromaRedFruit = new AromaAndFlavourRedFruit[MaximumTastesAndScents];
-    public AromaAndFlavourRedFruit[] AromaRedFruit
-    {
-        get { return aromaRedFruit; }
-        set { aromaRedFruit = value; }
-    }
-    // BlackFruit
-    private AromaAndFlavourBlackFruit[] aromaBlackFruit = new AromaAndFlavourBlackFruit[MaximumTastesAndScents];
-    public AromaAndFlavourBlackFruit[] AromaBlackFruit
-    {
-        get { return aromaBlackFruit; }
-        set { aromaBlackFruit = value; }
-    }
-    // DriedFruit
-    private AromaAndFlavourDriedFruit[] aromaDriedFruit = new AromaAndFlavourDriedFruit[MaximumTastesAndScents];
-    public AromaAndFlavourDriedFruit[] AromaDriedFruit
-    {
-        get { return aromaDriedFruit; }
-        set { aromaDriedFruit = value; }
-    }
-    #endregion
-        
-        #region Spice / Vegetable
+    public PalateSweetness PSweetness { get; set; }
 
-    private SpiceVegetableGategories[] aromaSpiceVegetableGategory = new SpiceVegetableGategories[MaximumTastesAndScents];
-    public SpiceVegetableGategories[] AromaSpiceVegetableGategory
-    {
-        get { return aromaSpiceVegetableGategory; }
-        set { aromaSpiceVegetableGategory = value; }
-    }
-    // Underripeness
-    private AromaAndFlavourUnderripeness[] aromaUnderripeness = new AromaAndFlavourUnderripeness[MaximumTastesAndScents];
-    public AromaAndFlavourUnderripeness[] AromaUnderripeness
-    {
-        get { return aromaUnderripeness; }
-        set { aromaUnderripeness = value; }
-    }
-    // Herbaceous
-    private AromaAndFlavourHerbaceous[] aromaHerbaceous = new AromaAndFlavourHerbaceous[MaximumTastesAndScents];
-    public AromaAndFlavourHerbaceous[] AromaHerbaceous
-    {
-        get { return aromaHerbaceous; }
-        set { aromaHerbaceous = value; }
-    }
-    // Herbal
-    private AromaAndFlavourHerbal[] aromaHerbal = new AromaAndFlavourHerbal[MaximumTastesAndScents];
-    public AromaAndFlavourHerbal[] AromaHerbal
-    {
-        get { return aromaHerbal; }
-        set { aromaHerbal = value; }
-    }
-    // Vegetable
-    private AromaAndFlavourVegetable[] aromaVegetable = new AromaAndFlavourVegetable[MaximumTastesAndScents];
-    public AromaAndFlavourVegetable[] AromaVegetable
-    {
-        get { return aromaVegetable; }
-        set { aromaVegetable = value; }
-    }
-    // SweetSpice
-    private AromaAndFlavourSweetSpice[] aromaSweetSpice = new AromaAndFlavourSweetSpice[MaximumTastesAndScents];
-    public AromaAndFlavourSweetSpice[] AromaSweetSpice
-    {
-        get { return aromaSweetSpice; }
-        set { aromaSweetSpice = value; }
-    }
-    // PungentSpice
-    private SpiceVegetableGategories[] aromaPungentSpice = new SpiceVegetableGategories[MaximumTastesAndScents];
-    public SpiceVegetableGategories[] AromaPungentSpice
-    {
-        get { return aromaPungentSpice; }
-        set { aromaPungentSpice = value; }
-    }
-    #endregion
+    public PalateAcidity PAcidity { get; set; }
 
-        #region Oak / Other
+    public PalateTannin PTannin { get; set; }
 
-    private OakOtherGategories[] aromaOakOtherGategory = new OakOtherGategories[MaximumTastesAndScents];
-    public OakOtherGategories[] AromaOakOtherGategory
-    {
-        get { return aromaOakOtherGategory; }
-        set { aromaOakOtherGategory = value; }
-    }
+    public PalateBody PBody { get; set; }
 
-    // SimplicityNeutrality
-    private AromaAndFlavourSimplicityNeutrality[] aromaSimplicityNeutrality = new AromaAndFlavourSimplicityNeutrality[MaximumTastesAndScents];
-    public AromaAndFlavourSimplicityNeutrality[] AromaSimplicityNeutrality
-    {
-        get { return aromaSimplicityNeutrality; }
-        set { aromaSimplicityNeutrality = value; }
-    }
-    // Autolytic
-    private AromaAndFlavourAutolytic[] aromaAutolytic = new AromaAndFlavourAutolytic[MaximumTastesAndScents];
-    public AromaAndFlavourAutolytic[] AromaAutolytic
-    {
-        get { return aromaAutolytic; }
-        set { aromaAutolytic = value; }
-    }
-    // Dairy
-    private AromaAndFlavourDairy[] aromaDairy = new AromaAndFlavourDairy[MaximumTastesAndScents];
-    public AromaAndFlavourDairy[] AromaDairy
-    {
-        get { return aromaDairy; }
-        set { aromaDairy = value; }
-    }
-    // Oak
-    private AromaAndFlavourOak[] aromaOak = new AromaAndFlavourOak[MaximumTastesAndScents];
-    public AromaAndFlavourOak[] AromaOak
-    {
-        get { return aromaOak; }
-        set { aromaOak = value; }
-    }
-    // Kernel
-    private AromaAndFlavourKernel[] aromaKernel = new AromaAndFlavourKernel[MaximumTastesAndScents];
-    public AromaAndFlavourKernel[] AromaKernel
-    {
-        get { return aromaKernel; }
-        set { aromaKernel = value; }
-    }
-    // Animal
-    private AromaAndFlavourAnimal[] aromaAnimal = new AromaAndFlavourAnimal[MaximumTastesAndScents];
-    public AromaAndFlavourAnimal[] AromaAnimal
-    {
-        get { return aromaAnimal; }
-        set { aromaAnimal = value; }
-    }
-    // Maturity
-    private AromaAndFlavourMaturity[] aromaMaturity = new AromaAndFlavourMaturity[MaximumTastesAndScents];
-    public AromaAndFlavourMaturity[] AromaMaturity
-    {
-        get { return aromaMaturity; }
-        set { aromaMaturity = value; }
-    }
-    // Mineral
-    private AromaAndFlavourMineral[] aromaMineral = new AromaAndFlavourMineral[MaximumTastesAndScents];
-    public AromaAndFlavourMineral[] AromaMineral
-    {
-        get { return aromaMineral; }
-        set { aromaMineral = value; }
-    }
-    #endregion
+    public PalateFinish PFinish { get; set; }
 
-
-    private PalateSweetness pSweetness;
-    public PalateSweetness PSweetness
-    {
-        get { return pSweetness; }
-        set { pSweetness = value; }
-    }
-
-    private PalateAcidity pAcidity;
-    public PalateAcidity PAcidity
-    {
-        get { return pAcidity; }
-        set { pAcidity = value; }
-    }
-
-    private PalateTannin pTannin;
-    public PalateTannin PTannin
-    {
-        get { return pTannin; }
-        set { pTannin = value; }
-    }
-
-    private PalateBody pBody;
-    public PalateBody PBody
-    {
-        get { return pBody; }
-        set { pBody = value; }
-    }
-
-    private PalateFinish pFinish;
-    public PalateFinish PFinish
-    {
-        get { return pFinish; }
-        set { pFinish = value; }
-    }
-
-    private Quality wineQuality;
-    public Quality WineQuality
-    {
-        get { return wineQuality; }
-        set { wineQuality = value; }
-    }
+    public Quality WineQuality { get; set; }
     #endregion
 
     #region enums
+
     public enum MainGategories
     {
         Appearance,
@@ -333,6 +60,7 @@ public class Wine
         Intensity,
         Color
     }
+
     public enum AppearanceClarity
     {
         Clear,
@@ -344,6 +72,7 @@ public class Wine
         Medium,
         Deep
     };
+
     public enum AppearanceColorGategories
     {
         WhiteWineColour,
@@ -356,12 +85,14 @@ public class Wine
         Gold,
         Amber
     };
+
     public enum AppearanceRoseWineColor
     {
         Pink,
         Salmon,
         Orange
     };
+
     public enum AppearanceRedWineColor
     {
         Purple,
@@ -376,11 +107,13 @@ public class Wine
         Intensity,
         Aroma
     };
+
     public enum NoseCondition
     {
         Clean,
         Unclean
     };
+
     public enum NoseIntensity
     {
         Light,
@@ -407,6 +140,7 @@ public class Wine
         BlackFruit,
         DriedFruit
     };
+
     public enum SpiceVegetableGategories
     {
         Underripeness,
@@ -416,6 +150,7 @@ public class Wine
         SweetSpice,
         PungentSpice
     };
+
     public enum OakOtherGategories
     {
         SimplicityNeutrality,
@@ -427,12 +162,14 @@ public class Wine
         Maturity,
         Mineral
     };
+
     public enum AromaAndFlavourFloral
     {
         Blossom,
         Rose,
         Violet
     };
+
     public enum AromaAndFlavourGreenFruit
     {
         GreenApple,
@@ -441,6 +178,7 @@ public class Wine
         Pear,
         Grape
     };
+
     public enum AromaAndFlavourCitrusFruit
     {
         Grapefruit,
@@ -448,12 +186,14 @@ public class Wine
         LimeJuice,
         LimeZest
     };
+
     public enum AromaAndFlavourStoneFruit
     {
         Peach,
         Apricot,
         Nectarine
     };
+
     public enum AromaAndFlavourTropicalFruit
     {
         Banana,
@@ -463,6 +203,7 @@ public class Wine
         PassionFruit,
         Pineapple
     };
+
     public enum AromaAndFlavourRedFruit
     {
         Redcurrant,
@@ -472,6 +213,7 @@ public class Wine
         RedCherry,
         Plum
     };
+
     public enum AromaAndFlavourBlackFruit
     {
         Blackcurrant,
@@ -479,6 +221,7 @@ public class Wine
         Blueberry,
         BlackCherry
     };
+
     public enum AromaAndFlavourDriedFruit
     {
         Fig,
@@ -492,6 +235,7 @@ public class Wine
         StewedFruits,
         PreservedFruits
     };
+
     public enum AromaAndFlavourUnderripeness
     {
         GreenBellPepper,
@@ -501,12 +245,14 @@ public class Wine
         Tomato,
         Potato
     };
+
     public enum AromaAndFlavourHerbaceous
     {
         Grass,
         Asparagus,
         BlackcurrantLeaf
     };
+
     public enum AromaAndFlavourHerbal
     {
         Eucalyptus,
@@ -516,6 +262,7 @@ public class Wine
         Fennel,
         Dill
     };
+
     public enum AromaAndFlavourVegetable
     {
         Cabbage,
@@ -524,6 +271,7 @@ public class Wine
         BlackOlive,
         GreenOlive
     };
+
     public enum AromaAndFlavourSweetSpice
     {
         Cinnamon,
@@ -532,6 +280,7 @@ public class Wine
         Nutmeg,
         Vanilla
     };
+
     public enum AromaAndFlavourPungentSpice
     {
         BlackPepper,
@@ -539,12 +288,14 @@ public class Wine
         Liquorice,
         Juniper
     };
+
     public enum AromaAndFlavourSimplicityNeutrality
     {
         Simple,
         Neutral,
         Indistinct
     };
+
     public enum AromaAndFlavourAutolytic
     {
         Yeast,
@@ -554,6 +305,7 @@ public class Wine
         Pastry,
         Lees
     };
+
     public enum AromaAndFlavourDairy
     {
         Butter,
@@ -561,6 +313,7 @@ public class Wine
         Cream,
         Yoghurt
     };
+
     public enum AromaAndFlavourOak
     {
         Vanilla,
@@ -570,6 +323,7 @@ public class Wine
         Smoke,
         Resinous
     };
+
     public enum AromaAndFlavourKernel
     {
         Almond,
@@ -579,12 +333,14 @@ public class Wine
         Chocholate,
         Coffee
     };
+
     public enum AromaAndFlavourAnimal
     {
         Leather,
         Meaty,
         Farmyard
     };
+
     public enum AromaAndFlavourMaturity
     {
         Vegetal,
@@ -599,6 +355,7 @@ public class Wine
         Honey,
         Cereal
     };
+
     public enum AromaAndFlavourMineral
     {
         Earth,
@@ -619,6 +376,7 @@ public class Wine
         FlavourCharasteristics, // use AromasAndFlavours
         Finish,
     };
+
     public enum PalateSweetness
     {
         Dry,
@@ -626,16 +384,19 @@ public class Wine
         Medium,
         Sweet
     };
+
     public enum PalateAcidity
     {
         Low,
         Medium,
         High
     };
+
     public enum PalateTannin
     {
         Low,Medium,High
     };
+
     public enum PalateBody
     {
         Light,Medium,Full
@@ -892,7 +653,7 @@ public class Wine
         return temp;
     }
 
-    public void Color (AppearanceColorGategories acg, int ColorGatecoryColorAsInt)
+    public void Color(AppearanceColorGategories acg, int ColorGatecoryColorAsInt)
     {
         AColorGategory = acg;
         switch (acg)
@@ -912,12 +673,22 @@ public class Wine
         }
     }
 
-    // Randomize wine method for restaurant customer
-
-    // compare two different wines.
-
-    public void CompareWines(Wine wine)
+    // compare two different wines. and return the amount of similiarities.
+    public int CompareWines(Wine wine)
     {
+        int comparisons = 0;
 
+        // complexity of O(n^2) that is bad mmkaay!
+        // reason this is n^2 is because of smells and tastes. they may not be in same order as the others.
+        for (int i = 0; i < readyMatrix.Length; i++)
+        {
+            for (int x = 0; x < wine.readyMatrix.Length; x++)
+            {
+                if (System.Linq.Enumerable.SequenceEqual(readyMatrix[i], wine.readyMatrix[x]))
+                    comparisons++;
+            }
+        }
+
+        return comparisons;
     }
 }

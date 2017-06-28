@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TestWineTwo : MonoBehaviour
 {
-    Wine wineTest;
+    public Wine wineTest;
 
     // Use this for initialization
     void Start()
