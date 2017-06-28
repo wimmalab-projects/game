@@ -155,16 +155,24 @@ public class GameMaster : MonoBehaviour
     };
     #endregion
 
-    #region InsideSceneCameraTransition
+    #region CameraRailsSystemMethods
 
     public void FarmCameraTransition()
     {
         farmCamera.GetComponent<MainAltCamControls>().transition = true;
+    }
 
+    public void TownCameraTransition()
+    {
+        townCamera.GetComponent<MainAltCamControls>().transition = true;
+    }
 
-}
+    public void BreweryCameraTransition()
+    {
+        breweryCamera.GetComponent<MainAltCamControls>().transition = true;
+    }
 
-#endregion
+    #endregion
 
 
     // debug tarkoituksissa voi poistaa myöhemmin
