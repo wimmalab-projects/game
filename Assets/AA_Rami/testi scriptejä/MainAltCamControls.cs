@@ -48,7 +48,7 @@ public class MainAltCamControls : MonoBehaviour {
         {
             Camera.transform.position = new Vector3(Mathf.Lerp(Camera.transform.position.x, CamPos2.position.x, transitionTime), Camera.transform.position.y, Camera.transform.position.z);
 
-            if ((int)Camera.transform.position.x + 1 >= (int)CamPos2.transform.position.x) // plus 1 here because the larp doesn't quite seem to get to equal value at slower time values.
+            if ((int)Camera.transform.position.x >= (int)CamPos2.transform.position.x) // plus 1 here because the larp doesn't quite seem to get to equal value at slower time values.
             {
                 transition = false;
                 cam1 = false;
