@@ -155,6 +155,18 @@ public class GameMaster : MonoBehaviour
     };
     #endregion
 
+    #region InsideSceneCameraTransition
+
+    public void FarmCameraTransition()
+    {
+        farmCamera.GetComponent<MainAltCamControls>().transition = true;
+
+
+}
+
+#endregion
+
+
     // debug tarkoituksissa voi poistaa myöhemmin
     void DebugMethod()
     {
