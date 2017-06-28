@@ -1,0 +1,7 @@
+Good day!
+Lets make some wine!
+Click on the road.
+Here are your wine plants.
+Click on the wine plant.
+Here is your inventory.
+Click on black or white grape vine to select a vine to plant, and click plant.
