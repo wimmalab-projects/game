@@ -12,7 +12,7 @@ public class MainAltCamControls : MonoBehaviour {
     public Camera Camera; // drag in editor
     public Transform CamPos1, CamPos2; // drag in editor, i used two empty game objects as placeholders from where i can just take position and lerp x axis.
     public bool transition = false;
-    private bool cam1 = true;
+    public bool cam1 = true;
 
     float transitionTime = 0.05f;
 
