@@ -49,9 +49,9 @@ public class Wine
     public enum Animal { Leather, Meaty, Farmyard };
     public enum Maturity { Vegetal, Mushroom, Hay, WetLeaves, ForestFloor, Game, Savoury, Tobacco, Cedar, Honey, Cereal };
     public enum Mineral { Earth, Petrol, Rubber, Tar, Stony, Steely, WetWool };
-    
-#endregion
-#endregion
+
+    #endregion
+    #endregion
 
     #region Methods
 
@@ -62,19 +62,18 @@ public class Wine
     /// <returns></returns>
     public int CompareWines(Wine wine)
     {
+        wine.ComparisonMatrix = wine.CreateMatrix(); // make sure comparison wine matrix is not null
+
         int similiarities = 0;
 
-        // complexity of O(n^2) that is bad mmkaay!
-        // reason this is n^2 is because of smells and tastes. they may not be in same order as the others.
-
-        //for (int i = 0; i < readyMatrix.Length; i++)
-        //{
-        //    for (int x = 0; x < wine.readyMatrix.Length; x++)
-        //    {
-        //        if (System.Linq.Enumerable.SequenceEqual(readyMatrix[i], wine.readyMatrix[x]))
-        //            similiarities++;
-        //    }
-        //}
+        for (int i = 0; i < ComparisonMatrix.Count; i++)
+        {
+            for (int x = 0; x < wine.ComparisonMatrix.Count; x++)
+            {
+                if (System.Linq.Enumerable.SequenceEqual(ComparisonMatrix[i], wine.ComparisonMatrix[x]))
+                    similiarities++;
+            }
+        }
         return similiarities;
     }
 
@@ -89,70 +88,93 @@ public class Wine
     /// <param name="AromaFlavorSubGategory"></param>
     /// <param name="FinalValue"></param>
     /// <returns>One Complete line for our matrix containing either an a Aroma or a Flavour</returns>
-     public int[] AromaFlavour(Enum AromaFlavourGategory, Enum AromaFlavorSubGategory, Enum FinalValue)
-    //public int[] AromaFlavour(Enum FinalValue)
+    public int[] AromaFlavour(Enum MainGategory, Enum Value)
     {
+
         int[] temp = new int[3];
 
-        string gategory = Enum.GetName(typeof(MainGategories), MainGategories.Aroma);
-        string subgategory = Enum.GetName(AromaFlavorSubGategory.GetType(), AromaFlavorSubGategory);
-        string finalvalue = Enum.GetName(FinalValue.GetType(), FinalValue);
-
-        string[] gategories = Enum.GetNames(AromaFlavourGategory.GetType());
-        string[] subgategories = Enum.GetNames(AromaFlavorSubGategory.GetType());
-        string[] finalvalues = Enum.GetNames(FinalValue.GetType());
-
-        string[] checkValues = Enum.GetNames(AromaFlavorSubGategory.GetType());
-
-        if (("Wine+" + subgategory) == FinalValue.GetType().ToString())// check that the AromaFlavorSubgategory actually holds the final value
+        // MainGategory to integer matrix
+        string[] mainGategories = Enum.GetNames(typeof(MainGategories));
+        for (int i = 0; i < mainGategories.Length; i++)
         {
-            for (int i = 0; i < gategories.Length; i++)
+            if (mainGategories[i] == MainGategory.ToString())
             {
-                if (gategories[i] == gategory)
-                {
-                    temp[0] = i;
-                }
-            }
-            for (int i = 0; i < subgategories.Length; i++)
-            {
-                if (subgategories[i] == subgategory)
-                {
-                    temp[1] = i;
-                }
-            }
-            for (int i = 0; i < finalvalues.Length; i++)
-            {
-                if (finalvalues[i] == finalvalue)
-                {
-                    temp[2] = i;
-                }
+                temp[0] = i;
             }
         }
-        else
-            return null;
+
+        // AromaFlavourGategory to integer in matrix
+        string[] subGategories = Enum.GetNames(typeof(AromaFlavourGategories));
+        for (int i = 0; i < subGategories.Length; i++)
+        {
+            if ("Wine+" + subGategories[i] == Value.GetType().ToString())
+            {
+                temp[1] = i;
+            }
+        }
+
+        // final value to matrix
+        string[] finalvalues = Enum.GetNames(Value.GetType());
+        for (int i = 0; i < finalvalues.Length; i++)
+        {
+            if (finalvalues[i] == Value.ToString())
+            {
+                temp[2] = i;
+            }
+        }
 
         return temp;
     }
 
     #region Matrix generator
 
-    public Clarity clarity;
-    public Condition condition;
-    public Intensity intensity;
-    public Sweetness sweetness;
-    public Acidity acidity;
-    public Tannin tannin;
-    public Body body;
-    public Finish finish;
+    public Clarity      clarity;
+    public Condition    condition;
+    public Intensity    intensity;
+    public Sweetness    sweetness;
+    public Acidity      acidity;
+    public Tannin       tannin;
+    public Body         body;
+    public Finish       finish;
 
     public List<int[]> Aromas = new List<int[]>();
+
     public List<int[]> Flavours = new List<int[]>();
 
-    public void CreateMatrix ()
-    {
+    public List<int[]> ComparisonMatrix;
 
+    /// <summary>
+    /// CreateMatrix that you can compare between wines.
+    /// </summary>
+    /// <returns></returns>
+    public List<int[]> CreateMatrix ()
+    {
+        List<int[]> tempList = new List<int[]>();
+
+        tempList.Add(new int[] { (int)MainGategories.Clarity, (int)clarity });
+        tempList.Add(new int[] { (int)MainGategories.Condition, (int)condition });
+        tempList.Add(new int[] { (int)MainGategories.Intensity, (int)intensity });
+        tempList.Add(new int[] { (int)MainGategories.Sweetness, (int)sweetness });
+        tempList.Add(new int[] { (int)MainGategories.Acidity, (int)acidity });
+        tempList.Add(new int[] { (int)MainGategories.Tannin, (int)tannin });
+        tempList.Add(new int[] { (int)MainGategories.Body, (int)body });
+        tempList.Add(new int[] { (int)MainGategories.Finish, (int)finish });
+
+        // add aromas
+        foreach (int[] iArr in Aromas)
+        {
+            tempList.Add(iArr);
+        }
+
+        // add flavours
+        foreach (int[] iArr in Flavours)
+        {
+            tempList.Add(iArr);
+        }
+        return tempList;
     }
 
     #endregion
+
     #endregion
 }

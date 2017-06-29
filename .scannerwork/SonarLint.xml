@@ -546,6 +546,7 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\TestWineOne.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\TestWineTwo.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WineOld.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpFarmButton.cs</File>
@@ -558,6 +559,9 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopSlot.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\buyButton.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptejä\MainAltCamControls.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\BottlingScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ClarificationScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandler.cs</File>
@@ -573,38 +577,6 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\CustomTiledImporterAttribute.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ICustomTiledImporter.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Mesh.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Prefab.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Texture.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Xml.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\ImportUtils.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\SortingLayerExposedEditor.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\SpriteDepthInMapEditor.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\Tiled2UnityMenuItems.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Editor\TiledAssetPostProcessor.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\GroupLayer.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\Layer.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\ObjectLayer.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\PolygonObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\PolylineObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\RectangleObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TileLayer.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\ZSmartTile\Classes\ZST_MapManager.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\ZSmartTile\Components\ZST_SmartTile.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\ZSmartTile\Components\ZST_SnapToGrid.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\ZSmartTile\Editor\ZST_Editor.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\testscript.cs</File>
   </Files>
 </AnalysisInput>
