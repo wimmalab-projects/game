@@ -56,28 +56,6 @@ public class Wine
     #region Methods
 
     /// <summary>
-    /// Compare other wine to this wine and return the number of matches
-    /// </summary>
-    /// <param name="wine"></param>
-    /// <returns></returns>
-    public int CompareWines(Wine wine)
-    {
-        wine.ComparisonMatrix = wine.CreateMatrix(); // make sure comparison wine matrix is not null
-
-        int similiarities = 0;
-
-        for (int i = 0; i < ComparisonMatrix.Count; i++)
-        {
-            for (int x = 0; x < wine.ComparisonMatrix.Count; x++)
-            {
-                if (System.Linq.Enumerable.SequenceEqual(ComparisonMatrix[i], wine.ComparisonMatrix[x]))
-                    similiarities++;
-            }
-        }
-        return similiarities;
-    }
-
-    /// <summary>
     /// Create a row directly to final matrix based on input.
     /// Method checks internally that the final value is held inside the flavor gategory as a valid choise
     /// so that the matrix isn't created having floral gategory as subgategory with maturity 

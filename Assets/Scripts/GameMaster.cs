@@ -174,6 +174,33 @@ public class GameMaster : MonoBehaviour
 
     #endregion
 
+    #region wine compare
+
+    /// <summary>
+    /// Compare two wines and return the number of matches
+    /// </summary>
+    /// <param name="wine1"></param>
+    /// <param name="wine2"></param>
+    /// <returns></returns>
+    public int CompareWines(Wine wine1, Wine wine2)
+    {
+        wine1.ComparisonMatrix = wine1.CreateMatrix(); // make sure comparison wine matrix is not null
+
+        int similiarities = 0;
+
+        for (int i = 0; i < wine2.ComparisonMatrix.Count; i++)
+        {
+            for (int x = 0; x < wine1.ComparisonMatrix.Count; x++)
+            {
+                if (System.Linq.Enumerable.SequenceEqual(wine2.ComparisonMatrix[i], wine1.ComparisonMatrix[x])) // Linq ei toimi luurissa?!
+                    similiarities++;
+            }
+        }
+        return similiarities;
+    }
+
+    #endregion
+
 
     // debug tarkoituksissa voi poistaa myöhemmin
     void DebugMethod()

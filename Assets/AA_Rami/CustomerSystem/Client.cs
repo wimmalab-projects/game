@@ -19,7 +19,7 @@ public class Client : MonoBehaviour
     public Wine WineIWant;
     public Wine WineIGet;
 
-    
+
 
     // farm client
     public int Budget;
