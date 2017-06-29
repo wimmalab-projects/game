@@ -15,9 +15,9 @@ public class GUIScript : MonoBehaviour
     public Text infoPanelTimer;
     public Button harvestButton;
     public Button plantButton;
+    public string button;
 
     private Animator animator; // Animate the Inventory, but scrap this.
-    private string button;
     private GameObject[] temp;
     private SlotScript slotScript;
     private PlantGround groundScript;

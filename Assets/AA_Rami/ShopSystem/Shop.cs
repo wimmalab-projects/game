@@ -14,10 +14,12 @@ public class Shop : MonoBehaviour {
     public SortedList<string, Item> items = new SortedList<string, Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    public bool bought;
+
     private GameObject ContentPanel;
     private GameObject InfoPanel;
     private GridLayoutGroup glg;
-    private Item currentlySelectedItem; 
+    private Item currentlySelectedItem;
     
     private void Start()
     {
@@ -43,6 +45,11 @@ public class Shop : MonoBehaviour {
         // scale content
         glg = ContentPanel.GetComponent<GridLayoutGroup>();
         scaleContent();
+    }
+
+    private void Update()
+    {
+        bought = false;
     }
 
     /// <summary>
@@ -86,6 +93,7 @@ public class Shop : MonoBehaviour {
     public void BuyItem ()
     {
         currentlySelectedItem.AddItem();
+        bought = true;
     }
 
     /// <summary>

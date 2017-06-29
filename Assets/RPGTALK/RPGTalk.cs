@@ -550,6 +550,7 @@ public class RPGTalk : MonoBehaviour {
 		} else {
 			if (!shouldStayOnScreen) {
 				textUI.enabled = false;
+                textUI.text = "";
 				if (dialoger) {
 					dialogerUI.enabled = false;
 				}

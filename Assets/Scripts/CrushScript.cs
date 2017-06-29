@@ -19,6 +19,7 @@ public class CrushScript : MonoBehaviour
     public Text gameOverText;
     public Text missedText;
     public static bool didWin;
+    public Text gameStartText;
 
     private const int maxMissedGrapes = 10; // How many grapes can be missed
     private GameObject temp;
@@ -28,6 +29,8 @@ public class CrushScript : MonoBehaviour
     private bool isStarted;
     private SlotScript slotScript;
     private Inventory inventory;
+    private bool instructionsDone;
+    private GameObject gm;
 
     GameObject[] spawnpoint;
 
@@ -38,8 +41,9 @@ public class CrushScript : MonoBehaviour
     {
         // Get script / gameobject references.
         mch = GetComponent<MethodCallerHandler>();
-        slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
-        inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        gm = GameObject.FindGameObjectWithTag("GameManager");
+        slotScript = gm.GetComponent<SlotScript>();
+        inventory = gm.GetComponent<Inventory>();
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
         spawnpoint = GameObject.FindGameObjectsWithTag("Respawn"); // Get the spawn points for the grapes
         mch = GetComponent<MethodCallerHandler>();
@@ -50,60 +54,66 @@ public class CrushScript : MonoBehaviour
         // Set everything to default
         didWin = false;
         isStarted = false;
+        instructionsDone = false;
         fillBar.fillAmount = 0;
         fillText.text = "0%";
         gameOverText.text = "";
         missedText.text = "0/10";
         startTime = Time.time;
+        StartCoroutine("WaitInstructions");
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        // Handle ui updates the ui accordingly to how many missed grapes and hits.
-        handleUI();
-        // If touch supported, use touch position else use mouse position then do the checktouch function
-        if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
+        // Wait till the instructions have been done
+        if (instructionsDone)
         {
-            if (Input.touchCount > 0)
+            // Handle ui updates the ui accordingly to how many missed grapes and hits.
+            handleUI();
+            // If touch supported, use touch position else use mouse position then do the checktouch function
+            if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
             {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.touchCount > 0)
                 {
-                    checkTouch(Input.GetTouch(0).position);
+                    if (Input.GetTouch(0).phase == TouchPhase.Began)
+                    {
+                        checkTouch(Input.GetTouch(0).position);
+                    }
                 }
             }
-        }
-        else if (platform == RuntimePlatform.WindowsEditor)
-        {
-            if (Input.GetMouseButtonUp(0))
+            else if (platform == RuntimePlatform.WindowsEditor)
             {
-                checkTouch(Input.mousePosition);
+                if (Input.GetMouseButtonUp(0))
+                {
+                    checkTouch(Input.mousePosition);
+                }
             }
-        }
 
-        // Respawn grapes
-        if (startTime + refire <= Time.time)
-        {
-            temp = Instantiate(grape);
-            temp.transform.SetParent(gameObject.transform);
-            temp.transform.position = spawnpoint[Random.Range(0, spawnpoint.Length)].transform.position;
-            startTime = Time.time;
-        }
+            // Respawn grapes
+            if (startTime + refire <= Time.time)
+            {
+                temp = Instantiate(grape);
+                temp.transform.SetParent(gameObject.transform);
+                temp.transform.position = spawnpoint[Random.Range(0, spawnpoint.Length)].transform.position;
+                startTime = Time.time;
+            }
 
-        // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
-        if (fillBar.fillAmount == 1)
-        {
-            didWin = true;
-            gameOverText.text = "Good job!";
-            gameOverText.text += "\nYour wine is now fermenting";
-            gameOver();
-        }
-        else if (missedGrapes == maxMissedGrapes)
-        {
-            didWin = false;
-            gameOverText.text = "You lost your grapes!";
-            gameOver();
+            // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
+            if (fillBar.fillAmount == 1)
+            {
+                didWin = true;
+                gameOverText.text = "Good job!";
+                gameOverText.text += "\nYour wine is now fermenting";
+                gameOver();
+            }
+            else if (missedGrapes == maxMissedGrapes)
+            {
+                didWin = false;
+                gameOverText.text = "You lost your grapes!";
+                gameOver();
+            }
         }
     }
 
@@ -169,5 +179,13 @@ public class CrushScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
         GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false;
+    }
+
+    IEnumerator WaitInstructions()
+    {
+        gameStartText.text = "You need to crush the grapes to fill the bar\nBut dont miss too much!";
+        yield return new WaitForSeconds(5);
+        gameStartText.text = "";
+        instructionsDone = true;
     }
 }

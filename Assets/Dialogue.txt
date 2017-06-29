@@ -1,7 +1,39 @@
-Good day!
-Lets make some wine!
-Click on the road.
+Oi mate!
+Lets make some focking wine!
+First we need to buy stuff.
+Click on the truck to go to town.
+Here is the town view.
+Here you will find the customers to sell your wine and also shop.
+Click on the shop to buy your first wine making stuff.
+To start making wine, first of all you need a grape vine.
+Buy a black grape vine or white grape vine.
+Most of the time, black grapes produce red wine and white grapes produce white wine.
+Congratulations! You just bought a grape vine!
+Now close the shop and lets head back to the farm by clicking the farm sign.
+We're back at the farm.
+Now click on the road to see your wine plants.
 Here are your wine plants.
 Click on the wine plant.
 Here is your inventory.
 Click on black or white grape vine to select a vine to plant, and click plant.
+Congratulations! You just planted your first grape vine!
+This is the first step to make wine.
+Now if you click on the plant where you planted your wine you can see more information.
+Try it!
+Here you can see how much time there is left before you can harvest the grapes.
+Here you can also see if the vine needs treatment like trimming its leafs.
+Now wait till you can harvest the grapes and click harvest.
+Congratulations! Your first self-growth grapes were added to your inventory!
+Now lets move on.
+Next step is to crush the grapes to get the juice out of them.
+Click on the road again.
+Click on the house to get to the winery.
+Welcome to the winery!
+Here you can crush the grapes, ferment the wine, clarificate, and bottle it.
+To start the crushing the grapes click on the fermentor.
+Here is your inventory again.
+Select the grape to crush and click crush.
+Good job! You showed them grapes whos the boss!
+Your wine is now fermenting in the fermentor.
+Click on it to see more info.
+Here you can again see how much there is left before the fermenting is done.
