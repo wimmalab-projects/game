@@ -138,6 +138,18 @@ public class DialogueTest : MonoBehaviour
             StartCoroutine(Wait(39, 40, 0.4f));
             tutorial15done = true;
         }
+
+        if (tutorial16done == false && tutorial15done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Collect")
+        {
+            StartCoroutine(Wait(41, 43, 0.4f));
+            tutorial15done = true;
+        }
+
+        if(tutorial17done == false && tutorial16done && ColliderHandler.parentGameObject.tag == "NotClarificating" && gm.IsInventoryOpen)
+        {
+            StartCoroutine(Wait(44, 44, 0.4f));
+            tutorial17done = true;
+        }
     }
 
     // Function that takes the startline and the endline to read from the Dialogue.txt and starts the dialog.

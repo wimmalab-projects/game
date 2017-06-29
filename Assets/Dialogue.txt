@@ -37,3 +37,8 @@ Good job! You showed them grapes whos the boss!
 Your wine is now fermenting in the fermentor.
 Click on it to see more info.
 Here you can again see how much there is left before the fermenting is done.
+Click collect when the fermenting is done.
+Your juice has fermented and is now wine!
+But you need to clarificate it to keep to quality top notch.
+Click on the clarification pot.
+Select your wine to place it in clarification pot and click clarfificate.
