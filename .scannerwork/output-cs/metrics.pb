@@ -2,14 +2,12 @@
 YC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Client.cs(
 0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0jr
 ˝
-`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=3;4=0;6=0;8=0;10=0;12=0j	%&'(+-3Ar7	!"#)*+./0145679:;<=>?@ABCEFGHIJKx
-^C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\TestWineOne.cs@ ("0"8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=0;2=1;4=0;6=0;8=0;10=0;12=1j2r∑	 !"#$%&'()*+,-./34689:;<=>?ABDFGHIJKLMNOQRSTUVWXYZ\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢x	ø
-^C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\TestWineTwo.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0j
-rÊ
-WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs# (.0+8@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=0;2=1;4=1;6=1;8=0;10=0;12=0j :;<=>APQRSTUVWXYZ`jtíìîï£©rï !"#$%&'()*+,-./0123?@ACEFGHIJKLMN[\^abcdefghklmnopqruvwxyz{|~ÉÑÖÜáàâäåéêñóòöõúùûü†°§•¶ß™´¨≠ÆØ¥x 
-ZC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WineOld.csA (@0=8 @ H R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=28;2=0;4=1;6=0;8=0;10=0;12=0j|¯®≠≥π—◊›‚˜År¯	
- "$&(*,12345679:;<=>@ABCDEFGHIJLMNOPQRSTUVWYZ[\]^`abcdefhijklmopqrsuvwxyz}~ÄÅÇÑÖÜáàâäãåçéêëíìîïñóòöõúùûü†°¢£§¶ß®©™´≠ÆØ∞±≤≥¥∂∑∏π∫ªºæø¿¡¬√≈∆«»… ÀÃÕœ–—“”‘’÷◊Ÿ⁄€‹›ﬁﬂ·‚„‰ÂÊÁËÈÍÎÏÌÔÒÚÛÙıˆ˜˘˙˚¸˝˛ÄÅÇÉÑÖÜáàäãåçéèêëìîïñóòôöúùûü†°¢§•¶ß®©´¨≠ÆØ∞±≤≥µ∂∑∏π∫ªΩæø¿¡¬√ƒ≈«»… ÀÃÕŒœ—“”‘’÷ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÁËÈÍÎÏÌÓÔÚÛÙıˆ˜¯˘˙¸˝˛ˇÄÅÇÑÖÜáàâãåçéêëíìïñóòôöúùûü†°¢£§©™´ÆØ∞±¥µ∂∑∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ“”‘’ÿŸ⁄€ﬁﬂ‡„‰ÂÊËÈÍÎÌÓÔÚÛÙı¯˘˙¸˝˛ˇÇÉÑÖáàèxÎ
-]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0j9	 !#$%&'()*,-12579:=>?BDFHJLMNOPRSTUWXYZ_r/…
+`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=3;4=0;6=0;8=0;10=0;12=0j	%&'(+-3Ar7	!"#)*+./0145679:;<=>?@ABCEFGHIJKx¬
+WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs (-0+8
+@
+H
+R 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=0;2=1;4=0;6=1;8=0;10=0;12=0j:;<=>?@ABCDJT^|}~çìr| !"#$%&'()*+,-./0123EFHKLMNOPQRUVWXYZ[\_`abcdefhimnopqrstvxzÄÅÇÑÖÜáàâäãéèêëîïñóòôûxÎ
+]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs; ("0"8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=1j2FHIKMrÆ	 !"#$%&'()*+,-./34689:;<=>?ABDOQRSTUVWXYZ\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢x…
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j	
 rƒ
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpFarmButton.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0r	
@@ -47,8 +45,8 @@ SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\FermentorScrip
  !"#$%&'()*./012345789:;=>?@ABCDEGHIJKLMNOxé
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GUIScript.csz (
 08-@-H-R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=1;2=0;4=1;6=0;8=1;10=1;12=1j!%.1[u∏¡r‹	
-#$&'()*+,/023456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY\]^_`abdefghijklmnopqrsvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑π∫ªºΩæø¬√ƒ≈∆«» ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙x6Ì
-NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs  (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=12;2=1;4=0;6=0;8=0;10=0;12=0jMNÄçé≤r≥	 !"#%&'()*+,./012356789:<=>?@ABCDFGHIJKOQRSTUVWXYZ[\]^_`abcdefgijklmnpqrstvwxyz{|~ÅÇÉÖÜáâäçéêëíìîïñóòôöõ†°¢£•¶ß®™´¨≠≥¥µ∂∑xÎ
+#$&'()*+,/023456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY\]^_`abdefghijklmnopqrsvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑π∫ªºΩæø¬√ƒ≈∆«» ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙x6ô
+NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs' (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=12;2=1;4=1;6=0;8=0;10=0;12=0j!MNÄçé≥¥µ∂∑∏ª√Õrœ	 !"#%&'()*+,./012356789:<=>?@ABCDFGHIJKOQRSTUVWXYZ[\]^_`abcdefgijklmnpqrstvwxyz{|~ÅÇÉÖÜáâäçéêëíìîïñóòôöõ†°¢£•¶ß®™´¨≠π∫ªΩø¿¡¬√ƒ≈∆«»Œœ–—“xÎ
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Inventory.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=1;2=1;4=1;6=0;8=0;10=0;12=0j'1>r=	 !"#$%()+,-./23456789:;<?@ABCDEFGHIJKLMNx	Û
 HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Item.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=10;2=1;4=0;6=0;8=0;10=0;12=0j0rP	
  !"#%&'(*+,-./0123456789:;<=>@ABCEFGHLMNOQRSTVWXY]^_`abcdfx≈
