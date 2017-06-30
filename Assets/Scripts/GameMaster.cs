@@ -199,6 +199,7 @@ public class GameMaster : MonoBehaviour
     /// <returns></returns>
     public int CompareWines(Wine wineA, Wine wineB)
     {
+        bool match = false;
         wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
         wineB.ComparisonMatrix = wineB.CreateMatrix();
 
@@ -209,16 +210,27 @@ public class GameMaster : MonoBehaviour
         {
             for (int x = 0; x < wineB.ComparisonMatrix.Count; x++)
             {
+
                 if (wineA.ComparisonMatrix[i].Length != wineB.ComparisonMatrix[x].Length)
                     break;
 
                 for (int y = 0; y < wineA.ComparisonMatrix[i].Length; y++)
                 {
-                    if (wineA.ComparisonMatrix[i][y] != wineB.ComparisonMatrix[i][y])
+                    if (wineA.ComparisonMatrix[i][y] != wineB.ComparisonMatrix[x][y])
                     {
+                        match = false;
                         break;
                     }
+                    else
+                    {
+                        match = true;
+                    }
+                }
+
+                if (match)
+                {
                     similiarities++;
+                    match = false;
                 }
             }
         }

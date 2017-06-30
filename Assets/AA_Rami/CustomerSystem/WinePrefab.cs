@@ -7,7 +7,14 @@ using UnityEngine;
 
 public class WinePrefab : MonoBehaviour
 {
-    public Wine wineTest;
+    private Wine wineHolder;
+    public Wine WineHolder
+    {
+        get
+        {
+            return wineHolder;
+        }
+    }
 
     [System.Serializable]
     public class AromasAndFlavours
@@ -38,7 +45,7 @@ public class WinePrefab : MonoBehaviour
     }
 
     [Header("Appearance")]
-    public Wine.WineType wineType;
+    public Wine.WineType wineType; // these need to be public so they can be edited in editor
     public Wine.Clarity clarity;
     [Space(10)]
 
@@ -59,21 +66,21 @@ public class WinePrefab : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        wineTest = new Wine();
+        wineHolder = new Wine();
 
-        wineTest.clarity = clarity;
-        wineTest.condition = condition;
-        wineTest.intensity = intensity;
-        wineTest.sweetness = sweetness;
-        wineTest.acidity = acidity;
-        wineTest.tannin = tannin;
-        wineTest.body = body;
-        wineTest.finish = finish;
+        WineHolder.clarity = clarity;
+        WineHolder.condition = condition;
+        WineHolder.intensity = intensity;
+        WineHolder.sweetness = sweetness;
+        WineHolder.acidity = acidity;
+        WineHolder.tannin = tannin;
+        WineHolder.body = body;
+        WineHolder.finish = finish;
 
-        CreateAromaFlavour(Wine.MainGategories.Aroma, Aromas, wineTest.Aromas);
-        CreateAromaFlavour(Wine.MainGategories.Flavour, Flavours, wineTest.Flavours);
+        CreateAromaFlavour(Wine.MainGategories.Aroma, Aromas, WineHolder.Aromas);
+        CreateAromaFlavour(Wine.MainGategories.Flavour, Flavours, WineHolder.Flavours);
 
-        wineTest.ComparisonMatrix = wineTest.CreateMatrix();
+        WineHolder.ComparisonMatrix = WineHolder.CreateMatrix();
     }
 
     public void CreateAromaFlavour (Enum MainGategory, List<AromasAndFlavours> collection, List<int[]> targetList)
@@ -89,67 +96,67 @@ public class WinePrefab : MonoBehaviour
             switch (aaf.gategories)
             {
                 case Wine.AromaFlavourGategories.Floral:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.floral));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.floral));
                     break;
                 case Wine.AromaFlavourGategories.GreenFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.greenFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.greenFruit));
                     break;
                 case Wine.AromaFlavourGategories.CitrusFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.citrusFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.citrusFruit));
                     break;
                 case Wine.AromaFlavourGategories.StoneFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.stoneFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.stoneFruit));
                     break;
                 case Wine.AromaFlavourGategories.TropicalFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.tropicalFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.tropicalFruit));
                     break;
                 case Wine.AromaFlavourGategories.RedFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.redFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.redFruit));
                     break;
                 case Wine.AromaFlavourGategories.BlackFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.blackFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.blackFruit));
                     break;
                 case Wine.AromaFlavourGategories.DriedFruit:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.driedFruit));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.driedFruit));
                     break;
                 case Wine.AromaFlavourGategories.Underripeness:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.underripeness));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.underripeness));
                     break;
                 case Wine.AromaFlavourGategories.Herbaceous:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.herbaceous));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.herbaceous));
                     break;
                 case Wine.AromaFlavourGategories.Herbal:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.herbal));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.herbal));
                     break;
                 case Wine.AromaFlavourGategories.Vegetable:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.vegetable));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.vegetable));
                     break;
                 case Wine.AromaFlavourGategories.SweetSpice:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.sweetSpice));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.sweetSpice));
                     break;
                 case Wine.AromaFlavourGategories.PungentSpice:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.pungentSpice));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.pungentSpice));
                     break;
                 case Wine.AromaFlavourGategories.Autolytic:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.autolytic));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.autolytic));
                     break;
                 case Wine.AromaFlavourGategories.Dairy:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.dairy));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.dairy));
                     break;
                 case Wine.AromaFlavourGategories.Oak:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.oak));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.oak));
                     break;
                 case Wine.AromaFlavourGategories.Kernel:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.kernel));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.kernel));
                     break;
                 case Wine.AromaFlavourGategories.Animal:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.animal));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.animal));
                     break;
                 case Wine.AromaFlavourGategories.Maturity:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.maturity));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.maturity));
                     break;
                 case Wine.AromaFlavourGategories.Mineral:
-                    targetList.Add(wineTest.AromaFlavour(MainGategory, aaf.mineral));
+                    targetList.Add(WineHolder.AromaFlavour(MainGategory, aaf.mineral));
                     break;
             }
         }

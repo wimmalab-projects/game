@@ -556,7 +556,6 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopSlot.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\buyButton.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptejä\MainAltCamControls.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\BottlingScript.cs</File>
@@ -564,6 +563,7 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandler.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\CrushScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\DestroySplash.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\DialogueTest.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\FermentorScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GUIScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs</File>
@@ -574,6 +574,5 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.cs</File>
-    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\testscript.cs</File>
   </Files>
 </AnalysisInput>
