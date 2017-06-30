@@ -2,12 +2,13 @@
 YC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Client.cs(
 0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0jr
 ı
-`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=3;4=0;6=0;8=0;10=0;12=0j	%&'(+-3Ar7	!"#)*+./0145679:;<=>?@ABCEFGHIJKxÂ
-WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs (-0+8
+`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=3;4=0;6=0;8=0;10=0;12=0j	%&'(+-3Ar7	!"#)*+./0145679:;<=>?@ABCEFGHIJKxÉ
+WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs (/0-8
 @
 H
-R 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=0;2=1;4=0;6=1;8=0;10=0;12=0j:;<=>?@ABCDJT^|}~“r| !"#$%&'()*+,-./0123EFHKLMNOPQRUVWXYZ[\_`abcdefhimnopqrstvxz€‚„…†‡ˆ‰Š‹‘”•–—˜™xë
-]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs; ("0"8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=1j2FHIKMr®	 !"#$%&'()*+,-./34689:;<=>?ABDOQRSTUVWXYZ\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢xÉ
+R 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=0;2=1;4=0;6=1;8=0;10=0;12=0j;<=>?@ABCDEKU_~€–r€ !"#$%&'()*+,-./01234FGILMNOPQRSVWXYZ[\]`abcdefgijnopqrstuvxz|‚ƒ„†‡ˆ‰Š‹Œ‘’“”—˜™š›œ¡xæ
+]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs; ($0$8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=1j;r®	
+ !"#$%&()*+-./013456789<=>@ABCDEFGIJLMOPQRSTUWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œxÉ
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j	
 rÄ
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpFarmButton.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0r	
@@ -16,8 +17,9 @@ eC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem
 rß
 \C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=0;2=1;4=0;6=1;8=0;10=0;12=0jr)	!"#$%'()*+,./0xÄ
 pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\CurtainControls.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=3;2=4;4=1;6=0;8=0;10=0;12=0j.	%&'./0;BCDRSTUhotuwy{~ƒ…‡‰‹rM !"#()*+,123456789:<=>?@EFGHIJKLMNOPVWXYZ[\]^_`abcefgijlmnpqrx	ã
-pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\kameracontrolli.cs	 (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=1;6=0;8=0;10=0;12=0r	 "#$x›
-SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.cs" (	08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=6;2=2;4=0;6=0;8=0;10=0;12=0j!'+0129:;<?AEFGSTU[\]defnrN	 !"#$%(),-.34567=>@BCHIJKLNOPQVWXY^_`abghijkopqrstuvwxyz{|x¼
+pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\kameracontrolli.cs	 (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=1;6=0;8=0;10=0;12=0r	 "#$x¦
+SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.cs$ 	(
+08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=7;2=2;4=0;6=0;8=0;10=0;12=0j!)-789@ABCFHLMNZ[\cdelmnvrY	 !"#$%&'*+./02345:;<=>DEGIJOPQRSUVWX]^_`afghijopqrswxyz{|}~€‚ƒ„x¼
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopExit.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0r	
 Ç
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopSlot.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=1;4=0;6=0;8=0;10=0;12=0j	
@@ -25,28 +27,27 @@ WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Sho
 XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\buyButton.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j	
 rö
 gC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptejÃ¤\MainAltCamControls.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=1;2=1;4=1;6=0;8=0;10=0;12=0j	 !")3r*
-#$%&')*+,-./013456789:xİ
-HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=6;2=0;4=0;6=1;8=0;10=0;12=0jr:	
- !"#$%&'(*+,-./12345689:;<=?@ABCDx·
-XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=1j[«¬­®¯°rö	!#$%&'()*+,-./12356789:;<=>?@ABCEFGHIJLMNOPQRSTVX\]^_`abcdefghijklmnopqrsvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•—˜™š›œ ¢£¤¥¦§¨©ª²³µ¶·¸¹º»½¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÔÕÖØÙx ³
-KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.cs¦ 	(-0(8]@^H]R 0=0;5=0;10=0;20=0;30=0;60=0;90=1Z1=1;2=3;4=1;6=1;8=0;10=0;12=3jkCDFGKPS‹Œ‘¡¨­²Ôãíù€¾¿ÅÌÜàïñôş“™š›œ³´µ¶·½ÃËÑãäåóôõ÷üıÉĞr¡	
-!"$%'(*+-.124578:;=>@ALNOQTVWYZ\]_`bcefhjklmnqrtuwxyz|}€‚…†‡ˆ‰’“”•–—™š›œŸ¢£¤¥©ª®±³µ¶¸º»½¾¿ÀÁÂÃÅÆÇÊËÌÍÎÕÖ×ØÙÚÛÜİŞßàáäåæçèéêîïğñóõ÷úûüışƒ…‡‰‹‘’“”–šœŸ ¡¢¥¦§¨©ª«¬­®°±²³¸»¼ÀÁÂÃÄÆÇÈÉÊËÍÎÏĞÑÒÓÕÖ×ØÙÚİŞßàáâãäåæèéêğòõö÷ùúûÿ€‚„†‡ˆ‰Š‹Œ‘”•–˜Ÿ¥¨ª«¬­®¯±º»¾¿ÀÂÄÅÆÇÈÌÍÎÏĞÒÓÔÕÖ×ØÚÛÜŞßàæçèéêëìíîïöøù€‚ƒ…‡‰‹Œ‘’“”–—˜™šŸ ¡¦§¨©ª«¬­®¯±²³´·»¼½¾¿ÀÂÃÄÅÇÊËÌÍÎÑÒÓÔÕx³Ö
+#$%&')*+,-./013456789:xÂ
+HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs6 (087@7H7R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=4;2=0;4=0;6=0;8=0;10=0;12=1j
+$,/369—r–	 "#%&'()*-.01457:;<=>@ABCDFGHIJLMNOPRSTUVXYZ[\^_`abdefghjklmnpqrstvwxyz|}~€‚ƒ„…†ˆ‰Š‹Œ‘’“”•˜™š›œx·
+XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=1j[«¬­®¯°rö	!#$%&'()*+,-./12356789:;<=>?@ABCEFGHIJLMNOPQRSTVX\]^_`abcdefghijklmnopqrsvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•—˜™š›œ ¢£¤¥¦§¨©ª²³µ¶·¸¹º»½¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÔÕÖØÙx µ
+KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.cs§ 	(-0(8]@^H]R 0=0;5=0;10=0;20=0;30=0;60=0;90=1Z1=1;2=3;4=1;6=1;8=0;10=0;12=3jkCDFGKPS‹Œ‘¡¨­²Ôãíù€¾¿ÅÌÜàïñôş“™š›œ³´µ¶·½ÃËÑãäåóôõ÷üıÊÑr£	
+!"$%'(*+-.124578:;=>@ALNOQTVWYZ\]_`bcefhjklmnqrtuwxyz|}€‚…†‡ˆ‰’“”•–—™š›œŸ¢£¤¥©ª®±³µ¶¸º»½¾¿ÀÁÂÃÅÆÇÊËÌÍÎÕÖ×ØÙÚÛÜİŞßàáäåæçèéêîïğñóõ÷úûüışƒ…‡‰‹‘’“”–šœŸ ¡¢¥¦§¨©ª«¬­®°±²³¸»¼ÀÁÂÃÄÆÇÈÉÊËÍÎÏĞÑÒÓÕÖ×ØÙÚİŞßàáâãäåæèéêğòõö÷ùúûÿ€‚„†‡ˆ‰Š‹Œ‘”•–˜Ÿ¥¨ª«¬­®¯±º»¾¿ÀÂÄÅÆÇÈÌÍÎÏĞÒÓÔÕÖ×ØÚÛÜŞßàæçèéêëìíîïöøù€‚ƒ…‡‰‹Œ‘’“”–—˜™šŸ ¡¦§¨©ª«¬­®¯°²³´µ¸¼½¾¿ÀÁÃÄÅÆÈËÌÍÎÏÒÓÔÕÖx³Ö
 RC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\BottlingScript.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=1;6=0;8=0;10=0;12=0jr*
  !#$%&'()*+-./012345xß
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ClarificationScript.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=1;6=0;8=0;10=0;12=0j!$-r*	
  "#%&'()*+./0123456x‡
 SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandler.cs! (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=1;2=1;4=1;6=0;8=0;10=0;12=1jAGKOSUrS	
- !"#$%&'()*,-./0123456789:;<=>?BDEGHIJKLMNOPQRWYZ[\]_`abcdfghxï
-OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\CrushScript.csB (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=4;2=0;4=2;6=0;8=0;10=1;12=0j#',2=@BU^n‚ŠŸr´
- "%&()*+,-.013456789:>?ACDEFGHIJKLMNOPQRSVWXYZ[\_`abcdefghijklopqrsuwyz{|}~€ƒ„…†‡ˆ‹Œ‘’“”•–—˜™š›œ ¡¢£¤¥¦§¨©ª«¬­x¶
+ !"#$%&'()*,-./0123456789:;<=>?BDEGHIJKLMNOPQRWYZ[\]_`abcdfghx
+OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\CrushScript.csJ (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=5;2=0;4=2;6=0;8=0;10=1;12=0j&*06CFIK^gxŒ”©rÓ
+ !#%()+,-./01245789:;<=>?@DEGHJLMNOPQRSTUVWXYZ[\_`abcdehijklmnopqrstuvyz{|}ƒ„…†‡ˆ‰Š‘’•–—˜™š›œŸ ¡¢£¤¥¦§ª«¬­®¯°±²³´µ¶¸¹º»¼½¾¿x¶
 QC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\DestroySplash.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0jr	
 ï
 SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\FermentorScript.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=3;2=0;4=0;6=0;8=1;10=0;12=0j-6rA
  !"#$%&'()*./012345789:;=>?@ABCDEGHIJKLMNOx
-MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GUIScript.csz (
-08-@-H-R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=1;2=0;4=1;6=0;8=1;10=1;12=1j!%.1[u¸ÁrÜ	
-#$&'()*+,/023456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY\]^_`abdefghijklmnopqrsvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¹º»¼½¾¿ÂÃÄÅÆÇÈÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúx6™
-NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs' (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=12;2=1;4=1;6=0;8=0;10=0;12=0j!MN€³´µ¶·¸»ÃÍrÏ	 !"#%&'()*+,./012356789:<=>?@ABCDFGHIJKOQRSTUVWXYZ[\]^_`abcdefgijklmnpqrstvwxyz{|~‚ƒ…†‡‰Š‘’“”•–—˜™š› ¡¢£¥¦§¨ª«¬­¹º»½¿ÀÁÂÃÄÅÆÇÈÎÏĞÑÒxë
+MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GUIScript.csz (08-@-H-R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=1;2=0;4=1;6=0;8=1;10=1;12=1j!%.1[u¸ÁrÜ	
+#$&'()*+,/023456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY\]^_`abdefghijklmnopqrsvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¹º»¼½¾¿ÂÃÄÅÆÇÈÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúx6³
+NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs, (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=12;2=1;4=0;6=1;8=0;10=0;12=0j)MN€³´µ¶·¸»ÀÂÄÅÉãrá	 !"#%&'()*+,./012356789:<=>?@ABCDFGHIJKOQRSTUVWXYZ[\]^_`abcdefgijklmnpqrstvwxyz{|~‚ƒ…†‡‰Š‘’“”•–—˜™š› ¡¢£¥¦§¨ª«¬­¹º»¼¾ËÌÍÎÏĞÒÓÔÕÖ×ØÙÚÛİŞäåæçèxë
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Inventory.cs (08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=1;2=1;4=1;6=0;8=0;10=0;12=0j'1>r=	 !"#$%()+,-./23456789:;<?@ABCDEFGHIJKLMNx	ó
 HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Item.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=10;2=1;4=0;6=0;8=0;10=0;12=0j0rP	
  !"#%&'(*+,-./0123456789:;<=>@ABCEFGHLMNOQRSTVWXY]^_`abcdfxÅ

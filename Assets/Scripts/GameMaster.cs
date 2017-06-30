@@ -182,20 +182,32 @@ public class GameMaster : MonoBehaviour
     /// <param name="wine1"></param>
     /// <param name="wine2"></param>
     /// <returns></returns>
-    public int CompareWines(Wine wine1, Wine wine2)
+    public int CompareWines(Wine wineA, Wine wineB)
     {
-        wine1.ComparisonMatrix = wine1.CreateMatrix(); // make sure comparison wine matrix is not null
+        wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
+        wineB.ComparisonMatrix = wineB.CreateMatrix();
 
         int similiarities = 0;
 
-        for (int i = 0; i < wine2.ComparisonMatrix.Count; i++)
+        // new comparsion loop wihtout LINQ (LINQ reportedly doesn't work properly with mobile)
+        for (int i = 0; i < wineA.ComparisonMatrix.Count; i++)
         {
-            for (int x = 0; x < wine1.ComparisonMatrix.Count; x++)
+            for (int x = 0; x < wineB.ComparisonMatrix.Count; x++)
             {
-                if (System.Linq.Enumerable.SequenceEqual(wine2.ComparisonMatrix[i], wine1.ComparisonMatrix[x])) // Linq ei toimi luurissa?!
+                if (wineA.ComparisonMatrix[i].Length != wineB.ComparisonMatrix[x].Length)
+                    break;
+
+                for (int y = 0; y < wineA.ComparisonMatrix[i].Length; y++)
+                {
+                    if (wineA.ComparisonMatrix[i][y] != wineB.ComparisonMatrix[i][y])
+                    {
+                        break;
+                    }
                     similiarities++;
+                }
             }
         }
+
         return similiarities;
     }
 

@@ -7,16 +7,7 @@ using UnityEngine;
 
 public class WinePrefab : MonoBehaviour
 {
-    Wine wineTest;
-
-    public Wine.Clarity clarity;
-    public Wine.Condition condition;
-    public Wine.Intensity intensity;
-    public Wine.Sweetness sweetness;
-    public Wine.Acidity acidity;
-    public Wine.Tannin tannin;
-    public Wine.Body body;
-    public Wine.Finish finish;
+    public Wine wineTest;
 
     [System.Serializable]
     public class AromasAndFlavours
@@ -45,13 +36,29 @@ public class WinePrefab : MonoBehaviour
         public Wine.Maturity maturity;
         public Wine.Mineral mineral;
     }
-    public List<AromasAndFlavours> Aromas, Flavours;
 
+    [Header("Appearance")]
+    public Wine.WineType wineType;
+    public Wine.Clarity clarity;
+    [Space(10)]
+
+    [Header("Nose")]
+    public Wine.Condition condition;
+    public Wine.Intensity intensity;
+    public List<AromasAndFlavours> Aromas;
+    [Space(10)]
+
+    [Header("Palate")]
+    public Wine.Sweetness sweetness;
+    public Wine.Acidity acidity;
+    public Wine.Tannin tannin;
+    public Wine.Body body;
+    public Wine.Finish finish;
+    public List<AromasAndFlavours> Flavours;
 
     // Use this for initialization
     void Start()
     {
-
         wineTest = new Wine();
 
         wineTest.clarity = clarity;
@@ -67,16 +74,6 @@ public class WinePrefab : MonoBehaviour
         CreateAromaFlavour(Wine.MainGategories.Flavour, Flavours, wineTest.Flavours);
 
         wineTest.ComparisonMatrix = wineTest.CreateMatrix();
-
-        //foreach (int[] i in wineTest.ComparisonMatrix)
-        //{
-        //    string s = "";
-        //    foreach (int ii in i)
-        //    {
-        //        s += ii + ",";
-        //    }
-        //    Debug.Log(s);
-        //}
     }
 
     public void CreateAromaFlavour (Enum MainGategory, List<AromasAndFlavours> collection, List<int[]> targetList)

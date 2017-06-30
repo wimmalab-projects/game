@@ -8,7 +8,8 @@ public class Wine
 
     #region Main Gategories and Gategory specifig Enums
 
-    public enum MainGategories { Clarity, Condition, Intensity, Sweetness, Acidity, Tannin, Body, Finish, Aroma, Flavour };
+    public enum MainGategories { WineType, Clarity, Condition, Intensity, Sweetness, Acidity, Tannin, Body, Finish, Aroma, Flavour };
+    public enum WineType { WhiteWine, RoseWine, RedWine, SparklingWhiteWine, SparklingRoseWine, SparklingRedWine }
     public enum Clarity { Clear, Hazy };
     public enum Condition { Clean, Unclean };
     public enum Intensity { Light, Medium, Pronounced };
@@ -106,6 +107,7 @@ public class Wine
 
     #region Matrix generator
 
+    public WineType     wineType;
     public Clarity      clarity;
     public Condition    condition;
     public Intensity    intensity;
@@ -129,6 +131,7 @@ public class Wine
     {
         List<int[]> tempList = new List<int[]>();
 
+        tempList.Add(new int[] { (int)MainGategories.WineType, (int)wineType });
         tempList.Add(new int[] { (int)MainGategories.Clarity, (int)clarity });
         tempList.Add(new int[] { (int)MainGategories.Condition, (int)condition });
         tempList.Add(new int[] { (int)MainGategories.Intensity, (int)intensity });

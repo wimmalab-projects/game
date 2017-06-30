@@ -1,13 +1,13 @@
 ƒ
 YC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Client.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property.! +W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
  W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.! +W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. A
@@ -16,57 +16,59 @@ YC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem
 `C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.csW
 S1104DMake this field 'private' and encapsulate it in a 'public' property.		 %H
 S39035Move the type 'CustomerPanel' into a named namespace. B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.±	
+S39049Provide an 'AssemblyVersion' attribute for this assembly.Š
+
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property.ss W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.nn !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.tt W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.rr W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.qq W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.oo W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.pp !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.oo !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.zz 'W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.mm W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.vv 1W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.xx 3?
+S1104DMake this field 'private' and encapsulate it in a 'public' property.ss W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.rr !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.qq !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.nn  W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.vv W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.uu W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.|| 'W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.tt W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.xx 1W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.zz 3?
 S3903,Move the type 'Wine' into a named namespace. B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.ß
+S39049Provide an 'AssemblyVersion' attribute for this assembly.¡
 ]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.//# )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. 1
-S125Remove this commented out code.GG W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.+ 5W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.)) !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.** W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.55 W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.00# )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.// #W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.66 W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.44 #W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.77 W
+S1104DMake this field 'private' and encapsulate it in a 'public' property... #W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.88 W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.99# +W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.+ 5W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.  +W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property." /W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. %W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property." /W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.  +W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property." /W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. %W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.   )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.!!" /W
-S1104DMake this field 'private' and encapsulate it in a 'public' property."" )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. 'W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. )W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.! -W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. 'W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.   W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.!! W
+S1104DMake this field 'private' and encapsulate it in a 'public' property."" !W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.## !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.$$ 'W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.%% )W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.&&! -W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.'' 'W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.(( W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.)) W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.** !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.++ !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.,, %W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.-- #<
-S1144)Remove the unused private method 'Start'.3O ;
-S108)Either remove or fill this block of code.TU 	E
-S39032Move the type 'WinePrefab' into a named namespace. B
+S1104DMake this field 'private' and encapsulate it in a 'public' property.$$ %W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.%% #<
+S1144)Remove the unused private method 'Start'.<M E
+S39032Move the type 'WinePrefab' into a named namespace. B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.œ
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.cs<
 S1144)Remove the unused private method 'Start'. n
@@ -83,22 +85,22 @@ eC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem
 S101hRename class 'cpRestaurantButton' to match camel case naming rules, consider using 'CpRestaurantButton'. M
 S3903:Move the type 'cpRestaurantButton' into a named namespace. B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.¤
-\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.cs`
-S2223MChange the visibility of 'parentGameObject' or make it 'const' or 'readonly'. -W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. -[
+\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.cs[
 S2223HChange the visibility of 'hitDetected' or make it 'const' or 'readonly'. "W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. ".
-S2933Make 'platform' 'readonly'.		 =
+S2933Make 'platform' 'readonly'.		 `
+S2223MChange the visibility of 'parentGameObject' or make it 'const' or 'readonly'. -W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. -=
 S1144*Remove the unused private method 'Update'. h
-S101VRename class 'tempTouch' to match camel case naming rules, consider using 'TempTouch'. D
+S101VRename class 'tempTouch' to match camel case naming rules, consider using 'TempTouch'. B
+S1066/Merge this if statement with the enclosing one. D
 S39031Move the type 'tempTouch' into a named namespace. B
-S1066/Merge this if statement with the enclosing one. B
 S1066/Merge this if statement with the enclosing one. h
 S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.)) B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.È
 pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\CurtainControls.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. %W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. !1
+S1104DMake this field 'private' and encapsulate it in a 'public' property. !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. %1
 S125Remove this commented out code.hh 51
 S125Remove this commented out code.oo 2<
 S1144)Remove the unused private method 'Start'. =
@@ -112,15 +114,17 @@ pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transiti
 S1144)Remove the unused private method 'OnGUI'.# t
 S101bRename class 'kameracontrolli' to match camel case naming rules, consider using 'Kameracontrolli'. J
 S39037Move the type 'kameracontrolli' into a named namespace. B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.í
-SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.cs1
-S125Remove this commented out code.AA 8W
+S39049Provide an 'AssemblyVersion' attribute for this assembly.†
+SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.csW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.$ JW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. :<
-S1144)Remove the unused private method 'Start'.. <
-S1144)Remove the unused private method 'OnGUI'.o{ ?
+S1104DMake this field 'private' and encapsulate it in a 'public' property. :1
+S125Remove this commented out code.HH 8<
+S1144)Remove the unused private method 'Start'.0 =
+S1144*Remove the unused private method 'Update'.25 =
+S1144)Remove the unused private method 'OnGUI'.	wƒ ?
 S3903,Move the type 'Shop' into a named namespace.		 B
 S39049Provide an 'AssemblyVersion' attribute for this assembly. 
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopExit.cs<
@@ -137,9 +141,9 @@ XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\buy
 S39031Move the type 'buyButton' into a named namespace. B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Ò
 gC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptejÃ¤\MainAltCamControls.csW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. "W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. 4
 S2933!Make 'transitionTime' 'readonly'.
  <
@@ -149,18 +153,39 @@ gC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptej
 
  =
 S1125*Remove the unnecessary Boolean literal(s).%% B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.ˆ
-HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs3
-S2933 Make 'tutorial1done' 'readonly'.	 C
-S11440Remove the unused private field 'tutorial1done'. <
-S1144)Remove the unused private method 'Awake'. <
-S1144)Remove the unused private method 'Start'. =
-S1144*Remove the unused private method 'Update'.( G
-S39034Move the type 'DialogueTest' into a named namespace. =
-S1125*Remove the unnecessary Boolean literal(s).  =
-S1125*Remove the unnecessary Boolean literal(s).5 :=
-S1125*Remove the unnecessary Boolean literal(s).##W ^=
-S1125*Remove the unnecessary Boolean literal(s).##s xB
+S39049Provide an 'AssemblyVersion' attribute for this assembly.•
+HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\DialogueTest.cs4
+S2933!Make 'tutorial16done' 'readonly'.	 4
+S2933!Make 'tutorial17done' 'readonly'.  	 D
+S11441Remove the unused private field 'tutorial16done'.  D
+S11441Remove the unused private field 'tutorial17done'.    <
+S1144)Remove the unused private method 'Awake'."* <
+S1144)Remove the unused private method 'Start'.-1 >
+S1144*Remove the unused private method 'Update'.	4 k
+S1450XRemove the 'GameState' field and declare it as a local variable in the relevant methods. "G
+S39034Move the type 'DialogueTest' into a named namespace. =
+S1125*Remove the unnecessary Boolean literal(s).:: "=
+S1125*Remove the unnecessary Boolean literal(s).::h m=
+S1125*Remove the unnecessary Boolean literal(s).@@ !=
+S1125*Remove the unnecessary Boolean literal(s).FF "=
+S1125*Remove the unnecessary Boolean literal(s).LL "=
+S1125*Remove the unnecessary Boolean literal(s).LLy ~=
+S1125*Remove the unnecessary Boolean literal(s).RR "=
+S1125*Remove the unnecessary Boolean literal(s).RR5 :=
+S1125*Remove the unnecessary Boolean literal(s).XX "=
+S1125*Remove the unnecessary Boolean literal(s).^^ !=
+S1125*Remove the unnecessary Boolean literal(s).dd !=
+S1125*Remove the unnecessary Boolean literal(s).jj #=
+S1125*Remove the unnecessary Boolean literal(s).pp #=
+S1125*Remove the unnecessary Boolean literal(s).vv #>
+S1125*Remove the unnecessary Boolean literal(s).	vv~ ƒ=
+S1125*Remove the unnecessary Boolean literal(s).|| #?
+S1125*Remove the unnecessary Boolean literal(s).
+‚‚ #A
+S1125*Remove the unnecessary Boolean literal(s).‚‚š Ÿ?
+S1125*Remove the unnecessary Boolean literal(s).
+ˆˆ #e
+S3776RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.44	 B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.ö
 XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs3
 S125Remove this commented out code.
@@ -169,70 +194,70 @@ XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalk
 S39035Move the type 'RPGTalkEditor' into a named namespace. e
 S3776RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed. $B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Ó*
-KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csp
-S101\Rename class 'RPGTalkPhoto' to match camel case naming rules, consider using 'RpgTalkPhoto'.
-ÒÒ v
+KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csY
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+ÍÍ Y
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+ÕÕ Y
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+ÔÔ v
 S101bRename class 'RPGTalkVariable' to match camel case naming rules, consider using 'RpgTalkVariable'.
-ËË Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
-ÌÌ Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
-ÓÓ I
-S39034Move the type 'RPGTalkPhoto' into a named namespace.
-ÒÒ Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
-ÔÔ L
+ÌÌ p
+S101\Rename class 'RPGTalkPhoto' to match camel case naming rules, consider using 'RpgTalkPhoto'.
+ÓÓ L
 S39037Move the type 'RPGTalkVariable' into a named namespace.
-ËË Y
+ÌÌ Y
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
-ÍÍ W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.%% W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.(( W
-S1104DMake this field 'private' and encapsulate it in a 'public' property... W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.++ W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.55 $W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.22 #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.88 W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.;; $W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.>> "W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.AA W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.OO W
-S1104DMake this field 'private' and encapsulate it in a 'public' property."" W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.WW !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.ZZ #W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.]] W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.`` W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.cc W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.ff W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.kk W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.mm W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.rr !W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.uu "W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.xx W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.zz /
-S125Remove this commented out code.DD !Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
- Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
-‚‚ Y
-S1104DMake this field 'private' and encapsulate it in a 'public' property.
-€€ W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.hh  3
+ÎÎ I
+S39034Move the type 'RPGTalkPhoto' into a named namespace.
+ÓÓ /
+S125Remove this commented out code.DD !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. #3
 S125Remove this commented out code.
 šš 3
 S125Remove this commented out code.
 ´´ ;3
 S125Remove this commented out code.
-üü GJ
+üü GW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.(( W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.++ W
+S1104DMake this field 'private' and encapsulate it in a 'public' property... W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.55 $W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.22 #W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.>> "W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.88 W
+S1104DMake this field 'private' and encapsulate it in a 'public' property."" W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.AA W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.OO W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.WW !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.ZZ #W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.]] W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.cc W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.ff W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.;; $W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.`` W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.kk W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.mm W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.rr !W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.%% W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.hh  W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.uu "W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.xx W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.zz Y
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+ Y
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+€€ Y
+S1104DMake this field 'private' and encapsulate it in a 'public' property.
+‚‚ W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.  J
 S11445Remove the unused private field 'allowPlayerAdvance'.
-½½ (>
+¾¾ (>
 S1144)Remove the unused private method 'Awake'.
 …‰ ?
 S1144*Remove the unused private method 'Update'.
@@ -250,22 +275,22 @@ KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csp
 S1125*Remove the unnecessary Boolean literal(s).
 †† g
 S3776RRefactor this method to reduce its Cognitive Complexity from 69 to the 15 allowed.
-ŸŸ D
+ŸŸ g
+S3776RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.
+±± D
 S1066/Merge this if statement with the enclosing one.
 šš D
 S1066/Merge this if statement with the enclosing one.
 »» g
 S3776RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.
-öö g
-S3776RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.
-±± B
+öö B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Å
 RC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\BottlingScript.csW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
-$ 1W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. =
+$ 1=
 S1144*Remove the unused private method 'Update'. 4 O
 S3457<Remove this formatting call and simply use the input string.33 $W
 S2292DMake this an auto-implemented property and remove its backing field. u
@@ -277,28 +302,28 @@ WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ClarificationS
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
  W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S2292DMake this an auto-implemented property and remove its backing field. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.) ;=
-S1144*Remove the unused private method 'Update'.5 z
+S1104DMake this field 'private' and encapsulate it in a 'public' property.) ;W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. =
+S1144*Remove the unused private method 'Update'.5 W
+S2292DMake this an auto-implemented property and remove its backing field. z
 S1450gRemove the 'clarificationTimeMinutes' field and declare it as a local variable in the relevant methods. (z
 S1450gRemove the 'clarificationTimeSeconds' field and declare it as a local variable in the relevant methods. (N
 S3903;Move the type 'ClarificationScript' into a named namespace.  O
 S3457<Remove this formatting call and simply use the input string.44 $B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.¾
-SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandler.cs1
-S125Remove this commented out code. $`
+SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandler.cs`
 S2223MChange the visibility of 'parentGameObject' or make it 'const' or 'readonly'.
 
- -W
+ -[
+S2223HChange the visibility of 'hitDetected' or make it 'const' or 'readonly'. "1
+S125Remove this commented out code. $W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.		  1
+S125Remove this commented out code.AA %W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
- -[
-S2223HChange the visibility of 'hitDetected' or make it 'const' or 'readonly'. "W
+ -W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. "1
-S125Remove this commented out code.AA %1
-S125Remove this commented out code.SS 3W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.		  /
+S125Remove this commented out code.SS 3/
 S2933Make 'layerMask' 'readonly'. .
 S2933Make 'platform' 'readonly'. <
 S1144)Remove the unused private method 'Awake'. =
@@ -309,38 +334,43 @@ SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\ColliderHandle
 S3776RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.	 B
 S1066/Merge this if statement with the enclosing one. B
 S1066/Merge this if statement with the enclosing one.&& B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.’
+S39049Provide an 'AssemblyVersion' attribute for this assembly.ƒ
 OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\CrushScript.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. V
+S1104DMake this field 'private' and encapsulate it in a 'public' property. V
 S2223CChange the visibility of 'didWin' or make it 'const' or 'readonly'. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. ,
-S2933Make 'refire' 'readonly'. #.
-S2933Make 'platform' 'readonly'."" <
-S1144)Remove the unused private method 'Awake'.%. <
-S1144)Remove the unused private method 'Start'.0: =
-S1144*Remove the unused private method 'Update'.>l =
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. ,
+S2933Make 'refire' 'readonly'. #.
+S2933Make 'platform' 'readonly'.%% <
+S1144)Remove the unused private method 'Awake'.(2 <
+S1144)Remove the unused private method 'Start'.4@ =
+S1144*Remove the unused private method 'Update'.Dv =
 S1144(Remove the unused private method 'Wait'.
- ¬ h
-S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.33 f
-S1450SRemove the 'temp' field and declare it as a local variable in the relevant methods. l
-S1450YRemove the 'slotScript' field and declare it as a local variable in the relevant methods. !k
-S1450XRemove the 'inventory' field and declare it as a local variable in the relevant methods. F
+ª¶ I
+S11444Remove the unused private method 'WaitInstructions'.
+¸¾ h
+S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.77 e
+S3776RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.DD	 d
+S1450QRemove the 'gm' field and declare it as a local variable in the relevant methods.!! f
+S1450SRemove the 'temp' field and declare it as a local variable in the relevant methods. l
+S1450YRemove the 'slotScript' field and declare it as a local variable in the relevant methods. !k
+S1450XRemove the 'inventory' field and declare it as a local variable in the relevant methods. F
 S39033Move the type 'CrushScript' into a named namespace.
 
  B
-S1066/Merge this if statement with the enclosing one.GG B
-S1066/Merge this if statement with the enclosing one.OO h
-S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.aa j
+S1066/Merge this if statement with the enclosing one.PP B
+S1066/Merge this if statement with the enclosing one.XX h
+S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.jj j
 S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.
-¢¢ B
+¬¬ B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Æ
 QC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\DestroySplash.csW
 S1104DMake this field 'private' and encapsulate it in a 'public' property. <
@@ -351,14 +381,14 @@ QC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\DestroySplash.
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Í
 
 SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\FermentorScript.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. 'W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.( 9W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
  4W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.( 9W
 S2292DMake this an auto-implemented property and remove its backing field.   <
 S1144)Remove the unused private method 'Awake'. =
 S1144*Remove the unused private method 'Update'..N t
@@ -367,36 +397,38 @@ SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\FermentorScrip
 S39037Move the type 'FermentorScript' into a named namespace. O
 S3457<Remove this formatting call and simply use the input string.MM $=
 S1125*Remove the unnecessary Boolean literal(s).22 "B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.ž
+S39049Provide an 'AssemblyVersion' attribute for this assembly.
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GUIScript.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.  <
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. <
 S1144)Remove the unused private method 'Awake'.#, =
 S1144*Remove the unused private method 'Update'./Y h
-S101VRename class 'GUIScript' to match camel case naming rules, consider using 'GuiScript'.		 g
-S1450TRemove the 'timer' field and declare it as a local variable in the relevant methods. h
-S1450URemove the 'button' field and declare it as a local variable in the relevant methods. f
-S1450SRemove the 'temp' field and declare it as a local variable in the relevant methods. D
+S101VRename class 'GUIScript' to match camel case naming rules, consider using 'GuiScript'.		 f
+S1450SRemove the 'temp' field and declare it as a local variable in the relevant methods. g
+S1450TRemove the 'timer' field and declare it as a local variable in the relevant methods. D
 S39031Move the type 'GUIScript' into a named namespace.		 =
 S1125*Remove the unnecessary Boolean literal(s).xxC Je
 S3776RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.vv e
 S3776RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.//	 B
-S39049Provide an 'AssemblyVersion' attribute for this assembly.ª
+S39049Provide an 'AssemblyVersion' attribute for this assembly.ß
 NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. $W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. +W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.  W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.OO 'Y
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
-ŽŽ $Y
+ #Y
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
- #<
+ŽŽ $3
+S125Remove this commented out code.
+ÀÀ @<
 S1144)Remove the unused private method 'Awake'.QX ?
 S1144,Remove the unused private method 'GoToTown'.Y] ?
 S1144,Remove the unused private method 'GoToFarm'.^b B
@@ -407,16 +439,16 @@ NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs
 S1144/Remove the unused private method 'ClientClick'.
 – D
 S1144/Remove the unused private method 'DebugMethod'.
-ÎÑ <
+äç <
 S1172)Remove this unused method parameter 'go'.pp $i
 S1450VRemove the 'guiTemp' field and declare it as a local variable in the relevant methods. E
 S39032Move the type 'GameMaster' into a named namespace. B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.÷
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Inventory.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.$ JW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. :<
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. :W
+S1104DMake this field 'private' and encapsulate it in a 'public' property.$ J<
 S1144)Remove the unused private method 'Awake'. <
 S1144)Remove the unused private method 'Start'.< <
 S1144)Remove the unused private method 'OnGUI'.?M D
@@ -439,17 +471,17 @@ WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\MethodCallerHa
 S39049Provide an 'AssemblyVersion' attribute for this assembly.ˆ
 
 OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\PlantGround.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property.		 4W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. 1
-S125Remove this commented out code.-- E1
-S125Remove this commented out code.22 E1
-S125Remove this commented out code.77 EW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
-! N=
+! NW
+S1104DMake this field 'private' and encapsulate it in a 'public' property. 1
+S125Remove this commented out code.-- EW
+S1104DMake this field 'private' and encapsulate it in a 'public' property.		 4W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. 1
+S125Remove this commented out code.22 E1
+S125Remove this commented out code.77 E=
 S1144*Remove the unused private method 'Update'.B O
 S3457<Remove this formatting call and simply use the input string.AA $t
 S1450aRemove the 'harvestTimeMinutes' field and declare it as a local variable in the relevant methods. "t
@@ -458,41 +490,41 @@ OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\PlantGround.cs
 S39049Provide an 'AssemblyVersion' attribute for this assembly.Ä
 HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.csW
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property.
 
- <
+ W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. <
 S1144)Remove the unused private method 'Start'. =
 S1144*Remove the unused private method 'Update'. k
 S1450XRemove the 'itemCount' field and declare it as a local variable in the relevant methods. ?
 S3903,Move the type 'Slot' into a named namespace. B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.¦
-NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.csW
-S1104DMake this field 'private' and encapsulate it in a 'public' property. X
+NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.cs1
+S125Remove this commented out code. %X
 S2223EChange the visibility of 'didPlant' or make it 'const' or 'readonly'. W
+S1104DMake this field 'private' and encapsulate it in a 'public' property. W
 S1104DMake this field 'private' and encapsulate it in a 'public' property. W
-S1104DMake this field 'private' and encapsulate it in a 'public' property. '1
-S125Remove this commented out code. %3
+S1104DMake this field 'private' and encapsulate it in a 'public' property. '3
 S2933 Make 'vinePositions' 'readonly'. "C
 S11440Remove the unused private field 'vinePositions'. <<
 S1144)Remove the unused private method 'Awake'.% …
 S1121rExtract the assignment of 'parent.gameObject.GetComponent<MethodCallerHandler>().MethodName' from this expression.gga b…
-S1121rExtract the assignment of 'parent.gameObject.GetComponent<MethodCallerHandler>().MethodName' from this expression.jjZ [M
+S1121rExtract the assignment of 'parent.gameObject.GetComponent<MethodCallerHandler>().MethodName' from this expression.jjZ [h
+S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.** M
 S1854:Remove this useless assignment to local variable 'method'.jj kM
-S1854:Remove this useless assignment to local variable 'method'.gg sp
-S1450]Remove the 'bottlingScript' field and declare it as a local variable in the relevant methods. !u
-S1450bRemove the 'clarificationScript' field and declare it as a local variable in the relevant methods. +q
-S1450^Remove the 'fermentorScript' field and declare it as a local variable in the relevant methods. #h
-S1450URemove the 'parent' field and declare it as a local variable in the relevant methods. i
-S1450VRemove the 'guiTemp' field and declare it as a local variable in the relevant methods. n
-S1450[Remove the 'groundScript' field and declare it as a local variable in the relevant methods. E
+S1854:Remove this useless assignment to local variable 'method'.gg sh
+S1450URemove the 'parent' field and declare it as a local variable in the relevant methods. q
+S1450^Remove the 'fermentorScript' field and declare it as a local variable in the relevant methods. #u
+S1450bRemove the 'clarificationScript' field and declare it as a local variable in the relevant methods. +n
+S1450[Remove the 'groundScript' field and declare it as a local variable in the relevant methods. p
+S1450]Remove the 'bottlingScript' field and declare it as a local variable in the relevant methods. !i
+S1450VRemove the 'guiTemp' field and declare it as a local variable in the relevant methods. E
 S39032Move the type 'SlotScript' into a named namespace.		 h
-S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.ii h
-S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.** j
+S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.ii j
 S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.
-ÁÁ j
+áá j
 S2696UMake the enclosing instance method 'static' or remove this set on the 'static' field.
-áá B
+ÁÁ B
 S39049Provide an 'AssemblyVersion' attribute for this assembly.“
 OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.cs<
 S1144)Remove the unused private method 'Awake'. =
