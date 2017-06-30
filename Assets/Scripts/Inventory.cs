@@ -74,5 +74,11 @@ public class Inventory : MonoBehaviour
             items["Black grape vine"].AddItem();
         }
         GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(10, 100, 100, 100));
+        if (GUILayout.Button("Add index 2"))
+        {
+            items["Bottle"].AddItem();
+        }
+        GUILayout.EndArea();
     }
 }

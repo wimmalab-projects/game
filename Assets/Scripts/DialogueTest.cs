@@ -14,6 +14,7 @@ public class DialogueTest : MonoBehaviour
     GameMaster.GameState GameState;
     CurtainControls cControls;
     Shop shopScript;
+    GUIScript guiScript;
     bool tutorial2done, tutorial3done, tutorial4done, tutorial5done, tutorial6done, tutorial7done, tutorial8done, tutorial9done,
          tutorial10done, tutorial11done, tutorial12done, tutorial13done, tutorial14done, tutorial15done, tutorial16done, tutorial17done,
          tutorial18done, tutorial19done, tutorial20done, tutorial21done, tutorial22done, tutorial23done, tutorial24done, tutorial25done,
@@ -27,6 +28,7 @@ public class DialogueTest : MonoBehaviour
         rpgTalk = gm.GetComponent<RPGTalk>();
         altCam = GameObject.Find("FarmViewCamera").GetComponent<MainAltCamControls>();
         cControls = GameObject.Find("fadetoblacktile").GetComponent<CurtainControls>();
+        guiScript = GameObject.Find("InventoryCanvas").GetComponent<GUIScript>();
     }
 
     // Use this for initialization
@@ -36,7 +38,6 @@ public class DialogueTest : MonoBehaviour
         = tutorial10done = tutorial11done = tutorial12done = tutorial13done = tutorial14done = tutorial15done = tutorial16done
         = tutorial17done = tutorial18done = tutorial19done = tutorial20done = tutorial21done = tutorial22done = tutorial23done = tutorial24done
         = tutorial25done = tutorial26done = tutorial27done = tutorial28done = false;
-
         // Start the tutorial when launching the game first time
         StartCoroutine(Wait(1, 4, 1f));
     }
@@ -72,7 +73,7 @@ public class DialogueTest : MonoBehaviour
             tutorial5done = true;
         }
 
-        if (!tutorial6done && tutorial5done && altCam.cam1 == false)
+        if (!tutorial6done && tutorial5done && !altCam.cam1)
         {
             StartCoroutine(Wait(15, 16, 0.3f));
             tutorial6done = true;
@@ -96,7 +97,7 @@ public class DialogueTest : MonoBehaviour
             tutorial9done = true;
         }
 
-        if (!tutorial10done && tutorial9done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Harvest")
+        if (!tutorial10done && tutorial9done && guiScript.button == "Harvest")
         {
             StartCoroutine(Wait(26, 29, 0.35f));
             tutorial10done = true;
@@ -120,7 +121,7 @@ public class DialogueTest : MonoBehaviour
             tutorial13done = true;
         }
 
-        if (!tutorial14done && tutorial13done && CrushScript.didWin && !GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive)
+        if (!tutorial14done && tutorial13done && CrushScript.didWin && !gm.CrushisActive)
         {
             StartCoroutine(Wait(36, 38, 0.4f));
             tutorial14done = true;
@@ -132,7 +133,7 @@ public class DialogueTest : MonoBehaviour
             tutorial15done = true;
         }
 
-        if (!tutorial16done && tutorial15done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Collect")
+        if (!tutorial16done && tutorial15done && guiScript.button == "Collect")
         {
             StartCoroutine(Wait(41, 43, 0.4f));
             tutorial16done = true;
@@ -144,7 +145,7 @@ public class DialogueTest : MonoBehaviour
             tutorial17done = true;
         }
 
-        if (!tutorial18done && tutorial17done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Clarificate")
+        if (!tutorial18done && tutorial17done && guiScript.button == "Clarificate")
         {
             StartCoroutine(Wait(45, 46, 0.4f));
             tutorial18done = true;
@@ -156,7 +157,7 @@ public class DialogueTest : MonoBehaviour
             tutorial19done = true;
         }
 
-        if (!tutorial20done && tutorial19done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Collect")
+        if (!tutorial20done && tutorial19done && guiScript.button == "Collect")
         {
             StartCoroutine(Wait(49, 51, 0.4f));
             tutorial20done = true;
@@ -168,7 +169,7 @@ public class DialogueTest : MonoBehaviour
             tutorial21done = true;
         }
 
-        if (!tutorial22done && tutorial21done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Bottle")
+        if (!tutorial22done && tutorial21done && guiScript.button == "Bottle")
         {
             StartCoroutine(Wait(53, 53, 0.4f));
             tutorial22done = true;
@@ -180,7 +181,7 @@ public class DialogueTest : MonoBehaviour
             tutorial23done = true;
         }
 
-        if (!tutorial24done && tutorial23done && GameObject.Find("InventoryCanvas").GetComponent<GUIScript>().button == "Collect")
+        if (!tutorial24done && tutorial23done && guiScript.button == "Collect")
         {
             StartCoroutine(Wait(55, 57, 0.4f));
             tutorial24done = true;
@@ -204,16 +205,18 @@ public class DialogueTest : MonoBehaviour
             tutorial27done = true;
         }
 
-        if (!tutorial28done && tutorial27done && gm.wineSold == true)
+        if (!tutorial28done && tutorial27done && gm.wineSold)
         {
             StartCoroutine(Wait(61, 63, 0.4f));
             tutorial28done = true;
+            // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
         }
 
-        //if (tutorial28done && !rpgTalk.textUI.gameObject.activeInHierarchy)
-        //{
-        //    Destroy(gameObject.GetComponent<DialogueTest>());
-        //}
+        if(tutorial28done && rpgTalk.dialogueFinished)
+        {
+            Destroy(gameObject.GetComponent<DialogueTest>());
+        }
+
     }
 
     // Function that takes the startline and the endline to read from the Dialogue.txt and starts the dialog.
@@ -222,6 +225,7 @@ public class DialogueTest : MonoBehaviour
         rpgTalk.lineToStart = startLine;
         rpgTalk.lineToBreak = breakLine;
         rpgTalk.NewTalk();
+
     }
 
     // Coroutine to smoothly show the dialog

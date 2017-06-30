@@ -129,6 +129,8 @@ public class RPGTalk : MonoBehaviour {
 	public int maxCharInWidth = 50;
 	public int maxCharInHeight = 4;
 
+    public bool dialogueFinished;
+
 
 	void Awake(){
 		if (startOnAwake) {
@@ -141,7 +143,6 @@ public class RPGTalk : MonoBehaviour {
 	/// </summary>
 	public void NewTalk()
     {
-
 		//reduce one for the line to Start and break
 		if(lineToBreak == -1){
 			actualLineToBreak = lineToBreak;
@@ -286,7 +287,8 @@ public class RPGTalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!textUI.gameObject.activeInHierarchy) {
-			return;
+            dialogueFinished = false;
+            return;
 		}
 
 
@@ -490,7 +492,7 @@ public class RPGTalk : MonoBehaviour {
 			} else {
 				cutscenePosition = rpgtalkElements.Count;
 			}
-			PlayNext ();
+            PlayNext ();
 		}
 	}
 
@@ -548,16 +550,19 @@ public class RPGTalk : MonoBehaviour {
 
 
 		} else {
-			if (!shouldStayOnScreen) {
+            dialogueFinished = true;
+            if (!shouldStayOnScreen) {
 				textUI.enabled = false;
                 textUI.text = "";
-				if (dialoger) {
+                if (dialoger) {
 					dialogerUI.enabled = false;
 				}
 				for (int i = 0; i < showWithDialog.Length; i++) {
 					showWithDialog [i].SetActive (false);
 				}
 			}
+
+
 
 			if(callbackScript != null){
 				callbackScript.Invoke(callbackFunction,0f);
