@@ -42,3 +42,22 @@ Your juice has fermented and is now wine!
 But you need to clarificate it to keep to quality top notch.
 Click on the clarification pot.
 Select your wine to place it in clarification pot and click clarfificate.
+Your wine is now clarificating.
+Press on the clarificator to see more info.
+Here you can see the time left on the clarification.
+Press collect when the clarification is ready!
+Your wine is top notch now!
+Now you need to bottle it.
+Click on the bottling machine.
+Select your wine and click bottle.
+Fucking again you can see more info when clicking the bottling machine again.
+Click collect when bottling is ready.
+Congratulations! Your wine is now bottled and ready to be sold!
+Now lets go sell it.
+Return to the farm by clicking the farm sign.
+Now lets go to the town by clicking the truck.
+Now find a suitable customer for you and click him.
+Click sell to sell your freshly made wine!
+Congratulations! You just sold your first selfmade wine!
+Now youre ready to make another one by yourself!
+Good luck!

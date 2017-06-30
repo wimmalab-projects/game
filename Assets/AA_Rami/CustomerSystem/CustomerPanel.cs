@@ -68,8 +68,12 @@ public class CustomerPanel : MonoBehaviour {
 
         if (wine.itemCount > 0)
         {
+            // Kutsuu arviointimetodin gamemasterista
+            // Pelaaja profiilille palkintometodi kutsu gamemasterista
+            // Kutsuu resetmetodin gamemasterista, joka aloittaa loopin alusta
             wine.PopItem();
             Debug.Log("wine sold");
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().wineSold = true;
         }
     }
 }

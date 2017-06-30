@@ -13,10 +13,12 @@ public class GameMaster : MonoBehaviour
     public Camera grapeCrush;
     public GameObject playGrapeCrush;
     public bool CrushisActive;
+    public bool wineSold;
 
     private GameObject guiTemp;
     private GUIScript guiScript;
     private CurtainControls curtainControls;
+    
 
     // set and compare to this
     public GameState State = GameState.Farm;
@@ -85,6 +87,12 @@ public class GameMaster : MonoBehaviour
         guiScript = guiTemp.GetComponent<GUIScript>();
         playGrapeCrush.SetActive(false);
         CrushisActive = false;
+        wineSold = false;
+    }
+
+    private void Update()
+    {
+        wineSold = false;
     }
     void GoToTown()
     {
@@ -147,12 +155,19 @@ public class GameMaster : MonoBehaviour
         CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
         CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
         CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
+
     }
     public enum ClientType
     {
         Farmer,
         Restaurant
     };
+
+    void ResetGame()
+    {
+        // Asiakkaat
+        // Tehty viini
+    }
     #endregion
 
     #region CameraRailsSystemMethods
