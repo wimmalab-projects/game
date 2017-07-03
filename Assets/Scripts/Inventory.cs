@@ -8,22 +8,20 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject inventory;
-    public GameObject inventorySlot;
-
-    public List<GameObject> slots = new List<GameObject>();
-    public SortedList<string, Item> items = new SortedList<string, Item>();
+    public GameObject InventoryGO; // Drag in editor
+    public GameObject InventorySlot; // Drag in editor
+    public List<GameObject> Slots = new List<GameObject>();
+    public SortedList<string, Item> Items = new SortedList<string, Item>();
 
     private GameObject contentPanel; // place prefab in editor
     private GameObject infoPanel;
     private GridLayoutGroup glg; // place prefab in editor
     private SlotScript slotScript;
-    private Item currentlySelectedItem;
 
     void Awake()
     {
-        infoPanel = inventory.transform.Find("Info").gameObject; // find our infopanel inside shop
-        contentPanel = inventory.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject; // find content panel inside shop
+        infoPanel = InventoryGO.transform.Find("Info").gameObject; // find our infopanel inside shop
+        contentPanel = InventoryGO.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject; // find content panel inside shop
         glg = contentPanel.GetComponent<GridLayoutGroup>();
         slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
     }
@@ -32,51 +30,41 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         // add items
-        items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
-        items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
-        items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPE));
-        items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPE));
-        items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
-        items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
-        items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));
-        items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.BOTTLE));
+        Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
+        Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
+        Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPE));
+        Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPE));
+        Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
+        Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
+        Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));
+        Items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.BOTTLE));
 
-        // create inventory buttons
-        for (int i = 0; i < items.Count; i++)
+        // create inventory slots
+        for (int i = 0; i < Items.Count; i++)
         {
-            GameObject temp = Instantiate(inventorySlot);
+            GameObject temp = Instantiate(InventorySlot);
             temp.transform.SetParent(contentPanel.transform);
-            temp.name = items.Keys[i];
-            slots.Add(temp);
+            temp.name = Items.Keys[i];
+            Slots.Add(temp);
         }
 
+        // Scale the slots to fit the content area
         float y = (contentPanel.transform.childCount + 1) / glg.constraintCount * glg.cellSize.y + (glg.cellSize.y * 2);
         contentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(contentPanel.GetComponent<RectTransform>().sizeDelta.x, y);
 
-        //// set inventory button positions /////// Muuta tämä vastaamaan shopin grid layout tyyppistä ratkaisua.
-        //for (int i = 0, y = 0; i < maxRows; y++)
-        //{
-        //    for (int x = 0; x < maxColumns; x++, i++)
-        //    {
-        //        if (slots[i] != null)
-        //        {
-        //            slots[i].transform.localPosition = new Vector3(125 + 1280 / 2 * -1 + 200 * x, (720 / 2 - 25) - 350 * y);
-        //        }
-        //    }
-        //}
-
+        // Set the default item that is selected in inventory
         GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
         GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
         GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
-
-        go1.GetComponent<Text>().text = items[items.Keys[0]].returnName();
-        go2.GetComponent<Text>().text = items[items.Keys[0]].ItemDesc;
-        go3.GetComponent<Image>().sprite = items[items.Keys[0]].ItemSprite;
+        go1.GetComponent<Text>().text = Items[Items.Keys[0]].returnName();
+        go2.GetComponent<Text>().text = Items[Items.Keys[0]].ItemDesc;
+        go3.GetComponent<Image>().sprite = Items[Items.Keys[0]].ItemSprite;
     }
 
+    // Refresh the info of the item when clicking items
     public void refreshInfo()
     {
-        currentlySelectedItem = items[slotScript.seedName];
+        Item currentlySelectedItem = Items[slotScript.SeedName];
 
         GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
         GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
@@ -87,25 +75,25 @@ public class Inventory : MonoBehaviour
         go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
     }
 
-    // Debug button that adds grape vines.
+    // Debug button that adds grape vines / bottles
     void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 100, 100));
         if (GUILayout.Button("Add index 0"))
         {
-            items["White grape vine"].AddItem();
+            Items["White grape vine"].AddItem();
         }
         GUILayout.EndArea();
         GUILayout.BeginArea(new Rect(10, 50, 100, 100));
         if (GUILayout.Button("Add index 1"))
         {
-            items["Black grape vine"].AddItem();
+            Items["Black grape vine"].AddItem();
         }
         GUILayout.EndArea();
         GUILayout.BeginArea(new Rect(10, 100, 100, 100));
         if (GUILayout.Button("Add index 2"))
         {
-            items["Bottle"].AddItem();
+            Items["Bottle"].AddItem();
         }
         GUILayout.EndArea();
     }

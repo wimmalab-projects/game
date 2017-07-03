@@ -64,7 +64,7 @@ public class CustomerPanel : MonoBehaviour {
     }
     public void AcceptRestaurantClient () // placeholder
     {
-        Item wine = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().items["Bottle"];
+        Item wine = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Bottle"];
 
         if (wine.itemCount > 0)
         {
@@ -73,7 +73,7 @@ public class CustomerPanel : MonoBehaviour {
             // Kutsuu resetmetodin gamemasterista, joka aloittaa loopin alusta
             wine.PopItem();
             Debug.Log("wine sold");
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().wineSold = true;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
         }
     }
 }

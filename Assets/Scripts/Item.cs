@@ -5,11 +5,11 @@ using UnityEngine;
 public class Item
 {
     #region attributes
-    private string itemDesc;
-    private string itemName;
-    private int itemID;
-    private Sprite itemSprite;
-    private ItemType itemType;
+    private readonly string itemDesc;
+    private readonly string itemName;
+    private readonly int itemID;
+    private readonly Sprite itemSprite;
+    private readonly ItemType itemType;
     private int itemValue;
 
     public enum ItemType

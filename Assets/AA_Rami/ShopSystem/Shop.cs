@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour {
     private void Start()
     {
 
-        items = gameObject.GetComponent<Inventory>().items; // get items and create buttons
+        items = gameObject.GetComponent<Inventory>().Items; // get items and create buttons
         InfoPanel = shop.transform.Find("Info").gameObject; // find our infopanel inside shop
         ContentPanel = shop.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject; // find content panel inside shop
 

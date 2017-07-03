@@ -9,41 +9,32 @@ using UnityEngine.UI;
 
 public class CrushScript : MonoBehaviour
 {
-    public Camera farmCamera;
-    public GameObject grape;
-    public LayerMask layerMask;
-    public float grapeScore;
-    public int missedGrapes;
-    public Image fillBar;
-    public Text fillText;
-    public Text gameOverText;
-    public Text missedText;
-    public static bool didWin;
-    public Text gameStartText;
+    public int MissedGrapes { get; set; }
+    public static bool DidWin { get; set; }
+    public GameObject Grape; // Drag in prefab
+    public LayerMask LayerMask; // Choose in editor
+    public Image FillBar; // Drag in editor
+    public Text FillText; // Drag in editor
+    public Text GameOverText; // Drag in editor
+    public Text MissedText; // Drag in editor
+    public Text GameStartText; // Drag in editor
 
+    private float grapeScore;
     private const int maxMissedGrapes = 10; // How many grapes can be missed
-    private GameObject temp;
-    private float startTime, refire = 0.4f; // How ofen a new grape is respawned
+    private float startTime;
+    private readonly float refire = 0.4f; // How ofen a new grape is respawned
     private GameObject grapeSplash;
     private MethodCallerHandler mch;
     private bool isStarted;
-    private SlotScript slotScript;
-    private Inventory inventory;
     private bool instructionsDone;
-    private GameObject gm;
-
-    GameObject[] spawnpoint;
-
-    RuntimePlatform platform = Application.platform;
+    private GameObject[] spawnpoint;
+    private RuntimePlatform platform;
     // Use this for initialization
 
     void Awake()
     {
         // Get script / gameobject references.
         mch = GetComponent<MethodCallerHandler>();
-        gm = GameObject.FindGameObjectWithTag("GameManager");
-        slotScript = gm.GetComponent<SlotScript>();
-        inventory = gm.GetComponent<Inventory>();
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
         spawnpoint = GameObject.FindGameObjectsWithTag("Respawn"); // Get the spawn points for the grapes
         mch = GetComponent<MethodCallerHandler>();
@@ -52,13 +43,14 @@ public class CrushScript : MonoBehaviour
     void Start()
     {
         // Set everything to default
-        didWin = false;
+        platform = Application.platform;
+        DidWin = false;
         isStarted = false;
         instructionsDone = false;
-        fillBar.fillAmount = 0;
-        fillText.text = "0%";
-        gameOverText.text = "";
-        missedText.text = "0/10";
+        FillBar.fillAmount = 0;
+        FillText.text = "0%";
+        GameOverText.text = "";
+        MissedText.text = "0/10";
         startTime = Time.time;
         StartCoroutine("WaitInstructions");
     }
@@ -75,43 +67,37 @@ public class CrushScript : MonoBehaviour
             // If touch supported, use touch position else use mouse position then do the checktouch function
             if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
             {
-                if (Input.touchCount > 0)
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    if (Input.GetTouch(0).phase == TouchPhase.Began)
-                    {
-                        checkTouch(Input.GetTouch(0).position);
-                    }
+                    checkTouch(Input.GetTouch(0).position);
                 }
             }
-            else if (platform == RuntimePlatform.WindowsEditor)
+            else if (platform == RuntimePlatform.WindowsEditor && Input.GetMouseButtonUp(0))
             {
-                if (Input.GetMouseButtonUp(0))
-                {
-                    checkTouch(Input.mousePosition);
-                }
+                checkTouch(Input.mousePosition);
             }
 
             // Respawn grapes
             if (startTime + refire <= Time.time)
             {
-                temp = Instantiate(grape);
+                GameObject temp = Instantiate(Grape);
                 temp.transform.SetParent(gameObject.transform);
                 temp.transform.position = spawnpoint[Random.Range(0, spawnpoint.Length)].transform.position;
                 startTime = Time.time;
             }
 
             // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
-            if (fillBar.fillAmount == 1)
+            if (FillBar.fillAmount == 1)
             {
-                didWin = true;
-                gameOverText.text = "Good job!";
-                gameOverText.text += "\nYour wine is now fermenting";
+                DidWin = true;
+                GameOverText.text = "Good job!";
+                GameOverText.text += "\nYour wine is now fermenting";
                 gameOver();
             }
-            else if (missedGrapes == maxMissedGrapes)
+            else if (MissedGrapes == maxMissedGrapes)
             {
-                didWin = false;
-                gameOverText.text = "You lost your grapes!";
+                DidWin = false;
+                GameOverText.text = "You lost your grapes!";
                 gameOver();
             }
         }
@@ -120,13 +106,13 @@ public class CrushScript : MonoBehaviour
     // Checks if the touch position collides with the grape collider. If it does the grape is destroyed and grapescore is added
     void checkTouch(Vector2 pos)
     {
-        if (layerMask.value == 2048)
+        if (LayerMask.value == 2048)
         {
             Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 
             Vector2 touchPos = new Vector2(wp.x, wp.y);
 
-            Collider2D hit = Physics2D.OverlapPoint(touchPos, layerMask);
+            Collider2D hit = Physics2D.OverlapPoint(touchPos, LayerMask);
 
             if (hit && hit.tag == "Grape")
             {
@@ -140,9 +126,9 @@ public class CrushScript : MonoBehaviour
     // Handles the fillbar filling and missed grapes count. Is being updated in Update().
     void handleUI()
     {
-        fillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        fillBar.fillAmount = (grapeScore * 1.5f);
-        missedText.text = missedGrapes + "/" + maxMissedGrapes;
+        FillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
+        FillBar.fillAmount = (grapeScore * 1.5f);
+        MissedText.text = MissedGrapes + "/" + maxMissedGrapes;
     }
 
     // When the game is over destroy all remaining gameobjects and display the gameover text. Also starts the wait coroutine to end the game.
@@ -158,7 +144,7 @@ public class CrushScript : MonoBehaviour
                 Destroy(splash);
             }
         }
-        gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+        GameOverText.GetComponent<Animator>().SetBool("gameOver", true);
         if (!isStarted)
         {
             isStarted = true;
@@ -169,7 +155,7 @@ public class CrushScript : MonoBehaviour
     // Coroutine to smoothly end the game and transistion back to brewery view. Destroys the view at the end.
     IEnumerator Wait()
     {
-        didWin = false;
+        DidWin = false;
         GameObject canvas = GameObject.Find("Canvas");
         yield return new WaitForSeconds(3);
         mch.CallMethod();
@@ -183,9 +169,9 @@ public class CrushScript : MonoBehaviour
 
     IEnumerator WaitInstructions()
     {
-        gameStartText.text = "You need to crush the grapes to fill the bar\nBut dont miss too much!";
+        GameStartText.text = "You need to crush the grapes to fill the bar\nBut dont miss too much!";
         yield return new WaitForSeconds(5);
-        gameStartText.text = "";
+        GameStartText.text = "";
         instructionsDone = true;
     }
 }

@@ -5,19 +5,22 @@ using System.Collections;
 
 public class ColliderHandler : MonoBehaviour
 {
-    public static bool hitDetected;
-    public GameObject gameMaster;
-    public static GameObject parentGameObject;
+    public GameObject ParentGameObject { get; set; }
 
-    //private CanvasGroup inventory;
     private GameMaster gm;
-    private LayerMask layerMask = 0;
-
-    RuntimePlatform platform = Application.platform;
+    private LayerMask layerMask;
+    private RuntimePlatform platform;
 
     void Awake()
     {
+        GameObject gameMaster = GameObject.FindGameObjectWithTag("GameManager");
         gm = gameMaster.GetComponent<GameMaster>();
+    }
+
+    void Start()
+    {
+        layerMask = 0;
+        platform = Application.platform;
     }
 
     // Update is called once per frame
@@ -25,24 +28,20 @@ public class ColliderHandler : MonoBehaviour
     {
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    checkTouch(Input.GetTouch(0).position);
-                }
+                checkTouch(Input.GetTouch(0).position);
             }
         }
-        else if (platform == RuntimePlatform.WindowsEditor)
+        else if (platform == RuntimePlatform.WindowsEditor && Input.GetMouseButtonUp(0))
         {
-            if (Input.GetMouseButtonUp(0))
-            {
-                checkTouch(Input.mousePosition);
-            }
+            checkTouch(Input.mousePosition);
         }
 
-        if (gm.IsInventoryOpen == true)
+        if (gm.IsInventoryOpen)
+        {
             layerMask.value = 5;
+        }
         else if (gm.State == GameMaster.GameState.Farm)
         {
             layerMask.value = 256;
@@ -61,8 +60,6 @@ public class ColliderHandler : MonoBehaviour
         }
         else
             layerMask.value = 0;
-
-        //Debug.Log(layerMask.value);
     }
 
     void checkTouch(Vector2 pos)
@@ -80,10 +77,6 @@ public class ColliderHandler : MonoBehaviour
         {
             hitterMethod(pos);
         }
-        //if (layerMask.value == 2048) // crushview
-        //{
-        //    hitterMethod(pos);
-        //}
     }
 
     public void hitterMethod(Vector2 pos)
@@ -94,9 +87,9 @@ public class ColliderHandler : MonoBehaviour
 
         if (hit)
         {
-            parentGameObject = hit.gameObject;
+            ParentGameObject = hit.gameObject;
             MethodCallerHandler mch;
-            mch = parentGameObject.GetComponent<MethodCallerHandler>();
+            mch = ParentGameObject.GetComponent<MethodCallerHandler>();
             mch.CallMethod();
 
         }

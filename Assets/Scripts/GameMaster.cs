@@ -9,19 +9,22 @@ public class GameMaster : MonoBehaviour
 {
 
     // Cameras for different views
-    public GameObject townCamera, farmCamera, breweryCamera;
-    public Camera grapeCrush;
-    public GameObject playGrapeCrush;
-    public bool CrushisActive;
-    public bool wineSold;
-
-    private GameObject guiTemp;
-    private GUIScript guiScript;
-    private CurtainControls curtainControls;
-    
+    public GameObject TownCamera, FarmCamera, BreweryCamera; // Drag in editor
+    public Camera GrapeCrush; // Drag in editor
+    public GameObject PlayGrapeCrushGO; // Drag in editor
+    public bool CrushisActive { get; set; }
+    public bool WineSold { get; set; }
 
     // set and compare to this
-    public GameState State = GameState.Farm;
+    public GameState State { get; set; }
+
+    // set and reset when inventory opens closes
+    // this is to stop colliders activating on mouse / touch clicks trough ui
+    public bool IsInventoryOpen { get; set; }
+
+    private GUIScript guiScript;
+    private CurtainControls curtainControls;
+
 
     /// <summary>
     /// List our gamestates here
@@ -76,43 +79,44 @@ public class GameMaster : MonoBehaviour
         Bottled
     }
 
-    // set and reset when inventory opens closes
-    // this is to stop colliders activating on mouse / touch clicks trough ui
-    public bool IsInventoryOpen = false;
-
     void Awake()
     {
         curtainControls = GameObject.FindGameObjectWithTag("Curtain").GetComponent<CurtainControls>();
-        guiTemp = GameObject.FindGameObjectWithTag("InventoryCanvas");
-        guiScript = guiTemp.GetComponent<GUIScript>();
-        playGrapeCrush.SetActive(false);
+        guiScript = GameObject.FindGameObjectWithTag("InventoryCanvas").GetComponent<GUIScript>();
+    }
+
+    private void Start()
+    {
+        State = GameState.Farm;
+        PlayGrapeCrushGO.SetActive(false);
         CrushisActive = false;
-        wineSold = false;
+        WineSold = false;
+        IsInventoryOpen = false;
     }
 
     private void Update()
     {
-        wineSold = false;
+        WineSold = false;
     }
     void GoToTown()
     {
-        curtainControls.FadeToBlack(Camera.main, townCamera.transform.Find("MainCam").GetComponent<Camera>());
+        curtainControls.FadeToBlack(Camera.main, TownCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Town;
     }
     void GoToFarm()
     {
-        curtainControls.FadeToBlack(Camera.main, farmCamera.transform.Find("MainCam").GetComponent<Camera>());
+        curtainControls.FadeToBlack(Camera.main, FarmCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Farm;
     }
     void GoToBrewery()
     {
-        curtainControls.FadeToBlack(Camera.main, breweryCamera.transform.Find("MainCam").GetComponent<Camera>());
+        curtainControls.FadeToBlack(Camera.main, BreweryCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Brewery;
     }
 
     void PlayGrapeCrush()
     {
-        curtainControls.FadeToBlack(Camera.main, grapeCrush);
+        curtainControls.FadeToBlack(Camera.main, GrapeCrush);
         State = GameState.GrapeCrush;
         StartCoroutine("Wait", 0.5f);
     }
@@ -126,7 +130,7 @@ public class GameMaster : MonoBehaviour
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
-        GameObject obj = Instantiate(playGrapeCrush);
+        GameObject obj = Instantiate(PlayGrapeCrushGO);
         State = GameState.GrapeCrush;
         obj.SetActive(true);
         CrushisActive = true;
@@ -174,17 +178,17 @@ public class GameMaster : MonoBehaviour
 
     public void FarmCameraTransition()
     {
-        farmCamera.GetComponent<MainAltCamControls>().transition = true;
+        FarmCamera.GetComponent<MainAltCamControls>().transition = true;
     }
 
     public void TownCameraTransition()
     {
-        townCamera.GetComponent<MainAltCamControls>().transition = true;
+        TownCamera.GetComponent<MainAltCamControls>().transition = true;
     }
 
     public void BreweryCameraTransition()
     {
-        breweryCamera.GetComponent<MainAltCamControls>().transition = true;
+        BreweryCamera.GetComponent<MainAltCamControls>().transition = true;
     }
 
     #endregion
@@ -239,12 +243,5 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
-
-
-    // debug tarkoituksissa voi poistaa myöhemmin
-    void DebugMethod()
-    {
-        Debug.Log("HEARHEAR!!");
-    }
 }
 

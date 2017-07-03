@@ -7,16 +7,13 @@ using UnityEngine;
 public class FermentorScript : MonoBehaviour
 {
 
-    public List<Sprite> Sprites = new List<Sprite>();
-    public GameMaster.FermentationState FermentationState;
-    public GameMaster.Winetype WineType;
-    public bool isFermenting;
-    public string grapeName;
-    private float timer;
-    public string niceTime;
+    public GameMaster.FermentationState FermentationState { get; set; }
+    public GameMaster.Winetype WineType { get; set; }
+    public bool IsFermenting { get; set; }
+    public string GrapeName { get; set; }
+    public float Timer { get; set; }
+    public string NiceTime { get; private set; }
 
-    private int fermentTimeMinutes;
-    private int fermentTimeSeconds;
     private GameMaster gameMaster;
     private SlotScript slotScript;
     private bool isStarted;
@@ -28,31 +25,17 @@ public class FermentorScript : MonoBehaviour
         isStarted = false;
     }
 
-
-    public float Timer
-    {
-        get
-        {
-            return timer;
-        }
-        set
-        {
-            timer = value;
-        }
-    }
-
-
     // Update is called once per frame
     void Update()
     {
         if (gameMaster.CrushisActive)
         {
-            if (isStarted == false)
+            if (!isStarted)
             {
                 isStarted = true;
             }
             // Check if the grape crush minigame was won and start the fermentation process.
-            if (CrushScript.didWin)
+            if (CrushScript.DidWin)
             {
                 slotScript.Ferment();
             }
@@ -60,20 +43,20 @@ public class FermentorScript : MonoBehaviour
 
         if (FermentationState != GameMaster.FermentationState.NotFermentating && FermentationState != GameMaster.FermentationState.Fermented)
         {
-            if (timer >= 0)
+            if (Timer >= 0)
             {
-                timer -= Time.deltaTime;
-                fermentTimeMinutes = Mathf.FloorToInt(timer / 60F);
-                fermentTimeSeconds = Mathf.FloorToInt(timer - fermentTimeMinutes * 60);
-                niceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
+                Timer -= Time.deltaTime;
+                int fermentTimeMinutes = Mathf.FloorToInt(Timer / 60F);
+                int fermentTimeSeconds = Mathf.FloorToInt(Timer - fermentTimeMinutes * 60);
+                NiceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
-            if (timer <= 0)
+            if (Timer <= 0)
             {
                 FermentationState = GameMaster.FermentationState.Fermented;
             }
         }
         else
-            niceTime = string.Format("0:00");
+            NiceTime = string.Format("0:00");
     }
 }

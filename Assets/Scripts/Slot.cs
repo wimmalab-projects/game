@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour, IPointerClickHandler
 {
 
-    public Text uiItemCount;
-    //public Text uiItemName;
-    public Image itemImage;
+    public Text UiItemCount; // Drag in editor
+    public Image ItemImage; // Drag in editor
 
-    private int itemCount;
     private Inventory inventory;
 
     private void Awake()
@@ -19,25 +17,20 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
     }
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         // Update the items count text and sprites
-        itemCount = inventory.items[gameObject.name].itemCount;
-        uiItemCount.text = itemCount.ToString();
+        int itemCount = inventory.Items[gameObject.name].itemCount;
+        UiItemCount.text = itemCount.ToString();
         //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
-        itemImage.sprite = inventory.items[gameObject.name].ItemSprite;
+        ItemImage.sprite = inventory.Items[gameObject.name].ItemSprite;
     }
 
     // Clear the highlight effect around the inventory block
     void clearHighlight()
     {
-        foreach (GameObject asd in inventory.slots)
+        foreach (GameObject asd in inventory.Slots)
         {
             asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
         }
@@ -47,10 +40,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData data)
     {
         clearHighlight();
-        if (inventory.items[gameObject.name] != null)
+        if (inventory.Items[gameObject.name] != null)
         {
             gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().seedName = gameObject.name;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName = gameObject.name;
             inventory.refreshInfo();
         }
     }

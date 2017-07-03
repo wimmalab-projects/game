@@ -16,7 +16,7 @@ public class MethodCallerHandler : MonoBehaviour
     private GameMaster gm;
 
     // method name to be called. set in editor
-    public string MethodName;
+    public string MethodName; // Drag in editor
 
     void Awake()
     {

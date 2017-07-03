@@ -24,7 +24,7 @@ public class grapeScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "GrapeFloor")
         {
-            crushScript.missedGrapes++;
+            crushScript.MissedGrapes++;
             Destroy(gameObject);
         }
     }

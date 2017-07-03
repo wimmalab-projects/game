@@ -7,47 +7,32 @@ using UnityEngine;
 public class BottlingScript : MonoBehaviour
 {
 
-    public GameMaster.BottlingState bottlingState;
-    private float timer;
-    public string niceTime;
-    public string wineName;
+    public GameMaster.BottlingState BottlingState { get; set; }
+    public string NiceTime { get; private set; }
+    public string WineName { get; set; }
+    public float Timer { get; set; }
 
-    private int bottlingTimeMinutes;
-    private int bottlingTimeSeconds;
-
-    public float Timer
-    {
-        get
-        {
-            return timer;
-        }
-
-        set
-        {
-            timer = value;
-        }
-    }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (bottlingState != GameMaster.BottlingState.NotBottling && bottlingState != GameMaster.BottlingState.Bottled)
+        if (BottlingState != GameMaster.BottlingState.NotBottling && BottlingState != GameMaster.BottlingState.Bottled)
         {
-            if (timer >= 0)
+            if (Timer >= 0)
             {
-                timer -= Time.deltaTime;
-                bottlingTimeMinutes = Mathf.FloorToInt(timer / 60F);
-                bottlingTimeSeconds = Mathf.FloorToInt(timer - bottlingTimeMinutes * 60);
-                niceTime = string.Format("{0:0}:{1:00}", bottlingTimeMinutes, bottlingTimeSeconds);
+                Timer -= Time.deltaTime;
+                int bottlingTimeMinutes = Mathf.FloorToInt(Timer / 60F);
+                int bottlingTimeSeconds = Mathf.FloorToInt(Timer - bottlingTimeMinutes * 60);
+                NiceTime = string.Format("{0:0}:{1:00}", bottlingTimeMinutes, bottlingTimeSeconds);
             }
 
-            if (timer <= 0)
+            if (Timer <= 0)
             {
-                bottlingState = GameMaster.BottlingState.Bottled;
+                BottlingState = GameMaster.BottlingState.Bottled;
             }
         }
         else
-            niceTime = string.Format("0:00");
+            NiceTime = string.Format("0:00");
     }
 }

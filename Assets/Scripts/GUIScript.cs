@@ -9,26 +9,25 @@ using UnityEngine.EventSystems;
 public class GUIScript : MonoBehaviour
 {
 
-    public CanvasGroup inventory;
-    public CanvasGroup infoPanel;
-    public Text infoPanelText;
-    public Text infoPanelTimer;
-    public Button harvestButton;
-    public Button plantButton;
-    public string button;
+    public CanvasGroup Inventory; // Drag in editor
+    public CanvasGroup InfoPanel; // Drag in editor
+    public Text InfoPanelText; // Drag in editor
+    public Text InfoPanelTimer; // Drag in editor
+    public Button HarvestButton; // Drag in editor
+    public Button PlantButton; // Drag in editor
+    public string Button; // Drag in editor
 
     private Animator animator; // Animate the Inventory, but scrap this.
-    private GameObject[] temp;
     private SlotScript slotScript;
     private PlantGround groundScript;
     private GameObject parent;
     private Image infoPanelSprite;
-    private string timer;
     private GameObject gameManager;
     private FermentorScript fermentorScript;
     private GameMaster gameMaster;
     private ClarificationScript clarificationScript;
     private BottlingScript bottlingScript;
+    private ColliderHandler colliderHandler;
 
     // Use this for initialization
 
@@ -37,52 +36,54 @@ public class GUIScript : MonoBehaviour
         // Get script/animator/sprite references
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         gameMaster = gameManager.GetComponent<GameMaster>();
-        infoPanelSprite = infoPanel.transform.Find("Plant sprite").GetComponent<Image>();
-        temp = GameObject.FindGameObjectsWithTag("Slot");
+        infoPanelSprite = InfoPanel.transform.Find("Plant sprite").GetComponent<Image>();
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("Slot");
         slotScript = gameManager.GetComponent<SlotScript>();
         animator = GetComponent<Animator>();
+        colliderHandler = gameManager.GetComponent<ColliderHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        string timer;
         // In the update, check the time left for each state, then update the timer accordingly to the infopanel timer text.
-        if (infoPanel.alpha == 1)
+        if (InfoPanel.alpha == 1)
         {
             if (parent.tag == "Planted")
             {
-                timer = groundScript.niceTime;
-                infoPanelTimer.text = timer;
+                timer = groundScript.NiceTime;
+                InfoPanelTimer.text = timer;
                 if (groundScript.Timer <= 0)
                 {
-                    infoPanelTimer.text = "Ready!";
+                    InfoPanelTimer.text = "Ready!";
                 }
             }
             else if (parent.tag == "Fermenting")
             {
-                timer = fermentorScript.niceTime;
-                infoPanelTimer.text = timer;
+                timer = fermentorScript.NiceTime;
+                InfoPanelTimer.text = timer;
                 if (fermentorScript.Timer <= 0)
                 {
-                    infoPanelTimer.text = "Ready!";
+                    InfoPanelTimer.text = "Ready!";
                 }
             }
             else if (parent.tag == "Clarificating")
             {
-                timer = clarificationScript.niceTime;
-                infoPanelTimer.text = timer;
+                timer = clarificationScript.NiceTime;
+                InfoPanelTimer.text = timer;
                 if (clarificationScript.Timer <= 0)
                 {
-                    infoPanelTimer.text = "Ready!";
+                    InfoPanelTimer.text = "Ready!";
                 }
             }
             else if (parent.tag == "Bottling")
             {
-                timer = bottlingScript.niceTime;
-                infoPanelTimer.text = timer;
+                timer = bottlingScript.NiceTime;
+                InfoPanelTimer.text = timer;
                 if (bottlingScript.Timer <= 0)
                 {
-                    infoPanelTimer.text = "Ready!";
+                    InfoPanelTimer.text = "Ready!";
                 }
             }
         }
@@ -93,23 +94,23 @@ public class GUIScript : MonoBehaviour
     {
         if (parent.tag == "Planted")
         {
-            infoPanelText.text = name + " is growing!";
+            InfoPanelText.text = name + " is growing!";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
 
         else if (parent.tag == "Fermenting")
         {
-            infoPanelText.text = name + " is fermenting";
+            InfoPanelText.text = name + " is fermenting";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
         else if (parent.tag == "Clarificating")
         {
-            infoPanelText.text = name + " is being clarificated";
+            InfoPanelText.text = name + " is being clarificated";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
         else if (parent.tag == "Bottling")
         {
-            infoPanelText.text = name + " is being bottled";
+            InfoPanelText.text = name + " is being bottled";
             infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
         }
     }
@@ -117,13 +118,13 @@ public class GUIScript : MonoBehaviour
     // Check what button was pressed and perform action accordingly to that button. didPlant hides the inventory / infopanel if the action was succesfully executed. If not the inventory/infopanel stays open.
     public void ButtonClicked()
     {
-        if (gameManager.GetComponent<GameMaster>().IsInventoryOpen == true)
+        if (gameManager.GetComponent<GameMaster>().IsInventoryOpen)
         {
-            button = EventSystem.current.currentSelectedGameObject.name;
-            switch (button)
+            Button = EventSystem.current.currentSelectedGameObject.name;
+            switch (Button)
             {
                 case "Exit":
-                    infoPanel.alpha = 0;
+                    InfoPanel.alpha = 0;
                     animator.SetBool("showInventory", false);
                     break;
                 case "Plant":
@@ -139,7 +140,7 @@ public class GUIScript : MonoBehaviour
                     if (groundScript.Timer <= 0)
                     {
                         slotScript.Harvest();
-                        infoPanel.alpha = 0;
+                        InfoPanel.alpha = 0;
                     }
                     else
                         return;
@@ -175,17 +176,17 @@ public class GUIScript : MonoBehaviour
                     if ((parent.tag == "Fermenting" && fermentorScript.Timer <= 0) || (parent.tag == "Clarificating" && clarificationScript.Timer <= 0) || (parent.tag == "Bottling" && bottlingScript.Timer <= 0))
                     {
                         slotScript.Collect();
-                        infoPanel.alpha = 0;
+                        InfoPanel.alpha = 0;
                     }
                     else
                         return;
                     break;
             }
             // Return the names and texts to default.
-            plantButton.name = "Plant";
-            plantButton.GetComponentInChildren<Text>().text = "Plant";
-            harvestButton.name = "Harvest";
-            harvestButton.GetComponentInChildren<Text>().text = "Harvest";
+            PlantButton.name = "Plant";
+            PlantButton.GetComponentInChildren<Text>().text = "Plant";
+            HarvestButton.name = "Harvest";
+            HarvestButton.GetComponentInChildren<Text>().text = "Harvest";
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         }
     }
@@ -193,7 +194,7 @@ public class GUIScript : MonoBehaviour
     // Shows the inventory or the infopanel depending on what was clicked. Also changes the button name and text so that the right action can be performed
     public void showInventory()
     {
-        parent = ColliderHandler.parentGameObject;
+        parent = colliderHandler.ParentGameObject;
         groundScript = parent.GetComponent<PlantGround>();
         fermentorScript = parent.GetComponent<FermentorScript>();
         clarificationScript = parent.GetComponent<ClarificationScript>();
@@ -202,48 +203,48 @@ public class GUIScript : MonoBehaviour
         switch (parent.tag)
         {
             case "NotPlanted":
-                inventory.alpha = 1;
+                Inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
                 break;
             case "Planted":
-                infoPanel.alpha = 1;
-                initializeInfoPanel(groundScript.plantName);
+                InfoPanel.alpha = 1;
+                initializeInfoPanel(groundScript.PlantName);
                 break;
             case "NotFermenting":
-                inventory.alpha = 1;
+                Inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
-                plantButton.name = "Crush";
-                plantButton.GetComponentInChildren<Text>().text = "Crush";
+                PlantButton.name = "Crush";
+                PlantButton.GetComponentInChildren<Text>().text = "Crush";
                 break;
             case "Fermenting":
-                infoPanel.alpha = 1;
+                InfoPanel.alpha = 1;
                 initializeInfoPanel(gameMaster.GetDescription(fermentorScript.WineType));
-                harvestButton.name = "Collect";
-                harvestButton.GetComponentInChildren<Text>().text = "Collect";
+                HarvestButton.name = "Collect";
+                HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
             case "NotClarificating":
-                inventory.alpha = 1;
+                Inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
-                plantButton.name = "Clarificate";
-                plantButton.GetComponentInChildren<Text>().text = "Clarificate";
+                PlantButton.name = "Clarificate";
+                PlantButton.GetComponentInChildren<Text>().text = "Clarificate";
                 break;
             case "Clarificating":
-                infoPanel.alpha = 1;
-                initializeInfoPanel(clarificationScript.wineName);
-                harvestButton.name = "Collect";
-                harvestButton.GetComponentInChildren<Text>().text = "Collect";
+                InfoPanel.alpha = 1;
+                initializeInfoPanel(clarificationScript.WineName);
+                HarvestButton.name = "Collect";
+                HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
             case "NotBottling":
-                inventory.alpha = 1;
+                Inventory.alpha = 1;
                 animator.SetBool("showInventory", true);
-                plantButton.name = "Bottle";
-                plantButton.GetComponentInChildren<Text>().text = "Bottle";
+                PlantButton.name = "Bottle";
+                PlantButton.GetComponentInChildren<Text>().text = "Bottle";
                 break;
             case "Bottling":
-                infoPanel.alpha = 1;
-                initializeInfoPanel(bottlingScript.wineName);
-                harvestButton.name = "Collect";
-                harvestButton.GetComponentInChildren<Text>().text = "Collect";
+                InfoPanel.alpha = 1;
+                initializeInfoPanel(bottlingScript.WineName);
+                HarvestButton.name = "Collect";
+                HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
         }
     }
