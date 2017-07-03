@@ -43,10 +43,6 @@ public class GUIScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        inventory.alpha = 0;
-    }
     // Update is called once per frame
     void Update()
     {
@@ -128,7 +124,7 @@ public class GUIScript : MonoBehaviour
             {
                 case "Exit":
                     infoPanel.alpha = 0;
-                    inventory.alpha = 0;
+                    animator.SetBool("showInventory", false);
                     break;
                 case "Plant":
                     slotScript.Plant();
@@ -239,7 +235,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "NotBottling":
                 inventory.alpha = 1;
-                //animator.SetBool("showInventory", true);
+                animator.SetBool("showInventory", true);
                 plantButton.name = "Bottle";
                 plantButton.GetComponentInChildren<Text>().text = "Bottle";
                 break;

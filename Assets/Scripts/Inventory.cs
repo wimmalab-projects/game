@@ -64,6 +64,14 @@ public class Inventory : MonoBehaviour
         //        }
         //    }
         //}
+
+        GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
+        GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
+        GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
+
+        go1.GetComponent<Text>().text = items[items.Keys[0]].returnName();
+        go2.GetComponent<Text>().text = items[items.Keys[0]].ItemDesc;
+        go3.GetComponent<Image>().sprite = items[items.Keys[0]].ItemSprite;
     }
 
     public void refreshInfo()
