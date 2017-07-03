@@ -4,23 +4,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject inventory;
+    public GameObject inventorySlot;
 
     public List<GameObject> slots = new List<GameObject>();
     public SortedList<string, Item> items = new SortedList<string, Item>();
-    public Canvas canvas; // place prefab in editor
-    public GameObject slot; // place prefab in editor
 
-    private const int maxRows = 6;
-    private const int maxColumns = 5;
-    private GameObject InventoryGO;
+    private GameObject contentPanel; // place prefab in editor
+    private GameObject infoPanel;
+    private GridLayoutGroup glg; // place prefab in editor
+    private SlotScript slotScript;
+    private Item currentlySelectedItem;
 
     void Awake()
     {
-        // Get the inventory reference
-        InventoryGO = canvas.transform.Find("Inventory").gameObject;
+        infoPanel = inventory.transform.Find("Info").gameObject; // find our infopanel inside shop
+        contentPanel = inventory.transform.Find("Scroll View").Find("Viewport").Find("Content").gameObject; // find content panel inside shop
+        glg = contentPanel.GetComponent<GridLayoutGroup>();
+        slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
     }
 
     // Use this for initialization
@@ -39,24 +44,39 @@ public class Inventory : MonoBehaviour
         // create inventory buttons
         for (int i = 0; i < items.Count; i++)
         {
-
-            GameObject temp = Instantiate(slot);
-            temp.transform.SetParent(InventoryGO.transform);
-            temp.GetComponent<Slot>().uiItemName.text = items[items.Keys[i]].returnName();
+            GameObject temp = Instantiate(inventorySlot);
+            temp.transform.SetParent(contentPanel.transform);
+            temp.name = items.Keys[i];
             slots.Add(temp);
         }
 
-        // set inventory button positions /////// Muuta tämä vastaamaan shopin grid layout tyyppistä ratkaisua.
-        for (int i = 0, y = 0; i < maxRows; y++)
-        {
-            for (int x = 0; x < maxColumns; x++, i++)
-            {
-                if (slots[i] != null)
-                {
-                    slots[i].transform.localPosition = new Vector3(125 + 1280 / 2 * -1 + 200 * x, (720 / 2 - 25) - 350 * y);
-                }
-            }
-        }
+        float y = (contentPanel.transform.childCount + 1) / glg.constraintCount * glg.cellSize.y + (glg.cellSize.y * 2);
+        contentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(contentPanel.GetComponent<RectTransform>().sizeDelta.x, y);
+
+        //// set inventory button positions /////// Muuta tämä vastaamaan shopin grid layout tyyppistä ratkaisua.
+        //for (int i = 0, y = 0; i < maxRows; y++)
+        //{
+        //    for (int x = 0; x < maxColumns; x++, i++)
+        //    {
+        //        if (slots[i] != null)
+        //        {
+        //            slots[i].transform.localPosition = new Vector3(125 + 1280 / 2 * -1 + 200 * x, (720 / 2 - 25) - 350 * y);
+        //        }
+        //    }
+        //}
+    }
+
+    public void refreshInfo()
+    {
+        currentlySelectedItem = items[slotScript.seedName];
+
+        GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
+        GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
+        GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
+
+        go1.GetComponent<Text>().text = currentlySelectedItem.returnName();
+        go2.GetComponent<Text>().text = currentlySelectedItem.ItemDesc;
+        go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
     }
 
     // Debug button that adds grape vines.
