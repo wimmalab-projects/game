@@ -8,7 +8,8 @@ _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem
 eC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpRestaurantButton.csutf-8e
 \C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.csutf-8y
 pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\CurtainControls.csutf-8y
-pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\kameracontrolli.csutf-8\
+pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transitionit ja kamera\kameracontrolli.csutf-8e
+\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\InventoryGrid.csutf-8\
 SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.csutf-8`
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopExit.csutf-8`
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\ShopSlot.csutf-8a
