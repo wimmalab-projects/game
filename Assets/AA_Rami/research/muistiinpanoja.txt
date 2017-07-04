@@ -1,0 +1,50 @@
+cd C:\Users\Administrator\Desktop\git_wine\wine-game
+
+C:\Users\Administrator\Desktop\sonar-scanner-cli-3.0.3.778-windows\sonar-scanner-3.0.3.778-windows\bin\sonar-scanner.bat
+
+
+appearance
+clarity = kirkastus
+
+nose
+
+Condition = Viat viiniss‰ jotka aiheuttaa hajuja, pilalla korkkim‰t‰ yms
+(
+cork taint = 1% change to all wine
+
+JATKOKEHITYS IDEAA: MOLDY grapes
+It is caused by bacterial spoilage.  It has certainly happened to you to taste a too mature strawberry or other fruits: a taste of moldy.  Thatís something you can detect if the grapes were not selected properly, and rotten ones have been let to ferment alongside the good ones. (ryp‰leiden lajittelu ennen murskaamista)
+
+Volatile Acidity: In short, volatile acidity can occur anytime you have the appropriate microbes, oxygen from air and a sufficient amount of heat. As such, volatile acidity can appear at any point in the wine process. You can get it during primary fermentation. You can get it during malolactic fementation.
+
+OXIDATION 1% change when bottling
+Too much air has penetrated in the bottle, accelerating the long natural oxidation that takes place over years through the cork. The wine is lifeless, flat, deprived of its fruity aromas.
+
+SULFUR flavours 1% change during bottling
+During fermentation, sulfur compounds develop. Sulfur dioxide is also added to wine to preserve it.  Screw-caps closures seal wines so tightly that the sulfides present in the wine remains trapped in , affecting the wineís aromas. This defect is also called REDUCTION , the opposite of OXIDATION . The following are the main sulfur smells, with their chemical name.
+)
+
+intensity = ik‰‰ntyminen?
+
+aroma = viiniryp‰le + ik‰‰ntymisastian rakenne + lis‰tyt maut
+
+Palate
+
+Sweetness = Hiivan ja sokereiden tasapaino k‰ymisvaiheessa (sokeri tulee ryp‰leist‰ vs lis‰tty hiiva)
+
+Acidity = Tulee ryp‰leist‰ ("as the berry grows both tartaric and malic acid increase in concentration until veraison, then both decrease, with malic acid decreasing at a more rapid rate.".)
+
+Tannin = whitewine is low tannin, rosewine is medium tannin, redwine is high tannin
+( tannins increase together with the duration that the wine is in contact with grape skins, can also be added in later as powdered tannin )
+
+body = amount of alcholo in wine
+(
+Wines Under 12.5% alcohol (the alcohol percentage should always be written on the wineís label) are said to light-bodied. These are generally the white wines we think of as crisp and refreshing. Good examples of these wines are Riesling, Italian Prosecco and Vinho Verde.
+
+Wines between 12.5% and 13.5% are considered medium-bodied. Good examples of these wines are Rose, French Burgundy, Pinot Grigio and Sauvignon Blanc.
+
+Finally, any wine over 13.5% alcohol is considered full-bodied. Some wines that are normally over this alcohol level and considered full-bodied are Zinfandel, Syrah/Shiraz, Cabernet, Merlot and Malbec. While the majority of wines over 13.5% alcohol are usually red, Chardonnay is a great example of a white that often can also be considered full-bodied.
+)
+
+finish = (vaatii oikean maistamisen... otetaanko pois?)
+(how long does the taste linger after a taste)
