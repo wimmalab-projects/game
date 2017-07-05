@@ -10,9 +10,9 @@ _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem
 eC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpRestaurantButton.cs5
 S1144"Remove this unused private member. z
 S101hRename class "cpRestaurantButton" to match camel case naming rules, consider using "CpRestaurantButton". ‡
-\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.cs`
-S2223MChange the visibility of "parentGameObject" or make it "const" or "readonly". -[
-S2223HChange the visibility of "hitDetected" or make it "const" or "readonly". "B
+\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\tempTouch.cs[
+S2223HChange the visibility of "hitDetected" or make it "const" or "readonly". "`
+S2223MChange the visibility of "parentGameObject" or make it "const" or "readonly". -B
 S1066/Merge this if statement with the enclosing one. B
 S1066/Merge this if statement with the enclosing one. .
 S2933Make "platform" "readonly".		 5
@@ -33,8 +33,8 @@ pC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\Scene transiti
 S1144"Remove this unused private member.
  5
 S1144"Remove this unused private member. å
-S1186yAdd a nested comment explaining why this method is empty, throw a "NotSupportedException" or complete the implementation. å
-S1186yAdd a nested comment explaining why this method is empty, throw a "NotSupportedException" or complete the implementation. Æ
+S1186yAdd a nested comment explaining why this method is empty, throw a "NotSupportedException" or complete the implementation. å
+S1186yAdd a nested comment explaining why this method is empty, throw a "NotSupportedException" or complete the implementation. Æ
 SC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Shop.cs1
 S125Remove this commented out code.HH 85
 S1144"Remove this unused private member.0 5
@@ -47,22 +47,22 @@ WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\Sho
 XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\ShopSystem\buyButton.cs5
 S1144"Remove this unused private member. h
 S101VRename class "buyButton" to match camel case naming rules, consider using "BuyButton". ‘
-gC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptej√§\MainAltCamControls.cs=
-S1125*Remove the unnecessary Boolean literal(s). 4
+gC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\testi scriptej√§\MainAltCamControls.cs4
 S2933!Make "transitionTime" "readonly".
  =
+S1125*Remove the unnecessary Boolean literal(s). =
 S1125*Remove the unnecessary Boolean literal(s).%% 5
 S1144"Remove this unused private member. Å
 XC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\Editor\RPGTalkEditor.cs3
 S125Remove this commented out code.
 ´´ (p
 S101^Rename class "RPGTalkEditor" to match camel case naming rules, consider using "RpgTalkEditor". Ñ
-KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csp
-S101\Rename class "RPGTalkPhoto" to match camel case naming rules, consider using "RpgTalkPhoto".
-ÿÿ v
+KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csv
 S101bRename class "RPGTalkVariable" to match camel case naming rules, consider using "RpgTalkVariable".
 —— /
-S125Remove this commented out code.DD !3
+S125Remove this commented out code.DD !p
+S101\Rename class "RPGTalkPhoto" to match camel case naming rules, consider using "RpgTalkPhoto".
+ÿÿ 3
 S125Remove this commented out code.
 úú 3
 S125Remove this commented out code.
@@ -80,17 +80,17 @@ KC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\RPGTALK\RPGTalk.csp
 S134CRefactor this code to not nest more than 3 control flow statements.
 ⁄⁄ W
 S134CRefactor this code to not nest more than 3 control flow statements.
-’’ W
+íí W
 S134CRefactor this code to not nest more than 3 control flow statements.
-íí 7
+’’ K
+S14496Define the locale to be used in this string operation.
+‘‘ !7
 S1144"Remove this unused private member.
 √√ (7
 S1144"Remove this unused private member.
 áã 7
 S1144"Remove this unused private member.
-†™ K
-S14496Define the locale to be used in this string operation.
-‘‘ !W
+†™ W
 S134CRefactor this code to not nest more than 3 control flow statements.
 »» W
 S134CRefactor this code to not nest more than 3 control flow statements.
@@ -197,11 +197,11 @@ HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.cs1
 S1144"Remove this unused private member. ç
 NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.csX
 S2223EChange the visibility of "didPlant" or make it "const" or "readonly". 5
-S1144"Remove this unused private member. j
+S1144"Remove this unused private member. h
+S2696UMake the enclosing instance method "static" or remove this set on the "static" field.!! h
+S2696UMake the enclosing instance method "static" or remove this set on the "static" field.`` j
 S2696UMake the enclosing instance method "static" or remove this set on the "static" field.
-∏∏ h
-S2696UMake the enclosing instance method "static" or remove this set on the "static" field.`` h
-S2696UMake the enclosing instance method "static" or remove this set on the "static" field.!! j
+∏∏ j
 S2696UMake the enclosing instance method "static" or remove this set on the "static" field.
 ÿÿ ‰
 OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.cs5
