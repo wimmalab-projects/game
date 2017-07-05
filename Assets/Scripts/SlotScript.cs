@@ -126,7 +126,7 @@ public class SlotScript : MonoBehaviour
         else
             fermentorScript.WineType = GameMaster.Winetype.RedWine;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
-        fermentorScript.Timer = 5;
+        fermentorScript.Timer = 150;
         fermentorScript.IsFermenting = true;
     }
 
@@ -180,7 +180,7 @@ public class SlotScript : MonoBehaviour
                 inventory.Items[CurrentlySelectedName].PopItem();
                 guiScript.initializeInfoPanel(clarificationScript.WineName);
                 clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
-                clarificationScript.Timer = 10;
+                clarificationScript.Timer = 100;
                 didPlant = true;
             }
             else
@@ -212,7 +212,7 @@ public class SlotScript : MonoBehaviour
                 inventory.Items[CurrentlySelectedName].PopItem();
                 guiScript.initializeInfoPanel(bottlingScript.WineName);
                 bottlingScript.BottlingState = GameMaster.BottlingState.Bottling;
-                bottlingScript.Timer = 10;
+                bottlingScript.Timer = 100;
                 didPlant = true;
             }
             else

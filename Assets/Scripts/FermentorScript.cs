@@ -17,12 +17,19 @@ public class FermentorScript : MonoBehaviour
     private GameMaster gameMaster;
     private SlotScript slotScript;
     private bool isStarted;
+    private bool isPaused;
+    private bool isTimerRunning;
+
+    System.DateTime timePaused;
+    System.DateTime timeUnpaused;
 
     private void Awake()
     {
         gameMaster = GameObject.Find("GameManager").GetComponent<GameMaster>();
         slotScript = GameObject.Find("GameManager").GetComponent<SlotScript>();
         isStarted = false;
+        isPaused = false;
+        isTimerRunning = false;
     }
 
     // Update is called once per frame
@@ -45,6 +52,7 @@ public class FermentorScript : MonoBehaviour
         {
             if (Timer >= 0)
             {
+                isTimerRunning = true;
                 Timer -= Time.deltaTime;
                 int fermentTimeMinutes = Mathf.FloorToInt(Timer / 60F);
                 int fermentTimeSeconds = Mathf.FloorToInt(Timer - fermentTimeMinutes * 60);
@@ -53,10 +61,52 @@ public class FermentorScript : MonoBehaviour
 
             if (Timer <= 0)
             {
+                isTimerRunning = false;
                 FermentationState = GameMaster.FermentationState.Fermented;
             }
         }
         else
             NiceTime = string.Format("0:00");
     }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if(isTimerRunning)
+        {
+            if (!hasFocus)
+            {
+                timePaused = System.DateTime.Now;
+            }
+            else
+            {
+                float timeLapsed;
+                timeUnpaused = System.DateTime.Now;
+                System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
+                timeLapsed = (float)difference.TotalSeconds;
+                Timer = (Timer + timeLapsed);
+                Debug.Log(Timer);
+            }
+        }
+    }
+
+    private void OnApplicationPause(bool paused)
+    {
+        if (isTimerRunning)
+        {
+            if (paused)
+            {
+                timePaused = System.DateTime.Now;
+            }
+            else
+            {
+                float timeLapsed;
+                timeUnpaused = System.DateTime.Now;
+                System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
+                timeLapsed = (float)difference.TotalSeconds;
+                Timer = (Timer + timeLapsed);
+                Debug.Log(Timer);
+            }
+        }
+    }
+
 }
