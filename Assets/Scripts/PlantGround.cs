@@ -12,8 +12,11 @@ public class PlantGround : MonoBehaviour
     public string PlantName { get; set; }
     public string NiceTime { get; private set; }
 
-    private float timer = 10;
+    private float timer = 100;
 
+    private bool isTimerRunning;
+    private System.DateTime timePaused;
+    private System.DateTime timeUnpaused;
 
     public float Timer
     {
@@ -21,8 +24,17 @@ public class PlantGround : MonoBehaviour
         {
             return timer;
         }
+
+        set
+        {
+            timer = value;
+        }
     }
 
+    private void Start()
+    {
+        isTimerRunning = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +42,7 @@ public class PlantGround : MonoBehaviour
         {
             if (timer >= 0)
             {
+                isTimerRunning = true;
                 timer -= Time.deltaTime;
                 int harvestTimeMinutes = Mathf.FloorToInt(timer / 60F);
                 int harvestTimeSeconds = Mathf.FloorToInt(timer - harvestTimeMinutes * 60);
@@ -40,6 +53,7 @@ public class PlantGround : MonoBehaviour
             if (timer <= 0)
             {
                 //GetComponent<SpriteRenderer>().sprite = Sprites[0];
+                isTimerRunning = false;
                 PlantState = GameMaster.PlantState.Grapes;
             }
             else if (timer < 60)
@@ -66,4 +80,44 @@ public class PlantGround : MonoBehaviour
     {
         timer = 10;
     }
+
+    //private void OnApplicationFocus(bool hasFocus)
+    //{
+    //    if (isTimerRunning)
+    //    {
+    //        if (!hasFocus)
+    //        {
+    //            timePaused = System.DateTime.Now;
+    //        }
+    //        else
+    //        {
+    //            float timeLapsed;
+    //            timeUnpaused = System.DateTime.Now;
+    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
+    //            timeLapsed = (float)difference.TotalSeconds;
+    //            timer = (timer + timeLapsed);
+    //            Debug.Log(Timer);
+    //        }
+    //    }
+    //}
+
+    //private void OnApplicationPause(bool paused)
+    //{
+    //    if (isTimerRunning)
+    //    {
+    //        if (paused)
+    //        {
+    //            timePaused = System.DateTime.Now;
+    //        }
+    //        else
+    //        {
+    //            float timeLapsed;
+    //            timeUnpaused = System.DateTime.Now;
+    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
+    //            timeLapsed = (float)difference.TotalSeconds;
+    //            timer = (timer + timeLapsed);
+    //            Debug.Log(Timer);
+    //        }
+    //    }
+    //}
 }
