@@ -45,7 +45,7 @@ public class Item
         {
             return itemValue;
         }
-        private set // keep private so item stack can only be changed from methods inside this class
+        set // keep private so item stack can only be changed from methods inside this class
         {
             if (value < 0)
             {
