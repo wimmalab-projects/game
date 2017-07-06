@@ -30,10 +30,10 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         // add items
-        Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.VINE));
-        Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.VINE));
-        Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPE));
-        Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPE));
+        Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.GRAPEVINE));
+        Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.GRAPEVINE));
+        Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPEVINE));
+        Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPEVINE));
         Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
         Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
         Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));

@@ -14,8 +14,7 @@ public class Item
 
     public enum ItemType
     {
-        GRAPE,
-        VINE,
+        GRAPEVINE,
         WINE,
         BOTTLE,
     }

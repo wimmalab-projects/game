@@ -6,7 +6,7 @@ Airén
 Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.
 
 Low Acidity
-Medium alcohol content (12-14%)
+Medium alcohol content (up to 14%)
 Citrus
 Green Apples
 Nuts
@@ -34,7 +34,7 @@ Chardonnay is a green-skinned grape variety used in the production of white wine
 but is now grown wherever wine is produced, from England to New Zealand
 
 Noticeable Acidity
-Medium alcohol content (12-14%)
+Medium alcohol content (up to 14%)
 Oak
 Green Plum
 Apple
@@ -46,10 +46,10 @@ Mango
 ================================
 Chenin Blanc
 
-Chenin blanc (Pineau de la Loire) is a white wine grape variety from the Loire Valley of France.
+Chenin blanc is a white wine grape variety from the Loire Valley of France.
 
 High acidity
-High alcohol content (13.5-14.5%)
+High alcohol content (up to 14.5%)
 Honey
 Apple
 Pear
@@ -62,15 +62,6 @@ Colombard is French white wine grape variety that is the offspring of Chenin bla
 High Acidic
 Low alcohol content (up to 12.5%)
 Guava
-================================
-Flora 
-
-The white Flora is a California wine grape. It is a crossing of Semillon and Gewürztraminer, both Vitis vinifera varieties, and it was created in 1938 by Harold P. Olmo
-
-High Acidic
-Medium alcohol content (12-14%)
-Pear
-Lychee
 ================================
 Garganega 
 
@@ -86,7 +77,7 @@ Gewürtztraminer
 Gewürztraminer is an aromatic wine grape variety, used in white wines, and performs best in cooler climates. In English, it is sometimes referred to colloquially as Gewürz, and in French it is written Gewurztraminer.
 
 Sweet
-Medium alcohol content (12.5-13.5%)
+Medium alcohol content (up to 13.5%)
 Lychees
 Roses
 Passion Fruit
@@ -101,20 +92,12 @@ High acidity
 High alcohol contents (up to 18%)
 lemon
 ================================
-Ansonica
-
-Ansonica or Inzolia is a white Italian wine grape planted primarily in western Sicily where it can be used to produce Marsala wine.
-
-Good Acidity
-Medium alcohol content (up to 13%)
-1 random kernel aroma
-================================
 Macabeo
 
-Macabeo, also called Viura or Macabeu is a white variety of wine grape used to make mildly acidic and young white wines.
+Macabeo is a white variety of wine grape used to make mildly acidic and young white wines.
 
 Medium acidic
-High alcohol content (12-14%)
+High alcohol content (up to 14%)
 Grapefruit
 Oak
 ================================
@@ -147,7 +130,7 @@ honey
 ================================
 Pinot Gris
 
-Pinot gris (or Grauburgunder) is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot noir variety, it normally has a grayish-blue fruit, accounting for its name (gris meaning "gray" in French) but the grapes can have a brownish pink to black and even white appearance.
+Pinot gris is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot noir variety, it normally has a grayish-blue fruit, accounting for its name (gris meaning "gray" in French) but the grapes can have a brownish pink to black and even white appearance.
 
 medium acidic
 Low alcohol content (up to 12.5%)
@@ -161,7 +144,7 @@ melon
 ================================
 Glera
 
-Glera (or Prosecco) is a white variety of grape of Slovenian origin, which was brought to the village of Prosecco from Slovenia's Karst region. Glera was, until 2009, mostly referred to as Prosecco. Glera is mainly grown in veneto area in italy near coneglianoa and valdobbiadene and is mainly used to produce white wine called Prosecco.
+Glera is a white variety of grape of Slovenian origin, which was brought to the village of Prosecco from Slovenia's Karst region. Glera was, until 2009, mostly referred to as Prosecco. Glera is mainly grown in veneto area in italy near coneglianoa and valdobbiadene and is mainly used to produce white wine called Prosecco.
 
 High Acidity
 Low alcohol content (up to 11.5%)
@@ -206,15 +189,6 @@ Toast
 Lemon
 Green Apple
 =================================
-Sauvignon Vert
-
-Sauvignon vert is a white wine grape of the species Vitis vinifera. It is widely planted in Chile where it was historically mistaken for Sauvignon blanc.
-
-Medium Acidity
-High alcohol content (up to 14.5%)
-Green Apples
-Walnut
-=================================
 Torrontés
 
 Torrontés is a white Argentine wine grape variety, producing fresh, aromatic wines with moderate acidity, smooth texture and mouthfeel as well as distinctive peach and apricot aromas on the nose.
@@ -228,7 +202,7 @@ Lemon Zest
 =================================
 Trebbiano
 
-Trebbiano is an Italian wine grape, one of the most widely planted grape varieties in the world.[1] It gives good yields, but tends to yield undistinguished wine. It can be fresh and fruity, but does not keep long.
+Trebbiano is an Italian wine grape, one of the most widely planted grape varieties in the world. It gives good yields, but tends to yield undistinguished wine. It can be fresh and fruity, but does not keep long.
 
 High acidity
 Low alcohol content (up to 12.5%)
@@ -241,7 +215,7 @@ Gooseberry
 =================================
 Viognier
 
-Viognier (French pronunciation: ?[vi??je]) is a white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley.[2] Outside of the Rhône, Viognier can be found in regions of North and South America as well as Australia, New Zealand, the Cape Winelands in South Africa and Israel.
+Viognier is a white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley. Outside of the Rhône, Viognier can be found in regions of North and South America as well as Australia, New Zealand, the Cape Winelands in South Africa and Israel.
 
 Low Acidity
 High alcohol content (up to 13%)
@@ -266,7 +240,7 @@ Pear
 =================================
 Cabernet Sauvignon
 
-Cabernet Sauvignon (French: [kab??n? sovi'??~]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.
+Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.
 
 Medium Acidity
 High alcohol content (up to 15%)
@@ -347,7 +321,7 @@ Raspberry
 =================================
 Pinot Noir
 
-Pinot Noir (French: [pino nwa?]) is a red wine grape variety of the species Vitis Vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes. The name is derived from the French words for pine and black. The pine alluding to the grape variety having tightly clustered, pine cone-shaped bunches of fruit.[1]
+Pinot Noir is a red wine grape variety of the species Vitis Vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes. The name is derived from the French words for pine and black. The pine alluding to the grape variety having tightly clustered, pine cone-shaped bunches of fruit.
 
 High Acidity
 High alcohol content (up to 13.5%)
@@ -386,7 +360,7 @@ Violet
 =================================
 Syrah (Shiraz)
 
-Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche.[1] Syrah should not be confused with Petite Sirah; a cross of Syrah with Peloursin dating from 1880.
+Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.
 
 High acidity
 High alcohol content (up to 15.5%)
