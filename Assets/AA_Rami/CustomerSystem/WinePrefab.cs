@@ -77,8 +77,7 @@ public class WinePrefab : MonoBehaviour
         WineHolder.body = body;
         WineHolder.finish = finish;
 
-        CreateAromaFlavour(Wine.MainGategories.Aroma, Aromas, WineHolder.Aromas);
-        CreateAromaFlavour(Wine.MainGategories.Flavour, Flavours, WineHolder.Flavours);
+        CreateAromaFlavour(Wine.MainGategories.Aroma, Aromas, WineHolder.AromasFlavors);
 
         WineHolder.ComparisonMatrix = WineHolder.CreateMatrix();
     }

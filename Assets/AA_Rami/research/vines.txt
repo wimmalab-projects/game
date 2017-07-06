@@ -7,7 +7,7 @@ Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.
 
 Low Acidity
 Medium alcohol content (up to 14%)
-Citrus
+Lemon
 Green Apples
 Nuts
 ================================
@@ -30,8 +30,7 @@ Lemon
 ================================
 Chardonnay 
 
-Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, 
-but is now grown wherever wine is produced, from England to New Zealand
+Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand
 
 Noticeable Acidity
 Medium alcohol content (up to 14%)

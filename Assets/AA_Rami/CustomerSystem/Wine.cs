@@ -117,9 +117,7 @@ public class Wine
     public Body         body;
     public Finish       finish;
 
-    public List<int[]> Aromas = new List<int[]>();
-
-    public List<int[]> Flavours = new List<int[]>();
+    public List<int[]> AromasFlavors = new List<int[]>();
 
     public List<int[]> ComparisonMatrix;
 
@@ -142,16 +140,11 @@ public class Wine
         tempList.Add(new int[] { (int)MainGategories.Finish, (int)finish });
 
         // add aromas
-        foreach (int[] iArr in Aromas)
+        foreach (int[] iArr in AromasFlavors)
         {
             tempList.Add(iArr);
         }
 
-        // add flavours
-        foreach (int[] iArr in Flavours)
-        {
-            tempList.Add(iArr);
-        }
         return tempList;
     }
 
