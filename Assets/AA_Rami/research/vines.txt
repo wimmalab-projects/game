@@ -1,4 +1,6 @@
 ================================
+#Vaaleat rypäleet
+================================
 Airén
 
 Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.
@@ -192,51 +194,231 @@ Green Bell Pepper
 Passio Fruit
 Grapefruit
 =================================
+Sémillon
 
-Sémillon yhdistetään usein muihin rypäleisiin, kuten Sauvignon Blanciin. Kaikissa valkoisissa, bourdeaux’laisissa viineissä on jonkin verran Sémillon-rypälettä. Rypäle on suosittu Australian Hunter Valleyssa. Sémillonin alttius jalohometartunnalle tekee siitä hyvän jälkiruokaviinien rypäleen. Rypäleestä valmistetut viinit ovat neutraaleja, pyöreitä ja vähänhappoisia. Aromeissa on ruohoa, sitrushedelmiä, hunajaa ja paahtoleipää.
+Sémillon is a golden-skinned grape used to make dry and sweet white wines, mostly in France and Australia. Its thin skin and susceptibility to botrytis make it dominate the sweet wine region Sauternes AOC and Barsac AOC in France.
 
-Tocai Friulano tunnetaan muualla kuin Italiassa nimellä Sauvignon Vert. Rypälettä kasvatetaan nykyään laajalti Chilessä, missä sen kuviteltiin alun perin olevan hyvin samankaltaista Sauvignon blanc -rypälettä. Tocai Friulano on mitä luultavimmin kotoisin Pohjois-Italiasta Veneton alueelta, mistä sen historiaa tiedetään jopa 1600-luvulta asti.
+Low Acidity
+High alcohol content (up to 14%)
+Grass
+Honey
+Toast
+Lemon
+Green Apple
+=================================
+Sauvignon Vert
 
-Torrontés on argentiinalainen valkea rypälelajike, josta syntyy raikkaita aromaattisia valkoviinejä. Argentiinassa sitä kasvatetaan jopa 1 700 metrin korkeudessa Calchaquíes’n laaksoissa. Torrontés’ta tehdään jopa 20 prosnettia Argentiinassa myytävistä valkoviineistä.
+Sauvignon vert is a white wine grape of the species Vitis vinifera. It is widely planted in Chile where it was historically mistaken for Sauvignon blanc.
 
-Trebbiano (myös ransk. Ugni Blanc, Saint-Emilion ja Clairette Ronde) on yksi maailman viljellyimmistä vaaleista rypäleistä ja sitä käytetään monissa erittäin arvostetuissa viineissä pienenä osana. Trebbiano on luultavasti kotoisin Keski-Italiasta ja saanut alkunsa jo 1200-luvulla. Se levisi 1400-luvulla Italiasta Ranskaan. Nykyään Trebbiano on erityisen suosittu tisleraaka-aineena ympäri maailmaa. Rypäleelle tunnusomaisia aromeja ovat omena, kevyt hedelmäisyys, karviainen, punaherukka ja kitkeryys.
+Medium Acidity
+High alcohol content (up to 14.5%)
+Green Apples
+Walnut
+=================================
+Torrontés
 
-Viognier on kohtalaisen uusi tulokas kansainvälisillä viinimarkkinoilla, vaikkakin sitä on viljelty Pohjois-Rhônen jyrkillä vuorenrinteillä jo yli tuhat vuotta sitten. Tänä päivänä Viognier on erittäin arvostettu ja kysytty rypäle, vaikka vielä 1990-luvulla sitä viljeltiin vain noin 80 hehtaarin alueella. Sitä viljellään kasvavissa määrin myös Kaliforniassa, New Yorkissa, Chilessä, Australiassa, Uudessa-Seelannissa ja Keski-Italiassa. Viognierissa on erittäin korkea sokeripitoisuus, matalat hapot ja voimakkaat aromit, joista on aistittavissa tyypillisesti kukkia, pähkinää, myskiä, trooppisia hedelmiä sekä mausteita.
+Torrontés is a white Argentine wine grape variety, producing fresh, aromatic wines with moderate acidity, smooth texture and mouthfeel as well as distinctive peach and apricot aromas on the nose.
 
-Xarel'lo on valkea lajike, jota kasvatetaan erityisesti Espanjassa Katalonian alueella. Sitä käytetään yhdessä Macabeon ja Paralledan kanssa espanjalaisen kuohuviinin, cavan, valmistukseen. Sitä käytetään myös absintin valmistuksessa yhtenä perusrypäleenä.
+Medium acidity
+Low alcohol content (up to 12.5%)
+Peach
+Appricot
+Rose
+Lemon Zest
+=================================
+Trebbiano
 
- chardonnay
-Chardonnay on maailman tunnetuimpia valkoviinirypäleitä
-Punaiset rypäleet
+Trebbiano is an Italian wine grape, one of the most widely planted grape varieties in the world.[1] It gives good yields, but tends to yield undistinguished wine. It can be fresh and fruity, but does not keep long.
 
-Puna- ja roseeviinien väri johtuu valmistuksessa käytetyistä tummista rypälelajikkeista. Rypäleiden väriaineet ovat kuorissa, joista ne liukenevat rypälemehuun käymisen aikana. Samalla siemenistä ja kuorista liukenee punaviinille tunnusomaisia parkkiaineita eli tanniineja.
+High acidity
+Low alcohol content (up to 12.5%)
+Lemon
+Rosemary
+Slate
+Chalk
+Red Currant
+Gooseberry
+=================================
+Viognier
 
-Cabernet Sauvignon on yksi maailman tunnetuimmista ja suosituimmista rypäleistä. Se on lähtöisin Bordeaux'n viinialueelta, mutta nykyisin sitä viljellään ympäri maailmaa. Cabernet Sauvignon’sta valmistettavat viinit ovat miellyttävän laatuisia, minkä vuoksi ne ovat myös kysyttyjä. Viinit ne ovat runsasvärisiä, voimakkaan täyteläisiä, tanniinisia ja parhaimmillaan pitkäikäisiä. Aromeissa on aistittavissa runsaasti mustaherukkaa, kahvia, setripuuta ja paprikaa. Lue lisää Cabernet Sauvignon -lajikkeesta.
+Viognier (French pronunciation: ?[vi??je]) is a white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley.[2] Outside of the Rhône, Viognier can be found in regions of North and South America as well as Australia, New Zealand, the Cape Winelands in South Africa and Israel.
 
-Carmenère (myös Cabernella, Bouton Blanc ja Grand Carmenet) on 1700-luvun Ranskan Bordeaux’sta kotoisin oleva punainen lajike, jonka käyttö kukoisti noin 1800-luvun puoliväliin asti ja sen jälkeen lähes hävisi viinimaailman kartalta. Carmenère teki uuden nousun vasta 1990-luvulla, kun viininviljelyssä palattiin juurille. Nykyään suuria viljelmiä on Ranskan lisäksi Chilessä. Carmenère on hyvin saman tyyppinen rypäle kuin Merlot. Sekoiteviineissä sitä käytetäänkin yleensä juuri Merlot’n sekä Cabernet’n kanssa. Sille tyypillisiä aromeja ovat chilipippuri, mustikka, lakritsi, suklaa, herukat ja vadelma.
+Low Acidity
+High alcohol content (up to 13%)
+Peach
+Pear
+Grapefruit
+Appricot
+pneapple
+=================================
+Xarel'lo
 
-Corvina tulee Italiasta ja pääasiallisesti sitä kasvatetaan Veneton alueella Koillis-Italiassa. Rypälettä käytetään sekoitteena muiden rypäleiden kanssa Bardolino-, Amarone- ja Valpolicella-viinien valmistuksessa. Yleensä Corvina kattaa noin 70 prosenttia sekoituksen rypäleistä. Corvina-viinit ovat kevyitä tai keskitäyteläisiä ja purppuran värisiä. Tynnyrikypsytys, jota erityisesti Valpolicellassa hyödynnetään, tuo niille täyteläisyyttä ja lisää tanniineja. Aromit muistuttavat karvasmantelia ja kirsikkaa.
+Xarello is a white grape variety of Spanish origin specially grown in Catalonia. With Macabeu and Parellada, is one of the three traditional varieties used to make the sparkling wine Cava.
 
-Corvinone sekoitetaan monesti Corvina-rypäleeseen, mutta DNA-testit ovat osoittaneet niiden olevan selkeästi erillisiä lajikkeita. Corvinonea käytetään Valpolicella-viinien pohjana. Rypäleenä se on erittäin herkkä viinisairauksille, mikä tekee sen viljelystä vaativaa. Corvinone-viinit ovat kirkkaan punaisia, rikkaita ja samettisia sekä aromiltaan hedelmäisiä.
+High acidity
+Low alcohol content (up to 11.5%)
+Appricot
+Lemon
+Green Apple
+Pear
+=================================
+#Punaiset rypäleet
+=================================
+Cabernet Sauvignon
 
-Grenache (myös espanjaksi Garnacha) on maailman viljellyin tumma rypälelajike, mutta sen nimi ei yleensä esiinny etiketeissä, sillä siitä ei kovin usein valmisteta puhdasta lajikeviiniä. Grenachea käytetään sekoiteviineissä vahvistamaan tanniinisia ja voimakkaita lajikkeita. Rypäle on kotoisin Aragoniasta Espanjasta ja varmoja merkintöjä sen viljelystä löytyy jo 1200-luvulta. Nykyään sitä viljellään eniten Koillis-Espanjassa Riojassa, Penedèsissä ja Navarrassa. Useat Grenachea sisältävät viinit ovat hyvin alkoholipitoisia ja siksi tuntuvat lämpimiltä suussa. Lajikkeelle tyypillisiä aromeja ovat esimerkiksi toffee, luumu, pippuri ja yrtit.
+Cabernet Sauvignon (French: [kab??n? sovi'??~]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.
 
-Malbec on lähtöisin Bordeaux’n alueelta Ranskasta, mutta siellä sitä nykyisin tapaa enää harvoin. Sen sijaan Malbec on erittäin yleinen rypälelajike Argentiinassa ja Chilessä. Alkuperäalueellaan Ranskassa siitä tulee alkoholipitoista, mutta latteaa viiniä. Lämpimässä ilmastossa lajike pääsee oikeuksiinsa, jolloin se tuottaa vahvoja, aromikkaita ja tanniinisia viinejä. Erityisesti Argentiinan Mendozan alueelta saadaan kiehtovia Malbec-viinejä, joista on usein aistittavissa karhunvatukkaa, vadelmaa, mausteita ja luumua. Lue lisää Malbecista.
+Medium Acidity
+High alcohol content (up to 15%)
+Black currant
+Coffee
+Cedar
+=================================
+Carmenère
 
-Merlot on kotoisin Ranskan Bordeaux'sta, mutta se on pehmeydessään monikäyttöisempi kuin toinen saman alueen kasvatti Cabernet Sauvignon. Yhdessä Merlot ja Cabernet Sauvignon muodostavat monen mielestä parhaan sekoitteen. Merlot'ta löytyy lähes kaikista Bordeaux'n alueen viinistä ja se on myös suosittu rypäle myös Kaliforniassa. Merlot-viinit ovat olemukseltaan pehmeitä, hedelmäisiä, täyteläisiä sekä pehmeästi tanniinisia ja niistä on löydettävissä esimerkiksi punaisten marjojen, herukan, luumujen, rusinoiden, savun ja suklaan aromeja. Lue lisää Merlot’sta.
+The Carménère grape is a wine grape variety originally planted in the Médoc region of Bordeaux, France, where it was used to produce deep red wines and occasionally used for blending purposes in the same manner as Petit Verdot.
 
-Nero d'Avola on Sisilian tärkein punainen rypäle ja samalla yksi Italian tärkeimpiä omia alkuperäislajikkeita. Se on saanut nimensä Sisilian eteläosan kaupungin Avolan mukaan. Nero d’Avola viihtyy parhaiten kuivissa ja kuumissa olosuhteissa. Rypäleestä valmistettuja viinejä verrataan usein uuden maailman Shiraz-viineihin: niissä on pehmeitä, makeita tanniineja sekä luumun ja pippurin aromeja.
+High acidity
+High alcohol content (up to 14%)
+Blueberry
+Liquorice 
+Chocolate
+Black Currant
+Red Currant
+Raspberry
+=================================
+Corvina 
 
-Pinotage on vuonna 1925 Etelä-Afrikassa kehitetty lajike, joka on risteytetty Pinot Noir - ja Cinsault-rypäleistä. Se nousi suosioon 1950-luvulla ja nykyään sen suurimmat viljelyalueet löytyvät Etelä-Afrikasta, Uudesta-Seelannista ja Kaliforniasta. Pinotage-rypäleet ovat pienikokoisia, vähäaromisia ja sokeripitoisia. Tanniinisuuteen vaikuttaa sadon suuruus – mitä pienempi sato, sitä aromikkaampi lopputulos. Pinotage-viineistä aistitaan suomuurainta, balsamicoa, pihkaa, tervaa, karpaloa ja vadelmaa.
+Corvina is an Italian wine grape variety that is sometimes also referred to as Corvina Veronese or Cruina. It is mainly grown in the Veneto region of northeast Italy. Corvina is used with several other grapes to create the light red regional wines Bardolino and Valpolicella that have a mild fruity flavor with hints of almond.
 
-Pinot Noir (myös Pinot Nero ja Spätburgunder) kuuluu klassisten, perinteisten rypäleiden joukkoon. Nykytietojen mukaan sitä viljeltiin jo 100 jKr. Burgundin alueella. Nykyisin rypälettä viljellään eniten Champagnen alueella sekä edelleen Burgundissa, missä siitä tuotetaan ehkäpä maailman arvostetuimmat viinit. Pienempiä Pinot Noir -viljelmiä on jonkin verran myös muualla Ranskassa ja suurempia tarhoja muissa Euroopan maissa. Rypälettä viljellään myös Euroopan ulkopuolella Kaliforniassa, Oregonissa sekä Argentiinassa ja Chilessä. Parhaiten Pinot Noirille soveltuu viileähkö ilmasto vaihtelevine vuodenaikoineen. Siitä valmistetaan pääasiassa punaisia lajikeviinejä sekä kuohuviinejä, joissa rypäle on mukana sekoitteena. Rypäleelle tyypillisissä viineissä erottuvat muun muassa pippurin, mausteiden, mansikan, vadelman, kirsikan, savun, toffeen, vaniljan ja suklaan aromit. Lue lisää Pinot Noirista.
+High acidity
+High alcohol content (up to 15.5%)
+Red Cherry
+Black Cherry
+Almond
+=================================
+Grenache
 
-Rondinella on italialainen rypäle, jota viljellään pääasiassa Italiassa Veneton alueella. Se on yksi Valpolicella- ja Bardolino-viinien päälajikkeita. Sitä käytetään sekoitteena monesti Corvina-, Molinara ja Corvinone-rypäleiden kera. Rondinella on hapokas ja sen aromit viittaavat selvästi kirsikkaan ja punaisiin marjoihin.
+Grenache is one of the most widely planted red wine grape varieties in the world. It ripens late, so it needs hot, dry conditions such as those found in Spain, where the grape most likely originated. It is also grown in the Italian isle of Sardinia, the south of France, Australia, and California's San Joaquin Valley.
 
-Sangiovese on peräisin Keski-Italiasta, todennäköisesti Toscanan alueelta. Se on Italiassa tärkeä ja suosittu lajike sekä Chianti-viinien tärkein punainen rypäle. Lajiketta viljellään pääosin Keski-Italian kukkuloilla. Muualta maailmasta rypälettä ei juurikaan löydy. Sangiovese soveltuu parhaiten lämpimään ilmastoon, sillä liian kylmässä se ei kypsy ja liian kuumassa sille tyypilliset aromit häviävät. Sangiovese-viinit ovat parhaimmillaan täyteläisiä, mausteisia ja pitkäikäisiä. Aromeista löytyy esimerkiksi piparkakkumausteita ja omenaa, mansikkaa, vadelmaa ja orvokkia.
+High Acidity
+High alcohol (up to 14.5%)
+Plum
+White pepper
+Leather
+Tar
+Raspberry
+Strawberry
+=================================
+Malbec
 
-Syrah (myös Shiraz) on rypälelajikkeena klassikko ja ensimmäiset varmat merkinnät siitä löytyvät jo 200-luvulta. Sen nimi juontaa juurensa mitä luultavimmin iranilaisesta Shiraz-kaupungista, joka sijaitsee vanhan idän kauppatien varrella. Sitä kutsutaan maantieteellisestä sijainnista riippuen joko eurooppalaisittain Syrah'ksi tai uuden maailman mukaisesti Shiraz'iksi. Suositun lajikkeen suurin viljelymaa on Ranska ja Euroopan ulkopuolelta Australia. Syrah-viinit ovat runsasvärisiä, vankkoja ja ikääntyvät hyvin ja niistä voi löytää helposti neilikan, pippurin ja kanelin aromeja. Lue lisää Syrah-lajikkeesta.
+Malbec is a purple grape variety used in making red wine. The grapes tend to have an inky dark color and robust tannins, and are known as one of the six grapes allowed in the blend of red Bordeaux wine. The French plantations of Malbec are now found primarily in Cahors in South West France. 
 
-Tempranillo-rypälettä (myös muun muassa Tinta Fino, Cenceibel, Ull de Liebre ja Tinta Roriz) viljellään laajalti sen kotimaassa Espanjassa ja se on Riojan alueen yleisin punainen lajike. Tempranillosta valmistetaan täyteläisiä ja ryhdikkäitä punaviinejä. Se kypsyy huomattavasti nopeammin kuin muut espanjalaiset punaiset rypäleet. Viimeisen sadan vuoden aikana sitä on istutettu myös Etelä-Amerikkaan, Yhdysvaltoihin, Etelä-Afrikkaan ja Australiaan. Tempranillo-viinejä voidaan juoda jo hyvin nuorina, mutta arvokkaimmat ovat kypsyneet useita vuosia tammitynnyreissä. Tempranillot ovat väriltään rubiininpunaisia ja niistä on aistittavissa marjojen, pippurin, neilikan, savun ja vaniljan aromeita. Lue lisää Tempranillosta.
+Low acidity
+High alcohol content (up to 15&)
+Blackberry
+Raspberry
+Plum
+=================================
+Merlot
 
-Zinfandel-rypälettä pidetään vahvasti kalifornialaisena rypälelajikkeena, mutta se lienee kotoisin joko Kroatiasta tai Etelä-Italiasta, sillä siinä on yhtenäisyyksiä sekä Italian Primitivo- että Kroatian Crljenak Kaštelanski -rypäleiden kanssa. Kalifornian lisäksi lajiketta viljellään nykyisillään Australiassa, Etelä-Afrikassa ja Israelissa. Hienoimmillaan Zinfandel-viinit ovat tummia, voimakkaita ja tanniinisia, mutta hedelmäisiä. Rypäleestä on tuotettu paljon myös Beaujolais-tyyppisiä kevyitä punaviinejä. Aromeja löytyy vadelmasta, tervasta ja lakritsista aina suolalihaan saakka.
+Merlot is a dark blue-colored wine grape variety, that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and "fleshiness", combined with its earlier ripening, makes Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.
+
+Low Acidity
+High alcohol content (up to 14.5%)
+Black currant
+Red currant 
+Plum
+Raisin
+Smoke 
+Chocolate
+=================================
+Pinotage
+
+Pinotage is a red wine grape that is South Africa's signature variety. It was bred there in 1925 as a cross between Pinot noir and Cinsaut (Cinsaut was known as "Hermitage" in South Africa during that time, hence the portmanteau name of Pinotage). It typically produces deep red varietal wines with smoky, bramble and earthy flavors, sometimes with notes of bananas and tropical fruit, but has been criticized for sometimes smelling of acetone.
+
+Medium Acidity
+High alcohol content (up to 14.5%)
+Banana
+Resin
+Tar
+Cranberry
+Raspberry
+=================================
+Pinot Noir
+
+Pinot Noir (French: [pino nwa?]) is a red wine grape variety of the species Vitis Vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes. The name is derived from the French words for pine and black. The pine alluding to the grape variety having tightly clustered, pine cone-shaped bunches of fruit.[1]
+
+High Acidity
+High alcohol content (up to 13.5%)
+Strawberry
+Raspberry
+Smoke
+Vanilla
+Chocolate
+Black Cherry
+Red Cherry
+=================================
+Rondinella
+
+Rondinella is an Italian wine grape mainly grown in the Veneto region of Italy and used in wines such as Valpolicella and Bardolino. It is often blended with Corvina, which DNA evidence has shown to be a parent variety, and Molinara. The grape has rather neutral flavors but is favored by growers due to its prolific yields. The vine is very resistant to grape disease and produces grapes that, while they don't necessarily have high sugar levels, do dry out well for use in the production of straw wines and recioto blends.
+
+High acidity
+High alcohol content (up to 15%)
+Plum
+Vanilla
+Cranberry
+Coffee
+Chocolate
+=================================
+Sangiovese
+
+Sangiovese is a red Italian wine grape variety. DNA profiling suggests that Sangiovese's ancestors are Ciliegiolo and Calabrese Montenuovo. The former is well known as an ancient variety in Tuscany, the latter is an almost-extinct relic from the Calabria, the toe of Italy.
+
+Medium Acidity
+High alcohol content (up to 14%)
+Strawberry
+Raspberry
+Red Apple
+Green Apple
+Ginger
+Violet
+=================================
+Syrah (Shiraz)
+
+Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche.[1] Syrah should not be confused with Petite Sirah; a cross of Syrah with Peloursin dating from 1880.
+
+High acidity
+High alcohol content (up to 15.5%)
+Clove
+Red pepper
+white pepper
+Cinnamon
+blackberry
+chocolate
+=================================
+Tempranillo
+
+Tempranillo is a black grape variety widely grown to make full-bodied red wines in its native Spain. Its name is the diminutive of the Spanish temprano ("early"), a reference to the fact that it ripens several weeks earlier than most Spanish red grapes
+
+Low Acidity
+High alcohol content (up to 14%)
+Plum
+Strawberry
+Vanilla
+White pepper
+Blackpepper
+Smoke
+Clove
+=================================
+Zinfandel
+
+Zinfandel is a variety of black-skinned wine grape. DNA analysis has revealed that it is genetically equivalent to the Croatian grapes Crljenak Kaštelanski and Tribidrag, as well as to the Primitivo variety traditionally grown in Apulia
+
+Medium acidity
+High alcohol content (up to 15%)
+Raspberry
+Tar
+Liquorice
+Meaty
+=================================
