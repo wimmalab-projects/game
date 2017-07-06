@@ -37,7 +37,6 @@ public class GUIScript : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         gameMaster = gameManager.GetComponent<GameMaster>();
         infoPanelSprite = InfoPanel.transform.Find("Plant sprite").GetComponent<Image>();
-        GameObject[] temp = GameObject.FindGameObjectsWithTag("Slot");
         slotScript = gameManager.GetComponent<SlotScript>();
         animator = GetComponent<Animator>();
         colliderHandler = gameManager.GetComponent<ColliderHandler>();

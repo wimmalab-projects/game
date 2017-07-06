@@ -19,7 +19,7 @@ public class Shop : MonoBehaviour {
     private GameObject ContentPanel;
     private GameObject InfoPanel;
     private GridLayoutGroup glg;
-    private Item currentlySelectedItem;
+    public Item currentlySelectedItem;
     
     private void Start()
     {

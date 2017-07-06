@@ -26,7 +26,7 @@ public class SaveLoadScript : MonoBehaviour
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
-        inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        inventory = gm.GetComponent<Inventory>();
     }
 
     private void Start()
@@ -140,7 +140,7 @@ public class SaveLoadScript : MonoBehaviour
             loadFile.Close();
 
             // Get the time difference we exited from the app and returned to the app
-            // THIS CAN BE EXPLOITED BY MOVING THE SYSTEM CLOCK.. FIX!!
+            // THIS CAN BE EXPLOITED BY MOVING THE SYSTEM CLOCK.. IS THERE FIX FOR IT!!!?!1+1!?!+!+!+??
             float timeLapsed;
             System.TimeSpan difference = timerData.timeExit.Subtract(timeReturn);
             timeLapsed = (float)difference.TotalSeconds; // Put the difference to seconds so we can easily substract the time

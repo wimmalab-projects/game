@@ -15,6 +15,8 @@ public class DialogueTest : MonoBehaviour
     private Shop shopScript;
     private GUIScript guiScript;
     private ColliderHandler colliderHandler;
+    private SlotScript slotScript;
+    private FermentorScript fermentorScript;
 
     bool tutorial2done, tutorial3done, tutorial4done, tutorial5done, tutorial6done, tutorial7done, tutorial8done, tutorial9done,
          tutorial10done, tutorial11done, tutorial12done, tutorial13done, tutorial14done, tutorial15done, tutorial16done, tutorial17done,
@@ -31,6 +33,7 @@ public class DialogueTest : MonoBehaviour
         cControls = GameObject.Find("fadetoblacktile").GetComponent<CurtainControls>();
         guiScript = GameObject.Find("InventoryCanvas").GetComponent<GUIScript>();
         colliderHandler = gm.GetComponent<ColliderHandler>();
+        slotScript = gm.GetComponent<SlotScript>();
     }
 
     // Use this for initialization
@@ -41,12 +44,15 @@ public class DialogueTest : MonoBehaviour
         = tutorial17done = tutorial18done = tutorial19done = tutorial20done = tutorial21done = tutorial22done = tutorial23done = tutorial24done
         = tutorial25done = tutorial26done = tutorial27done = tutorial28done = false;
         // Start the tutorial when launching the game first time
+        rpgTalk.variables[0].variableValue = Player.Name;
         StartCoroutine(Wait(1, 4, 1f));
     }
 
     // Update is called once per frame
     void Update()
     {
+        rpgTalk.variables[1].variableValue = shopScript.currentlySelectedItem.returnName();
+        rpgTalk.variables[2].variableValue = slotScript.CurrentlySelectedName;
         // Update the gamestate so we can use it
         GameMaster.GameState GameState = gm.State;
 
@@ -65,6 +71,7 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial4done && tutorial3done && shopScript.bought)
         {
+            shopScript.CloseShop();
             StartCoroutine(Wait(11, 12, 0.2f));
             tutorial4done = true;
         }
@@ -137,6 +144,8 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial16done && tutorial15done && guiScript.Button == "Collect")
         {
+            fermentorScript = colliderHandler.ParentGameObject.GetComponent<FermentorScript>();
+            rpgTalk.variables[3].variableValue = gm.GetDescription(fermentorScript.WineType);
             StartCoroutine(Wait(41, 43, 0.4f));
             tutorial16done = true;
         }

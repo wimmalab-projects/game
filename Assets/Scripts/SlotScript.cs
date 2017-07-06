@@ -40,7 +40,7 @@ public class SlotScript : MonoBehaviour
         if (inventory.Items[SeedName].itemCount > 0)
         {
             // If the item is not a vine display error and dont plant
-            if (inventory.Items[SeedName].returnItemType() == Item.ItemType.VINE)
+            if (inventory.Items[SeedName].returnItemType() == Item.ItemType.GRAPEVINE)
             {
                 // Set the groundscript, so that it is planted and remove the vine item
                 parent.tag = "Planted";
@@ -83,7 +83,7 @@ public class SlotScript : MonoBehaviour
     {
         if (inventory.Items[SeedName].itemCount > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.GRAPE)
+            if (inventory.Items[SeedName].iType == Item.ItemType.GRAPEVINE)
             {
                 GameObject parent = colliderHandler.ParentGameObject;
 
