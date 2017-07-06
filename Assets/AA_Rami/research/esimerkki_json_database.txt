@@ -1,0 +1,8 @@
+{
+	"vinegrape" : {
+		"name" : "Airén", 
+		"id" : 0, 
+		"desc" : "Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
+		"AromasFlavous" : ["Lemon", "GreenApple"]
+	}
+}

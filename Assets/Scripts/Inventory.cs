@@ -30,10 +30,22 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         // add items
-        Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.GRAPEVINE));
-        Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.GRAPEVINE));
-        Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPEVINE));
-        Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPEVINE));
+        //Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.GRAPEVINE));
+        //Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.GRAPEVINE));
+        //Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPEVINE));
+        //Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPEVINE));
+
+
+        VineGrape vineOne = new VineGrape(
+            "Airén", 0,
+            "Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.This grape is native to Spain where it represents about 30 % of all grapes grown.", 
+            VineGrape.GrapeVineType.Vine, VineGrape.GrapeType.White, VineGrape.Acidity.Low, 14f);
+        vineOne.AromasAndFlavours.Add(Wine.CitrusFruit.Lemon);
+        vineOne.AromasAndFlavours.Add(Wine.GreenFruit.GreenApple);
+        vineOne.AromasAndFlavours.Add(Wine.Kernel.Almond);
+
+        Items.Add(vineOne.returnName(), vineOne);
+
         Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
         Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
         Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));
@@ -98,3 +110,4 @@ public class Inventory : MonoBehaviour
         GUILayout.EndArea();
     }
 }
+

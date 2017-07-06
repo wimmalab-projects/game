@@ -34,19 +34,26 @@ public class VineGrape : Item {
     /// <summary>
     /// Level of acidity in the grape's juice
     /// </summary>
-    private Acidity acidity;
     public enum Acidity
     {
         Low,
         Medium,
         High
     }
+    private Acidity acidity;
 
     /// <summary>
     /// List of aromas and flavours common from this grape
     /// </summary>
-    public List<Enum> AromasAndFlavours { get; set; }
-    
+    public List<Enum> AromasAndFlavours
+    {
+        get
+        {
+            return aromasAndFlavours;
+        }
+    }
+    private List<Enum> aromasAndFlavours;
+
     /// <summary>
     /// Grapevine constructor. 
     /// </summary>
@@ -58,12 +65,13 @@ public class VineGrape : Item {
     /// <param name="acidLevel">is this low/medium/high acidity grape</param>
     /// <param name="maxAlcohol">highest alcohol level found from a wine made by this grape</param>
     /// <param name="aromasAndFlavours">aromas and flavours found from wines made by this grape</param>
-    public VineGrape(string name, int id, string desc, GrapeVineType grapeVineType, GrapeType grapeType, Acidity acidLevel, float maxAlcohol, List<Enum> aromasAndFlavours) : base(name,id,desc,ItemType.GRAPEVINE)
+    public VineGrape(string name, int id, string desc, GrapeVineType grapeVineType, GrapeType grapeType, Acidity acidLevel, float maxAlcohol) : base(name,id,desc,ItemType.GRAPEVINE)
     {
+        aromasAndFlavours = new List<Enum>();
         gvt = grapeVineType;
         gt = grapeType;
         acidity = acidLevel;
         AlcoholContent = maxAlcohol;
-        AromasAndFlavours = aromasAndFlavours;
-    }
+        //AromasAndFlavours = aromasAndFlavours;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }

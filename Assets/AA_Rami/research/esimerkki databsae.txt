@@ -1,0 +1,19 @@
+#VineGrape
+    name = Airén;
+    id = jokunumero;
+    desc = Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.This grape is native to Spain where it represents about 30% of all grapes grown.;
+    grapevinetype = vine;
+    grapetype = white;
+    acidity = low;
+    alcohol = 14;
+    aroma = lemon;
+    aroma = green apples;
+    aroma = nuts;
+#EndItem
+
+#Item
+    name = wooden barrel;
+    id = jokunumero;
+    desc = This is a wooden barrel
+    type = jokutyyppi
+#EndItem
