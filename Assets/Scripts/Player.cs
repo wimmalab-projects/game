@@ -1,10 +1,41 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
 
-[Serializable]
-public class Player
+public static class Player
 {
-    public string Name { get; set; }
-    public int Money { get; set; }
+    public static string Name = "Homo";
+    public static int Exp = 0;
+    public const int ExpConst = 120;
+    public static int Level = 1;
+    public static int Money = 500;
+    public static double ExpNeeded = Math.Floor(Math.Pow((ExpConst * 1), 1.3));
+
+    static Player()
+    {
+
+    }
+
+    public static void GainExperience(int amount)
+    {
+        Exp += amount;
+
+        if(Exp >= ExpNeeded)
+        {
+            LevelUp();
+        }
+    }
+
+    public static void LevelUp()
+    {
+        Level++;
+        ExpNeeded = Math.Floor(Math.Pow((ExpConst * Level), 1.3));
+    }
+
+    public static void AddMoney(int amount)
+    {
+        Money += amount;
+    }
 }

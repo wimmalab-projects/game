@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveLoadScript : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class SaveLoadScript : MonoBehaviour
     GameObject[] fermentors;
     GameObject[] clarifications;
     GameObject[] bottlings;
-
     Inventory inventory;
+    GameMaster gm;
 
     System.DateTime timeReturn; // Get the time when we returned to app
     private bool wannaDelete; // Only for debugging, so we can delete the savefile in mobile
@@ -24,6 +25,7 @@ public class SaveLoadScript : MonoBehaviour
 
     private void Awake()
     {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
     }
 
@@ -101,11 +103,22 @@ public class SaveLoadScript : MonoBehaviour
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
             //Debug.Log(data.timeExit);
+
+            // Set player data
+            PlayerData playerData = new PlayerData();
+            playerData.Name = Player.Name;
+            playerData.Exp = Player.Exp;
+            playerData.ExpNeeded = Player.ExpNeeded;
+            playerData.Level = Player.Level;
+            playerData.Money = Player.Money;
+
+
             // Serialize
             BinaryFormatter bf = new BinaryFormatter();
             FileStream saveFile = File.Create(Application.persistentDataPath + "/SaveFile.dat");
             bf.Serialize(saveFile, timerData);
             bf.Serialize(saveFile, inventoryData);
+            bf.Serialize(saveFile, playerData);
             //Debug.Log("Saving to " + Application.persistentDataPath);
             saveFile.Close();
         }
@@ -122,6 +135,7 @@ public class SaveLoadScript : MonoBehaviour
             FileStream loadFile = File.Open(Application.persistentDataPath + "/SaveFile.dat", FileMode.Open);
             TimerData timerData = (TimerData)bf.Deserialize(loadFile);
             InventoryData inventoryData = (InventoryData)bf.Deserialize(loadFile);
+            PlayerData playerData = (PlayerData)bf.Deserialize(loadFile);
             //Debug.Log("Loading to " + Application.persistentDataPath);
             loadFile.Close();
 
@@ -193,6 +207,13 @@ public class SaveLoadScript : MonoBehaviour
             {
                 inventory.Items[item.Key].itemCount = item.Value;
             }
+
+            // Set player data
+            Player.Name = playerData.Name;
+            Player.Exp = playerData.Exp;
+            Player.ExpNeeded = playerData.ExpNeeded;
+            Player.Level = playerData.Level;
+            Player.Money = playerData.Money;
         }
     }
 
@@ -263,23 +284,28 @@ public class SaveLoadScript : MonoBehaviour
         public Dictionary<string, List<TimerData>> Bottlings = new Dictionary<string, List<TimerData>>();
     }
 
+    // Inventorydata
     [Serializable]
     class InventoryData
     {
-        public string itemName { get; set; }
-        public int itemCount { get; set; }
         public Dictionary<string, int> Items = new Dictionary<string, int>();
 
         public InventoryData()
         {
 
         }
+    }
 
-        public InventoryData(string name, int count)
-        {
-            itemName = name;
-            itemCount = count;
-        }
+    // Playerdata
+    [Serializable]
+    class PlayerData
+    {
+        public string Name { get; set; }
+        public int Exp { get; set; }
+        public double ExpNeeded { get; set; }
+        public const int ExpConst = 100;
+        public int Level { get; set; }
+        public int Money { get; set; }
     }
 
     // When application goes pause and unpause

@@ -6,6 +6,7 @@ using System.Reflection;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class GameMaster : MonoBehaviour
     private GUIScript guiScript;
     private CurtainControls curtainControls;
 
+    public Text exp;
+    public Text expneeded;
+    public Text level;
+    public Text playername;
 
     /// <summary>
     /// List our gamestates here
@@ -98,6 +103,10 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
+        exp.text = Player.Exp.ToString();
+        expneeded.text = Player.ExpNeeded.ToString();
+        level.text = Player.Level.ToString();
+        playername.text = Player.Name;
         WineSold = false;
     }
     void GoToTown()
@@ -245,5 +254,18 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
+
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(1100, 50, 100, 100));
+        if (GUILayout.Button("Add exp"))
+        {
+            Player.GainExperience(100);
+            exp.text = Player.Exp.ToString();
+            expneeded.text = Player.ExpNeeded.ToString();
+            level.text = Player.Level.ToString();
+        }
+        GUILayout.EndArea();
+    }
 }
 
