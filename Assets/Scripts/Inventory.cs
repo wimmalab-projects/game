@@ -40,9 +40,9 @@ public class Inventory : MonoBehaviour
             "Airén", 0,
             "Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.This grape is native to Spain where it represents about 30 % of all grapes grown.", 
             VineGrape.GrapeVineType.Vine, VineGrape.GrapeType.White, VineGrape.Acidity.Low, 14f);
-        vineOne.AromasAndFlavours.Add(Wine.CitrusFruit.Lemon);
-        vineOne.AromasAndFlavours.Add(Wine.GreenFruit.GreenApple);
-        vineOne.AromasAndFlavours.Add(Wine.Kernel.Almond);
+        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.Lemon);
+        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.GreenApple);
+        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.Almond);
 
         Items.Add(vineOne.returnName(), vineOne);
 
