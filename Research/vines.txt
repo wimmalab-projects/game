@@ -1,16 +1,6 @@
 ================================
 #Vaaleat rypäleet
 ================================
-Airén
-
-Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.
-
-Low Acidity
-Medium alcohol content (up to 14%)
-Lemon
-Green Apples
-Nuts
-================================
 Albariño
 
 Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.
@@ -27,6 +17,16 @@ Catarratto is Italian white wine grape planted primarily in Sicily where it is t
 Low acidity
 Low alcohol content (up to 12.5%)
 Lemon
+================================
+Airén
+
+Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.
+
+Low Acidity
+Medium alcohol content (up to 14%)
+Lemon
+Green Apples
+Nuts
 ================================
 Chardonnay 
 

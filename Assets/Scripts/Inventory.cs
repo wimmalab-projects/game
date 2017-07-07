@@ -39,17 +39,17 @@ public class Inventory : MonoBehaviour
         VineGrape vineOne = new VineGrape(
             "Airén", 0,
             "Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.This grape is native to Spain where it represents about 30 % of all grapes grown.", 
-            VineGrape.GrapeVineType.Vine, VineGrape.GrapeType.White, VineGrape.Acidity.Low, 14f);
-        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.Lemon);
-        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.GreenApple);
-        vineOne.AromasAndFlavours.Add(Wine.AromaFlavor.Almond);
+            VineGrape.GrapeOrVine.Vine, VineGrape.GrapeTextureColor.White, VineGrape.Acidity.Low, 14f);
+        vineOne.AromasFlavors.Add(Wine.AromaFlavor.Lemon);
+        vineOne.AromasFlavors.Add(Wine.AromaFlavor.GreenApple);
+        vineOne.AromasFlavors.Add(Wine.AromaFlavor.Almond);
 
         Items.Add(vineOne.returnName(), vineOne);
 
-        Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.WINE));
-        Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.WINE));
-        Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.WINE));
-        Items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.BOTTLE));
+        Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.FinishedWine));
+        Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.FinishedWine));
+        Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.FinishedWine));
+        Items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.Bottle));
 
         // create inventory slots
         for (int i = 0; i < Items.Count; i++)

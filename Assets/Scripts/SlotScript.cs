@@ -40,7 +40,7 @@ public class SlotScript : MonoBehaviour
         if (inventory.Items[SeedName].itemCount > 0)
         {
             // If the item is not a vine display error and dont plant
-            if (inventory.Items[SeedName].returnItemType() == Item.ItemType.GRAPEVINE)
+            if (inventory.Items[SeedName].returnItemType() == Item.ItemType.GrapeVine)
             {
                 // Set the groundscript, so that it is planted and remove the vine item
                 parent.tag = "Planted";
@@ -83,7 +83,7 @@ public class SlotScript : MonoBehaviour
     {
         if (inventory.Items[SeedName].itemCount > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.GRAPEVINE)
+            if (inventory.Items[SeedName].iType == Item.ItemType.GrapeVine)
             {
                 GameObject parent = colliderHandler.ParentGameObject;
 
@@ -172,7 +172,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].itemCount > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.WINE)
+            if (inventory.Items[SeedName].iType == Item.ItemType.FinishedWine)
             {
                 parent.tag = "Clarificating";
                 CurrentlySelectedName = inventory.Items[SeedName].returnName();
@@ -204,7 +204,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].itemCount > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.WINE)
+            if (inventory.Items[SeedName].iType == Item.ItemType.FinishedWine)
             {
                 parent.tag = "Bottling";
                 CurrentlySelectedName = inventory.Items[SeedName].returnName();

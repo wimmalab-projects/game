@@ -5,8 +5,8 @@ using UnityEngine;
 public class Item
 {
     #region attributes
-    private readonly string itemDesc;
     private readonly string itemName;
+    private readonly string ItemDescription;
     private readonly int itemID;
     private readonly Sprite itemSprite;
     private readonly ItemType itemType;
@@ -14,9 +14,13 @@ public class Item
 
     public enum ItemType
     {
-        GRAPEVINE,
-        WINE,
-        BOTTLE,
+        GrapeVine,
+        FinishedWine,
+        Bottle,
+        FieldAddable,
+        FermentAddable,
+        FermentDish,
+        ClarificationDish,
     }
 
     #endregion
@@ -25,7 +29,7 @@ public class Item
 
     public string ItemDesc
     {
-        get { return itemDesc; }
+        get { return ItemDescription; }
     }
 
     public ItemType iType
@@ -93,7 +97,7 @@ public class Item
     {
         itemName = name;
         itemID = id;
-        itemDesc = desc;
+        ItemDescription = desc;
         itemType = type;
         itemSprite = Resources.Load<Sprite>("" + name);
     }

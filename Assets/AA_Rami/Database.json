@@ -1,0 +1,106 @@
+{
+   "Item":[
+	  {
+         "Name":"Yeast",
+		 "Prefix":"Item",
+		 "Id":1,
+		 "Description":"Used to make the wine GO! w00tw00t!!",
+		 "ItemType":"FermentAddable"
+      },
+	  {
+         "Name":"Oak Chips",
+		 "Prefix":"Item",
+		 "Id":2,
+		 "Description":"Readily available in several types and toast levels. Easy to rack wine off of chips or beans. Used to add tannins to the wine during fermentation. +Tannin +oak taste",
+		 "ItemType":"FermentAddable"
+      },
+	  {
+         "Name":"Oak Powder",
+		 "Prefix":"Item",
+		 "Id":3,
+		 "Description":"Because of the surface area that comes in contact with the wine, a little bit goes a long way. Used to add tannins to the wine during fermentation. ++Tannin +oak taste",
+		 "ItemType":"FermentAddable"
+      },
+	  {
+         "Name":"Oak Barrels",
+		 "Prefix":"Item",
+		 "Id":4,
+		 "Description":"Traditional time-proven method for oaking large quantities of wine. Clarification dish, ++Tannin ++Oak taste",
+		 "ItemType":"ClarificationDish"
+      },
+      {
+         "Name":"Bottle",
+		 "Prefix":"Item",
+		 "Id":5,
+		 "Description":"This is a bottle",
+		 "ItemType":"Bottle"
+      },
+	  {
+         "Name":"",
+		 "Prefix":"Item",
+		 "Id":0,
+		 "Description":"",
+		 "ItemType":""
+      }
+   ],
+   "VineGrape":[
+	  {
+         "Name":"Albariño",
+		 "Prefix":"VineGrape",
+         "Id":1,
+         "Description":"Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
+		 "ItemType":"GrapeVine",
+         "GrapeOrVine":"Vine",
+         "GrapeTextureColor":"White",
+         "AcidLevel":"High",
+		 "AlcoholLevel":12.5,
+         "AromasFlavors":[
+			"Apricot",
+			"Peach"
+         ]
+      },
+	  {
+         "Name":"Cataratto",
+		 "Prefix":"VineGrape",
+         "Id":2,
+         "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
+		 "ItemType":"GrapeVine",
+         "GrapeOrVine":"Vine",
+         "GrapeTextureColor":"White",
+         "AcidLevel":"Low",
+		 "AlcoholLevel":12.5,
+         "AromasFlavors":[
+			"Lemon"
+         ]
+      },
+	  {
+         "Name":"Airén",
+		 "Prefix":"VineGrape",
+         "Id":3,
+         "Description":"Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
+         "ItemType":"GrapeVine",
+		 "GrapeOrVine":"Vine",
+         "GrapeTextureColor":"White",
+         "AcidLevel":"Low",
+		 "AlcoholLevel":14.0,
+         "AromasFlavors":[
+            "Lemon",
+            "GreenApple",
+            "Nuts"
+         ]
+      },
+	  {
+         "Name":"",
+		 "Prefix":"VineGrape",
+         "Id":0,
+         "Description":"",
+		 "ItemType":"GrapeVine",
+         "GrapeOrVine":"",
+         "GrapeTextureColor":"White",
+         "AcidLevel":"",
+		 "AlcoholLevel":10.0,
+         "AromasFlavors":[
+         ]
+      }
+   ]
+}
