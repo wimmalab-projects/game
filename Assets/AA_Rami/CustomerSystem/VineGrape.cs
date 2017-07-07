@@ -26,6 +26,7 @@ public class VineGrape : Item {
     }
     private GrapeVineType gvt;
 
+    public GrapeVineType Gvt { get { return gvt; } }
     /// <summary>
     /// Percent value of a highest alcohol found from a grape
     /// </summary>
@@ -74,5 +75,4 @@ public class VineGrape : Item {
         AlcoholContent = maxAlcohol;
         //AromasAndFlavours = aromasAndFlavours;
     }
-
 }

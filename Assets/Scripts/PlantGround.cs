@@ -78,7 +78,7 @@ public class PlantGround : MonoBehaviour
 
     public void resetTimer()
     {
-        timer = 10;
+        timer = 100;
     }
 
     //private void OnApplicationFocus(bool hasFocus)

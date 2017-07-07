@@ -65,7 +65,7 @@ public class Item
         return itemID;
     }
 
-    public Item.ItemType returnItemType()
+    public ItemType returnItemType()
     {
         return itemType;
     }
