@@ -119,8 +119,8 @@ public class SaveLoadScript : MonoBehaviour
             bf.Serialize(saveFile, timerData);
             bf.Serialize(saveFile, inventoryData);
             bf.Serialize(saveFile, playerData);
-            //Debug.Log("Saving to " + Application.persistentDataPath);
             saveFile.Close();
+            Debug.Log("Saving...");
         }
     }
 
@@ -144,7 +144,7 @@ public class SaveLoadScript : MonoBehaviour
             float timeLapsed;
             System.TimeSpan difference = timerData.timeExit.Subtract(timeReturn);
             timeLapsed = (float)difference.TotalSeconds; // Put the difference to seconds so we can easily substract the time
-            Debug.Log(timeLapsed);
+            //Debug.Log(timeLapsed);
 
             // Loop through plant dictionary and assign saved values to variables
             foreach (KeyValuePair<string, List<TimerData>> plant in timerData.Plants)
@@ -214,6 +214,8 @@ public class SaveLoadScript : MonoBehaviour
             Player.ExpNeeded = playerData.ExpNeeded;
             Player.Level = playerData.Level;
             Player.Money = playerData.Money;
+
+            Debug.Log("Loading...");
         }
     }
 
