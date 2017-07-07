@@ -5,10 +5,8 @@ public class Wine
 {
 
     #region Enums
-
-    #region Main Gategories and Gategory specifig Enums
-
-    public enum MainGategories { WineType, Clarity, Condition, Intensity, Sweetness, Acidity, Tannin, Body, Finish, Aroma, Flavour };
+    
+    public enum MainGategories { WineType, Clarity, Condition, Intensity, Sweetness, Acidity, Tannin, Body, AromaFlavor };
     public enum WineType { WhiteWine, RoseWine, RedWine, SparklingWhiteWine, SparklingRoseWine, SparklingRedWine }
     public enum Clarity { Clear, Hazy };
     public enum Condition { Clean, Unclean };
@@ -17,41 +15,18 @@ public class Wine
     public enum Acidity { Low, Medium, High };
     public enum Tannin { Low, Medium, High };
     public enum Body { Light, Medium, Full };
-    public enum Finish { Short, Medium, Long };
 
-    #endregion
-
-    #region Aroma and Flavour enums
-
-    public enum AromaFlavourGategories
+    public enum AromaFlavor
     {
-        Floral, GreenFruit, CitrusFruit, StoneFruit, TropicalFruit, RedFruit, BlackFruit,
-        DriedFruit, Underripeness, Herbaceous, Herbal, Vegetable, SweetSpice, PungentSpice,
-        Autolytic, Dairy, Oak, Kernel, Animal, Maturity, Mineral
+        Blossom, Rose, Violet, GreenApple, RedApple, GooseBerry, Pear, Grape, GrapeFruit, Lemon, Limejuice, LimeZest, Peach, Apricot, Nectarine, 
+        Banana, Lychee, Mango, Melon, PassionFruit, Pineapple, Redcurrant, Cranberry, Raspberry, Strawberry, RedCherry, Plum, Blackcurrant, Blackberry, Blueberry, Blackcherry,
+        Fig, Prune, Raisin, Sultana, Kirsch, Jamminess, Cooked, Baked, StewedFruits, PreservedFruits, GreenBellPepper, Grass, WhitePepper, Leafiness, Tomato, Potato,
+        Asparagus, BlackcurrantLeaf, Eucalyptus, Mint, Medicinal, Lavender, Fennel, Dill, Cabbage, Peas, Beans, BlackOlive, GreenOlive, Cinnamon, Cloves, Ginger, Nutmeg, Vanilla,
+        BlackPepper, Liquorice, Juniper, Yeast, Biscuit, Bread, Toast, Pastry, Lees, Butter, Cheese, Cream, Yoghurt, Cedar, CharredWood, Smoke, Resinous,
+        Almond, Coconut, Hazelnut, Walnut, Chocolate, Coffee, Leather, Meaty, Farmyard, Vegetal, Mushroom, Hay, WetLeaves, ForestFloor, Game, Savoury, Tobacco, Honey, Cereal,
+        Earth, Petrol, Rubber, Tar, Stony, Steely, WetWool
     };
-    public enum Floral { Blossom, Rose, Violet };
-    public enum GreenFruit { GreenApple, RedApple, GooseBerry, Pear, Grape };
-    public enum CitrusFruit { GrapeFruit, Lemon, Limejuice, LimeZest };
-    public enum StoneFruit { Peach, Apricot, Nectarine };
-    public enum TropicalFruit { Banana, Lychee, Mango, Melon, PassionFruit, Pineapple };
-    public enum RedFruit { Redcurrant, Cranberry, Raspberry, Strawberry, RedCherry, Plum };
-    public enum BlackFruit { Blackcurrant, Blackberry, Blueberry, Blackcherry };
-    public enum DriedFruit { Fig, Prune, Raisin, Sultana, Kirsch, Jamminess, Cooked, Baked, StewedFruits, PreservedFruits };
-    public enum Underripeness { GreenBellPepper, Grass, WhitePepper, Leafiness, Tomato, Potato };
-    public enum Herbaceous { Grass, Asparagus, BlackcurrantLeaf };
-    public enum Herbal { Eucalyptus, Mint, Medicinal, Lavender, Fennel, Dill };
-    public enum Vegetable { Cabbage, Peas, Beans, BlackOlive, GreenOlive };
-    public enum SweetSpice { Cinnamon, Cloves, Ginger, Nutmeg, Vanilla };
-    public enum PungentSpice { BlackPepper, WhitePepper, Liquorice, Juniper };
-    public enum Autolytic { Yeast, Biscuit, Bread, Toast, Pastry, Lees };
-    public enum Dairy { Butter, Cheese, Cream, Yoghurt };
-    public enum Oak { Vanilla, Toast, Cedar, CharredWood, Smoke, Resinous };
-    public enum Kernel { Almond, Coconut, Hazelnut, Walnut, Chocolate, Coffee };
-    public enum Animal { Leather, Meaty, Farmyard };
-    public enum Maturity { Vegetal, Mushroom, Hay, WetLeaves, ForestFloor, Game, Savoury, Tobacco, Cedar, Honey, Cereal };
-    public enum Mineral { Earth, Petrol, Rubber, Tar, Stony, Steely, WetWool };
 
-    #endregion
     #endregion
 
     #region Methods
@@ -63,11 +38,11 @@ public class Wine
     /// gategory cereal as final value
     /// Returns null if failed input
     /// </summary>
-    /// <param name="AromaFlavourGategory"></param>
+    /// <param name="AromaFlavorGategory"></param>
     /// <param name="AromaFlavorSubGategory"></param>
     /// <param name="FinalValue"></param>
-    /// <returns>One Complete line for our matrix containing either an a Aroma or a Flavour</returns>
-    public int[] AromaFlavour(Enum MainGategory, Enum Value)
+    /// <returns>One Complete line for our matrix containing either an a Aroma or a Flavor</returns>
+    public int[] AromasAndFlavors(Enum MainGategory, Enum Value)
     {
 
         int[] temp = new int[3];
@@ -82,8 +57,8 @@ public class Wine
             }
         }
 
-        // AromaFlavourGategory to integer in matrix
-        string[] subGategories = Enum.GetNames(typeof(AromaFlavourGategories));
+        // AromaFlavorGategory to integer in matrix
+        string[] subGategories = Enum.GetNames(typeof(AromaFlavor));
         for (int i = 0; i < subGategories.Length; i++)
         {
             if ("Wine+" + subGategories[i] == Value.GetType().ToString())
@@ -115,9 +90,8 @@ public class Wine
     public Acidity      acidity;
     public Tannin       tannin;
     public Body         body;
-    public Finish       finish;
 
-    public List<int[]> AromasFlavors = new List<int[]>();
+    public List<AromaFlavor> AromasFlavors = new List<AromaFlavor>();
 
     public List<int[]> ComparisonMatrix;
 
@@ -137,12 +111,11 @@ public class Wine
         tempList.Add(new int[] { (int)MainGategories.Acidity, (int)acidity });
         tempList.Add(new int[] { (int)MainGategories.Tannin, (int)tannin });
         tempList.Add(new int[] { (int)MainGategories.Body, (int)body });
-        tempList.Add(new int[] { (int)MainGategories.Finish, (int)finish });
 
         // add aromas
-        foreach (int[] iArr in AromasFlavors)
+        foreach (AromaFlavor af in AromasFlavors)
         {
-            tempList.Add(iArr);
+            tempList.Add(new int[] { (int)MainGategories.AromaFlavor, (int)af });
         }
 
         return tempList;
