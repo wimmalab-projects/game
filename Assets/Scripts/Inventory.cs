@@ -36,20 +36,7 @@ public class Inventory : MonoBehaviour
         //Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPEVINE));
 
 
-        VineGrape vineOne = new VineGrape(
-            "Airén", 0,
-            "Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking.This grape is native to Spain where it represents about 30 % of all grapes grown.", 
-            VineGrape.GrapeOrVine.Vine, VineGrape.GrapeTextureColor.White, VineGrape.Acidity.Low, 14f);
-        vineOne.AromasFlavors.Add(Wine.AromaFlavor.Lemon);
-        vineOne.AromasFlavors.Add(Wine.AromaFlavor.GreenApple);
-        vineOne.AromasFlavors.Add(Wine.AromaFlavor.Almond);
-
-        Items.Add(vineOne.returnName(), vineOne);
-
-        Items.Add("White wine", new Item("White wine", 4, "This is white wine", Item.ItemType.FinishedWine));
-        Items.Add("Red wine", new Item("Red wine", 5, "This is red wine", Item.ItemType.FinishedWine));
-        Items.Add("Rose wine", new Item("Rose wine", 6, "This is rose wine", Item.ItemType.FinishedWine));
-        Items.Add("Bottle", new Item("Bottle", 7, "This is a bottle", Item.ItemType.Bottle));
+        // get items from database
 
         // create inventory slots
         for (int i = 0; i < Items.Count; i++)
@@ -68,9 +55,9 @@ public class Inventory : MonoBehaviour
         GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
         GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
         GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
-        go1.GetComponent<Text>().text = Items[Items.Keys[0]].returnName();
-        go2.GetComponent<Text>().text = Items[Items.Keys[0]].ItemDesc;
-        go3.GetComponent<Image>().sprite = Items[Items.Keys[0]].ItemSprite;
+        go1.GetComponent<Text>().text = Items[Items.Keys[0]].Name;
+        go2.GetComponent<Text>().text = Items[Items.Keys[0]].Description;
+        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(Items[Items.Keys[0]].SpriteName);
     }
 
     // Refresh the info of the item when clicking items
@@ -82,9 +69,9 @@ public class Inventory : MonoBehaviour
         GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
         GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
 
-        go1.GetComponent<Text>().text = currentlySelectedItem.returnName();
-        go2.GetComponent<Text>().text = currentlySelectedItem.ItemDesc;
-        go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
+        go1.GetComponent<Text>().text = currentlySelectedItem.Name;
+        go2.GetComponent<Text>().text = currentlySelectedItem.Description;
+        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName);
     }
 
     // Debug button that adds grape vines / bottles

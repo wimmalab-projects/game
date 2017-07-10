@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Item
 {
-    #region attributes
-    private readonly string itemName;
-    private readonly string ItemDescription;
-    private readonly int itemID;
-    private readonly Sprite itemSprite;
-    private readonly ItemType itemType;
-    private int itemValue;
+    public string SpriteName, Name, Prefix, Description;
+    public int Id;
+    public float Value;
+    public IType ItemType;
+    public int Stack;
+    public bool CanBuy;
 
-    public enum ItemType
+    public enum IType
     {
         GrapeVine,
         FinishedWine,
@@ -23,84 +22,20 @@ public class Item
         ClarificationDish,
     }
 
-    #endregion
-
-    #region gettersetter
-
-    public string ItemDesc
+    public string returnID()
     {
-        get { return ItemDescription; }
+        return Prefix + Id.ToString();
     }
-
-    public ItemType iType
-    {
-        get { return itemType; }
-    }
-
-    public Sprite ItemSprite
-    {
-        get { return itemSprite; }
-    }
-
-    public int itemCount
-    {
-        get
-        {
-            return itemValue;
-        }
-        set // keep private so item stack can only be changed from methods inside this class
-        {
-            if (value < 0)
-            {
-                if (itemValue - value < 0)
-                    itemValue = 0;
-                else
-                    itemValue -= value;
-            }
-            else
-            {
-                itemValue = value;
-            }
-        }
-    }
-
-    public int returnID()
-    {
-        return itemID;
-    }
-
-    public ItemType returnItemType()
-    {
-        return itemType;
-    }
-    #endregion
-
-    #region methods
+    
     public void PopItem()
     {
-        itemCount--;
+        if (Stack > 0)
+            Stack--;
     }
 
     public void AddItem()
     {
-        itemCount++;
+        Stack++;
     }
-
-    public string returnName()
-    {
-        return itemName;
-    }
-    #endregion
-
-    #region constructors
-    public Item(string name, int id, string desc, ItemType type)
-    {
-        itemName = name;
-        itemID = id;
-        ItemDescription = desc;
-        itemType = type;
-        itemSprite = Resources.Load<Sprite>("" + name);
-    }
-    #endregion
 }
 

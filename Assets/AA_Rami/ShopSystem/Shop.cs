@@ -34,7 +34,7 @@ public class Shop : MonoBehaviour {
             GameObject temp = Instantiate(ShopSlot);
             temp.transform.SetParent(ContentPanel.transform);
             temp.name = items.Keys[i];
-            temp.GetComponent<Image>().sprite = items[temp.name].ItemSprite;
+            temp.GetComponent<Image>().sprite = Resources.Load<Sprite>(items[temp.name].SpriteName);
             slots.Add(temp);
         }
 
@@ -82,9 +82,9 @@ public class Shop : MonoBehaviour {
         GameObject go2 = InfoPanel.transform.Find("SelectedIitemDesc").gameObject;
         GameObject go3 = InfoPanel.transform.Find("SelectedItemImage").gameObject;
 
-        go1.GetComponent<Text>().text = currentlySelectedItem.returnName();
-        go2.GetComponent<Text>().text = currentlySelectedItem.ItemDesc;
-        go3.GetComponent<Image>().sprite = currentlySelectedItem.ItemSprite;
+        go1.GetComponent<Text>().text = currentlySelectedItem.Name;
+        go2.GetComponent<Text>().text = currentlySelectedItem.Description;
+        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName);
     }
 
     /// <summary>

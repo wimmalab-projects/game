@@ -51,7 +51,7 @@ public class DialogueTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rpgTalk.variables[1].variableValue = shopScript.currentlySelectedItem.returnName();
+        rpgTalk.variables[1].variableValue = shopScript.currentlySelectedItem.Name;
         rpgTalk.variables[2].variableValue = slotScript.CurrentlySelectedName;
         // Update the gamestate so we can use it
         GameMaster.GameState GameState = gm.State;

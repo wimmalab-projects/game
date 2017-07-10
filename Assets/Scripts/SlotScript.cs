@@ -37,19 +37,19 @@ public class SlotScript : MonoBehaviour
         PlantGround groundScript = parent.GetComponent<PlantGround>();
 
         // If the item count is zero dont plant and show error
-        if (inventory.Items[SeedName].itemCount > 0 && inventory.Items[SeedName].returnItemType() == Item.ItemType.GrapeVine)
+        if (inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
         {
             // If the item is not a vine display error and dont plant
 
-            if (inventory.Items[SeedName].returnItemType() == Item.ItemType.GrapeVine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
 
-            if (((VineGrape)inventory.Items[SeedName]).Gov == VineGrape.GrapeOrVine.Vine)
+            if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Vine)
 
             {
                 // Set the groundscript, so that it is planted and remove the vine item
                 parent.tag = "Planted";
                 groundScript.PlantState = GameMaster.PlantState.JustPlanted;
-                groundScript.PlantName = inventory.Items[SeedName].returnName();
+                groundScript.PlantName = inventory.Items[SeedName].Name;
                 guiScript.initializeInfoPanel(groundScript.PlantName);
                 inventory.Items[SeedName].PopItem();
                 didPlant = true;
@@ -85,17 +85,17 @@ public class SlotScript : MonoBehaviour
     // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
-        if (inventory.Items[SeedName].itemCount > 0)
+        if (inventory.Items[SeedName].Stack > 0)
         {
 
-            if (inventory.Items[SeedName].iType == Item.ItemType.GrapeVine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
 
-            if (((VineGrape)inventory.Items[SeedName]).Gov == VineGrape.GrapeOrVine.Grape)
+            if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
 
             {
                 GameObject parent = colliderHandler.ParentGameObject;
 
-                CurrentlySelectedName = inventory.Items[SeedName].returnName();
+                CurrentlySelectedName = inventory.Items[SeedName].Name;
                 inventory.Items[CurrentlySelectedName].PopItem();
                 GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
                 grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(CurrentlySelectedName); // Change the sprite accordingly to what was selected
@@ -178,12 +178,12 @@ public class SlotScript : MonoBehaviour
         GameObject parent = colliderHandler.ParentGameObject;
         ClarificationScript clarificationScript = parent.GetComponent<ClarificationScript>();
 
-        if (inventory.Items[SeedName].itemCount > 0)
+        if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
             {
                 parent.tag = "Clarificating";
-                CurrentlySelectedName = inventory.Items[SeedName].returnName();
+                CurrentlySelectedName = inventory.Items[SeedName].Name;
                 clarificationScript.WineName = CurrentlySelectedName;
                 inventory.Items[CurrentlySelectedName].PopItem();
                 guiScript.initializeInfoPanel(clarificationScript.WineName);
@@ -210,12 +210,12 @@ public class SlotScript : MonoBehaviour
         GameObject parent = colliderHandler.ParentGameObject;
         BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
 
-        if (inventory.Items[SeedName].itemCount > 0)
+        if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].iType == Item.ItemType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
             {
                 parent.tag = "Bottling";
-                CurrentlySelectedName = inventory.Items[SeedName].returnName();
+                CurrentlySelectedName = inventory.Items[SeedName].Name;
                 bottlingScript.WineName = CurrentlySelectedName;
                 inventory.Items[CurrentlySelectedName].PopItem();
                 guiScript.initializeInfoPanel(bottlingScript.WineName);

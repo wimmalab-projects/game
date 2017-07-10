@@ -5,19 +5,10 @@ using UnityEngine;
 
 public class VineGrape : Item {
 
-    /// <summary>
-    /// Do not confuse with wine color.
-    /// This means the color of the grapeskin
-    /// </summary>
-    public enum GrapeTextureColor
-    {
-        White,
-        Red,
-        Green,
-        Purple,
-        Black,
-    }
-    GrapeTextureColor gtc;
+    public GrapeOrVine GoV;
+    public float AlcoholLevel;
+    public Acidity AcidLevel;
+    public List<Enum> AromasFlavors;
 
     /// <summary>
     /// Are we talking about the the vine that grows the grape or the actual grape
@@ -27,13 +18,6 @@ public class VineGrape : Item {
         Grape,
         Vine
     }
-    private GrapeOrVine gov;
-
-    public GrapeOrVine Gov { get { return gov; } }
-    /// <summary>
-    /// Percent value of a highest alcohol found from a grape
-    /// </summary>
-    public float AlcoholLevel { get; set; }
 
     /// <summary>
     /// Level of acidity in the grape's juice
@@ -43,39 +27,5 @@ public class VineGrape : Item {
         Low,
         Medium,
         High
-    }
-    private Acidity AcidLevel;
-
-    /// <summary>
-    /// List of aromas and flavours common from this grape
-    /// </summary>
-    public List<Enum> AromasFlavors
-    {
-        get
-        {
-            return aromasFlavors;
-        }
-    }
-    private List<Enum> aromasFlavors;
-
-    /// <summary>
-    /// Grapevine constructor. 
-    /// </summary>
-    /// <param name="name">Name of the grape</param>
-    /// <param name="id">Id for the grapevine</param>
-    /// <param name="desc">Description of the grape</param>
-    /// <param name="grapeVineType">Is this item ripe grape or vine of that grape</param>
-    /// <param name="grapeType">Is this white skinned grape or red skinned grape</param>
-    /// <param name="acidLevel">is this low/medium/high acidity grape</param>
-    /// <param name="maxAlcohol">highest alcohol level found from a wine made by this grape</param>
-    /// <param name="aromasAndFlavours">aromas and flavours found from wines made by this grape</param>
-    public VineGrape(string name, int id, string desc, GrapeOrVine grapeVineType, GrapeTextureColor grapeType, Acidity acidLevel, float maxAlcohol) : base(name, id, desc, ItemType.GrapeVine)
-    {
-        aromasFlavors = new List<Enum>();
-        gov = grapeVineType;
-        gtc = grapeType;
-        AcidLevel = acidLevel;
-        AlcoholLevel = maxAlcohol;
-        //AromasAndFlavours = aromasAndFlavours;
     }
 }

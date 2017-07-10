@@ -98,7 +98,7 @@ public class SaveLoadScript : MonoBehaviour
             // Get all inventory items and add them to inventorydata dictionary
             foreach(KeyValuePair<string, Item> item in inventory.Items)
             {
-                inventoryData.Items.Add(item.Value.returnName(), item.Value.itemCount);
+                inventoryData.Items.Add(item.Value.Name, item.Value.Stack);
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
@@ -205,7 +205,7 @@ public class SaveLoadScript : MonoBehaviour
             // Loop through the item dictionary and assign saved itemcounts to items itemcount
             foreach (KeyValuePair<string, int> item in inventoryData.Items)
             {
-                inventory.Items[item.Key].itemCount = item.Value;
+                inventory.Items[item.Key].Stack = item.Value;
             }
 
             // Set player data

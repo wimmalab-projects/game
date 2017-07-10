@@ -66,7 +66,7 @@ public class CustomerPanel : MonoBehaviour {
     {
         Item wine = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Bottle"];
 
-        if (wine.itemCount > 0)
+        if (wine.Stack > 0)
         {
             // Kutsuu arviointimetodin gamemasterista
             // Pelaaja profiilille palkintometodi kutsu gamemasterista

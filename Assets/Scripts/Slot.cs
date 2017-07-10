@@ -21,10 +21,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         // Update the items count text and sprites
-        int itemCount = inventory.Items[gameObject.name].itemCount;
+        int itemCount = inventory.Items[gameObject.name].Stack;
         UiItemCount.text = itemCount.ToString();
         //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
-        ItemImage.sprite = inventory.Items[gameObject.name].ItemSprite;
+        ItemImage.sprite = Resources.Load<Sprite>(inventory.Items[gameObject.name].SpriteName);
     }
 
     // Clear the highlight effect around the inventory block
