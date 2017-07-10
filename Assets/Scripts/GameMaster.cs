@@ -10,28 +10,33 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
+    [Header("Camera System")]
+    // Cameras for different views // Drag in editor
+    public GameObject TownCamera;
+    public GameObject FarmCamera;
+    public GameObject BreweryCamera; 
 
-    // Cameras for different views
-    public GameObject TownCamera, FarmCamera, BreweryCamera; // Drag in editor
+    [Header("Grape Crush")]
     public Camera GrapeCrush; // Drag in editor
     public GameObject PlayGrapeCrushGO; // Drag in editor
+
+    [Header("XP system")]
+    public Text exp;
+    public Text expneeded;
+    public Text level;
+    public Text playername;
+
+    // invisible in inspector
+    private GUIScript guiScript;
+    private CurtainControls curtainControls;
     public bool CrushisActive { get; set; }
     public bool WineSold { get; set; }
-
     // set and compare to this
     public GameState State { get; set; }
 
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen { get; set; }
-
-    private GUIScript guiScript;
-    private CurtainControls curtainControls;
-
-    public Text exp;
-    public Text expneeded;
-    public Text level;
-    public Text playername;
 
     /// <summary>
     /// List our gamestates here
@@ -101,14 +106,15 @@ public class GameMaster : MonoBehaviour
         IsInventoryOpen = false;
     }
 
-    private void Update()
-    {
-        exp.text = Player.Exp.ToString();
-        expneeded.text = Player.ExpNeeded.ToString();
-        level.text = Player.Level.ToString();
-        playername.text = Player.Name;
-        WineSold = false;
-    }
+    //private void Update()
+    //{
+    //    exp.text = Player.Exp.ToString();
+    //    expneeded.text = Player.ExpNeeded.ToString();
+    //    level.text = Player.Level.ToString();
+    //    playername.text = Player.Name;
+    //    WineSold = false;
+    //}
+
     void GoToTown()
     {
         curtainControls.FadeToBlack(Camera.main, TownCamera.transform.Find("MainCam").GetComponent<Camera>());
@@ -161,8 +167,9 @@ public class GameMaster : MonoBehaviour
     }
 
     #region CustomerSystem
-    public GameObject CurrentClient; // set by cpFarmButton.cs load this into farmview client
+    [Header("Customer System")]
     public GameObject CustomerSystem; // set in editor.
+    public GameObject CurrentClient; // set by cpFarmButton.cs load this into farmview client
 
     void ClientClick(GameObject go)
     {
@@ -205,6 +212,8 @@ public class GameMaster : MonoBehaviour
     #endregion
 
     #region wine compare
+    [Header("Wine Comparison System")]
+    public GameObject OurWine;
 
     /// <summary>
     /// Compare two wines and return the number of matches
@@ -215,8 +224,9 @@ public class GameMaster : MonoBehaviour
     public int CompareWines(Wine wineA, Wine wineB)
     {
         bool match = false;
-        wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
-        wineB.ComparisonMatrix = wineB.CreateMatrix();
+
+        //wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
+        //wineB.ComparisonMatrix = wineB.CreateMatrix();
 
         int similiarities = 0;
 
@@ -242,7 +252,7 @@ public class GameMaster : MonoBehaviour
                     }
                 }
 
-                if (match)
+                if (match == true)
                 {
                     similiarities++;
                     match = false;
@@ -257,7 +267,7 @@ public class GameMaster : MonoBehaviour
 
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(1100, 50, 100, 100));
+        GUILayout.BeginArea(new Rect(500, 50, 100, 100));
         if (GUILayout.Button("Add exp"))
         {
             Player.GainExperience(100);
@@ -265,6 +275,7 @@ public class GameMaster : MonoBehaviour
             expneeded.text = Player.ExpNeeded.ToString();
             level.text = Player.Level.ToString();
         }
+
         GUILayout.EndArea();
     }
 }

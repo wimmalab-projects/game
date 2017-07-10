@@ -42,6 +42,7 @@ public class WinePrefab : MonoBehaviour
     {
         wineHolder = new Wine();
 
+        WineHolder.wineType = wineType;
         WineHolder.clarity = clarity;
         WineHolder.condition = condition;
         WineHolder.intensity = intensity;
