@@ -29,14 +29,10 @@ public class Inventory : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // add items
-        //Items.Add("Black grape vine", new Item("Black grape vine", 0, "Black grape vine", Item.ItemType.GRAPEVINE));
-        //Items.Add("White grape vine", new Item("White grape vine", 1, "White grape vine", Item.ItemType.GRAPEVINE));
-        //Items.Add("Black grape", new Item("Black grape", 2, "This is a black grape", Item.ItemType.GRAPEVINE));
-        //Items.Add("White grape", new Item("White grape", 3, "This is a white grape", Item.ItemType.GRAPEVINE));
-
 
         // get items from database
+        Items = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Database>().Items;
+
 
         // create inventory slots
         for (int i = 0; i < Items.Count; i++)

@@ -9,10 +9,10 @@ public class PlantGround : MonoBehaviour
     public List<Sprite> Sprites = new List<Sprite>();
     public GameMaster.PlantState PlantState { get; set; }
     public bool IsPlanted { get; set; }
-    public string PlantName { get; set; }
+    public string PlantName;
     public string NiceTime { get; private set; }
 
-    private float timer = 100;
+    private float timer = 5;
 
     private bool isTimerRunning;
     private System.DateTime timePaused;
@@ -80,44 +80,4 @@ public class PlantGround : MonoBehaviour
     {
         timer = 100;
     }
-
-    //private void OnApplicationFocus(bool hasFocus)
-    //{
-    //    if (isTimerRunning)
-    //    {
-    //        if (!hasFocus)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            timer = (timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
-
-    //private void OnApplicationPause(bool paused)
-    //{
-    //    if (isTimerRunning)
-    //    {
-    //        if (paused)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            timer = (timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
 }

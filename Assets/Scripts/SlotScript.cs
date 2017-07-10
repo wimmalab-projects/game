@@ -41,15 +41,23 @@ public class SlotScript : MonoBehaviour
         {
             // If the item is not a vine display error and dont plant
 
-            if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
+            // if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
 
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Vine)
-
             {
                 // Set the groundscript, so that it is planted and remove the vine item
                 parent.tag = "Planted";
                 groundScript.PlantState = GameMaster.PlantState.JustPlanted;
+
                 groundScript.PlantName = inventory.Items[SeedName].Name;
+
+                foreach (KeyValuePair<string,Item> pair in inventory.Items)
+                {
+                    if (pair.Value.Name == groundScript.PlantName && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
+                        groundScript.PlantName = pair.Key;
+                }
+
+
                 guiScript.initializeInfoPanel(groundScript.PlantName);
                 inventory.Items[SeedName].PopItem();
                 didPlant = true;
@@ -75,8 +83,8 @@ public class SlotScript : MonoBehaviour
         parent.tag = "NotPlanted";
         groundScript.PlantState = GameMaster.PlantState.NotPlanted;
         CurrentlySelectedName = groundScript.PlantName;
-        string selectedGrape = CurrentlySelectedName.Split(' ')[0] + " " + CurrentlySelectedName.Split(' ')[1]; // Get the name right so we can add correct item from the item database
-        CurrentlySelectedName = selectedGrape;
+        
+        
         groundScript.PlantName = null;
         inventory.Items[CurrentlySelectedName].AddItem();
         groundScript.resetTimer();

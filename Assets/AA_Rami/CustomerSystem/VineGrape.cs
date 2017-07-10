@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class VineGrape : Item {
 
     public GrapeOrVine GoV;
     public float AlcoholLevel;
     public Acidity AcidLevel;
-    public List<Enum> AromasFlavors;
+    public List<Wine.AromaFlavor> AromasFlavors;
 
     /// <summary>
     /// Are we talking about the the vine that grows the grape or the actual grape
