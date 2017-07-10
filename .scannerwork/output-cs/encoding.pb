@@ -1,6 +1,7 @@
 b
 YC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Client.csutf-8i
-`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.csutf-8`
+`C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.csutf-8e
+\C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\VineGrape.csutf-8`
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.csutf-8f
 ]C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.csutf-8h
 _C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.csutf-8h
@@ -29,7 +30,9 @@ NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\GameMaster.cs
 MC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Inventory.csutf-8Q
 HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Item.csutf-8`
 WC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\MethodCallerHandler.csutf-8X
-OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\PlantGround.csutf-8Q
+OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\PlantGround.csutf-8S
+JC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Player.csutf-8[
+RC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SaveLoadScript.csutf-8Q
 HC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.csutf-8W
 NC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.csutf-8X
 OC:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.csutf-8

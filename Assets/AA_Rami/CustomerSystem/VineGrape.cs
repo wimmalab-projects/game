@@ -29,7 +29,7 @@ public class VineGrape : Item {
     }
     private GrapeOrVine gov;
 
-    public GrapeVineType Gvt { get { return gvt; } }
+    public GrapeOrVine Gov { get { return gov; } }
     /// <summary>
     /// Percent value of a highest alcohol found from a grape
     /// </summary>

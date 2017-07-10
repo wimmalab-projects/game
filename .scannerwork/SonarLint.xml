@@ -441,6 +441,7 @@
   <Files>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Client.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\CustomerPanel.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\VineGrape.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\Wine.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\WinePrefab.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\AA_Rami\CustomerSystem\cpExitButton.cs</File>
@@ -470,6 +471,8 @@
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Item.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\MethodCallerHandler.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\PlantGround.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Player.cs</File>
+    <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SaveLoadScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\Slot.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\SlotScript.cs</File>
     <File>C:\Users\Administrator\Desktop\git_wine\wine-game\Assets\Scripts\grapeScript.cs</File>
