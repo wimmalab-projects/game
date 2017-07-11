@@ -15,7 +15,7 @@ public class Item
     public enum IType
     {
         GrapeVine,
-        FinishedWine,
+        Wine,
         Bottle,
         FieldAddable,
         FermentAddable,
