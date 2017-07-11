@@ -1,5 +1,5 @@
 projectKey=wine-game
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/wine-game
-ceTaskId=AV0q7tkk5_A9emHPZnGB
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AV0q7tkk5_A9emHPZnGB
+ceTaskId=AV0xwW5s5_A9emHPZnGC
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV0xwW5s5_A9emHPZnGC
