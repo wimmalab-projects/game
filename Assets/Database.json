@@ -2,7 +2,7 @@
    "Item":[
 	  {
          "Name":"Yeast",
-		 "SpriteName": "Yeast.png",
+		 "SpriteName": "Yeast",
 		 "Prefix":"Item",
 		 "Id":1,
 		 "Description":"Used to make the wine GO! w00tw00t!!",
@@ -11,7 +11,7 @@
       },
 	  {
          "Name":"Oak Chips",
-		 "SpriteName": "Oak_Chips.png",
+		 "SpriteName": "Oak_Chips",
 		 "Prefix":"Item",
 		 "Id":2,
 		 "Description":"Readily available in several types and toast levels. Easy to rack wine off of chips or beans. Used to add tannins to the wine during fermentation. +Tannin +oak taste",
@@ -20,7 +20,7 @@
       },
 	  {
          "Name":"Oak Powder",
-		 "SpriteName": "Oak_Powder.png",
+		 "SpriteName": "Oak_Powder",
 		 "Prefix":"Item",
 		 "Id":3,
 		 "Description":"Because of the surface area that comes in contact with the wine, a little bit goes a long way. Used to add tannins to the wine during fermentation. ++Tannin +oak taste",
@@ -29,7 +29,7 @@
       },
 	  {
          "Name":"Oak Barrels",
-		 "SpriteName": "Oak_Barrels.png",
+		 "SpriteName": "Oak_Barrels",
 		 "Prefix":"Item",
 		 "Id":4,
 		 "Description":"Traditional time-proven method for oaking large quantities of wine. Clarification dish, ++Tannin ++Oak taste",
@@ -38,7 +38,7 @@
       },
       {
          "Name":"Bottle",
-		 "SpriteName": "Bottle.png",
+		 "SpriteName": "Bottle",
 		 "Prefix":"Item",
 		 "Id":5,
 		 "Description":"This is a bottle",
@@ -57,7 +57,7 @@
    "VineGrape":[
 	  {
          "Name":"Albariño",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":1,
          "Description":"Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
@@ -73,7 +73,7 @@
       },
 	  {
          "Name":"Cataratto",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":2,
          "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
@@ -88,7 +88,7 @@
       },
 	  {
          "Name":"Airén",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":3,
          "Description":"Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
@@ -105,7 +105,7 @@
       },
 	  {
          "Name":"Albariño",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":4,
          "Description":"Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
@@ -121,7 +121,7 @@
       },
 	  {
          "Name":"Cataratto",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":5,
          "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
@@ -136,7 +136,7 @@
       },
 	  {
          "Name":"Airén",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":6,
          "Description":"Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
@@ -153,7 +153,7 @@
       },
 	  {
          "Name":"",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":0,
          "Description":"",

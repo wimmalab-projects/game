@@ -16,7 +16,7 @@ public class SlotScript : MonoBehaviour
     private GUIScript guiScript;
     private GameMaster gameMaster;
     private ColliderHandler colliderHandler;
-
+    private Item currentlySelectedItem;
 
     // called before start
     void Awake()
@@ -41,25 +41,15 @@ public class SlotScript : MonoBehaviour
         {
             // If the item is not a vine display error and dont plant
 
-            // if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
-
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Vine)
             {
                 // Set the groundscript, so that it is planted and remove the vine item
+                currentlySelectedItem = inventory.Items[SeedName];
                 parent.tag = "Planted";
                 groundScript.PlantState = GameMaster.PlantState.JustPlanted;
-
                 groundScript.PlantName = inventory.Items[SeedName].Name;
-
-                foreach (KeyValuePair<string,Item> pair in inventory.Items)
-                {
-                    if (pair.Value.Name == groundScript.PlantName && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
-                        groundScript.PlantName = pair.Key;
-                }
-
-
                 guiScript.initializeInfoPanel(groundScript.PlantName);
-                inventory.Items[SeedName].PopItem();
+                currentlySelectedItem.PopItem();
                 didPlant = true;
 
             }
@@ -79,34 +69,36 @@ public class SlotScript : MonoBehaviour
     {
         GameObject parent = colliderHandler.ParentGameObject;
         PlantGround groundScript = parent.GetComponent<PlantGround>();
-
         parent.tag = "NotPlanted";
         groundScript.PlantState = GameMaster.PlantState.NotPlanted;
+
+        foreach (KeyValuePair<string, Item> pair in inventory.Items)
+        {
+            if (pair.Value.Name == groundScript.PlantName && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
+                groundScript.PlantName = pair.Key;
+        }
+
         CurrentlySelectedName = groundScript.PlantName;
-        
-        
+        currentlySelectedItem = inventory.Items[CurrentlySelectedName];
         groundScript.PlantName = null;
-        inventory.Items[CurrentlySelectedName].AddItem();
+        currentlySelectedItem.AddItem();
         groundScript.resetTimer();
     }
 
     // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
-        if (inventory.Items[SeedName].Stack > 0)
+        if (inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
         {
-
-            if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
-
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
 
             {
                 GameObject parent = colliderHandler.ParentGameObject;
-
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
-                inventory.Items[CurrentlySelectedName].PopItem();
+                currentlySelectedItem = inventory.Items[SeedName];
+                currentlySelectedItem.PopItem();
                 GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
-                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(CurrentlySelectedName); // Change the sprite accordingly to what was selected
+                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName); // Change the sprite accordingly to what was selected
                 parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush"; // set the methodname so that we can go to grapecrush view
                 parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod(); // Call the method PlayGrapeCrush
                 didPlant = true;
@@ -133,17 +125,21 @@ public class SlotScript : MonoBehaviour
         FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
-        string selectedGrape = CurrentlySelectedName.Split(' ')[0] + " " + CurrentlySelectedName.Split(' ')[1]; // Get the name right so we can set winetype correctly
-        CurrentlySelectedName = selectedGrape;
-        if (CurrentlySelectedName == "White grape")
-        {
-            fermentorScript.WineType = GameMaster.Winetype.WhiteWine;
-        }
-        else
-            fermentorScript.WineType = GameMaster.Winetype.RedWine;
+        fermentorScript.WineType = GameMaster.Winetype.WhiteWine;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
         fermentorScript.Timer = 150;
         fermentorScript.IsFermenting = true;
+
+        foreach (VineGrape vg in gameMaster.GetComponent<Database>().Collection.VineGrape)
+        {
+            if (vg.Name == fermentorScript.GrapeName && vg.GoV == VineGrape.GrapeOrVine.Grape)
+            {
+                foreach (Wine.AromaFlavor af in vg.AromasFlavors)
+                {
+                    gameMaster.OurWine.GetComponent<WinePrefab>().aromasAndFlavors.Add(af);
+                }
+            }
+        }
     }
 
     // Collect the item accordingly what tag the parent has and also set the parent so it can be used again to ferment / clarificate or bottling.

@@ -10,15 +10,15 @@ public class FermentorScript : MonoBehaviour
     public GameMaster.FermentationState FermentationState { get; set; }
     public GameMaster.Winetype WineType { get; set; }
     public bool IsFermenting { get; set; }
-    public string GrapeName { get; set; }
+    public string GrapeName;
     public float Timer { get; set; }
     public string NiceTime { get; private set; }
 
     private GameMaster gameMaster;
     private SlotScript slotScript;
-    private bool isStarted;
-    private bool isPaused;
-    private bool isTimerRunning;
+    private bool testing = true;
+    private bool isPaused = false;
+    private bool isTimerRunning = false;
 
     System.DateTime timePaused;
     System.DateTime timeUnpaused;
@@ -27,27 +27,23 @@ public class FermentorScript : MonoBehaviour
     {
         gameMaster = GameObject.Find("GameManager").GetComponent<GameMaster>();
         slotScript = GameObject.Find("GameManager").GetComponent<SlotScript>();
-        isStarted = false;
-        isPaused = false;
-        isTimerRunning = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameMaster.CrushisActive)
-        {
-            if (!isStarted)
-            {
-                isStarted = true;
-            }
-            // Check if the grape crush minigame was won and start the fermentation process.
-            if (CrushScript.DidWin)
-            {
-                slotScript.Ferment();
-            }
-        }
-
+        //if (gameMaster.CrushisActive)
+        //{
+        //    //if (!isStarted)
+        //    //{
+        //    //    isStarted = true;
+        //    //}
+        //    // Check if the grape crush minigame was won and start the fermentation process.
+        //    if (CrushScript.DidWin)
+        //    {
+        //        slotScript.Ferment();
+        //    }
+        //}
         if (FermentationState != GameMaster.FermentationState.NotFermentating && FermentationState != GameMaster.FermentationState.Fermented)
         {
             if (Timer >= 0)

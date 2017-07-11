@@ -98,7 +98,7 @@ public class SaveLoadScript : MonoBehaviour
             // Get all inventory items and add them to inventorydata dictionary
             foreach(KeyValuePair<string, Item> item in inventory.Items)
             {
-                inventoryData.Items.Add(item.Value.Name, item.Value.Stack);
+                inventoryData.Items.Add(item.Key, item.Value.Stack);
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
@@ -341,10 +341,10 @@ public class SaveLoadScript : MonoBehaviour
     }
 
     // This method doesnt work on mobile, but used for pc debugging
-    private void OnApplicationQuit()
-    {
-        Save(); // Save data
-    }
+    //private void OnApplicationQuit()
+    //{
+    //    Save(); // Save data
+    //}
 
     // Delete the savefile
     private void DeleteFile()
