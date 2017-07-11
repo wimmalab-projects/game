@@ -177,6 +177,10 @@ public class GUIScript : MonoBehaviour
                         slotScript.Collect();
                         InfoPanel.alpha = 0;
                     }
+                    else if ( parent.tag == "Fermenting" && fermentorScript.Timer > 0)
+                    {
+                        slotScript.didCollect = true;
+                    }
                     else
                         return;
                     break;

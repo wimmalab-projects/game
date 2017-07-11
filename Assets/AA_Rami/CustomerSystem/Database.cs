@@ -27,7 +27,7 @@ public class Database : MonoBehaviour
 
         foreach (KeyValuePair<string, Item> item in Items)
         {
-            Debug.Log(item.Value.ItemType);
+            //Debug.Log(item.Value.ItemType);
         }
     }
 }

@@ -19,6 +19,8 @@ public class FermentorScript : MonoBehaviour
     private bool testing = true;
     private bool isPaused = false;
     private bool isTimerRunning = false;
+    private WinePrefab ourWine;
+    private bool wineTypeDecided = false;
 
     System.DateTime timePaused;
     System.DateTime timeUnpaused;
@@ -27,6 +29,7 @@ public class FermentorScript : MonoBehaviour
     {
         gameMaster = GameObject.Find("GameManager").GetComponent<GameMaster>();
         slotScript = GameObject.Find("GameManager").GetComponent<SlotScript>();
+        ourWine = gameMaster.OurWine.GetComponent<WinePrefab>();
     }
 
     // Update is called once per frame
@@ -55,54 +58,37 @@ public class FermentorScript : MonoBehaviour
                 NiceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
+            if (Timer < 50 && slotScript.didCollect && !wineTypeDecided)
+            {
+                WineType = GameMaster.Winetype.RedWine;
+                ourWine.wineType = (Wine.WineType)WineType;
+                wineTypeDecided = true;
+                Debug.Log(WineType);
+            }
+
+            else if (Timer < 100 && slotScript.didCollect && !wineTypeDecided)
+            {
+                WineType = GameMaster.Winetype.RoseWine;
+                ourWine.wineType = (Wine.WineType)WineType;
+                wineTypeDecided = true;
+                Debug.Log(WineType);
+            }
+
+            else if (Timer < 150 && slotScript.didCollect && !wineTypeDecided)
+            {
+                WineType = GameMaster.Winetype.WhiteWine;
+                ourWine.wineType = (Wine.WineType)WineType;
+                wineTypeDecided = true;
+                Debug.Log(WineType);
+            }
+
             if (Timer <= 0)
             {
-                isTimerRunning = false;
                 FermentationState = GameMaster.FermentationState.Fermented;
+                Debug.Log(WineType);
             }
         }
         else
             NiceTime = string.Format("0:00");
     }
-
-    //private void OnApplicationFocus(bool hasFocus)
-    //{
-    //    if(isTimerRunning)
-    //    {
-    //        if (!hasFocus)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            Timer = (Timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
-
-    //private void OnApplicationPause(bool paused)
-    //{
-    //    if (isTimerRunning)
-    //    {
-    //        if (paused)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            Timer = (Timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
-
 }

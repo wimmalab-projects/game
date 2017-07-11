@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class SlotScript : MonoBehaviour
 {
     public static bool didPlant;
+    public bool didCollect;
     public string SeedName { get; set; }
     public string CurrentlySelectedName { get; set; }
 
@@ -125,7 +126,6 @@ public class SlotScript : MonoBehaviour
         FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
-        fermentorScript.WineType = GameMaster.Winetype.WhiteWine;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
         fermentorScript.Timer = 150;
         fermentorScript.IsFermenting = true;
@@ -150,7 +150,7 @@ public class SlotScript : MonoBehaviour
         {
             FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
             parent.tag = "NotFermenting";
-            inventory.Items[gameMaster.GetDescription(fermentorScript.WineType)].AddItem();
+            inventory.Items["Item6"].AddItem();
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
@@ -159,6 +159,8 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Clarificating")
         {
             ClarificationScript clarificationScript = parent.GetComponent<ClarificationScript>();
+            gameMaster.OurWine.GetComponent<WinePrefab>().clarity = Wine.Clarity.Clear;
+            gameMaster.OurWine.GetComponent<WinePrefab>().condition = Wine.Condition.Clean;
             parent.tag = "NotClarificating";
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
             inventory.Items[clarificationScript.WineName].AddItem();
@@ -184,7 +186,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
                 parent.tag = "Clarificating";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
@@ -216,7 +218,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
                 parent.tag = "Bottling";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
