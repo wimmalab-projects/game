@@ -26,6 +26,21 @@ public class Inventory : MonoBehaviour
         slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
     }
 
+    public void ShowHideSlots()
+    {
+        foreach (GameObject go in Slots)
+        {
+            if (Items[go.name].Stack <= 0)
+            {
+                go.SetActive(false);
+            }
+            else
+            {
+                go.SetActive(true);
+            }
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -42,6 +57,8 @@ public class Inventory : MonoBehaviour
             temp.name = Items.Keys[i];
             Slots.Add(temp);
         }
+
+        ShowHideSlots();
 
         // Scale the slots to fit the content area
         float y = (contentPanel.transform.childCount + 1) / glg.constraintCount * glg.cellSize.y + (glg.cellSize.y * 2);
@@ -68,29 +85,6 @@ public class Inventory : MonoBehaviour
         go1.GetComponent<Text>().text = currentlySelectedItem.Name;
         go2.GetComponent<Text>().text = currentlySelectedItem.Description;
         go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName);
-    }
-
-    // Debug button that adds grape vines / bottles
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 100, 100));
-        if (GUILayout.Button("Add index 0"))
-        {
-            Items["White grape vine"].AddItem();
-        }
-        GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(10, 50, 100, 100));
-        if (GUILayout.Button("Add index 1"))
-        {
-            Items["Black grape vine"].AddItem();
-        }
-        GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(10, 100, 100, 100));
-        if (GUILayout.Button("Add index 2"))
-        {
-            Items["Bottle"].AddItem();
-        }
-        GUILayout.EndArea();
     }
 }
 

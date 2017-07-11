@@ -202,6 +202,7 @@ public class GUIScript : MonoBehaviour
         fermentorScript = parent.GetComponent<FermentorScript>();
         clarificationScript = parent.GetComponent<ClarificationScript>();
         bottlingScript = parent.GetComponent<BottlingScript>();
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().ShowHideSlots();
 
         switch (parent.tag)
         {
