@@ -24,7 +24,7 @@ public class Wine
         Asparagus, BlackcurrantLeaf, Eucalyptus, Mint, Medicinal, Lavender, Fennel, Dill, Cabbage, Peas, Beans, BlackOlive, GreenOlive, Cinnamon, Cloves, Ginger, Nutmeg, Vanilla,
         BlackPepper, Liquorice, Juniper, Yeast, Biscuit, Bread, Toast, Pastry, Lees, Butter, Cheese, Cream, Yoghurt, Cedar, CharredWood, Smoke, Resinous,
         Almond, Coconut, Hazelnut, Walnut, Chocolate, Coffee, Leather, Meaty, Farmyard, Vegetal, Mushroom, Hay, WetLeaves, ForestFloor, Game, Savoury, Tobacco, Honey, Cereal,
-        Earth, Petrol, Rubber, Tar, Stony, Steely, WetWool, Guava, Rosemary, Chalk
+        Earth, Petrol, Rubber, Tar, Stony, Steely, WetWool, Guava, Rosemary, Chalk, RedPepper
     };
 
     #endregion
