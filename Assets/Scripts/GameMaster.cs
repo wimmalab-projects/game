@@ -29,7 +29,7 @@ public class GameMaster : MonoBehaviour
     // invisible in inspector
     private GUIScript guiScript;
     private CurtainControls curtainControls;
-    public bool CrushisActive { get; set; }
+    public bool CrushisActive;
     public bool WineSold { get; set; }
     // set and compare to this
     public GameState State { get; set; }

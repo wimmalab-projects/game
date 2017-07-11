@@ -29,6 +29,7 @@ public class CrushScript : MonoBehaviour
     private bool instructionsDone;
     private GameObject[] spawnpoint;
     private RuntimePlatform platform;
+    private SlotScript slotScript;
     // Use this for initialization
 
     void Awake()
@@ -38,6 +39,7 @@ public class CrushScript : MonoBehaviour
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
         spawnpoint = GameObject.FindGameObjectsWithTag("Respawn"); // Get the spawn points for the grapes
         mch = GetComponent<MethodCallerHandler>();
+        slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
     }
 
     void Start()
@@ -155,6 +157,11 @@ public class CrushScript : MonoBehaviour
     // Coroutine to smoothly end the game and transistion back to brewery view. Destroys the view at the end.
     IEnumerator Wait()
     {
+        // If won, start the fermentation process
+        if(DidWin)
+        {
+            slotScript.Ferment();
+        }
         DidWin = false;
         GameObject canvas = GameObject.Find("Canvas");
         yield return new WaitForSeconds(3);
