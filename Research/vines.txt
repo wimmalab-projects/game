@@ -1,6 +1,6 @@
-================================
+================================X
 #Vaaleat rypäleet
-================================
+================================X
 Albariño
 
 Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.
@@ -9,7 +9,7 @@ High Acidity
 Low alcohol content (up to 12.5%)
 Appricot
 Peach
-================================
+================================X
 Cataratto 
 
 Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.
@@ -17,7 +17,7 @@ Catarratto is Italian white wine grape planted primarily in Sicily where it is t
 Low acidity
 Low alcohol content (up to 12.5%)
 Lemon
-================================
+================================X
 Airén
 
 Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.
@@ -27,7 +27,7 @@ Medium alcohol content (up to 14%)
 Lemon
 Green Apples
 Nuts
-================================
+================================X
 Chardonnay 
 
 Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand
@@ -42,7 +42,7 @@ Peach
 Melon
 Banana
 Mango
-================================
+================================X
 Chenin Blanc
 
 Chenin blanc is a white wine grape variety from the Loire Valley of France.
@@ -53,7 +53,7 @@ Honey
 Apple
 Pear
 Peach
-================================
+================================X
 Colombard 
 
 Colombard is French white wine grape variety that is the offspring of Chenin blanc and Gouais blanc. It is still among the permitted white grape varieties in Bordeaux wine
@@ -61,7 +61,7 @@ Colombard is French white wine grape variety that is the offspring of Chenin bla
 High Acidic
 Low alcohol content (up to 12.5%)
 Guava
-================================
+================================X
 Garganega 
 
 Garganega is a variety of white Italian wine grape widely grown in the Veneto region of North East Italy, particularly in the provinces of Verona and Vicenza. It is Italy's 6th most widely planted white grape
@@ -70,7 +70,7 @@ Medium Acidic
 Low alcohol content (up to 12.5%)
 Lemon
 Almond
-================================
+================================X
 Gewürtztraminer 
 
 Gewürztraminer is an aromatic wine grape variety, used in white wines, and performs best in cooler climates. In English, it is sometimes referred to colloquially as Gewürz, and in French it is written Gewurztraminer.
@@ -82,7 +82,7 @@ Roses
 Passion Fruit
 mango
 grape
-================================
+================================X
 Grillo
 
 Grillo also known as Riddu and Rossese bianco, is a white Italian wine grape variety which withstands high temperatures and is widely used in Sicilian wine-making.
@@ -90,7 +90,7 @@ Grillo also known as Riddu and Rossese bianco, is a white Italian wine grape var
 High acidity
 High alcohol contents (up to 18%)
 lemon
-================================
+================================X
 Macabeo
 
 Macabeo is a white variety of wine grape used to make mildly acidic and young white wines.
@@ -99,7 +99,7 @@ Medium acidic
 High alcohol content (up to 14%)
 Grapefruit
 Oak
-================================
+================================X
 Müller-Thurgau
 
 Müller-Thurgau is a white grape variety which was created by Hermann Müller from the Swiss Canton of Thurgau in 1882. It is a crossing of Riesling with Madeleine Royale.
@@ -107,7 +107,7 @@ Müller-Thurgau is a white grape variety which was created by Hermann Müller from
 Low acidity
 High alcohol content (up to 13.2%)
 peach
-================================
+================================X
 Muscat
 
 The Muscat family of grapes include over 200 grape varieties belonging to the Vitis vinifera species that have been used in wine production and as raisin and table grapes around the globe for many centuries. Their colors ranges from white (such as Muscat Ottonel), to yellow (Moscato Giallo), to pink (Moscato rosa del Trentino) to near black (Muscat Hamburg). 
@@ -116,7 +116,7 @@ Medium acidity
 High alcohol content (up to 15%)
 Lemon
 Raisin
-================================
+================================X
 Parellada
 
 Parellada is a white grape variety of Catalan origin specially grown in Catalonia. With Macabeu and Xarel·lo, is one of the three traditional varieties used to make the sparkling wine Cava, which is primarily produced in Catalonia. 
@@ -126,13 +126,14 @@ Medium alcohol content (up to 12%)
 green apple
 grapefruit
 honey
-================================
+================================X
 Pinot Gris
 
 Pinot gris is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot noir variety, it normally has a grayish-blue fruit, accounting for its name (gris meaning "gray" in French) but the grapes can have a brownish pink to black and even white appearance.
 
 medium acidic
 Low alcohol content (up to 12.5%)
+
 Apple
 Rose
 Clove
@@ -140,7 +141,7 @@ Cinnamon
 Honey
 pear
 melon
-================================
+================================X
 Glera
 
 Glera is a white variety of grape of Slovenian origin, which was brought to the village of Prosecco from Slovenia's Karst region. Glera was, until 2009, mostly referred to as Prosecco. Glera is mainly grown in veneto area in italy near coneglianoa and valdobbiadene and is mainly used to produce white wine called Prosecco.
@@ -151,7 +152,7 @@ Green Apple
 Honey
 Melon
 Pear
-================================
+================================X
 Riesling
 
 Riesling is a white grape variety which originated in the Rhine region of Germany. Riesling is an aromatic grape variety displaying flowery, almost perfumed, aromas as well as high acidity. It is used to make dry, semi-sweet, sweet, and sparkling white wines. Riesling wines are usually varietally pure and are seldom oaked.
@@ -162,7 +163,7 @@ Smoke
 Honey
 Petrol
 Peach
-================================
+================================X
 Sauvignon Blanc
 
 Sauvignon blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The grape most likely gets its name from the French words sauvage ("wild") and blanc ("white") due to its early origins as an indigenous grape in South West France.
@@ -175,7 +176,7 @@ Gooseberry
 Green Bell Pepper
 Passio Fruit
 Grapefruit
-=================================
+=================================X
 Sémillon
 
 Sémillon is a golden-skinned grape used to make dry and sweet white wines, mostly in France and Australia. Its thin skin and susceptibility to botrytis make it dominate the sweet wine region Sauternes AOC and Barsac AOC in France.
@@ -187,7 +188,7 @@ Honey
 Toast
 Lemon
 Green Apple
-=================================
+=================================X
 Torrontés
 
 Torrontés is a white Argentine wine grape variety, producing fresh, aromatic wines with moderate acidity, smooth texture and mouthfeel as well as distinctive peach and apricot aromas on the nose.
@@ -198,7 +199,7 @@ Peach
 Appricot
 Rose
 Lemon Zest
-=================================
+=================================X
 Trebbiano
 
 Trebbiano is an Italian wine grape, one of the most widely planted grape varieties in the world. It gives good yields, but tends to yield undistinguished wine. It can be fresh and fruity, but does not keep long.
@@ -211,7 +212,7 @@ Slate
 Chalk
 Red Currant
 Gooseberry
-=================================
+=================================X
 Viognier
 
 Viognier is a white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley. Outside of the Rhône, Viognier can be found in regions of North and South America as well as Australia, New Zealand, the Cape Winelands in South Africa and Israel.
@@ -223,10 +224,10 @@ Pear
 Grapefruit
 Appricot
 pneapple
-=================================
+=================================X
 Xarel'lo
 
-Xarello is a white grape variety of Spanish origin specially grown in Catalonia. With Macabeu and Parellada, is one of the three traditional varieties used to make the sparkling wine Cava.
+Xarel'lo is a white grape variety of Spanish origin specially grown in Catalonia. With Macabeu and Parellada, is one of the three traditional varieties used to make the sparkling wine Cava.
 
 High acidity
 Low alcohol content (up to 11.5%)
@@ -236,7 +237,7 @@ Green Apple
 Pear
 =================================
 #Punaiset rypäleet
-=================================
+=================================X
 Cabernet Sauvignon
 
 Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.
@@ -246,13 +247,14 @@ High alcohol content (up to 15%)
 Black currant
 Coffee
 Cedar
-=================================
+=================================X
 Carmenère
 
 The Carménère grape is a wine grape variety originally planted in the Médoc region of Bordeaux, France, where it was used to produce deep red wines and occasionally used for blending purposes in the same manner as Petit Verdot.
 
 High acidity
 High alcohol content (up to 14%)
+
 Blueberry
 Liquorice 
 Chocolate
