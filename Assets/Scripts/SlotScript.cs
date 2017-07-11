@@ -134,6 +134,7 @@ public class SlotScript : MonoBehaviour
         {
             if (vg.Name == fermentorScript.GrapeName && vg.GoV == VineGrape.GrapeOrVine.Grape)
             {
+                gameMaster.OurWine.GetComponent<WinePrefab>().acidity = (Wine.Acidity)vg.AcidLevel;
                 foreach (Wine.AromaFlavor af in vg.AromasFlavors)
                 {
                     gameMaster.OurWine.GetComponent<WinePrefab>().aromasAndFlavors.Add(af);
@@ -163,7 +164,7 @@ public class SlotScript : MonoBehaviour
             gameMaster.OurWine.GetComponent<WinePrefab>().condition = Wine.Condition.Clean;
             parent.tag = "NotClarificating";
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
-            inventory.Items[clarificationScript.WineName].AddItem();
+            inventory.Items["Item7"].AddItem();
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
         }
@@ -190,8 +191,9 @@ public class SlotScript : MonoBehaviour
             {
                 parent.tag = "Clarificating";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
+                currentlySelectedItem = inventory.Items[SeedName];
                 clarificationScript.WineName = CurrentlySelectedName;
-                inventory.Items[CurrentlySelectedName].PopItem();
+                currentlySelectedItem.PopItem();
                 guiScript.initializeInfoPanel(clarificationScript.WineName);
                 clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
                 clarificationScript.Timer = 100;

@@ -61,6 +61,7 @@ public class FermentorScript : MonoBehaviour
             if (Timer < 50 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.RedWine;
+                ourWine.tannin = Wine.Tannin.High;
                 ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
@@ -69,6 +70,7 @@ public class FermentorScript : MonoBehaviour
             else if (Timer < 100 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.RoseWine;
+                ourWine.tannin = Wine.Tannin.Medium;
                 ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
@@ -77,6 +79,7 @@ public class FermentorScript : MonoBehaviour
             else if (Timer < 150 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.WhiteWine;
+                ourWine.tannin = Wine.Tannin.Low;
                 ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
