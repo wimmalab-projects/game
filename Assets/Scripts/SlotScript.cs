@@ -184,7 +184,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
                 parent.tag = "Clarificating";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
@@ -216,7 +216,7 @@ public class SlotScript : MonoBehaviour
 
         if (inventory.Items[SeedName].Stack > 0)
         {
-            if (inventory.Items[SeedName].ItemType == Item.IType.FinishedWine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
                 parent.tag = "Bottling";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;

@@ -353,39 +353,42 @@ Vanilla
 Cranberry
 Coffee
 Chocolate
-=================================
+=================================ZZ>XXX
 Sangiovese
 
 Sangiovese is a red Italian wine grape variety. DNA profiling suggests that Sangiovese's ancestors are Ciliegiolo and Calabrese Montenuovo. The former is well known as an ancient variety in Tuscany, the latter is an almost-extinct relic from the Calabria, the toe of Italy.
 
 Medium Acidity
 High alcohol content (up to 14%)
+
 Strawberry
 Raspberry
 Red Apple
 Green Apple
 Ginger
 Violet
-=================================
+=================================XXXXX
 Syrah (Shiraz)
 
 Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.
 
 High acidity
 High alcohol content (up to 15.5%)
+
 Clove
 Red pepper
 white pepper
 Cinnamon
 blackberry
 chocolate
-=================================
+=================================XX
 Tempranillo
 
 Tempranillo is a black grape variety widely grown to make full-bodied red wines in its native Spain. Its name is the diminutive of the Spanish temprano ("early"), a reference to the fact that it ripens several weeks earlier than most Spanish red grapes
 
 Low Acidity
 High alcohol content (up to 14%)
+
 Plum
 Strawberry
 Vanilla
@@ -393,15 +396,16 @@ White pepper
 Blackpepper
 Smoke
 Clove
-=================================
+=================================XX
 Zinfandel
 
 Zinfandel is a variety of black-skinned wine grape. DNA analysis has revealed that it is genetically equivalent to the Croatian grapes Crljenak Kaštelanski and Tribidrag, as well as to the Primitivo variety traditionally grown in Apulia
 
 Medium acidity
 High alcohol content (up to 15%)
+
 Raspberry
 Tar
 Liquorice
 Meaty
-=================================
+=================================XXX

@@ -1228,7 +1228,7 @@
          "Description":"Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.",
          "ItemType":0,
          "GoV":0,
-         "AcidLevel":,
+         "AcidLevel":2,
          "AlcoholLevel":14.0,
          "AromasFlavors":[
            61,
@@ -1248,7 +1248,7 @@
          "Description":"Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.",
          "ItemType":0,
          "GoV":1,
-         "AcidLevel":,
+         "AcidLevel":2,
          "AlcoholLevel":14.0,
          "AromasFlavors":[
            61,
