@@ -2,47 +2,47 @@
    "Item":[
 	  {
          "Name":"Yeast",
-		 "SpriteName": "Yeast.png",
+		 "SpriteName": "Yeast",
 		 "Prefix":"Item",
 		 "Id":1,
 		 "Description":"Used to make the wine GO! w00tw00t!!",
-		 "ItemType":"FermentAddable",
+		 "ItemType":4,
 		 "CanBuy": true
       },
 	  {
          "Name":"Oak Chips",
-		 "SpriteName": "Oak_Chips.png",
+		 "SpriteName": "Oak_Chips",
 		 "Prefix":"Item",
 		 "Id":2,
 		 "Description":"Readily available in several types and toast levels. Easy to rack wine off of chips or beans. Used to add tannins to the wine during fermentation. +Tannin +oak taste",
-		 "ItemType":"FermentAddable",
+		 "ItemType":4,
 		 "CanBuy": true
       },
 	  {
          "Name":"Oak Powder",
-		 "SpriteName": "Oak_Powder.png",
+		 "SpriteName": "Oak_Powder",
 		 "Prefix":"Item",
 		 "Id":3,
 		 "Description":"Because of the surface area that comes in contact with the wine, a little bit goes a long way. Used to add tannins to the wine during fermentation. ++Tannin +oak taste",
-		 "ItemType":"FermentAddable",
+		 "ItemType":4,
 		 "CanBuy": true
       },
 	  {
          "Name":"Oak Barrels",
-		 "SpriteName": "Oak_Barrels.png",
+		 "SpriteName": "Oak_Barrels",
 		 "Prefix":"Item",
 		 "Id":4,
 		 "Description":"Traditional time-proven method for oaking large quantities of wine. Clarification dish, ++Tannin ++Oak taste",
-		 "ItemType":"ClarificationDish",
+		 "ItemType":6,
 		 "CanBuy": true
       },
       {
          "Name":"Bottle",
-		 "SpriteName": "Bottle.png",
+		 "SpriteName": "Bottle",
 		 "Prefix":"Item",
 		 "Id":5,
 		 "Description":"This is a bottle",
-		 "ItemType":"Bottle",
+		 "ItemType":2,
 		 "CanBuy": true
       },
 	  {
@@ -51,19 +51,20 @@
 		 "Prefix":"Item",
 		 "Id":0,
 		 "Description":"",
-		 "ItemType":""
+		 "ItemType":0,
+     "CanBuy": true
       }
    ],
    "VineGrape":[
 	  {
-         "Name":"Albariño",
-		 "SpriteName": "White.png",
+         "Name":"AlbariÃ±o",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":1,
-         "Description":"Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
-		 "ItemType":"GrapeVine",
+         "Description":"AlbariÃ±o is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
+		 "ItemType":0,
          "GoV":1,
-         "AcidLevel":"High",
+         "AcidLevel":2,
 		 "AlcoholLevel":12.5,
          "AromasFlavors":[
 			13,
@@ -71,30 +72,61 @@
          ],
 		 "CanBuy": true
       },
+      {
+           "Name":"AlbariÃ±o",
+  		 "SpriteName": "White",
+  		 "Prefix":"VineGrape",
+           "Id":2,
+           "Description":"AlbariÃ±o is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
+  		 "ItemType":0,
+           "GoV":0,
+           "AcidLevel":2,
+  		 "AlcoholLevel":12.5,
+           "AromasFlavors":[
+  			13,
+  			12
+           ],
+  		 "CanBuy": false
+        },
 	  {
          "Name":"Cataratto",
-		 "SpriteName": "White.png",
-		 "Prefix":"VineGrape",
-         "Id":2,
-         "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
-		 "ItemType":"GrapeVine",
-         "GoV":1,
-         "AcidLevel":"Low",
-		 "AlcoholLevel":12.5,
-         "AromasFlavors":[
-			9
-         ],
-		 "CanBuy": true
-      },
-	  {
-         "Name":"Airén",
-		 "SpriteName": "White.png",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":3,
-         "Description":"Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
-         "ItemType":"GrapeVine",
+         "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
+		 "ItemType":0,
+         "GoV":1,
+         "AcidLevel":0,
+		 "AlcoholLevel":12.5,
+         "AromasFlavors":[
+			9
+         ],
+		 "CanBuy": true
+      },
+      {
+           "Name":"Cataratto",
+  		 "SpriteName": "White",
+  		 "Prefix":"VineGrape",
+           "Id":4,
+           "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
+  		 "ItemType":0,
+           "GoV":0,
+           "AcidLevel":0,
+  		 "AlcoholLevel":12.5,
+           "AromasFlavors":[
+  			9
+           ],
+  		 "CanBuy": false
+        },
+	  {
+         "Name":"AirÃ©n",
+		 "SpriteName": "White",
+		 "Prefix":"VineGrape",
+         "Id":5,
+         "Description":"AirÃ©n is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
+         "ItemType":0,
 		 "GoV":1,
-         "AcidLevel":"Low",
+         "AcidLevel":0,
 		 "AlcoholLevel":14.0,
          "AromasFlavors":[
             9,
@@ -104,45 +136,14 @@
 		 "CanBuy": true
       },
 	  {
-         "Name":"Albariño",
-		 "SpriteName": "White.png",
-		 "Prefix":"VineGrape",
-         "Id":4,
-         "Description":"Albariño is a variety of white wine grape grown in Galicia (northwest Spain), It was presumably brought to Iberia by Cluny monks in the twelfth century.",
-		 "ItemType":"GrapeVine",
-         "GoV":0,
-         "AcidLevel":"High",
-		 "AlcoholLevel":12.5,
-         "AromasFlavors":[
-			13,
-			12
-         ],
-		 "CanBuy": false
-      },
-	  {
-         "Name":"Cataratto",
-		 "SpriteName": "White.png",
-		 "Prefix":"VineGrape",
-         "Id":5,
-         "Description":"Catarratto is Italian white wine grape planted primarily in Sicily where it is the most widely planted grape.",
-		 "ItemType":"GrapeVine",
-         "GoV":0,
-         "AcidLevel":"Low",
-		 "AlcoholLevel":12.5,
-         "AromasFlavors":[
-			9
-         ],
-		 "CanBuy": false
-      },
-	  {
-         "Name":"Airén",
-		 "SpriteName": "White.png",
+         "Name":"AirÃ©n",
+		 "SpriteName": "White",
 		 "Prefix":"VineGrape",
          "Id":6,
-         "Description":"Airén is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
-         "ItemType":"GrapeVine",
+         "Description":"AirÃ©n is a variety of Vitis vinifera, a white grape commonly used in winemaking. This grape is native to Spain where it represents about 30% of all grapes grown.",
+         "ItemType":0,
 		 "GoV":0,
-         "AcidLevel":"Low",
+         "AcidLevel":0,
 		 "AlcoholLevel":14.0,
          "AromasFlavors":[
             9,
@@ -151,19 +152,63 @@
          ],
 		 "CanBuy": false
       },
-	  {
-         "Name":"",
-		 "SpriteName": "White.png",
-		 "Prefix":"VineGrape",
-         "Id":0,
-         "Description":"",
-		 "ItemType":"GrapeVine",
-         "GoV":0,
-         "AcidLevel":"",
-		 "AlcoholLevel":10.0,
-         "AromasFlavors":[
-         ],
-		 "CanBuy": false
-      }
+      {
+           "Name":"Chardonnay",
+  		 "SpriteName": "White",
+  		 "Prefix":"VineGrape",
+           "Id":7,
+           "Description":"Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand",
+           "ItemType":0,
+  		 "GoV":0,
+           "AcidLevel":1,
+  		 "AlcoholLevel":14.0,
+           "AromasFlavors":[
+             26,
+             3,
+             4,
+             6,
+             12,
+             18,
+             15,
+             17
+           ],
+  		 "CanBuy": false
+        },
+        {
+             "Name":"Chardonnay",
+    		 "SpriteName": "White",
+    		 "Prefix":"VineGrape",
+             "Id":8,
+             "Description":"Chardonnay is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand",
+             "ItemType":0,
+    		 "GoV":1,
+             "AcidLevel":1,
+    		 "AlcoholLevel":14.0,
+             "AromasFlavors":[
+               26,
+               3,
+               4,
+               6,
+               12,
+               18,
+               15,
+               17
+             ],
+    		 "CanBuy": true
+          },
+      {
+           "Name":"",
+  		 "SpriteName": "White",
+  		 "Prefix":"VineGrape",
+           "Id":0,
+           "Description":"",
+           "ItemType":0,
+  		 "GoV":0,
+           "AcidLevel":0,
+  		 "AlcoholLevel":14.0,
+           "AromasFlavors":[
+           ],
+  		 "CanBuy": false
+        },
    ]
 }
