@@ -25,7 +25,9 @@ public class Inventory : MonoBehaviour
         glg = contentPanel.GetComponent<GridLayoutGroup>();
         slotScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>();
     }
-
+    /// <summary>
+    /// Used to show and hide items in inventory based on item stack
+    /// </summary>
     public void ShowHideSlots()
     {
         foreach (GameObject go in Slots)
@@ -68,9 +70,9 @@ public class Inventory : MonoBehaviour
         GameObject go1 = infoPanel.transform.Find("SelectedItemName").gameObject;
         GameObject go2 = infoPanel.transform.Find("SelectedIitemDesc").gameObject;
         GameObject go3 = infoPanel.transform.Find("SelectedItemImage").gameObject;
-        go1.GetComponent<Text>().text = Items[Items.Keys[0]].Name;
-        go2.GetComponent<Text>().text = Items[Items.Keys[0]].Description;
-        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(Items[Items.Keys[0]].SpriteName);
+        //go1.GetComponent<Text>().text = Items[Items.Keys[0]].Name;
+        //go2.GetComponent<Text>().text = Items[Items.Keys[0]].Description;
+        //go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(Items[Items.Keys[0]].SpriteName);
     }
 
     // Refresh the info of the item when clicking items

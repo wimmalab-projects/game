@@ -63,14 +63,14 @@
          "ItemType":1,
          "CanBuy":false
       },
-      {
-         "Name":"",
-         "SpriteName":"",
+	  {
+         "Name":"Bottled Wine",
+         "SpriteName":"BottledWine",
          "Prefix":"Item",
-         "Id":0,
-         "Description":"",
-         "ItemType":0,
-         "CanBuy":true
+         "Id":8,
+         "Description":"Bottled Wine",
+         "ItemType":1,
+         "CanBuy":false
       }
    ],
    "VineGrape":[

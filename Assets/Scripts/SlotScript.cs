@@ -173,7 +173,7 @@ public class SlotScript : MonoBehaviour
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
-            inventory.Items["Bottle"].AddItem();
+            inventory.Items["Item8"].AddItem();
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
         }
@@ -224,8 +224,9 @@ public class SlotScript : MonoBehaviour
             {
                 parent.tag = "Bottling";
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
+                currentlySelectedItem = inventory.Items[SeedName];
                 bottlingScript.WineName = CurrentlySelectedName;
-                inventory.Items[CurrentlySelectedName].PopItem();
+                currentlySelectedItem.PopItem();
                 guiScript.initializeInfoPanel(bottlingScript.WineName);
                 bottlingScript.BottlingState = GameMaster.BottlingState.Bottling;
                 bottlingScript.Timer = 100;
