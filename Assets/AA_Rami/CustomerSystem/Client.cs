@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Client : MonoBehaviour
 {
+    public bool AtFarm = false;
+
     public GameMaster.ClientType clientType;
 
     public string Name;

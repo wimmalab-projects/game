@@ -106,15 +106,6 @@ public class GameMaster : MonoBehaviour
         IsInventoryOpen = false;
     }
 
-    //private void Update()
-    //{
-    //    exp.text = Player.Exp.ToString();
-    //    expneeded.text = Player.ExpNeeded.ToString();
-    //    level.text = Player.Level.ToString();
-    //    playername.text = Player.Name;
-    //    WineSold = false;
-    //}
-
     void GoToTown()
     {
         curtainControls.FadeToBlack(Camera.main, TownCamera.transform.Find("MainCam").GetComponent<Camera>());
@@ -173,11 +164,12 @@ public class GameMaster : MonoBehaviour
 
     void ClientClick(GameObject go)
     {
-        Debug.Log(go.ToString());
-        CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
-        CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
-        CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
-
+        if (go.GetComponent<Client>().AtFarm == false)
+        { 
+            CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
+            CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
+            CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
+        }
     }
     public enum ClientType
     {
@@ -190,6 +182,16 @@ public class GameMaster : MonoBehaviour
         // Asiakkaat
         // Tehty viini
     }
+
+    // load farm client to farm.
+    public void LoadFarmClient()
+    {
+        CurrentClient.GetComponent<Client>().AtFarm = true;
+        GameObject go = Instantiate(CurrentClient);
+        go.transform.position = GameObject.Find("CustomerSpawn").transform.position;
+        go.layer = GameObject.Find("CustomerSpawn").layer;
+    }
+
     #endregion
 
     #region CameraRailsSystemMethods
@@ -265,18 +267,24 @@ public class GameMaster : MonoBehaviour
 
     #endregion
 
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(500, 50, 100, 100));
-        if (GUILayout.Button("Add exp"))
-        {
-            Player.GainExperience(100);
-            exp.text = Player.Exp.ToString();
-            expneeded.text = Player.ExpNeeded.ToString();
-            level.text = Player.Level.ToString();
-        }
+    #region shop
 
-        GUILayout.EndArea();
+    /// <summary>
+    /// call this from methodcaller handler to open close shop.
+    /// </summary>
+    public void Shop()
+    {
+        Debug.Log(transform.parent);
+        if (transform.GetComponent<Shop>().shop.activeSelf == false)
+        {
+            transform.GetComponent<Shop>().OpenShop();
+        }
+        else
+        {
+            transform.GetComponent<Shop>().CloseShop();
+        }
     }
+
+    #endregion
 }
 

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CustomerPanel : MonoBehaviour {
 
+    public List<GameObject> Clients = new List<GameObject>(); // place client prefabs here in editor
     public Client clientSender = null; // this is set by the gamemaster clientclick method
 
     /// <summary>
