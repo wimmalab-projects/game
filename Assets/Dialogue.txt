@@ -1,27 +1,32 @@
-Hello *PlayerName*!
-Lets make some focking wine!
+Hello There!
+Welcome to the journey of wine making!
+Now, lets make some wine!
 First we need to buy stuff.
+We need vines so we can grow grapes.
 Click on the truck to go to town.
 Here is the town view.
-Here you will find the customers to sell your wine and also shop.
-Click on the shop to buy your first wine making stuff.
-To start making wine, first of all you need a grape vine.
-Buy a black grape vine or white grape vine.
-Most of the time, black grapes produce red wine and white grapes produce white wine.
-Congratulations! You just bought a *GrapeVine*
-Now lets head back to the farm by clicking the farm sign.
+Here you will see customers who want to buy your wine.
+The shop is also located here.
+Click on the shop doors to enter the shop and to buy your first wine making stuff.
+Lets buy a vine so we can grow grapes.
+Theres a variety of vines available.
+Choose your favourite!
+Congratulations! You just bought a *GrapeVine* vine!
+Now lets head back to the farm by clicking the truck.
+Hello again!
 We're back at the farm.
-Now click on the road to see your wine plants.
-Here are your wine plants.
-Click on the wine plant.
+Lets plant our vine.
+Click on the road to see your vine plants.
+Click on the vine plant.
 Here is your inventory.
-Click on *GrapeVine* to select it and click plant
-Congratulations! You just planted your first *GrapeVine*
+Here you can see all the stuff you have bought.
+Click on *GrapeVine* to select it and click plant.
+Congratulations! You just planted your first *GrapeVine* vine!
 This is the first step to make wine.
-Now if you click on the plant where you planted your wine you can see more information.
+Vines produce grapes, which are crushed to make wine.
+Now if you click on the plant where you planted your vine, you can see more information.
 Try it!
 Here you can see how much time there is left before you can harvest the grapes.
-Here you can also see if the vine needs treatment like trimming its leafs.
 Now wait till you can harvest the grapes and click harvest.
 Congratulations! Your first *GrapeName*s were added to your inventory!
 Now lets move on.
@@ -29,28 +34,39 @@ Next step is to crush the *GrapeName*s to get the juice out of them.
 Click on the road again.
 Click on the house to get to the winery.
 Welcome to the winery!
-Here you can crush the *GrapeName*s, ferment the wine, clarificate, and bottle it.
+Here you can crush the *GrapeName*s, ferment, clarificate, and bottle the wine.
+To make wine you need juice.
+To get juice you need to crush the grapes.
 To start the crushing the *GrapeName*s click on the fermentor.
 Here is your inventory again.
 Select *GrapeName*s to crush them and click crush.
-Good job! You showed them *GrapeName*s whos the boss!
+Good job! You showed them *GrapeName*s who's the boss!
 Your juice is now fermenting in the fermentor.
 Click on it to see more info.
-Here you can again see how much there is left before the fermenting is done.
-Click collect when the fermenting is done.
-Your juice has fermented and is now *WineName*!
-But you need to clarificate it to keep to quality top notch.
+Here you can see how much time there is left before the fermenting is done.
+Grape skins are collected at a certain time to make a certain type of wine.
+White wines get skin contact very little,
+Rose wines get a bit of skin contact,
+and Red Wines get a lot of skin contact.
+Click collect before 1:30 to make white wine.
+Click collect before 0:50 to make rose wine.
+Red wine is made if you dont collect the grapes!
+When the fermenting is ready click collect.
+You removed the skins and your wine is now *WineName*!
+Now wait till the fermentation is completed, and click collect.
+Your juice has fermented and is now *WineName*
+But you need to clarificate it to keep the quality top notch.
 Click on the clarification pot.
-Select *WineName* to place it in clarification pot and click clarfificate.
+Select Fermented wine to place it in clarification pot and click clarfificate.
 Your *WineName* is now clarificating.
-Press on the clarificator to see more info.
+Click on the clarificator to see more info.
 Here you can see the time left on the clarification.
 Press collect when the clarification is ready!
 Your *WineName* is top notch now!
 Now you need to bottle it.
 Click on the bottling machine.
-Select *WineName* and click bottle.
-Fucking again you can see more info when clicking the bottling machine again.
+Select Clarificated wine and click bottle.
+You can see more info when clicking the bottling machine.
 Click collect when bottling is ready.
 Congratulations! Your *WineName* is now bottled and ready to be sold!
 Now lets go sell it.

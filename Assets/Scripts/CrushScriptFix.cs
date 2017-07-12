@@ -205,7 +205,6 @@ public class CrushScriptFix : MonoBehaviour
         {
             slotScript.Ferment();
         }
-        DidWin = false;
         GameObject canvas = GameObject.Find("Canvas");
         canvas.SetActive(false);
         GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false;
