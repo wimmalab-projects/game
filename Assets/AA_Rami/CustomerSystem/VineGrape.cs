@@ -10,6 +10,7 @@ public class VineGrape : Item {
     public float AlcoholLevel;
     public Acidity AcidLevel;
     public List<Wine.AromaFlavor> AromasFlavors;
+    public Wine.Intensity AromaIntensity;
 
     /// <summary>
     /// Are we talking about the the vine that grows the grape or the actual grape

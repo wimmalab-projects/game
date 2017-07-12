@@ -119,20 +119,4 @@ public class Shop : MonoBehaviour {
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         shop.SetActive(false);
     }
-
-
-    // temp can remove later
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(Screen.width-150,Screen.height - 150,150,150));
-        if (GUILayout.Button("open shop"))
-        {
-            OpenShop();
-        }
-        if (GUILayout.Button("CLOSE shop"))
-        {
-            CloseShop();
-        }
-        GUILayout.EndArea();
-    }
 }

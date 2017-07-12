@@ -14,5 +14,6 @@ public class cpFarmButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData data)
     {
         cp.AcceptFarmer();
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().LoadFarmClient();
     }
 }

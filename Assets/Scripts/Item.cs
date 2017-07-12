@@ -7,7 +7,7 @@ public class Item
 {
     public string SpriteName, Name, Prefix, Description;
     public int Id;
-    public float Value;
+    public int Value; // per hectar, h
     public IType ItemType;
     public int Stack;
     public bool CanBuy;
