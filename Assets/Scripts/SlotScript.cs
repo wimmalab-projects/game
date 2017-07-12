@@ -143,6 +143,18 @@ public class SlotScript : MonoBehaviour
         }
     }
 
+    #region multiple wine method
+
+    public void AddWineToInventory()
+    {
+        Item i = inventory.Items["Item6"];
+        i.Name = "testi1";
+        i.AddItem();
+        inventory.Items.Add("TestWine", i);
+    }
+
+    #endregion
+
     // Collect the item accordingly what tag the parent has and also set the parent so it can be used again to ferment / clarificate or bottling.
     public void Collect()
     {
@@ -151,7 +163,10 @@ public class SlotScript : MonoBehaviour
         {
             FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
             parent.tag = "NotFermenting";
-            inventory.Items["Item6"].AddItem();
+            // inventory.Items["Item6"].AddItem(); // #001 
+
+            AddWineToInventory();
+
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
@@ -164,7 +179,7 @@ public class SlotScript : MonoBehaviour
             gameMaster.OurWine.GetComponent<WinePrefab>().condition = Wine.Condition.Clean;
             parent.tag = "NotClarificating";
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
-            inventory.Items["Item7"].AddItem();
+            inventory.Items["Item7"].AddItem(); // #001
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
         }
@@ -173,7 +188,7 @@ public class SlotScript : MonoBehaviour
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
-            inventory.Items["Item8"].AddItem();
+            inventory.Items["Item8"].AddItem(); // #001
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
         }

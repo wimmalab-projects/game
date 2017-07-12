@@ -88,7 +88,9 @@
             13,
             12
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Albariño",
@@ -104,7 +106,9 @@
             13,
             12
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Cataratto",
@@ -119,7 +123,9 @@
          "AromasFlavors":[
             9
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Cataratto",
@@ -134,7 +140,9 @@
          "AromasFlavors":[
             9
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Airén",
@@ -151,7 +159,9 @@
             3,
             85
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Airén",
@@ -168,7 +178,9 @@
             3,
             85
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Chardonnay",
@@ -190,7 +202,9 @@
             15,
             17
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Chardonnay",
@@ -212,7 +226,9 @@
             15,
             17
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Chenin Blanc",
@@ -231,7 +247,9 @@
            6,
            12
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Chenin Blanc",
@@ -251,6 +269,9 @@
            12
          ],
          "CanBuy":true
+         ,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Colombard",
@@ -265,7 +286,9 @@
          "AromasFlavors":[
            108
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Colombard",
@@ -280,7 +303,9 @@
          "AromasFlavors":[
            108
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Garganega",
@@ -296,7 +321,9 @@
            9,
            82
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Garganega",
@@ -312,7 +339,9 @@
            9,
            82
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Gewürtztraminer",
@@ -331,7 +360,9 @@
            17,
            7
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Gewürtztraminer",
@@ -350,7 +381,9 @@
            17,
            7
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Grillo",
@@ -365,7 +398,9 @@
          "AromasFlavors":[
            9
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Grillo",
@@ -380,7 +415,9 @@
          "AromasFlavors":[
            9
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Macabeo",
@@ -395,7 +432,9 @@
          "AromasFlavors":[
            8
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Macabeo",
@@ -410,7 +449,9 @@
          "AromasFlavors":[
            8
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Müller-Thurgau",
@@ -425,7 +466,9 @@
          "AromasFlavors":[
            12
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Müller-Thurgau",
@@ -440,7 +483,9 @@
          "AromasFlavors":[
            12
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Muscat",
@@ -456,7 +501,9 @@
            9,
            33
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Muscat",
@@ -472,7 +519,9 @@
            9,
            33
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Parellada",
@@ -489,7 +538,9 @@
            8,
            99
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Parellada",
@@ -506,7 +557,9 @@
            8,
            99
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Pinot Gris",
@@ -527,7 +580,9 @@
            6,
            3
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Pinot Gris",
@@ -548,7 +603,9 @@
            6,
            3
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Glera",
@@ -566,7 +623,9 @@
            18,
            6
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Glera",
@@ -584,7 +643,9 @@
            18,
            6
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Riesling",
@@ -602,7 +663,9 @@
            102,
            12
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Riesling",
@@ -620,7 +683,9 @@
            102,
            12
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Sauvignon Blanc",
@@ -640,7 +705,9 @@
            19,
            8
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Sauvignon Blanc",
@@ -660,7 +727,9 @@
            19,
            8
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Sémillon",
@@ -679,7 +748,9 @@
            9,
            3
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 12000
       },
       {
          "Name":"Sémillon",
@@ -698,7 +769,9 @@
            9,
            3
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 12000
       },
       {
          "Name":"Torrontés",
@@ -716,7 +789,9 @@
            1,
            11
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
 
       {
@@ -735,7 +810,9 @@
            1,
            11
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Trebbiano",
@@ -754,7 +831,9 @@
            21,
            5
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Trebbiano",
@@ -773,7 +852,9 @@
            21,
            5
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
       },
       {
          "Name":"Viognier",
@@ -792,7 +873,9 @@
            13,
            20
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Viognier",
@@ -811,7 +894,9 @@
            13,
            20
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Xarel'lo",
@@ -829,7 +914,9 @@
            3,
            12
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Xarel'lo",
@@ -847,7 +934,9 @@
            3,
            12
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Cabernet Sauvignon",
@@ -864,7 +953,9 @@
            87,
            78
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Cabernet Sauvignon",
@@ -881,7 +972,9 @@
            87,
            78
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Carmenère",
@@ -901,7 +994,9 @@
            21,
            23
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Carmenère",
@@ -921,7 +1016,9 @@
            21,
            23
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Corvina",
@@ -938,7 +1035,9 @@
            30,
            82
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Corvina",
@@ -955,7 +1054,9 @@
            30,
            82
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Grenache",
@@ -975,7 +1076,9 @@
            23,
            24
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Grenache",
@@ -995,7 +1098,9 @@
            23,
            24
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Malbec",
@@ -1012,7 +1117,9 @@
            23,
            26
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Malbec",
@@ -1029,7 +1136,9 @@
            23,
            26
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Merlot",
@@ -1049,7 +1158,9 @@
            80,
            86
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Merlot",
@@ -1069,7 +1180,9 @@
            80,
            86
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Pinotage",
@@ -1088,7 +1201,9 @@
            22,
            23
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Pinotage",
@@ -1107,7 +1222,9 @@
            22,
            23
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 8000
       },
       {
          "Name":"Pinot Noir",
@@ -1128,7 +1245,9 @@
            28,
            25
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 12000
       },
       {
          "Name":"Pinot Noir",
@@ -1149,7 +1268,9 @@
            28,
            25
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 12000
       },
       {
          "Name":"Rondinella",
@@ -1168,7 +1289,9 @@
            87,
            86
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Rondinella",
@@ -1187,7 +1310,9 @@
            87,
            86
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 8000
       },
       {
          "Name":"Sangiovese",
@@ -1207,7 +1332,9 @@
            62,
            2
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Sangiovese",
@@ -1227,7 +1354,9 @@
            62,
            2
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Syrah (Shiraz)",
@@ -1247,7 +1376,9 @@
            28,
            86
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Syrah (Shiraz)",
@@ -1267,7 +1398,9 @@
            28,
            86
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Tempranillo",
@@ -1288,7 +1421,9 @@
            80,
            61
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Tempranillo",
@@ -1309,7 +1444,9 @@
            80,
            61
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Zinfandel",
@@ -1320,14 +1457,16 @@
          "ItemType":0,
          "GoV":0,
          "AcidLevel":1,
-         "AlcoholLevel":54.0,
+         "AlcoholLevel":14.0,
          "AromasFlavors":[
            23,
            104,
            66,
            89
          ],
-         "CanBuy":false
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 12000
       },
       {
          "Name":"Zinfandel",
@@ -1338,14 +1477,151 @@
          "ItemType":0,
          "GoV":1,
          "AcidLevel":1,
-         "AlcoholLevel":54.0,
+         "AlcoholLevel":14.0,
          "AromasFlavors":[
            23,
            104,
            66,
            89
          ],
-         "CanBuy":true
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 12000
+      },
+      {
+         "Name":"Pinot Grigio",
+         "SpriteName":"White",
+         "Prefix":"VineGrape",
+         "Id":71,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":0,
+         "AcidLevel":2,
+         "AlcoholLevel":12.0,
+         "AromasFlavors":[
+           9,
+           3,
+           6
+         ],
+         "CanBuy":false,
+         "AromaIntensity": 0,
+         "Value": 4000
+      },
+      {
+         "Name":"Pinot Grigio",
+         "SpriteName":"White",
+         "Prefix":"VineGrape",
+         "Id":72,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":1,
+         "AcidLevel":2,
+         "AlcoholLevel":12.0,
+         "AromasFlavors":[
+           9,
+           3,
+           6
+         ],
+         "CanBuy":true,
+         "AromaIntensity": 0,
+         "Value": 4000
+      },
+      {
+         "Name":"Nebbiolo",
+         "SpriteName":"Red",
+         "Prefix":"VineGrape",
+         "Id":73,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":0,
+         "AcidLevel":2,
+         "AlcoholLevel":14.0,
+         "AromasFlavors":[
+           25,
+           1,
+           104,
+           71,
+           98,
+           80,
+           88,
+           101
+         ],
+         "CanBuy":false,
+         "AromaIntensity": 2,
+         "Value": 15000
+      },
+      {
+         "Name":"Nebbiolo",
+         "SpriteName":"Red",
+         "Prefix":"VineGrape",
+         "Id":74,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":1,
+         "AcidLevel":2,
+         "AlcoholLevel":14.0,
+         "AromasFlavors":[
+           25,
+           1,
+           104,
+           71,
+           98,
+           80,
+           88,
+           101
+         ],
+         "CanBuy":true,
+         "AromaIntensity": 2,
+         "Value": 15000
+      },
+      {
+         "Name":"Meunier",
+         "SpriteName":"Red",
+         "Prefix":"VineGrape",
+         "Id":75,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":0,
+         "AcidLevel":2,
+         "AlcoholLevel":12.0,
+         "AromasFlavors":[
+           4,
+           3,
+           9,
+           6,
+           68,
+           69,
+           70,
+           71
+         ],
+         "CanBuy":true,
+         "AromaIntensity": 1,
+         "Value": 10000
+      },
+      {
+         "Name":"Meunier",
+         "SpriteName":"Red",
+         "Prefix":"VineGrape",
+         "Id":76,
+         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "ItemType":0,
+         "GoV":1,
+         "AcidLevel":2,
+         "AlcoholLevel":12.0,
+         "AromasFlavors":[
+           4,
+           3,
+           9,
+           6,
+           68,
+           69,
+           70,
+           71
+         ],
+         "CanBuy":false,
+         "AromaIntensity": 1,
+         "Value": 10000
       }
+
    ]
 }

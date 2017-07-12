@@ -24,11 +24,6 @@ public class Database : MonoBehaviour
         {
             Items.Add(i.Prefix + i.Id, i);
         }
-
-        foreach (KeyValuePair<string, Item> item in Items)
-        {
-            //Debug.Log(item.Value.ItemType);
-        }
     }
 }
 
