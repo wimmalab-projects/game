@@ -125,12 +125,14 @@ public class GUIScript : MonoBehaviour
                 case "Exit":
                     InfoPanel.alpha = 0;
                     animator.SetBool("showInventory", false);
+                    ResetButtons();
                     break;
                 case "Plant":
                     slotScript.Plant();
                     if (SlotScript.didPlant)
                     {
                         animator.SetBool("showInventory", false);
+                        ResetButtons();
                     }
                     else
                         return;
@@ -140,6 +142,7 @@ public class GUIScript : MonoBehaviour
                     {
                         slotScript.Harvest();
                         InfoPanel.alpha = 0;
+                        ResetButtons();
                     }
                     else
                         return;
@@ -149,6 +152,7 @@ public class GUIScript : MonoBehaviour
                     if (SlotScript.didPlant)
                     {
                         animator.SetBool("showInventory", false);
+                        ResetButtons();
                     }
                     else
                         return;
@@ -158,6 +162,7 @@ public class GUIScript : MonoBehaviour
                     if (SlotScript.didPlant)
                     {
                         animator.SetBool("showInventory", false);
+                        ResetButtons();
                     }
                     else
                         return;
@@ -167,6 +172,7 @@ public class GUIScript : MonoBehaviour
                     if (SlotScript.didPlant)
                     {
                         animator.SetBool("showInventory", false);
+                        ResetButtons();
                     }
                     else
                         return;
@@ -176,8 +182,9 @@ public class GUIScript : MonoBehaviour
                     {
                         slotScript.Collect();
                         InfoPanel.alpha = 0;
+                        ResetButtons();
                     }
-                    else if ( parent.tag == "Fermenting" && fermentorScript.Timer > 0)
+                    else if (parent.tag == "Fermenting" && fermentorScript.Timer > 0)
                     {
                         slotScript.didCollect = true;
                     }
@@ -185,13 +192,18 @@ public class GUIScript : MonoBehaviour
                         return;
                     break;
             }
-            // Return the names and texts to default.
-            PlantButton.name = "Plant";
-            PlantButton.GetComponentInChildren<Text>().text = "Plant";
-            HarvestButton.name = "Harvest";
-            HarvestButton.GetComponentInChildren<Text>().text = "Harvest";
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
+
         }
+    }
+
+    void ResetButtons()
+    {
+        // Return the names and texts to default.
+        PlantButton.name = "Plant";
+        PlantButton.GetComponentInChildren<Text>().text = "Plant";
+        HarvestButton.name = "Harvest";
+        HarvestButton.GetComponentInChildren<Text>().text = "Harvest";
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
 
     // Shows the inventory or the infopanel depending on what was clicked. Also changes the button name and text so that the right action can be performed

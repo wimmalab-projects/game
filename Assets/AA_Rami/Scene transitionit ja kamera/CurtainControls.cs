@@ -8,7 +8,7 @@ public class CurtainControls : MonoBehaviour {
     /// Example usage of this script can be found below this class.
     /// </summary>
 
-    bool IsClear = true;
+    public bool IsClear = true;
     public bool transition = true;
     Color curtainColor;
 

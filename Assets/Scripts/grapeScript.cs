@@ -8,23 +8,23 @@ using UnityEngine;
 public class grapeScript : MonoBehaviour
 {
     private GameObject temp;
-    private CrushScript crushScript;
+    private CrushScriptFix crushScriptFix;
 
     private void Awake()
     {
-        temp = GameObject.Find("CrushView(Clone)");
+        temp = GameObject.Find("CrushView");
     }
 
     private void Update()
     {
-        crushScript = temp.GetComponent<CrushScript>();
+        crushScriptFix = temp.GetComponent<CrushScriptFix>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "GrapeFloor")
         {
-            crushScript.MissedGrapes++;
+            crushScriptFix.MissedGrapes++;
             Destroy(gameObject);
         }
     }

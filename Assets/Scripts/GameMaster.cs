@@ -14,11 +14,12 @@ public class GameMaster : MonoBehaviour
     // Cameras for different views // Drag in editor
     public GameObject TownCamera;
     public GameObject FarmCamera;
-    public GameObject BreweryCamera; 
+    public GameObject BreweryCamera;
+    public GameObject CrushCamera;
 
-    [Header("Grape Crush")]
-    public Camera GrapeCrush; // Drag in editor
-    public GameObject PlayGrapeCrushGO; // Drag in editor
+    //[Header("Grape Crush")]
+    //public Camera GrapeCrush; // Drag in editor
+    //public GameObject PlayGrapeCrushGO; // Drag in editor
 
     [Header("XP system")]
     public Text exp;
@@ -100,7 +101,7 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         State = GameState.Farm;
-        PlayGrapeCrushGO.SetActive(false);
+        //CrushCamera.transform.parent.gameObject.SetActive(false);
         CrushisActive = false;
         WineSold = false;
         IsInventoryOpen = false;
@@ -133,25 +134,16 @@ public class GameMaster : MonoBehaviour
 
     void PlayGrapeCrush()
     {
-        curtainControls.FadeToBlack(Camera.main, GrapeCrush);
         State = GameState.GrapeCrush;
-        StartCoroutine("Wait", 0.5f);
+        CrushCamera.transform.parent.gameObject.SetActive(true);
+        curtainControls.FadeToBlack(Camera.main, CrushCamera.transform.Find("MainCam").GetComponent<Camera>());
+        CrushisActive = true;
     }
 
     void ViewInventory(GameObject go)
     {
         guiScript.showInventory();
         IsInventoryOpen = true;
-    }
-
-    IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-        GameObject obj = Instantiate(PlayGrapeCrushGO);
-        State = GameState.GrapeCrush;
-        obj.SetActive(true);
-        CrushisActive = true;
-
     }
 
     // Get fermentation state enums description for nicer name
@@ -207,6 +199,11 @@ public class GameMaster : MonoBehaviour
     public void BreweryCameraTransition()
     {
         BreweryCamera.GetComponent<MainAltCamControls>().transition = true;
+    }
+
+    public void CrushCameraTransition()
+    {
+        CrushCamera.GetComponent<MainAltCamControls>().transition = true;
     }
 
     #endregion

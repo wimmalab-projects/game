@@ -34,11 +34,10 @@ public class SlotScript : MonoBehaviour
         didPlant = false;
 
         GameObject parent = colliderHandler.ParentGameObject;
-
         PlantGround groundScript = parent.GetComponent<PlantGround>();
 
         // If the item count is zero dont plant and show error
-        if (inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
+        if (SeedName != null && inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
         {
             // If the item is not a vine display error and dont plant
 
@@ -89,7 +88,8 @@ public class SlotScript : MonoBehaviour
     // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
-        if (inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
+        if (SeedName != null && 
+            inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
         {
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
 
