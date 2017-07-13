@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEditor;
 using System.Linq;
 using UnityEngine;
 
-public class WinePrefab : MonoBehaviour
+public class OurWine : MonoBehaviour
 {
     private Wine wineHolder;
     public Wine WineHolder
@@ -16,7 +15,7 @@ public class WinePrefab : MonoBehaviour
         }
     }
 
-    public string wineName;    
+    public string wineName;
 
     [Header("Appearance")]
     public Wine.WineType wineType; // these need to be public so they can be edited in editor
@@ -40,7 +39,7 @@ public class WinePrefab : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    void SetStats()
     {
         wineHolder = new Wine();
 

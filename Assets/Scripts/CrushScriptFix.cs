@@ -198,6 +198,8 @@ public class CrushScriptFix : MonoBehaviour
     // Coroutine to smoothly end the game and transistion back to brewery view. Destroys the view at the end.
     void EndGame()
     {
+        gm.GetComponent<ColliderHandler>().ParentGameObject.AddComponent<WinePrefab>();
+
         instructionsDone = false;
         mch.CallMethod();
         //// If won, start the fermentation process
