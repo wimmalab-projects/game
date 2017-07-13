@@ -6,57 +6,63 @@ using UnityEngine;
 
 public class OurWine : MonoBehaviour
 {
-    private Wine wineHolder;
-    public Wine WineHolder
-    {
-        get
-        {
-            return wineHolder;
-        }
-    }
-
     public string wineName;
+    public ItemOurWine ourWine = new ItemOurWine();
 
-    [Header("Appearance")]
-    public Wine.WineType wineType; // these need to be public so they can be edited in editor
-    public Wine.Clarity clarity;
-    [Space(10)]
+    //public Wine.WineType wineType;
+    //public Wine.Clarity clarity;
+    //public Wine.Condition condition;
+    //public Wine.Intensity intensity;
+    //public Wine.Sweetness sweetness;
+    //public Wine.Acidity acidity;
+    //public Wine.Tannin tannin;
+    //public Wine.Body body;
+    //public List<Wine.AromaFlavor> aromasAndFlavors;
 
-    [Header("Nose")]
-    public Wine.Condition condition;
-    public Wine.Intensity intensity;
-    [Space(10)]
-
-    [Header("Palate")]
-    public Wine.Sweetness sweetness;
-    public Wine.Acidity acidity;
-    public Wine.Tannin tannin;
-    public Wine.Body body;
-    [Space(10)]
-
-    [Header("Aromas and Flavors")]
-    public List<Wine.AromaFlavor> aromasAndFlavors;
-
+    private void Start()
+    {
+        ourWine.Prefix = "cw";
+        
+    }
 
     // Use this for initialization
     void SetStats()
     {
-        wineHolder = new Wine();
+        //ourWine.Stack = 1;
+        //ourWine.CanBuy = false;
+        //ourWine.wineType = wineType;
+        //ourWine.clarity = clarity;
+        //ourWine.condition = condition;
+        //ourWine.intensity = intensity;
+        //ourWine.sweetness = sweetness;
+        //ourWine.acidity = acidity;
+        //ourWine.tannin = tannin;
+        //ourWine.body = body;
+        //ourWine.aromasAndFlavors = aromasAndFlavors;
+    }
 
-        WineHolder.wineType = wineType;
-        WineHolder.clarity = clarity;
-        WineHolder.condition = condition;
-        WineHolder.intensity = intensity;
-        WineHolder.sweetness = sweetness;
-        WineHolder.acidity = acidity;
-        WineHolder.tannin = tannin;
-        WineHolder.body = body;
+    public void CreateInventoryItem(GameObject go)
+    {
+        ourWine.ItemType = Item.IType.Wine;
 
-        foreach (Wine.AromaFlavor af in aromasAndFlavors)
-        {
-            WineHolder.AromasFlavors.Add(af);
-        }
+        ourWine.Prefix = "cw";
 
-        WineHolder.ComparisonMatrix = WineHolder.CreateMatrix();
+        ourWine.SpriteName = "CustomWine";
+        ourWine.Name = wineName;
+
+        ourWine.Id = wineName;
+
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Add(ourWine.Prefix + ourWine.Id, ourWine);
+        Debug.Log(ourWine.Prefix + ourWine.Id);
+
+
+        Inventory inv = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        GameObject temp = Instantiate(inv.InventorySlot);
+        string s = go.name;
+        go.transform.parent = temp.transform;
+        go.name += "child";
+        temp.transform.SetParent(inv.contentPanel.transform);
+        temp.name = s;
+        inv.Slots.Add(temp);
     }
 }

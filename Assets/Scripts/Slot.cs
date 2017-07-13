@@ -20,6 +20,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(gameObject.name);
         // Update the items count text and sprites
         int itemCount = inventory.Items[gameObject.name].Stack;
         UiItemCount.text = itemCount.ToString();

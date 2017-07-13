@@ -130,17 +130,21 @@ public class SlotScript : MonoBehaviour
         fermentorScript.Timer = 150;
         fermentorScript.IsFermenting = true;
 
+        
+
         foreach (VineGrape vg in gameMaster.GetComponent<Database>().Collection.VineGrape)
         {
             if (vg.Name == fermentorScript.GrapeName && vg.GoV == VineGrape.GrapeOrVine.Grape)
             {
-                gameMaster.OurWine.GetComponent<WinePrefab>().acidity = (Wine.Acidity)vg.AcidLevel;
+                fermentorScript.ourWine.GetComponent<OurWine>().ourWine.acidity = (Wine.Acidity)vg.AcidLevel;
                 foreach (Wine.AromaFlavor af in vg.AromasFlavors)
                 {
-                    gameMaster.OurWine.GetComponent<WinePrefab>().aromasAndFlavors.Add(af);
+                    fermentorScript.ourWine.GetComponent<OurWine>().ourWine.aromasAndFlavors.Add(af);
                 }
             }
         }
+        
+        
     }
 
     #region multiple wine method
@@ -163,6 +167,9 @@ public class SlotScript : MonoBehaviour
         {
             FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
             parent.tag = "NotFermenting";
+
+            inventory.Items["cw" + parent.GetComponent<FermentorScript>().ourWine.GetComponent<OurWine>().wineName].AddItem();
+            
             // inventory.Items["Item6"].AddItem(); // #001 
 
             //AddWineToInventory();

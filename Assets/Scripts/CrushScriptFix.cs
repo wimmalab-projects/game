@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class CrushScriptFix : MonoBehaviour
 {
+    public GameObject ourWinePrefab; // place in edtior
+
     public int MissedGrapes { get; set; }
     public static bool DidWin { get; set; }
     public GameObject Grape; // Drag in prefab
@@ -180,14 +182,47 @@ public class CrushScriptFix : MonoBehaviour
 
     public void ButtonClicked()
     {
+        bool isKeyUsed = false;
+
         string Button = EventSystem.current.currentSelectedGameObject.name;
 
         switch (Button)
         {
             case "ReadyButton":
-                instructionsDone = true;
-                GameStartText.text = "";
-                readyButton.transform.gameObject.SetActive(false);
+
+                FermentorScript fs = gm.GetComponent<ColliderHandler>().ParentGameObject.GetComponent<FermentorScript>();
+                fs.ourWine = Resources.Load("OurWine") as GameObject;
+                OurWine ow = fs.ourWine.GetComponent<OurWine>();
+                ow.wineName = GameObject.Find("WineName").transform.Find("Text").GetComponent<Text>().text;               
+                //Debug.Log(fs.ourWine.GetComponent<OurWine>().ourWine.returnID());
+
+                Debug.Log(ow);
+                Debug.Log(ow.ourWine.Prefix + ow.wineName);
+                foreach (string key in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Keys)
+                {
+                    if (ow.ourWine.Prefix + ow.wineName == key)
+                    {
+                        isKeyUsed = true;
+                        break;
+                    }
+                    else
+                        isKeyUsed = false;
+                }
+
+                if (isKeyUsed == false)
+                {
+                    GameObject go = Instantiate(fs.ourWine);
+                    go.name = "cw" + fs.ourWine.GetComponent<OurWine>().wineName;
+                    fs.ourWine = go;
+                    go.GetComponent<OurWine>().CreateInventoryItem(fs.ourWine);
+                    instructionsDone = true;
+                    GameStartText.text = "";
+                    readyButton.transform.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Destroy(ow);
+                }
                 break;
             case "ExitGame":
                 EndGame();
@@ -198,7 +233,6 @@ public class CrushScriptFix : MonoBehaviour
     // Coroutine to smoothly end the game and transistion back to brewery view. Destroys the view at the end.
     void EndGame()
     {
-        gm.GetComponent<ColliderHandler>().ParentGameObject.AddComponent<WinePrefab>();
 
         instructionsDone = false;
         mch.CallMethod();

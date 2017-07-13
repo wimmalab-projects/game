@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour
     public List<GameObject> Slots = new List<GameObject>();
     public SortedList<string, Item> Items = new SortedList<string, Item>();
 
-    private GameObject contentPanel; // place prefab in editor
+    public GameObject contentPanel; // place prefab in editor
     private GameObject infoPanel;
     private GridLayoutGroup glg; // place prefab in editor
     private SlotScript slotScript;
