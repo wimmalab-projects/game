@@ -37,7 +37,7 @@ public class GameMaster : MonoBehaviour
 
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
-    public bool IsInventoryOpen { get; set; }
+    public bool IsInventoryOpen;
 
     /// <summary>
     /// List our gamestates here
@@ -283,5 +283,15 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
+
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(100, 10, 100, 100));
+        if (GUILayout.Button("Add"))
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Item1"].AddItem();
+        }
+        GUILayout.EndArea();
+    }
 }
 

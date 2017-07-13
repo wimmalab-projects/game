@@ -49,18 +49,7 @@ public class Inventory : MonoBehaviour
 
         // get items from database
         Items = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Database>().Items;
-
-
-        // create inventory slots
-        for (int i = 0; i < Items.Count; i++)
-        {
-            GameObject temp = Instantiate(InventorySlot);
-            temp.transform.SetParent(contentPanel.transform);
-            temp.name = Items.Keys[i];
-            Slots.Add(temp);
-        }
-
-        ShowHideSlots();
+        CreateCustomSlots();
 
         // Scale the slots to fit the content area
         float y = (contentPanel.transform.childCount + 1) / glg.constraintCount * glg.cellSize.y + (glg.cellSize.y * 2);
@@ -75,8 +64,66 @@ public class Inventory : MonoBehaviour
         //go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(Items[Items.Keys[0]].SpriteName);
     }
 
-    // Refresh the info of the item when clicking items
-    public void refreshInfo()
+    //public void CreateInitialSlots()
+    //{
+    //    ShowHideSlots();
+    //    for (int i = 0; i < Items.Count; i++)
+    //    {
+    //        GameObject temp = Instantiate(InventorySlot);
+    //        temp.transform.SetParent(contentPanel.transform);
+    //        temp.name = Items.Keys[i];
+    //        Slots.Add(temp);
+    //    }
+    //}
+
+    public void CreateCustomSlots()
+    {
+        foreach (GameObject go in Slots)
+        {
+            Destroy(go);
+        }
+        Slots = new List<GameObject>();
+        for (int i = 0; i < Items.Count; i++)
+        {
+            GameObject temp = Instantiate(InventorySlot);
+            temp.transform.SetParent(contentPanel.transform);
+            temp.name = Items.Keys[i];
+            Slots.Add(temp);
+        }
+    }
+        //    ShowHideSlots();
+        //bool exists = false;
+        //// create inventory slots
+        //for (int i = 0; i < Slots.Count; i++)
+        //{
+        //    foreach(KeyValuePair<string, Item> pair in Items)
+        //    {
+        //        if (Slots[i].name == pair.Key)
+        //        {                   
+        //            exists = true;
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            exists = false;
+        //            Debug.Log(Slots[i].name + " " + pair.Key);
+        //        }
+
+        //    }
+
+        //    if (!exists)
+        //    {
+        //        GameObject temp = Instantiate(InventorySlot);
+        //        temp.transform.SetParent(contentPanel.transform);
+        //        temp.name = Items.Keys[i];
+        //        Slots.Add(temp);
+        //    }
+
+        //}
+        //}
+
+        // Refresh the info of the item when clicking items
+        public void refreshInfo()
     {
         Item currentlySelectedItem = Items[slotScript.SeedName];
 

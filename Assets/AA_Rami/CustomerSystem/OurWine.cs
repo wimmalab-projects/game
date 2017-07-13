@@ -21,8 +21,7 @@ public class OurWine : MonoBehaviour
 
     private void Start()
     {
-        ourWine.Prefix = "cw";
-        
+        ourWine.Prefix = "cw";     
     }
 
     // Use this for initialization

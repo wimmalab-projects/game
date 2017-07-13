@@ -9,6 +9,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public Text UiItemCount; // Drag in editor
     public Image ItemImage; // Drag in editor
+    public int itemCount;
 
     private Inventory inventory;
 
@@ -22,7 +23,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         //Debug.Log(gameObject.name);
         // Update the items count text and sprites
-        int itemCount = inventory.Items[gameObject.name].Stack;
+        itemCount = inventory.Items[gameObject.name].Stack;
         UiItemCount.text = itemCount.ToString();
         //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
         ItemImage.sprite = Resources.Load<Sprite>(inventory.Items[gameObject.name].SpriteName);

@@ -19,6 +19,7 @@ public class SaveLoadScript : MonoBehaviour
     Inventory inventory;
     GameMaster gm;
 
+
     System.DateTime timeReturn; // Get the time when we returned to app
     private bool wannaDelete; // Only for debugging, so we can delete the savefile in mobile
     private bool initialFocus; // This is used to recognize if we launched the app or we came back to the game without exiting
@@ -32,6 +33,7 @@ public class SaveLoadScript : MonoBehaviour
     private void Start()
     {
         Load(); // Load all info
+        inventory.CreateCustomSlots();
         wannaDelete = false;
     }
 
@@ -99,6 +101,7 @@ public class SaveLoadScript : MonoBehaviour
             foreach(KeyValuePair<string, Item> item in inventory.Items)
             {
                 inventoryData.Items.Add(item.Key, item.Value);
+                //Debug.Log(item.Value.Stack);
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
@@ -202,13 +205,11 @@ public class SaveLoadScript : MonoBehaviour
                 }
             }
 
-            inventory.Items = inventoryData.Items;
-
-            //// Loop through the item dictionary and assign saved itemcounts to items itemcount
-            //foreach (KeyValuePair<string, Item> item in inventoryData.Items)
-            //{
-            //    inventory.Items[item.Key] = item.Value;
-            //}
+            // Loop through the item dictionary and assign saved itemcounts to items itemcount
+            foreach (KeyValuePair<string, Item> item in inventoryData.Items)
+            {
+                inventory.Items[item.Key] = item.Value;
+            }
 
             // Set player data
             Player.Name = playerData.Name;

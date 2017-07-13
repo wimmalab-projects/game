@@ -96,7 +96,7 @@ public class Shop : MonoBehaviour {
     /// <summary>
     /// buy currently selected item.
     /// </summary>
-    public void BuyItem ()
+    public void BuyItem()
     {
         currentlySelectedItem.AddItem();
         bought = true;
