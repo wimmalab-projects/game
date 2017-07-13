@@ -145,13 +145,13 @@ public class SlotScript : MonoBehaviour
 
     #region multiple wine method
 
-    public void AddWineToInventory()
-    {
-        Item i = inventory.Items["Item6"];
-        i.Name = "testi1";
-        i.AddItem();
-        inventory.Items.Add("TestWine", i);
-    }
+    //public void AddWineToInventory()
+    //{
+    //    Item i = inventory.Items["Item6"];
+    //    i.Name = "testi1";
+    //    // i.AddItem();
+    //    inventory.Items.Add("TestWine", i);
+    //}
 
     #endregion
 
@@ -165,7 +165,7 @@ public class SlotScript : MonoBehaviour
             parent.tag = "NotFermenting";
             // inventory.Items["Item6"].AddItem(); // #001 
 
-            AddWineToInventory();
+            //AddWineToInventory();
 
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;
