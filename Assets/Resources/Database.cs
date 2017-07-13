@@ -14,6 +14,7 @@ public class Database : MonoBehaviour
     public void Start()
     {
 
+        TextAsset file = Resources.Load("Database") as TextAsset;
         JsonUtility.FromJsonOverwrite(File.ReadAllText(Application.dataPath + "/Database.json"), Collection);
 
         foreach (Item i in Collection.Item)
