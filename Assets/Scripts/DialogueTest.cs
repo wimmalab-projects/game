@@ -130,8 +130,6 @@ public class DialogueTest : MonoBehaviour
             tutorial13done = true;
         }
 
-        Debug.Log(CrushScriptFix.DidWin + " " + gm.CrushisActive);
-
         if (!tutorial14done && tutorial13done && CrushScriptFix.DidWin && !gm.CrushisActive)
         {
             StartCoroutine(Wait(43, 45, 1f));
