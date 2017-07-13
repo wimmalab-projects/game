@@ -98,7 +98,7 @@ public class SaveLoadScript : MonoBehaviour
             // Get all inventory items and add them to inventorydata dictionary
             foreach(KeyValuePair<string, Item> item in inventory.Items)
             {
-                inventoryData.Items.Add(item.Key, item.Value.Stack);
+                inventoryData.Items.Add(item.Key, item.Value);
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
@@ -202,11 +202,13 @@ public class SaveLoadScript : MonoBehaviour
                 }
             }
 
-            // Loop through the item dictionary and assign saved itemcounts to items itemcount
-            foreach (KeyValuePair<string, int> item in inventoryData.Items)
-            {
-                inventory.Items[item.Key].Stack = item.Value;
-            }
+            inventory.Items = inventoryData.Items;
+
+            //// Loop through the item dictionary and assign saved itemcounts to items itemcount
+            //foreach (KeyValuePair<string, Item> item in inventoryData.Items)
+            //{
+            //    inventory.Items[item.Key] = item.Value;
+            //}
 
             // Set player data
             Player.Name = playerData.Name;
@@ -290,7 +292,7 @@ public class SaveLoadScript : MonoBehaviour
     [Serializable]
     class InventoryData
     {
-        public Dictionary<string, int> Items = new Dictionary<string, int>();
+        public SortedList<string, Item> Items = new SortedList<string, Item>();
 
         public InventoryData()
         {

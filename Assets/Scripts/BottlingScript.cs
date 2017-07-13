@@ -44,44 +44,4 @@ public class BottlingScript : MonoBehaviour
         else
             NiceTime = string.Format("0:00");
     }
-
-    //private void OnApplicationFocus(bool hasFocus)
-    //{
-    //    if (isTimerRunning)
-    //    {
-    //        if (!hasFocus)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            Timer = (Timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
-
-    //private void OnApplicationPause(bool paused)
-    //{
-    //    if (isTimerRunning)
-    //    {
-    //        if (paused)
-    //        {
-    //            timePaused = System.DateTime.Now;
-    //        }
-    //        else
-    //        {
-    //            float timeLapsed;
-    //            timeUnpaused = System.DateTime.Now;
-    //            System.TimeSpan difference = timePaused.Subtract(timeUnpaused);
-    //            timeLapsed = (float)difference.TotalSeconds;
-    //            Timer = (Timer + timeLapsed);
-    //            Debug.Log(Timer);
-    //        }
-    //    }
-    //}
 }
