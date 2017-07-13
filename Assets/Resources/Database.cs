@@ -13,14 +13,8 @@ public class Database : MonoBehaviour
     // load database
     public void Start()
     {
-<<<<<<< HEAD:Assets/Resources/Database.cs
-
-        TextAsset file = Resources.Load("Database") as TextAsset;
-        JsonUtility.FromJsonOverwrite(File.ReadAllText(Application.dataPath + "/Database.json"), Collection);
-=======
         TextAsset ta = Resources.Load("Database") as TextAsset;
         JsonUtility.FromJsonOverwrite(ta.ToString(), Collection);
->>>>>>> 67fa8974962552b8a6d10a068827e9a7fe2afeb8:Assets/AA_Rami/CustomerSystem/Database.cs
 
         foreach (Item i in Collection.Item)
         {
