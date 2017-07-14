@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClarificationScript : MonoBehaviour
 {
-
+    public ItemOurWine ourWine;
     public GameMaster.ClarificationState ClarificationState { get; set; }
     [SerializeField]
     public float Timer { get; set; }
