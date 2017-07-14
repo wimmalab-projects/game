@@ -168,7 +168,7 @@ public class SlotScript : MonoBehaviour
             FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
             parent.tag = "NotFermenting";
 
-            inventory.Items["cw" + parent.GetComponent<FermentorScript>().ourWine.GetComponent<OurWine>().wineName].AddItem();
+            inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName].AddItem();
             
             // inventory.Items["Item6"].AddItem(); // #001 
 
@@ -182,11 +182,15 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Clarificating")
         {
             ClarificationScript clarificationScript = parent.GetComponent<ClarificationScript>();
-            gameMaster.OurWine.GetComponent<WinePrefab>().clarity = Wine.Clarity.Clear;
-            gameMaster.OurWine.GetComponent<WinePrefab>().condition = Wine.Condition.Clean;
+
+            // ohjaa menemään viiniin
+            clarificationScript.ourWine.clarity = Wine.Clarity.Clear;
+            clarificationScript.ourWine.condition = Wine.Condition.Clean;
+
+            inventory.Items["cw" + clarificationScript.ourWine.Name].AddItem();
+
             parent.tag = "NotClarificating";
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
-            inventory.Items["Item7"].AddItem(); // #001
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
         }
@@ -212,6 +216,7 @@ public class SlotScript : MonoBehaviour
             if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
                 parent.tag = "Clarificating";
+                clarificationScript.ourWine = (ItemOurWine)inventory.Items[SeedName];
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
                 currentlySelectedItem = inventory.Items[SeedName];
                 clarificationScript.WineName = CurrentlySelectedName;
