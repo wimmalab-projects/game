@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FermentorScript : MonoBehaviour
 {
-    public GameObject ourWine { get; set; } // placed from crushscript end game.
+    public GameObject ourWine; // placed from crushscript end game.
     public GameMaster.FermentationState FermentationState { get; set; }
     public GameMaster.Winetype WineType { get; set; }
     public bool IsFermenting { get; set; }
@@ -20,9 +20,6 @@ public class FermentorScript : MonoBehaviour
     private bool isPaused = false;
     private bool isTimerRunning = false;
     private bool wineTypeDecided = false;
-
-    System.DateTime timePaused;
-    System.DateTime timeUnpaused;
 
     private void Awake()
     {

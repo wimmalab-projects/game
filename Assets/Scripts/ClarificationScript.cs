@@ -12,8 +12,6 @@ public class ClarificationScript : MonoBehaviour
     public string WineName { get; set; }
 
     private bool isTimerRunning;
-    private System.DateTime timePaused;
-    private System.DateTime timeUnpaused;
 
     private void Start()
     {

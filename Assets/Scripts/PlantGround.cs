@@ -15,8 +15,6 @@ public class PlantGround : MonoBehaviour
     private float timer = 5;
 
     private bool isTimerRunning;
-    private System.DateTime timePaused;
-    private System.DateTime timeUnpaused;
 
     public float Timer
     {

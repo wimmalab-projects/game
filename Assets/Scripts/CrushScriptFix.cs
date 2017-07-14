@@ -205,6 +205,7 @@ public class CrushScriptFix : MonoBehaviour
                 Debug.Log(ow.ourWine.Prefix + ow.wineName);
                 foreach (string key in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Keys)
                 {
+                    Debug.Log(key);
                     if (ow.ourWine.Prefix + ow.wineName == key)
                     {
                         isKeyUsed = true;
@@ -224,7 +225,7 @@ public class CrushScriptFix : MonoBehaviour
                     GameStartText.text = "";
                     readyButton.transform.gameObject.SetActive(false);
                     GameObject.Find("WineName").GetComponent<InputField>().text = "";
-                    wineNameText.SetActive(false);
+                    wineNameText.transform.parent.gameObject.SetActive(false);
                 }
                 else
                 {

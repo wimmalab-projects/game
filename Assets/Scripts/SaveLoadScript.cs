@@ -72,7 +72,7 @@ public class SaveLoadScript : MonoBehaviour
             {
                 FermentorScript fs = ferment.GetComponent<FermentorScript>();
                 List<TimerData> dataList = new List<TimerData>();
-                dataList.Add(new TimerData(fs.GrapeName, fs.Timer, fs.FermentationState));
+                dataList.Add(new TimerData(fs.GrapeName, fs.Timer, fs.FermentationState, fs.GetComponent<OurWine>(), fs.GetComponent<OurWine>().GetComponent<ItemOurWine>()));
                 timerData.Ferments.Add(ferment.name, dataList);
             }
 
@@ -173,6 +173,9 @@ public class SaveLoadScript : MonoBehaviour
                     fs.GrapeName = saveData.FermentName;
                     fs.FermentationState = saveData.FermentState;
                     fs.Timer = (saveData.FermentTimer + timeLapsed);
+                    fs.ourWine = Instantiate(new GameObject());
+                    fs.ourWine.AddComponent(saveData.FermentHolder1.GetType());
+                    fs.ourWine.GetComponent<OurWine>().ourWine = saveData.FermentHolder2;
                 }
             }
 
@@ -234,7 +237,8 @@ public class SaveLoadScript : MonoBehaviour
         public string FermentName { get; set; }
         public float FermentTimer { get; set; }
         public GameMaster.FermentationState FermentState { get; set; }
-
+        public OurWine FermentHolder1 { get; set; }
+        public ItemOurWine FermentHolder2 { get; set; }
         // Clarificators
         public string ClarificationName { get; set; }
         public float ClarificationTimer { get; set; }
@@ -262,11 +266,13 @@ public class SaveLoadScript : MonoBehaviour
             PlantState = state;
         }
 
-        public TimerData(string name, float timer, GameMaster.FermentationState state)
+        public TimerData(string name, float timer, GameMaster.FermentationState state, OurWine holder1, ItemOurWine holder2)
         {
             FermentName = name;
             FermentTimer = timer;
             FermentState = state;
+            FermentHolder1 = holder1;
+            FermentHolder2 = holder2;
         }
 
         public TimerData(string name, float timer, GameMaster.ClarificationState state, ItemOurWine holder)
