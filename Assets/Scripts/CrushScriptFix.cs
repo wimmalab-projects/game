@@ -193,20 +193,22 @@ public class CrushScriptFix : MonoBehaviour
         {
             case "ReadyButton":
                 FermentorScript fs = gm.GetComponent<ColliderHandler>().ParentGameObject.GetComponent<FermentorScript>();
-                fs.ourWine = Resources.Load("OurWine") as GameObject;
-                OurWine ow = fs.ourWine.GetComponent<OurWine>();
-                ow.wineName = wineNameText.GetComponent<InputField>().text;
-                
-                
+                //fs.ourWine = Resources.Load("OurWine") as GameObject;
+
+                Debug.Log(gm.GetComponent<ColliderHandler>().ParentGameObject);
+
+                fs.ourWine.wineName = wineNameText.GetComponent<InputField>().text;
+
+
                 //Debug.Log(fs.ourWine.GetComponent<OurWine>().ourWine.returnID());
 
-                Debug.Log(ow);
-                ow.ourWine.Prefix = "cw";
-                Debug.Log(ow.ourWine.Prefix + ow.wineName);
+
+                fs.ourWine.ourWine.Prefix = "cw";
+                Debug.Log(fs.ourWine.ourWine.Prefix + fs.ourWine.wineName);
                 foreach (string key in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Keys)
                 {
                     Debug.Log(key);
-                    if (ow.ourWine.Prefix + ow.wineName == key)
+                    if (fs.ourWine.ourWine.Prefix + fs.ourWine.wineName == key)
                     {
                         isKeyUsed = true;
                         break;
@@ -217,19 +219,16 @@ public class CrushScriptFix : MonoBehaviour
 
                 if (isKeyUsed == false)
                 {
-                    GameObject go = Instantiate(fs.ourWine);
-                    go.name = "cw" + fs.ourWine.GetComponent<OurWine>().wineName;
-                    fs.ourWine = go;
-                    go.GetComponent<OurWine>().CreateInventoryItem(fs.ourWine);
-                    instructionsDone = true;
+                    //GameObject go = Instantiate(fs.ourWine);
+                    //go.name = "cw" + fs.ourWine.GetComponent<OurWine>().wineName;
+                    //fs.ourWine = go;
+                    fs.ourWine.CreateInventoryItem(gm.GetComponent<ColliderHandler>().ParentGameObject); // go.GetComponent<OurWine>().CreateInventoryItem(fs.ourWine);
                     GameStartText.text = "";
                     readyButton.transform.gameObject.SetActive(false);
                     GameObject.Find("WineName").GetComponent<InputField>().text = "";
-                    wineNameText.transform.parent.gameObject.SetActive(false);
-                }
-                else
-                {
-                    Destroy(ow);
+                    wineNameText.transform.gameObject.SetActive(false); 
+                    //wineNameText.transform.parent.gameObject.SetActive(false);
+                    instructionsDone = true;
                 }
                 break;
             case "ExitGame":

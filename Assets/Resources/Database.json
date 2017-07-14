@@ -108,7 +108,8 @@
          ],
          "CanBuy":true,
          "AromaIntensity": 1,
-         "Value": 8000
+         "Value": 8000,
+		 "Stack": 3
       },
       {
          "Name":"Cataratto",

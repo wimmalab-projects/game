@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class FermentorScript : MonoBehaviour
 {
-    public GameObject ourWine; // placed from crushscript end game.
+    //public GameObject ourWineGo; // placed from crushscript end game.
+    public OurWine ourWine;
     public GameMaster.FermentationState FermentationState { get; set; }
     public GameMaster.Winetype WineType { get; set; }
     public bool IsFermenting { get; set; }
@@ -25,6 +26,8 @@ public class FermentorScript : MonoBehaviour
     {
         gameMaster = GameObject.Find("GameManager").GetComponent<GameMaster>();
         slotScript = GameObject.Find("GameManager").GetComponent<SlotScript>();
+
+        ourWine = new OurWine();
     }
 
     // Update is called once per frame
@@ -56,8 +59,8 @@ public class FermentorScript : MonoBehaviour
             if (Timer < 50 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.RedWine;
-                ourWine.GetComponent<OurWine>().ourWine.tannin = Wine.Tannin.High;
-                ourWine.GetComponent<OurWine>().ourWine.wineType = (Wine.WineType)WineType;
+                ourWine.ourWine.tannin = Wine.Tannin.High;
+                ourWine.ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
             }
@@ -65,8 +68,8 @@ public class FermentorScript : MonoBehaviour
             else if (Timer < 100 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.RoseWine;
-                ourWine.GetComponent<OurWine>().ourWine.tannin = Wine.Tannin.Medium;
-                ourWine.GetComponent<OurWine>().ourWine.wineType = (Wine.WineType)WineType;
+                ourWine.ourWine.tannin = Wine.Tannin.Medium;
+                ourWine.ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
             }
@@ -74,8 +77,8 @@ public class FermentorScript : MonoBehaviour
             else if (Timer < 150 && slotScript.didCollect && !wineTypeDecided)
             {
                 WineType = GameMaster.Winetype.WhiteWine;
-                ourWine.GetComponent<OurWine>().ourWine.tannin = Wine.Tannin.Low;
-                ourWine.GetComponent<OurWine>().ourWine.wineType = (Wine.WineType)WineType;
+                ourWine.ourWine.tannin = Wine.Tannin.Low;
+                ourWine.ourWine.wineType = (Wine.WineType)WineType;
                 wineTypeDecided = true;
                 Debug.Log(WineType);
             }

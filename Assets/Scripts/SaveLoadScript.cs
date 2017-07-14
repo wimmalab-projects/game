@@ -72,7 +72,7 @@ public class SaveLoadScript : MonoBehaviour
             {
                 FermentorScript fs = ferment.GetComponent<FermentorScript>();
                 List<TimerData> dataList = new List<TimerData>();
-                dataList.Add(new TimerData(fs.GrapeName, fs.Timer, fs.FermentationState, fs.GetComponent<OurWine>(), fs.GetComponent<OurWine>().GetComponent<ItemOurWine>()));
+                dataList.Add(new TimerData(fs.GrapeName, fs.Timer, fs.FermentationState, fs.GetComponent<FermentorScript>().ourWine));
                 timerData.Ferments.Add(ferment.name, dataList);
             }
 
@@ -90,7 +90,7 @@ public class SaveLoadScript : MonoBehaviour
             {
                 BottlingScript bs = bottling.GetComponent<BottlingScript>();
                 List<TimerData> dataList = new List<TimerData>();
-                dataList.Add(new TimerData(bs.WineName, bs.Timer, bs.BottlingState));
+                dataList.Add(new TimerData(bs.WineName, bs.Timer, bs.BottlingState, bs.ourWine));
                 timerData.Bottlings.Add(bottling.name, dataList);
             }
 
@@ -173,9 +173,7 @@ public class SaveLoadScript : MonoBehaviour
                     fs.GrapeName = saveData.FermentName;
                     fs.FermentationState = saveData.FermentState;
                     fs.Timer = (saveData.FermentTimer + timeLapsed);
-                    fs.ourWine = Instantiate(new GameObject());
-                    fs.ourWine.AddComponent(saveData.FermentHolder1.GetType());
-                    fs.ourWine.GetComponent<OurWine>().ourWine = saveData.FermentHolder2;
+                    fs.ourWine = saveData.FermentHolder1;
                 }
             }
 
@@ -205,6 +203,7 @@ public class SaveLoadScript : MonoBehaviour
                     bs.WineName = saveData.BottlingName;
                     bs.BottlingState = saveData.BottlingState;
                     bs.Timer = (saveData.BottlingTimer + timeLapsed); // Substract the difference from the timer
+                    bs.ourWine = saveData.BottlingHolder;
                 }
             }
 
@@ -238,7 +237,7 @@ public class SaveLoadScript : MonoBehaviour
         public float FermentTimer { get; set; }
         public GameMaster.FermentationState FermentState { get; set; }
         public OurWine FermentHolder1 { get; set; }
-        public ItemOurWine FermentHolder2 { get; set; }
+
         // Clarificators
         public string ClarificationName { get; set; }
         public float ClarificationTimer { get; set; }
@@ -249,6 +248,7 @@ public class SaveLoadScript : MonoBehaviour
         public string BottlingName { get; set; }
         public float BottlingTimer { get; set; }
         public GameMaster.BottlingState BottlingState { get; set; }
+        public ItemOurWine BottlingHolder { get; set; }
 
         // Time we exited the app
         public System.DateTime timeExit;
@@ -266,13 +266,12 @@ public class SaveLoadScript : MonoBehaviour
             PlantState = state;
         }
 
-        public TimerData(string name, float timer, GameMaster.FermentationState state, OurWine holder1, ItemOurWine holder2)
+        public TimerData(string name, float timer, GameMaster.FermentationState state, OurWine holder1)
         {
             FermentName = name;
             FermentTimer = timer;
             FermentState = state;
             FermentHolder1 = holder1;
-            FermentHolder2 = holder2;
         }
 
         public TimerData(string name, float timer, GameMaster.ClarificationState state, ItemOurWine holder)
@@ -283,11 +282,12 @@ public class SaveLoadScript : MonoBehaviour
             ClarificationHolder = holder;
         }
 
-        public TimerData(string name, float timer, GameMaster.BottlingState state)
+        public TimerData(string name, float timer, GameMaster.BottlingState state, ItemOurWine holder)
         {
             BottlingName = name;
             BottlingTimer = timer;
             BottlingState = state;
+            BottlingHolder = holder;
         }
 
         // Dictionaries which we use to save the data.

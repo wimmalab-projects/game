@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
-public class OurWine : MonoBehaviour
+public class OurWine
 {
     public string wineName;
     public ItemOurWine ourWine = new ItemOurWine();
@@ -59,10 +59,10 @@ public class OurWine : MonoBehaviour
 
 
         Inventory inv = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
-        GameObject temp = Instantiate(inv.InventorySlot);
-        string s = go.name;
-        go.transform.parent = temp.transform;
-        go.name += "child";
+        GameObject temp = MonoBehaviour.Instantiate(inv.InventorySlot);
+        string s = "cw" + go.GetComponent<FermentorScript>().ourWine.ourWine.Name;
+        //go.transform.parent = temp.transform;
+       // go.name += "child";
         temp.transform.SetParent(inv.contentPanel.transform);
         temp.name = s;
         inv.Slots.Add(temp);
