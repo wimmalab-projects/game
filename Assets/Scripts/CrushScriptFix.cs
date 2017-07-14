@@ -205,7 +205,6 @@ public class CrushScriptFix : MonoBehaviour
                 Debug.Log(ow.ourWine.Prefix + ow.wineName);
                 foreach (string key in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Keys)
                 {
-                    Debug.Log(key);
                     if (ow.ourWine.Prefix + ow.wineName == key)
                     {
                         isKeyUsed = true;

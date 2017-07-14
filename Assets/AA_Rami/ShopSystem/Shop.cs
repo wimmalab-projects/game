@@ -19,12 +19,18 @@ public class Shop : MonoBehaviour {
     private GameObject ContentPanel;
     private GameObject InfoPanel;
     private GridLayoutGroup glg;
+    private GameObject gm;
     public Item currentlySelectedItem;
-    
+
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameManager");
+    }
+
     private void Start()
     {
 
-        foreach (KeyValuePair<string, Item> pair in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Database>().Items)
+        foreach (KeyValuePair<string, Item> pair in gm.GetComponent<Database>().Items)
         {
             if (pair.Value.CanBuy == true)
                 items.Add(pair.Key, pair.Value);
@@ -98,7 +104,7 @@ public class Shop : MonoBehaviour {
     /// </summary>
     public void BuyItem()
     {
-        currentlySelectedItem.AddItem();
+        gm.GetComponent<Inventory>().Items[currentlySelectedItem.Prefix + currentlySelectedItem.Id].AddItem();
         bought = true;
     }
 
@@ -107,7 +113,7 @@ public class Shop : MonoBehaviour {
     /// </summary>
     public void OpenShop()
     {
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = true;
+        gm.GetComponent<GameMaster>().IsInventoryOpen = true;
         shop.SetActive(true);
     }
 
@@ -116,7 +122,7 @@ public class Shop : MonoBehaviour {
     /// </summary>
     public void CloseShop()
     {
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
+        gm.GetComponent<GameMaster>().IsInventoryOpen = false;
         shop.SetActive(false);
     }
 }

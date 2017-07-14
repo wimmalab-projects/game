@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FermentorScript : MonoBehaviour
 {
-    public GameObject ourWine; // placed from crushscript end game.
+    public GameObject ourWine { get; set; } // placed from crushscript end game.
     public GameMaster.FermentationState FermentationState { get; set; }
     public GameMaster.Winetype WineType { get; set; }
     public bool IsFermenting { get; set; }

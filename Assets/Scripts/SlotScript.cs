@@ -130,7 +130,8 @@ public class SlotScript : MonoBehaviour
         fermentorScript.Timer = 150;
         fermentorScript.IsFermenting = true;
 
-        
+
+
 
         foreach (VineGrape vg in gameMaster.GetComponent<Database>().Collection.VineGrape)
         {

@@ -81,7 +81,7 @@ public class SaveLoadScript : MonoBehaviour
             {
                 ClarificationScript cs = clarificication.GetComponent<ClarificationScript>();
                 List<TimerData> dataList = new List<TimerData>();
-                dataList.Add(new TimerData(cs.WineName, cs.Timer, cs.ClarificationState));
+                dataList.Add(new TimerData(cs.WineName, cs.Timer, cs.ClarificationState, cs.ourWine));
                 timerData.Clarifications.Add(clarificication.name, dataList);
             }
 
@@ -101,7 +101,6 @@ public class SaveLoadScript : MonoBehaviour
             foreach(KeyValuePair<string, Item> item in inventory.Items)
             {
                 inventoryData.Items.Add(item.Key, item.Value);
-                //Debug.Log(item.Value.Stack);
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
@@ -188,6 +187,7 @@ public class SaveLoadScript : MonoBehaviour
                     cs.WineName = saveData.ClarificationName;
                     cs.ClarificationState = saveData.ClarificationState;
                     cs.Timer = (saveData.ClarificationTimer + timeLapsed); // Substract the difference from the timer
+                    cs.ourWine = saveData.ClarificationHolder;
                 }
             }
 
@@ -239,6 +239,7 @@ public class SaveLoadScript : MonoBehaviour
         public string ClarificationName { get; set; }
         public float ClarificationTimer { get; set; }
         public GameMaster.ClarificationState ClarificationState { get; set; }
+        public ItemOurWine ClarificationHolder { get; set; }
 
         // Bottlers
         public string BottlingName { get; set; }
@@ -268,11 +269,12 @@ public class SaveLoadScript : MonoBehaviour
             FermentState = state;
         }
 
-        public TimerData(string name, float timer, GameMaster.ClarificationState state)
+        public TimerData(string name, float timer, GameMaster.ClarificationState state, ItemOurWine holder)
         {
             ClarificationName = name;
             ClarificationTimer = timer;
             ClarificationState = state;
+            ClarificationHolder = holder;
         }
 
         public TimerData(string name, float timer, GameMaster.BottlingState state)
