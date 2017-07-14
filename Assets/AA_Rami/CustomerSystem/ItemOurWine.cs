@@ -6,6 +6,7 @@ using UnityEngine;
 public class ItemOurWine : Item
 {
     public bool IsSellable;
+    public float AlcoholLevel;
     public Wine.WineType            wineType;
     public Wine.Clarity             clarity;
     public Wine.Condition           condition;
