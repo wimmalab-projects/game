@@ -51,9 +51,9 @@ public class CrushScriptFix : MonoBehaviour
         cc = GameObject.FindGameObjectWithTag("GameManager").transform.GetChild(1).GetComponent<CurtainControls>();
         cg.gameObject.SetActive(false);
     }
-
+    
     void Start()
-    {        
+    {
         // Set everything to default
         platform = Application.platform;
         DidWin = false;
@@ -72,6 +72,7 @@ public class CrushScriptFix : MonoBehaviour
     {
         if(gm.State == GameMaster.GameState.GrapeCrush && cc.IsClear && !instructionsDone)
         {
+            
             cg.gameObject.SetActive(true);
             grapeScore = 0;
             FillBar.fillAmount = 0;
