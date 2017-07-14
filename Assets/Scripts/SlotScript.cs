@@ -264,7 +264,7 @@ public class SlotScript : MonoBehaviour
         {
             if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
-                if (((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsSellable == false)
+                if (((ItemOurWine)inventory.Items[SeedName]).IsSellable == false)
                 {
                     parent.tag = "Bottling";
                     bottlingScript.ourWine = (ItemOurWine)inventory.Items[SeedName];
