@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class SlotScript : MonoBehaviour
 {
@@ -127,7 +128,7 @@ public class SlotScript : MonoBehaviour
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
-        fermentorScript.Timer = 150;
+        fermentorScript.Timer = 10; // vaihda takasi 150
         fermentorScript.IsFermenting = true;
 
 
@@ -138,6 +139,10 @@ public class SlotScript : MonoBehaviour
             if (vg.Name == fermentorScript.GrapeName && vg.GoV == VineGrape.GrapeOrVine.Grape)
             {
                 fermentorScript.ourWine.GetComponent<OurWine>().ourWine.acidity = (Wine.Acidity)vg.AcidLevel;
+                fermentorScript.ourWine.GetComponent<OurWine>().ourWine.intensity = (Wine.Intensity)vg.AromaIntensity;
+                fermentorScript.ourWine.GetComponent<OurWine>().ourWine.AlcoholLevel = vg.AlcoholLevel;
+
+                //fermentorScript.ourWine.GetComponent<OurWine>().ourWine.body;
                 foreach (Wine.AromaFlavor af in vg.AromasFlavors)
                 {
                     fermentorScript.ourWine.GetComponent<OurWine>().ourWine.aromasAndFlavors.Add(af);
@@ -170,10 +175,21 @@ public class SlotScript : MonoBehaviour
             parent.tag = "NotFermenting";
 
             inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName].AddItem();
-            
-            // inventory.Items["Item6"].AddItem(); // #001 
 
-            //AddWineToInventory();
+            float average = (((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName]).AlcoholLevel + (int)fermentorScript.ourWine.GetComponent<OurWine>().ourWine.tannin);
+
+            if (average < 13)
+            {
+                ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName]).body = Wine.Body.Light;
+            }
+            else if (average < 14)
+            {
+                ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName]).body = Wine.Body.Medium;
+            }
+            else
+            {
+                ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.GetComponent<OurWine>().wineName]).body = Wine.Body.Full;
+            }
 
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;

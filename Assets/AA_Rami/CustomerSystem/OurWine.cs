@@ -51,8 +51,10 @@ public class OurWine : MonoBehaviour
 
         ourWine.Id = wineName;
 
+        //ourWine.AlcoholLevel = 
+
+
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Add(ourWine.Prefix + ourWine.Id, ourWine);
-        Debug.Log(ourWine.Prefix + ourWine.Id);
 
 
         Inventory inv = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
