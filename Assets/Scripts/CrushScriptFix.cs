@@ -77,6 +77,7 @@ public class CrushScriptFix : MonoBehaviour
             
             cg.gameObject.SetActive(true);
             wineName.transform.parent.gameObject.SetActive(true);
+            wineName.text = "";
             grapeScore = 0;
             FillBar.fillAmount = 0;
             FillText.text = "0%";
