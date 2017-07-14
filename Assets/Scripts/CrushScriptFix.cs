@@ -198,7 +198,7 @@ public class CrushScriptFix : MonoBehaviour
                 fs.ourWine = Resources.Load("OurWine") as GameObject;
                 OurWine ow = fs.ourWine.GetComponent<OurWine>();
                 ow.wineName = wineName.text;
-                wineName.transform.parent.gameObject.SetActive(false);
+                
                 
                 //Debug.Log(fs.ourWine.GetComponent<OurWine>().ourWine.returnID());
 
@@ -226,6 +226,7 @@ public class CrushScriptFix : MonoBehaviour
                     instructionsDone = true;
                     GameStartText.text = "";
                     readyButton.transform.gameObject.SetActive(false);
+                    wineName.transform.parent.gameObject.SetActive(false);
                 }
                 else
                 {
