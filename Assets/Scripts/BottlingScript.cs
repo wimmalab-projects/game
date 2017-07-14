@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BottlingScript : MonoBehaviour
 {
-
+    public ItemOurWine ourWine;
     public GameMaster.BottlingState BottlingState { get; set; }
     public string NiceTime { get; private set; }
     public string WineName { get; set; }

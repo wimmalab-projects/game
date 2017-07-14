@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ItemOurWine : Item
 {
+    public bool IsSellable;
     public Wine.WineType            wineType;
     public Wine.Clarity             clarity;
     public Wine.Condition           condition;

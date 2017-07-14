@@ -19,8 +19,6 @@ public class Item
         Bottle,
         FieldAddable,
         FermentAddable,
-        FermentDish,
-        ClarificationDish,
     }
 
     public string returnID()
