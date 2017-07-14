@@ -184,8 +184,8 @@ public class SlotScript : MonoBehaviour
             ClarificationScript clarificationScript = parent.GetComponent<ClarificationScript>();
 
             // ohjaa menemään viiniin
-            clarificationScript.ourWine.clarity = Wine.Clarity.Clear;
-            clarificationScript.ourWine.condition = Wine.Condition.Clean;
+            ((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).clarity = Wine.Clarity.Clear;
+            ((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).condition = Wine.Condition.Clean;
 
             inventory.Items["cw" + clarificationScript.ourWine.Name].AddItem();
 
@@ -193,6 +193,7 @@ public class SlotScript : MonoBehaviour
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
+            Debug.Log(((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).condition);
         }
         else if (parent.tag == "Bottling")
         {
@@ -215,16 +216,25 @@ public class SlotScript : MonoBehaviour
         {
             if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
-                parent.tag = "Clarificating";
-                clarificationScript.ourWine = (ItemOurWine)inventory.Items[SeedName];
-                CurrentlySelectedName = inventory.Items[SeedName].Name;
-                currentlySelectedItem = inventory.Items[SeedName];
-                clarificationScript.WineName = CurrentlySelectedName;
-                currentlySelectedItem.PopItem();
-                guiScript.initializeInfoPanel(clarificationScript.WineName);
-                clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
-                clarificationScript.Timer = 100;
-                didPlant = true;
+                if (((ItemOurWine)inventory.Items[SeedName]).clarity == Wine.Clarity.Hazy || ((ItemOurWine)inventory.Items[SeedName]).condition == Wine.Condition.Unclean)
+                {
+                    parent.tag = "Clarificating";
+                    clarificationScript.ourWine = (ItemOurWine)inventory.Items[SeedName];
+                    Debug.Log(clarificationScript.ourWine.Name);
+                    CurrentlySelectedName = inventory.Items[SeedName].Name;
+                    currentlySelectedItem = inventory.Items[SeedName];
+                    clarificationScript.WineName = CurrentlySelectedName;
+                    currentlySelectedItem.PopItem();
+                    guiScript.initializeInfoPanel(clarificationScript.WineName);
+                    clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
+                    clarificationScript.Timer = 100;
+                    didPlant = true;
+                }
+                else
+                {
+                    didPlant = false;
+                    Debug.Log("Homo viini");
+                }
             }
             else
             {
