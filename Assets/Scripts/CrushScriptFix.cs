@@ -37,11 +37,13 @@ public class CrushScriptFix : MonoBehaviour
     private SlotScript slotScript;
     private CurtainControls cc;
     private GameMaster gm;
+    private Text wineName;
     // Use this for initialization
 
     void Awake()
     {
         // Get script / gameobject references.
+        wineName = GameObject.Find("WineName").transform.Find("Text").GetComponent<Text>();
         mch = GetComponent<MethodCallerHandler>();
         grapeSplash = Resources.Load<GameObject>("GrapeSplash 1");
         spawnpoint = GameObject.FindGameObjectsWithTag("Respawn"); // Get the spawn points for the grapes
@@ -73,6 +75,7 @@ public class CrushScriptFix : MonoBehaviour
         if(gm.State == GameMaster.GameState.GrapeCrush && cc.IsClear && !instructionsDone)
         {
             cg.gameObject.SetActive(true);
+            wineName.transform.parent.gameObject.SetActive(true);
             grapeScore = 0;
             FillBar.fillAmount = 0;
             FillText.text = "0%";
@@ -189,11 +192,13 @@ public class CrushScriptFix : MonoBehaviour
         switch (Button)
         {
             case "ReadyButton":
-
+                wineName = GameObject.Find("WineName").transform.Find("Text").GetComponent<Text>();
                 FermentorScript fs = gm.GetComponent<ColliderHandler>().ParentGameObject.GetComponent<FermentorScript>();
                 fs.ourWine = Resources.Load("OurWine") as GameObject;
                 OurWine ow = fs.ourWine.GetComponent<OurWine>();
-                ow.wineName = GameObject.Find("WineName").transform.Find("Text").GetComponent<Text>().text;               
+                ow.wineName = wineName.text;
+                wineName.transform.parent.gameObject.SetActive(false);
+                
                 //Debug.Log(fs.ourWine.GetComponent<OurWine>().ourWine.returnID());
 
                 Debug.Log(ow);
