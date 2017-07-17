@@ -137,6 +137,10 @@ public class CrushScriptFix : MonoBehaviour
                 gameOver();
             }
 
+            if(wineNameText.GetComponent<InputField>().isFocused)
+            {
+                
+            }
             //if (GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false && cc.transition == false)
             //{
             //    Destroy(gameObject);
@@ -200,7 +204,12 @@ public class CrushScriptFix : MonoBehaviour
                 instructionsDone = true;
                 break;
             case "ExitGame":
-                EndGame();
+                if (wineNameText.GetComponent<InputField>().text != "")
+                {
+                    EndGame();
+                }
+                else
+                    return;
                 break;
         }
     }
