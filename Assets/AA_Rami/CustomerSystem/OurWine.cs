@@ -10,11 +10,6 @@ public class OurWine
     public string wineName;
     public ItemOurWine ourWine = new ItemOurWine();
 
-    private void Start()
-    {
-        ourWine.Prefix = "cw";     
-    }
-
     public void CreateInventoryItem(GameObject go)
     {
         ourWine.sweetness = 0;

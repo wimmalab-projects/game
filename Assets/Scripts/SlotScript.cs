@@ -183,6 +183,8 @@ public class SlotScript : MonoBehaviour
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
             fermentorScript.Timer = 0;
+
+            fermentorScript.ourWine = new OurWine();
         }
         else if (parent.tag == "Clarificating")
         {
@@ -208,7 +210,7 @@ public class SlotScript : MonoBehaviour
                 bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
 
                 inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-                ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsSellable = true;
+                ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
 
                 bottlingScript.WineName = null;
                 bottlingScript.Timer = 0;
@@ -269,7 +271,7 @@ public class SlotScript : MonoBehaviour
         {
             if (inventory.Items[SeedName].ItemType == Item.IType.Wine)
             {
-                if (((ItemOurWine)inventory.Items[SeedName]).IsSellable == false)
+                if (((ItemOurWine)inventory.Items[SeedName]).IsBottled == false)
                 {
                     parent.tag = "Bottling";
                     bottlingScript.ourWine = (ItemOurWine)inventory.Items[SeedName];

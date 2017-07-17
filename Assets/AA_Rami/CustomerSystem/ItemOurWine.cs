@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ItemOurWine : Item
 {
-    public bool IsSellable;
+    public bool IsBottled;
     public float AlcoholLevel;
     public Wine.WineType wineType = Wine.WineType.RedWine;
     public Wine.Clarity clarity = Wine.Clarity.Hazy;
