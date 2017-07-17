@@ -225,8 +225,8 @@ public class GameMaster : MonoBehaviour
     {
         bool match = false;
 
-        //wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
-        //wineB.ComparisonMatrix = wineB.CreateMatrix();
+        wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
+        wineB.ComparisonMatrix = wineB.CreateMatrix();
 
         int similiarities = 0;
 
