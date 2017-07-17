@@ -34,7 +34,7 @@ public class SlotScript : MonoBehaviour
     {
         didPlant = false;
 
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         PlantGround groundScript = parent.GetComponent<PlantGround>();
 
         // If the item count is zero dont plant and show error
@@ -68,7 +68,7 @@ public class SlotScript : MonoBehaviour
     // Harvest the ready grapes and set the groundscript so that there can be planted again.
     public void Harvest()
     {
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         PlantGround groundScript = parent.GetComponent<PlantGround>();
         parent.tag = "NotPlanted";
         groundScript.PlantState = GameMaster.PlantState.NotPlanted;
@@ -95,7 +95,7 @@ public class SlotScript : MonoBehaviour
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
 
             {
-                GameObject parent = colliderHandler.ParentGameObject;
+                GameObject parent = GetColliderParent();
                 CurrentlySelectedName = inventory.Items[SeedName].Name;
                 currentlySelectedItem = inventory.Items[SeedName];
                 currentlySelectedItem.PopItem();
@@ -123,7 +123,7 @@ public class SlotScript : MonoBehaviour
     // Start the fermentation process, by setting the fermentorscript so it is fermenting
     public void Ferment()
     {
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
@@ -153,22 +153,10 @@ public class SlotScript : MonoBehaviour
         
     }
 
-    #region multiple wine method
-
-    //public void AddWineToInventory()
-    //{
-    //    Item i = inventory.Items["Item6"];
-    //    i.Name = "testi1";
-    //    // i.AddItem();
-    //    inventory.Items.Add("TestWine", i);
-    //}
-
-    #endregion
-
     // Collect the item accordingly what tag the parent has and also set the parent so it can be used again to ferment / clarificate or bottling.
     public void Collect()
     {
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         if (parent.tag == "Fermenting")
         {
             FermentorScript fermentorScript = parent.GetComponent<FermentorScript>();
@@ -231,7 +219,7 @@ public class SlotScript : MonoBehaviour
     // Start the clarification process and set the clarification script so it is clarificating.
     public void Clarificate()
     {
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         ClarificationScript clarificationScript = parent.GetComponent<ClarificationScript>();
 
         if (inventory.Items[SeedName].Stack > 0)
@@ -274,7 +262,7 @@ public class SlotScript : MonoBehaviour
     // Start the bottling process and set the bottlingscript so that it is bottling.
     public void Bottling()
     {
-        GameObject parent = colliderHandler.ParentGameObject;
+        GameObject parent = GetColliderParent();
         BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
 
         if (inventory.Items[SeedName].Stack > 0)
@@ -306,5 +294,27 @@ public class SlotScript : MonoBehaviour
             didPlant = false;
             Debug.Log("Not enough");
         }
+    }
+
+    public void AddIngredient ()
+    {
+        if (inventory.Items["Item1"].Stack > 0)
+        {
+            GameObject parent = GetColliderParent();
+            FermentorScript fs = parent.GetComponent<FermentorScript>();
+
+            Debug.Log(inventory.Items["Item1"].Stack);
+
+            if ((int)fs.ourWine.ourWine.sweetness < 3)
+            {
+                inventory.Items["Item1"].PopItem();
+                fs.ourWine.ourWine.sweetness++;
+            }
+        }
+    }
+
+    public GameObject GetColliderParent ()
+    {
+        return colliderHandler.ParentGameObject;
     }
 }
