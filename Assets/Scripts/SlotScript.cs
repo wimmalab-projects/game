@@ -206,20 +206,17 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Bottling")
         {
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
-
-<<<<<<< HEAD
+            
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
 
             inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsSellable = true;
+            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
 
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
-=======
                 inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
                 ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
->>>>>>> 701f22b771cf2c83b715f8f08d08800c30b11d5d
 
         }
     }
