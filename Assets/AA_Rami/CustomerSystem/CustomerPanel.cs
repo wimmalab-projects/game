@@ -69,6 +69,11 @@ public class CustomerPanel : MonoBehaviour {
 
         if (wine.Stack > 0)
         {
+            // 1. Avaa luettelon viineistä (sisältää pullotetut viinit)
+            // 2. 
+
+
+
             // Kutsuu arviointimetodin gamemasterista
             // Pelaaja profiilille palkintometodi kutsu gamemasterista
             // Kutsuu resetmetodin gamemasterista, joka aloittaa loopin alusta

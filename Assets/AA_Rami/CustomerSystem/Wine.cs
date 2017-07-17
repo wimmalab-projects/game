@@ -11,7 +11,7 @@ public class Wine
     public enum Clarity { Clear, Hazy };
     public enum Condition { Clean, Unclean };
     public enum Intensity { Light, Medium, Pronounced };
-    public enum Sweetness { Dry, OffDry, Medium, Sweet };
+    public enum Sweetness { Sweet, Medium, OffDry, Dry };
     public enum Acidity { Low, Medium, High };
     public enum Tannin { Low, Medium, High };
     public enum Body { Light, Medium, Full };

@@ -131,8 +131,9 @@ public class GameMaster : MonoBehaviour
         CrushisActive = true;
     }
 
-    void ViewInventory(GameObject go)
+    public void ViewInventory(GameObject go)
     {
+        Debug.Log("teststetst");
         guiScript.showInventory();
         IsInventoryOpen = true;
     }
@@ -283,15 +284,5 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
-
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(100, 10, 100, 100));
-        if (GUILayout.Button("Add"))
-        {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Item1"].AddItem();
-        }
-        GUILayout.EndArea();
-    }
 }
 

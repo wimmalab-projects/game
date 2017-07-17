@@ -114,6 +114,11 @@ public class GUIScript : MonoBehaviour
         }
     }
 
+    public void AddIngredient()
+    {
+        slotScript.AddIngredient();
+    }
+
     // Check what button was pressed and perform action accordingly to that button. didPlant hides the inventory / infopanel if the action was succesfully executed. If not the inventory/infopanel stays open.
     public void ButtonClicked()
     {

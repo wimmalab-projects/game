@@ -10,39 +10,9 @@ public class OurWine
     public string wineName;
     public ItemOurWine ourWine = new ItemOurWine();
 
-    //public Wine.WineType wineType;
-    //public Wine.Clarity clarity;
-    //public Wine.Condition condition;
-    //public Wine.Intensity intensity;
-    //public Wine.Sweetness sweetness;
-    //public Wine.Acidity acidity;
-    //public Wine.Tannin tannin;
-    //public Wine.Body body;
-    //public List<Wine.AromaFlavor> aromasAndFlavors;
-
-    private void Start()
-    {
-        ourWine.Prefix = "cw";     
-    }
-
-    // Use this for initialization
-    void SetStats()
-    {
-        //ourWine.Stack = 1;
-        //ourWine.CanBuy = false;
-        //ourWine.wineType = wineType;
-        //ourWine.clarity = clarity;
-        //ourWine.condition = condition;
-        //ourWine.intensity = intensity;
-        //ourWine.sweetness = sweetness;
-        //ourWine.acidity = acidity;
-        //ourWine.tannin = tannin;
-        //ourWine.body = body;
-        //ourWine.aromasAndFlavors = aromasAndFlavors;
-    }
-
     public void CreateInventoryItem(GameObject go)
     {
+        ourWine.sweetness = 0;
         ourWine.ItemType = Item.IType.Wine;
 
         ourWine.Prefix = "cw";

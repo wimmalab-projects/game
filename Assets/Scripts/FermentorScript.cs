@@ -33,18 +33,6 @@ public class FermentorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (gameMaster.CrushisActive)
-        //{
-        //    //if (!isStarted)
-        //    //{
-        //    //    isStarted = true;
-        //    //}
-        //    // Check if the grape crush minigame was won and start the fermentation process.
-        //    if (CrushScript.DidWin)
-        //    {
-        //        slotScript.Ferment();
-        //    }
-        //}
         if (FermentationState != GameMaster.FermentationState.NotFermentating && FermentationState != GameMaster.FermentationState.Fermented)
         {
             if (Timer >= 0)
