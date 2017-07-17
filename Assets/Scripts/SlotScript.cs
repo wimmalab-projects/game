@@ -84,12 +84,13 @@ public class SlotScript : MonoBehaviour
         groundScript.PlantName = null;
         currentlySelectedItem.AddItem();
         groundScript.resetTimer();
+        parent.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
-        if (SeedName != null && 
+        if (SeedName != null &&
             inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
         {
             if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
@@ -144,13 +145,13 @@ public class SlotScript : MonoBehaviour
                 fermentorScript.ourWine.ourWine.aromasAndFlavors = new List<Wine.AromaFlavor>();
                 //fermentorScript.ourWine.GetComponent<OurWine>().ourWine.body;
                 foreach (Wine.AromaFlavor af in vg.AromasFlavors)
-                {           
+                {
                     fermentorScript.ourWine.ourWine.aromasAndFlavors.Add(af);
                 }
             }
         }
-        
-        
+
+
     }
 
     #region multiple wine method
@@ -215,16 +216,16 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Bottling")
         {
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
-            
-                parent.tag = "NotBottling";
-                bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
 
-                inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-                ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsSellable = true;
+            parent.tag = "NotBottling";
+            bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
 
-                bottlingScript.WineName = null;
-                bottlingScript.Timer = 0;
-            
+            inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
+            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsSellable = true;
+
+            bottlingScript.WineName = null;
+            bottlingScript.Timer = 0;
+
         }
     }
 
