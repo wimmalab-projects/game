@@ -132,9 +132,6 @@ public class SlotScript : MonoBehaviour
         fermentorScript.Timer = 150; // vaihda takasi 150
         fermentorScript.IsFermenting = true;
 
-
-        Debug.Log(parent);
-
         foreach (VineGrape vg in gameMaster.GetComponent<Database>().Collection.VineGrape)
         {
             if (vg.Name == fermentorScript.GrapeName && vg.GoV == VineGrape.GrapeOrVine.Grape)
@@ -179,12 +176,14 @@ public class SlotScript : MonoBehaviour
             {
                 ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.wineName]).body = Wine.Body.Full;
             }
-
+            ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.wineName]).wineType = fermentorScript.ourWine.ourWine.wineType;
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
             fermentorScript.Timer = 0;
             fermentorScript.wineTypeDecided = false;
+            fermentorScript.CollectedGrapes = false;
+            fermentorScript.WineType = GameMaster.Winetype.RedWine;
             fermentorScript.ourWine = new OurWine();
         }
         else if (parent.tag == "Clarificating")
@@ -206,26 +205,13 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Bottling")
         {
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
-<<<<<<< HEAD
-=======
 
->>>>>>> 1a84ec536cb79f9c58a742ff3db3ee149cbd0174
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
             inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
             ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
-<<<<<<< HEAD
-
-=======
-
-            inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
-
-            inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
->>>>>>> 1a84ec536cb79f9c58a742ff3db3ee149cbd0174
         }
     }
 

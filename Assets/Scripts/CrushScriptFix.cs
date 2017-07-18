@@ -235,14 +235,11 @@ public class CrushScriptFix : MonoBehaviour
 
         FermentorScript fs = gm.GetComponent<ColliderHandler>().ParentGameObject.GetComponent<FermentorScript>();
         //fs.ourWine = Resources.Load("OurWine") as GameObject;
-        Debug.Log(gm.GetComponent<ColliderHandler>().ParentGameObject);
         fs.ourWine.wineName = wineNameText.GetComponent<InputField>().text;
         //Debug.Log(fs.ourWine.GetComponent<OurWine>().ourWine.returnID());
         fs.ourWine.ourWine.Prefix = "cw";
-        Debug.Log(fs.ourWine.ourWine.Prefix + fs.ourWine.wineName);
         foreach (string key in GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Keys)
         {
-            Debug.Log(key);
             if (fs.ourWine.ourWine.Prefix + fs.ourWine.wineName == key)
             {
                 isKeyUsed = true;

@@ -83,13 +83,13 @@ public class Wine
     #region Matrix generator
 
     public WineType wineType = WineType.RedWine;
-    public Clarity      clarity;
-    public Condition    condition;
-    public Intensity    intensity;
-    public Sweetness    sweetness;
-    public Acidity      acidity;
-    public Tannin       tannin;
-    public Body         body;
+    public Clarity clarity = Clarity.Hazy;
+    public Condition condition = Condition.Unclean;
+    public Intensity intensity = Intensity.Medium;
+    public Sweetness sweetness = Sweetness.Medium;
+    public Acidity acidity = Acidity.Medium;
+    public Tannin tannin = Tannin.Medium;
+    public Body body = Body.Medium;
 
     public List<AromaFlavor> AromasFlavors = new List<AromaFlavor>();
 

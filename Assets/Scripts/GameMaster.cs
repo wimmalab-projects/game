@@ -83,12 +83,12 @@ public class GameMaster : MonoBehaviour
 
     public enum Winetype
     {
+        [Description("Red wine")]
+        RedWine,
         [Description("White wine")]
         WhiteWine,
         [Description("Rose wine")]
-        RoseWine,
-        [Description("Red wine")]
-        RedWine = 0,
+        RoseWine
     }
 
     public enum BottlingState
