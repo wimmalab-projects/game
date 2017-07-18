@@ -201,36 +201,36 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial25done && tutorial24done && guiScript.Button == "Collect")
         {
-            StartCoroutine(Wait(71, 71, 0.4f));
+            StartCoroutine(Wait(71, 73, 0.4f));
             tutorial25done = true;
         }
 
-        //if (!tutorial26done && tutorial25done && GameState == GameMaster.GameState.Farm && !cControls.transition)
-        //{
-        //    StartCoroutine(Wait(74, 74, 0.4f));
-        //    tutorial26done = true;
-        //}
+        if (!tutorial26done && tutorial25done && GameState == GameMaster.GameState.Farm && !cControls.transition)
+        {
+            StartCoroutine(Wait(74, 74, 0.4f));
+            tutorial26done = true;
+        }
 
-        //if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Town && !cControls.transition)
-        //{
-        //    StartCoroutine(Wait(75, 75, 0.4f));
-        //    tutorial27done = true;
-        //}
+        if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Town && !cControls.transition)
+        {
+            StartCoroutine(Wait(75, 75, 0.4f));
+            tutorial27done = true;
+        }
 
-        //if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").activeInHierarchy)
-        //{
-        //    StartCoroutine(Wait(76, 76, 0.4f));
-        //    tutorial28done = true;
-        //}
+        if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").activeInHierarchy)
+        {
+            StartCoroutine(Wait(76, 76, 0.4f));
+            tutorial28done = true;
+        }
 
-        //if (!tutorial29done && tutorial28done && gm.WineSold)
-        //{
-        //    StartCoroutine(Wait(77, 79, 0.4f));
-        //    tutorial29done = true;
-        //    // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
-        //}
+        if (!tutorial29done && tutorial28done && gm.WineSold)
+        {
+            StartCoroutine(Wait(77, 79, 0.4f));
+            tutorial29done = true;
+            // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
+        }
 
-        if (tutorial25done && rpgTalk.dialogueFinished)
+        if (tutorial29done && rpgTalk.dialogueFinished)
         {
             Destroy(gameObject.GetComponent<DialogueTest>());
         }

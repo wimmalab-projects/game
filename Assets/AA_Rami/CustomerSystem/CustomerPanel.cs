@@ -87,6 +87,7 @@ public class CustomerPanel : MonoBehaviour {
         }
         else // sell the wine if the panel is open and wine is selected
         {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
             Wine wineA = clientSender.GetComponent<Client>().WineIWant.WineHolder;
             Wine wineB = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).test();
             

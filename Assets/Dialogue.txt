@@ -72,8 +72,8 @@ Congratulations! Your *WineName* is now bottled and ready to be sold!
 Now lets go sell it.
 Return to the farm by clicking the farm sign.
 Now lets go to the town by clicking the truck.
-Now find a suitable customer for you and click him.
-Click sell to sell your freshly made *WineName*!
+Now click Jarmo.
+Click sell and pick your wine and click sell again.
 Congratulations! You just sold your *WineName*!
 Now youre ready to make another one by yourself!
 Good luck!
