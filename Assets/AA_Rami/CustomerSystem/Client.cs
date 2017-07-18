@@ -18,8 +18,8 @@ public class Client : MonoBehaviour
     public string BadReview;
 
     // restaurant client
-    public Wine WineIWant;
-    public Wine WineIGet;
+    public WinePrefab WineIWant;
+    public WinePrefab WineIGet;
 
 
 

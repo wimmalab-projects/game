@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
+    [HideInInspector] // only works for the next line below it.
+    public GameObject lastSelectedUiObject;
+
     [Header("Camera System")]
     // Cameras for different views // Drag in editor
     public GameObject TownCamera;
@@ -26,6 +29,9 @@ public class GameMaster : MonoBehaviour
     public Text expneeded;
     public Text level;
     public Text playername;
+
+    [Header("Evaluation system")]
+    public float MatchPercentage;
 
     // invisible in inspector
     private GUIScript guiScript;
@@ -220,12 +226,15 @@ public class GameMaster : MonoBehaviour
     /// <param name="wine1"></param>
     /// <param name="wine2"></param>
     /// <returns></returns>
-    public int CompareWines(Wine wineA, Wine wineB)
+    public void CompareWines(Wine wineA, Wine wineB)
     {
         bool match = false;
 
-        //wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
-        //wineB.ComparisonMatrix = wineB.CreateMatrix();
+        wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
+        wineB.ComparisonMatrix = wineB.CreateMatrix();
+
+        //Debug.Log(wineA.ComparisonMatrix.Count);
+
 
         int similiarities = 0;
 
@@ -259,7 +268,8 @@ public class GameMaster : MonoBehaviour
             }
         }
 
-        return similiarities;
+        // return percentage match (like 90% match or 50% match) // 6*100/18 matches * 100/total values in winea.comparsion
+        MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
     }
 
     #endregion

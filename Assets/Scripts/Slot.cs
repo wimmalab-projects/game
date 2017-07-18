@@ -10,12 +10,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Text UiItemCount; // Drag in editor
     public Image ItemImage; // Drag in editor
     public int itemCount;
+    GameMaster gm;
 
     private Inventory inventory;
 
     private void Awake()
     {
-        inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
+        inventory = gm.gameObject.GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -30,23 +32,24 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     }
 
     // Clear the highlight effect around the inventory block
-    void clearHighlight()
+    void clearHighlight(GameObject go)
     {
-        foreach (GameObject asd in inventory.Slots)
-        {
-            asd.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
-        }
+        go.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
     }
 
     // Create hightlight effect around the inventory block
     public void OnPointerClick(PointerEventData data)
     {
-        clearHighlight();
+        if (gm.lastSelectedUiObject != null)
+        {
+            clearHighlight(gm.lastSelectedUiObject);
+        }
         if (inventory.Items[gameObject.name] != null)
         {
             gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName = gameObject.name;
             inventory.refreshInfo();
+            gm.lastSelectedUiObject = data.selectedObject;
         }
     }
 }
