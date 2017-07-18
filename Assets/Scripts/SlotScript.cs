@@ -205,7 +205,6 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Bottling")
         {
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
-
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
             inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
