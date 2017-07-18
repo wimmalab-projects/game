@@ -90,7 +90,7 @@ public class CustomerPanel : MonoBehaviour {
             Wine wineA = clientSender.GetComponent<Client>().WineIWant.WineHolder;
             Wine wineB = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).test();
             
-            //Debug.Log(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CompareWines(wineA, wineB));
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CompareWines(wineA, wineB);
         }
 
 

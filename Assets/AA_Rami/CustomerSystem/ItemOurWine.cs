@@ -14,7 +14,7 @@ public class ItemOurWine : Item
     public Wine.Intensity intensity = Wine.Intensity.Medium;
     public Wine.Sweetness sweetness = Wine.Sweetness.Medium;
     public Wine.Acidity acidity = Wine.Acidity.Medium;
-    public Wine.Tannin tannin = Wine.Tannin.High;
+    public Wine.Tannin tannin = Wine.Tannin.Medium;
     public Wine.Body body = Wine.Body.Medium;
     public List<Wine.AromaFlavor> aromasAndFlavors;
 

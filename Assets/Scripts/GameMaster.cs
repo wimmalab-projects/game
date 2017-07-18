@@ -83,12 +83,12 @@ public class GameMaster : MonoBehaviour
 
     public enum Winetype
     {
+        [Description("Red wine")]
+        RedWine,
         [Description("White wine")]
         WhiteWine,
         [Description("Rose wine")]
-        RoseWine,
-        [Description("Red wine")]
-        RedWine = 0,
+        RoseWine
     }
 
     public enum BottlingState
@@ -270,6 +270,7 @@ public class GameMaster : MonoBehaviour
 
         // return percentage match (like 90% match or 50% match) // 6*100/18 matches * 100/total values in winea.comparsion
         MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
+        Debug.Log(MatchPercentage + " " + similiarities * 100 / wineA.ComparisonMatrix.Count);
     }
 
     #endregion
