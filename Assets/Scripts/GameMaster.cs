@@ -282,7 +282,6 @@ public class GameMaster : MonoBehaviour
     /// </summary>
     public void Shop()
     {
-        Debug.Log(transform.parent);
         if (transform.GetComponent<Shop>().shop.activeSelf == false)
         {
             transform.GetComponent<Shop>().OpenShop();
@@ -294,15 +293,5 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
-
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(100, 10, 100, 100));
-        if (GUILayout.Button("Add"))
-        {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Item1"].AddItem();
-        }
-        GUILayout.EndArea();
-    }
 }
 

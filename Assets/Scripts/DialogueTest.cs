@@ -217,7 +217,7 @@ public class DialogueTest : MonoBehaviour
             tutorial27done = true;
         }
 
-        if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").activeInHierarchy)
+        if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").gameObject.activeSelf)
         {
             StartCoroutine(Wait(76, 76, 0.4f));
             tutorial28done = true;

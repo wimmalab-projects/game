@@ -12,7 +12,7 @@ public class PlantGround : MonoBehaviour
     public string PlantName;
     public string NiceTime { get; private set; }
 
-    private float timer = 150;
+    private float timer = 200;
 
     private bool isTimerRunning;
 
@@ -50,30 +50,33 @@ public class PlantGround : MonoBehaviour
             // Different states for growth, and change the sprite accordingly to that
             if (timer <= 0)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[2];
+                GetComponent<SpriteRenderer>().sprite = Sprites[0];
                 isTimerRunning = false;
                 PlantState = GameMaster.PlantState.Grapes;
             }
+
             else if (timer < 60)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[2];
+                GetComponent<SpriteRenderer>().sprite = Sprites[1];
                 PlantState = GameMaster.PlantState.Trimmed;
             }
-            else if (timer < 120)
+
+            else if (timer < 150)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[1];
+                GetComponent<SpriteRenderer>().sprite = Sprites[3];
                 PlantState = GameMaster.PlantState.Overgrowth;
             }
+
             else if (timer < 200)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[0];
+                GetComponent<SpriteRenderer>().sprite = Sprites[5];
                 PlantState = GameMaster.PlantState.JustPlanted;
             }
         }
 
         else if (PlantState == GameMaster.PlantState.Grapes)
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites[2];
+            GetComponent<SpriteRenderer>().sprite = Sprites[0];
         }
 
         else

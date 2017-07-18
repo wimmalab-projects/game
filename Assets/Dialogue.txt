@@ -37,7 +37,7 @@ Welcome to the winery!
 Here you can crush the *GrapeName*s, ferment, clarificate, and bottle the wine.
 To make wine you need juice.
 To get juice you need to crush the grapes.
-To start the crushing the *GrapeName*s click on the fermentor.
+To start the crushing the *GrapeName*s click on one of the fermentors.
 Here is your inventory again.
 Select *GrapeName*s to crush them and click crush.
 Good job! You showed them *GrapeName*s who's the boss!
@@ -56,10 +56,10 @@ You removed the skins and your wine is now *WineType*!
 Now wait till the fermentation is completed, and click collect.
 Your *WineName* has fermented and is now *WineType*
 But you need to clarificate it to keep the quality top notch.
-Click on the clarification pot.
-Select *WineName* to place it in clarification pot and click clarfificate.
+Click on one of the barrels.
+Select *WineName* to place it in barrel and click clarfificate.
 Your *WineName* is now clarificating.
-Click on the clarificator to see more info.
+Click on the barrel to see more info.
 Here you can see the time left on the clarification.
 Press collect when the clarification is ready!
 Your *WineName* is top notch now!
@@ -70,7 +70,7 @@ You can see more info when clicking the bottling machine.
 Click collect when bottling is ready.
 Congratulations! Your *WineName* is now bottled and ready to be sold!
 Now lets go sell it.
-Return to the farm by clicking the farm sign.
+Return to the farm by clicking the stairs.
 Now lets go to the town by clicking the truck.
 Now click Jarmo.
 Click sell and pick your wine and click sell again.
