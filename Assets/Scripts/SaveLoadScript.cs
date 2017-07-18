@@ -17,6 +17,7 @@ public class SaveLoadScript : MonoBehaviour
     GameObject[] clarifications;
     GameObject[] bottlings;
     Inventory inventory;
+    DialogueTest dt;
     GameMaster gm;
 
 
@@ -27,6 +28,7 @@ public class SaveLoadScript : MonoBehaviour
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
+        dt = gm.GetComponent<DialogueTest>();
         inventory = gm.GetComponent<Inventory>();
     }
 
@@ -114,6 +116,9 @@ public class SaveLoadScript : MonoBehaviour
             playerData.Level = Player.Level;
             playerData.Money = Player.Money;
 
+            TutorialData tutorialData = new TutorialData();
+            tutorialData.tutorialcompleted = dt.tutorialcompleted;
+
 
             // Serialize
             BinaryFormatter bf = new BinaryFormatter();
@@ -121,6 +126,7 @@ public class SaveLoadScript : MonoBehaviour
             bf.Serialize(saveFile, timerData);
             bf.Serialize(saveFile, inventoryData);
             bf.Serialize(saveFile, playerData);
+            bf.Serialize(saveFile, tutorialData);
             saveFile.Close();
             Debug.Log("Saving...");
         }
@@ -138,6 +144,7 @@ public class SaveLoadScript : MonoBehaviour
             TimerData timerData = (TimerData)bf.Deserialize(loadFile);
             InventoryData inventoryData = (InventoryData)bf.Deserialize(loadFile);
             PlayerData playerData = (PlayerData)bf.Deserialize(loadFile);
+            TutorialData tutorialData = (TutorialData)bf.Deserialize(loadFile);
             //Debug.Log("Loading to " + Application.persistentDataPath);
             loadFile.Close();
 
@@ -221,6 +228,14 @@ public class SaveLoadScript : MonoBehaviour
             Player.ExpNeeded = playerData.ExpNeeded;
             Player.Level = playerData.Level;
             Player.Money = playerData.Money;
+
+            dt = gm.GetComponent<DialogueTest>();
+            dt.tutorialcompleted = tutorialData.tutorialcompleted;
+
+            if(dt.tutorialcompleted)
+            {
+                Destroy(dt);   
+            }
 
             Debug.Log("Loading...");
         }
@@ -325,6 +340,12 @@ public class SaveLoadScript : MonoBehaviour
         public const int ExpConst = 100;
         public int Level { get; set; }
         public int Money { get; set; }
+    }
+
+    [Serializable]
+    class TutorialData
+    {
+        public bool tutorialcompleted { get; set; }
     }
 
     // When application goes pause and unpause

@@ -23,6 +23,9 @@ public class DialogueTest : MonoBehaviour
          tutorial18done, tutorial19done, tutorial20done, tutorial21done, tutorial22done, tutorial23done, tutorial24done, tutorial25done,
          tutorial26done, tutorial27done, tutorial28done, tutorial29done;
 
+
+    public bool tutorialcompleted;
+
     private void Awake()
     {
         // Get references
@@ -151,7 +154,7 @@ public class DialogueTest : MonoBehaviour
             tutorial16done = true;
         }
 
-        if (!tutorial17done && tutorial16done && guiScript.Button == "Collect")
+        if (!tutorial17done && guiScript.Button == "Collect")
         {
             StartCoroutine(Wait(57, 59, 1f));
             tutorial17done = true;
@@ -233,6 +236,7 @@ public class DialogueTest : MonoBehaviour
         if (tutorial29done && rpgTalk.dialogueFinished)
         {
             Destroy(gameObject.GetComponent<DialogueTest>());
+            tutorialcompleted = true;
         }
 
     }
