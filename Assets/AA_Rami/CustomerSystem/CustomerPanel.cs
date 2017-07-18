@@ -87,10 +87,10 @@ public class CustomerPanel : MonoBehaviour {
         }
         else // sell the wine if the panel is open and wine is selected
         {
-            Wine wineB = clientSender.GetComponent<Client>().WineIWant.WineHolder;
-            Wine wineA = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).test();
+            Wine wineA = clientSender.GetComponent<Client>().WineIWant.WineHolder;
+            Wine wineB = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).test();
             
-            Debug.Log(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CompareWines(wineA, wineB));
+            //Debug.Log(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CompareWines(wineA, wineB));
         }
 
 
@@ -105,15 +105,5 @@ public class CustomerPanel : MonoBehaviour {
         //    // 5. vertaa palautetut yhtäläisyydet halutun viinin maksini attribuuttien määrään (esim. 10 yhtäläisyyttä 20 attribuuttia = 50%)
         //    // 6. antaa XP perustuen yhtäläisyyksien määrään. Erinomainen > 85%, kohtalainen > 50%, Huono < 50%
         //    // 7. loopin resetti.
-
-
-
-        //    // Kutsuu arviointimetodin gamemasterista
-        //    // Pelaaja profiilille palkintometodi kutsu gamemasterista
-        //    // Kutsuu resetmetodin gamemasterista, joka aloittaa loopin alusta
-        //    wine.PopItem();
-        //    Debug.Log("wine sold");
-        //    GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
-        //}
     }
 }
