@@ -12,7 +12,7 @@ public class PlantGround : MonoBehaviour
     public string PlantName;
     public string NiceTime { get; private set; }
 
-    private float timer = 200;
+    private float timer = 150;
 
     private bool isTimerRunning;
 

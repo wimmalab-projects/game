@@ -88,7 +88,7 @@ public class GameMaster : MonoBehaviour
         [Description("Rose wine")]
         RoseWine,
         [Description("Red wine")]
-        RedWine,
+        RedWine = 0,
     }
 
     public enum BottlingState
@@ -137,9 +137,8 @@ public class GameMaster : MonoBehaviour
         CrushisActive = true;
     }
 
-    public void ViewInventory(GameObject go)
+    void ViewInventory(GameObject go)
     {
-        Debug.Log("teststetst");
         guiScript.showInventory();
         IsInventoryOpen = true;
     }
@@ -294,5 +293,15 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
+
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(100, 10, 100, 100));
+        if (GUILayout.Button("Add"))
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Item1"].AddItem();
+        }
+        GUILayout.EndArea();
+    }
 }
 
