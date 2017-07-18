@@ -15,6 +15,7 @@ public class GUIScript : MonoBehaviour
     public Text InfoPanelTimer; // Drag in editor
     public Button HarvestButton; // Drag in editor
     public Button PlantButton; // Drag in editor
+    public Button CollectGrapeButton;
     public string Button; // Drag in editor
 
     private Animator animator; // Animate the Inventory, but scrap this.
@@ -56,15 +57,26 @@ public class GUIScript : MonoBehaviour
                 if (groundScript.Timer <= 0)
                 {
                     InfoPanelTimer.text = "Ready!";
+                    HarvestButton.interactable = true;
                 }
             }
             else if (parent.tag == "Fermenting")
             {
+                if (!fermentorScript.wineTypeDecided && fermentorScript.Timer > 0)
+                {
+                    CollectGrapeButton.gameObject.SetActive(true);
+                }
+                else
+                {
+                    CollectGrapeButton.gameObject.SetActive(false);
+                }
+
                 timer = fermentorScript.NiceTime;
                 InfoPanelTimer.text = timer;
                 if (fermentorScript.Timer <= 0)
                 {
                     InfoPanelTimer.text = "Ready!";
+                    HarvestButton.interactable = true;
                 }
             }
             else if (parent.tag == "Clarificating")
@@ -74,6 +86,7 @@ public class GUIScript : MonoBehaviour
                 if (clarificationScript.Timer <= 0)
                 {
                     InfoPanelTimer.text = "Ready!";
+                    HarvestButton.interactable = true;
                 }
             }
             else if (parent.tag == "Bottling")
@@ -83,6 +96,7 @@ public class GUIScript : MonoBehaviour
                 if (bottlingScript.Timer <= 0)
                 {
                     InfoPanelTimer.text = "Ready!";
+                    HarvestButton.interactable = true;
                 }
             }
         }
@@ -189,15 +203,14 @@ public class GUIScript : MonoBehaviour
                         InfoPanel.alpha = 0;
                         ResetButtons();
                     }
-                    else if (parent.tag == "Fermenting" && fermentorScript.Timer > 0)
-                    {
-                        slotScript.didCollect = true;
-                    }
                     else
                         return;
                     break;
+                case "CollectGrapes":
+                    fermentorScript.CollectedGrapes = true;
+                    CollectGrapeButton.gameObject.SetActive(false);
+                    break;
             }
-
         }
     }
 
@@ -209,6 +222,7 @@ public class GUIScript : MonoBehaviour
         HarvestButton.name = "Harvest";
         HarvestButton.GetComponentInChildren<Text>().text = "Harvest";
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
+        HarvestButton.interactable = false;
     }
 
     // Shows the inventory or the infopanel depending on what was clicked. Also changes the button name and text so that the right action can be performed
@@ -239,7 +253,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Fermenting":
                 InfoPanel.alpha = 1;
-                initializeInfoPanel(gameMaster.GetDescription(fermentorScript.WineType));
+                initializeInfoPanel(fermentorScript.ourWine.wineName);
                 HarvestButton.name = "Collect";
                 HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

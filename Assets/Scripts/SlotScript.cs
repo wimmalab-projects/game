@@ -49,7 +49,7 @@ public class SlotScript : MonoBehaviour
                 parent.tag = "Planted";
                 groundScript.PlantState = GameMaster.PlantState.JustPlanted;
                 groundScript.PlantName = inventory.Items[SeedName].Name;
-                guiScript.initializeInfoPanel(groundScript.PlantName);
+                //guiScript.initializeInfoPanel(groundScript.PlantName);
                 currentlySelectedItem.PopItem();
                 didPlant = true;
 
@@ -129,7 +129,7 @@ public class SlotScript : MonoBehaviour
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
-        fermentorScript.Timer = 10; // vaihda takasi 150
+        fermentorScript.Timer = 150; // vaihda takasi 150
         fermentorScript.IsFermenting = true;
 
 
@@ -184,7 +184,7 @@ public class SlotScript : MonoBehaviour
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
             fermentorScript.Timer = 0;
-
+            fermentorScript.wineTypeDecided = false;
             fermentorScript.ourWine = new OurWine();
         }
         else if (parent.tag == "Clarificating")
@@ -206,27 +206,13 @@ public class SlotScript : MonoBehaviour
         else if (parent.tag == "Bottling")
         {
             BottlingScript bottlingScript = parent.GetComponent<BottlingScript>();
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> 73e82ab25643f69acf5f695988ada23fdf1aa32e
             parent.tag = "NotBottling";
             bottlingScript.BottlingState = GameMaster.BottlingState.NotBottling;
-
             inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
             ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
-
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
-<<<<<<< HEAD
-            inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
-=======
-                inventory.Items["cw" + bottlingScript.ourWine.Name].AddItem();
-                ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
 
->>>>>>> 73e82ab25643f69acf5f695988ada23fdf1aa32e
         }
     }
 
@@ -249,7 +235,7 @@ public class SlotScript : MonoBehaviour
                     currentlySelectedItem = inventory.Items[SeedName];
                     clarificationScript.WineName = CurrentlySelectedName;
                     currentlySelectedItem.PopItem();
-                    guiScript.initializeInfoPanel(clarificationScript.WineName);
+                    //guiScript.initializeInfoPanel(clarificationScript.ourWine.Name);
                     clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
                     clarificationScript.Timer = 100;
                     didPlant = true;
@@ -291,10 +277,15 @@ public class SlotScript : MonoBehaviour
                     currentlySelectedItem = inventory.Items[SeedName];
                     bottlingScript.WineName = CurrentlySelectedName;
                     currentlySelectedItem.PopItem();
-                    guiScript.initializeInfoPanel(bottlingScript.WineName);
+                    //guiScript.initializeInfoPanel(bottlingScript.ourWine.Name);
                     bottlingScript.BottlingState = GameMaster.BottlingState.Bottling;
                     bottlingScript.Timer = 100;
                     didPlant = true;
+                }
+                else
+                {
+                    didPlant = false;
+                    Debug.Log("Already bottled");
                 }
             }
             else

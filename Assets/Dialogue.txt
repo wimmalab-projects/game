@@ -41,23 +41,23 @@ To start the crushing the *GrapeName*s click on the fermentor.
 Here is your inventory again.
 Select *GrapeName*s to crush them and click crush.
 Good job! You showed them *GrapeName*s who's the boss!
-Your juice is now fermenting in the fermentor.
+Your *WineName* is now fermenting in the fermentor.
 Click on it to see more info.
-Here you can see how much time there is left before the fermenting is done.
+Here you can see how much time there is left before *WineName* is fermented
 Grape skins are collected at a certain time to make a certain type of wine.
 White wines get skin contact very little,
 Rose wines get a bit of skin contact,
 and Red Wines get a lot of skin contact.
 Click collect before 1:30 to make white wine.
 Click collect before 0:50 to make rose wine.
-Red wine is made if you dont collect the grapes!
+Red wine is made if you collect them when the fermenting is done.
 When the fermenting is ready click collect.
-You removed the skins and your wine is now *WineName*!
+You removed the skins and your wine is now *WineType*!
 Now wait till the fermentation is completed, and click collect.
-Your juice has fermented and is now *WineName*
+Your *WineName* has fermented and is now *WineType*
 But you need to clarificate it to keep the quality top notch.
 Click on the clarification pot.
-Select Fermented wine to place it in clarification pot and click clarfificate.
+Select *WineName* to place it in clarification pot and click clarfificate.
 Your *WineName* is now clarificating.
 Click on the clarificator to see more info.
 Here you can see the time left on the clarification.
@@ -65,7 +65,7 @@ Press collect when the clarification is ready!
 Your *WineName* is top notch now!
 Now you need to bottle it.
 Click on the bottling machine.
-Select Clarificated wine and click bottle.
+Select *WineName* and click bottle.
 You can see more info when clicking the bottling machine.
 Click collect when bottling is ready.
 Congratulations! Your *WineName* is now bottled and ready to be sold!
@@ -74,6 +74,6 @@ Return to the farm by clicking the farm sign.
 Now lets go to the town by clicking the truck.
 Now find a suitable customer for you and click him.
 Click sell to sell your freshly made *WineName*!
-Congratulations! You just sold your first selfmade *WineName*!
+Congratulations! You just sold your *WineName*!
 Now youre ready to make another one by yourself!
 Good luck!

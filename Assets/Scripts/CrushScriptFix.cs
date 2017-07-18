@@ -204,12 +204,15 @@ public class CrushScriptFix : MonoBehaviour
                 instructionsDone = true;
                 break;
             case "ExitGame":
-                if (wineNameText.GetComponent<InputField>().text != "")
+                if (DidWin && wineNameText.GetComponent<InputField>().text != "")
+                {
+                    MakeWine();
+                    slotScript.Ferment();
+                }
+                else if (!DidWin)
                 {
                     EndGame();
                 }
-                else
-                    return;
                 break;
         }
     }
@@ -220,11 +223,6 @@ public class CrushScriptFix : MonoBehaviour
         instructionsDone = false;
         mch.CallMethod();
         //// If won, start the fermentation process
-        if (DidWin)
-        {
-            MakeWine();
-            slotScript.Ferment();
-        }
         GameObject canvas = GameObject.Find("Canvas");
         canvas.SetActive(false);
         GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false;
@@ -263,9 +261,12 @@ public class CrushScriptFix : MonoBehaviour
             //GameStartText.text = "";
             //readyButton.transform.gameObject.SetActive(false);
             GameObject.Find("WineName").GetComponent<InputField>().text = "";
+            EndGame();
             //wineNameText.transform.gameObject.SetActive(false);
             ////wineNameText.transform.parent.gameObject.SetActive(false);
             //instructionsDone = true;
         }
+        else
+            return;
     }
 }

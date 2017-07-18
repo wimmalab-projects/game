@@ -82,7 +82,7 @@ public class Wine
 
     #region Matrix generator
 
-    public WineType     wineType;
+    public WineType wineType = WineType.RedWine;
     public Clarity      clarity;
     public Condition    condition;
     public Intensity    intensity;

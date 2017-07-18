@@ -9,7 +9,7 @@ public class FermentorScript : MonoBehaviour
     //public GameObject ourWineGo; // placed from crushscript end game.
     public OurWine ourWine;
     public GameMaster.FermentationState FermentationState { get; set; }
-    public GameMaster.Winetype WineType { get; set; }
+    public GameMaster.Winetype WineType = GameMaster.Winetype.RedWine;
     public bool IsFermenting { get; set; }
     public string GrapeName;
     public float Timer { get; set; }
@@ -20,7 +20,8 @@ public class FermentorScript : MonoBehaviour
     private bool testing = true;
     private bool isPaused = false;
     private bool isTimerRunning = false;
-    private bool wineTypeDecided = false;
+    public bool wineTypeDecided = false;
+    public bool CollectedGrapes = false;
 
     private void Awake()
     {
@@ -44,7 +45,7 @@ public class FermentorScript : MonoBehaviour
                 NiceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
-            if (Timer < 50 && slotScript.didCollect && !wineTypeDecided)
+            if (Timer < 50 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.RedWine;
                 ourWine.ourWine.tannin = Wine.Tannin.High;
@@ -53,7 +54,7 @@ public class FermentorScript : MonoBehaviour
                 Debug.Log(WineType);
             }
 
-            else if (Timer < 100 && slotScript.didCollect && !wineTypeDecided)
+            else if (Timer < 100 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.RoseWine;
                 ourWine.ourWine.tannin = Wine.Tannin.Medium;
@@ -62,7 +63,7 @@ public class FermentorScript : MonoBehaviour
                 Debug.Log(WineType);
             }
 
-            else if (Timer < 150 && slotScript.didCollect && !wineTypeDecided)
+            else if (Timer < 150 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.WhiteWine;
                 ourWine.ourWine.tannin = Wine.Tannin.Low;

@@ -108,7 +108,7 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial10done && tutorial9done && guiScript.Button == "Harvest")
         {
-            StartCoroutine(Wait(31, 34, 0.35f));
+            StartCoroutine(Wait(31, 34, 0.4f));
             tutorial10done = true;
         }
 
@@ -132,7 +132,8 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial14done && tutorial13done && CrushScriptFix.DidWin && !gm.CrushisActive)
         {
-            StartCoroutine(Wait(43, 45, 1f));
+            rpgTalk.variables[3].variableValue = colliderHandler.ParentGameObject.GetComponent<FermentorScript>().ourWine.wineName;
+            StartCoroutine(Wait(43, 45, 1.3f));
             tutorial14done = true;
         }
 
@@ -142,15 +143,15 @@ public class DialogueTest : MonoBehaviour
             tutorial15done = true;
         }
 
-        if (!tutorial16done && tutorial15done && guiScript.Button == "Collect")
+        if (!tutorial16done && tutorial15done && guiScript.Button == "CollectGrapes")
         {
             fermentorScript = colliderHandler.ParentGameObject.GetComponent<FermentorScript>();
-            rpgTalk.variables[3].variableValue = gm.OurWine.GetComponent<WinePrefab>().wineType.ToString();
+            rpgTalk.variables[4].variableValue = gm.GetDescription(fermentorScript.WineType);
             StartCoroutine(Wait(55, 56, 0.4f));
             tutorial16done = true;
         }
 
-        if (!tutorial17done && tutorial16done && guiScript.Button == "Collect" && colliderHandler.ParentGameObject.GetComponent<FermentorScript>().Timer <= 0)
+        if (!tutorial17done && tutorial16done && guiScript.Button == "Collect")
         {
             StartCoroutine(Wait(57, 59, 1f));
             tutorial17done = true;
@@ -200,36 +201,36 @@ public class DialogueTest : MonoBehaviour
 
         if (!tutorial25done && tutorial24done && guiScript.Button == "Collect")
         {
-            StartCoroutine(Wait(71, 73, 0.4f));
+            StartCoroutine(Wait(71, 71, 0.4f));
             tutorial25done = true;
         }
 
-        if (!tutorial26done && tutorial25done && GameState == GameMaster.GameState.Farm && !cControls.transition)
-        {
-            StartCoroutine(Wait(74, 74, 0.4f));
-            tutorial26done = true;
-        }
+        //if (!tutorial26done && tutorial25done && GameState == GameMaster.GameState.Farm && !cControls.transition)
+        //{
+        //    StartCoroutine(Wait(74, 74, 0.4f));
+        //    tutorial26done = true;
+        //}
 
-        if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Town && !cControls.transition)
-        {
-            StartCoroutine(Wait(75, 75, 0.4f));
-            tutorial27done = true;
-        }
+        //if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Town && !cControls.transition)
+        //{
+        //    StartCoroutine(Wait(75, 75, 0.4f));
+        //    tutorial27done = true;
+        //}
 
-        if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").activeInHierarchy)
-        {
-            StartCoroutine(Wait(76, 76, 0.4f));
-            tutorial28done = true;
-        }
+        //if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").activeInHierarchy)
+        //{
+        //    StartCoroutine(Wait(76, 76, 0.4f));
+        //    tutorial28done = true;
+        //}
 
-        if (!tutorial29done && tutorial28done && gm.WineSold)
-        {
-            StartCoroutine(Wait(77, 79, 0.4f));
-            tutorial29done = true;
-            // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
-        }
+        //if (!tutorial29done && tutorial28done && gm.WineSold)
+        //{
+        //    StartCoroutine(Wait(77, 79, 0.4f));
+        //    tutorial29done = true;
+        //    // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
+        //}
 
-        if (tutorial28done && rpgTalk.dialogueFinished)
+        if (tutorial25done && rpgTalk.dialogueFinished)
         {
             Destroy(gameObject.GetComponent<DialogueTest>());
         }
