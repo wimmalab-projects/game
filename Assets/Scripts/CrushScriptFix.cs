@@ -172,7 +172,7 @@ public class CrushScriptFix : MonoBehaviour
     void handleUI()
     {
         FillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        FillBar.fillAmount = (grapeScore * 1.5f);
+        FillBar.fillAmount = (grapeScore * 1.5f) / 100;
         MissedText.text = MissedGrapes + "/" + maxMissedGrapes;
     }
 

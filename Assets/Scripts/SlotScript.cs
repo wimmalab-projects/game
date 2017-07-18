@@ -129,7 +129,7 @@ public class SlotScript : MonoBehaviour
         parent.tag = "Fermenting";
         fermentorScript.GrapeName = CurrentlySelectedName;
         fermentorScript.FermentationState = GameMaster.FermentationState.Fermenting;
-        fermentorScript.Timer = 150; // vaihda takasi 150
+        fermentorScript.Timer = 90; // vaihda takasi 150
         fermentorScript.IsFermenting = true;
 
         foreach (VineGrape vg in gameMaster.GetComponent<Database>().Collection.VineGrape)
@@ -235,7 +235,7 @@ public class SlotScript : MonoBehaviour
                     currentlySelectedItem.PopItem();
                     //guiScript.initializeInfoPanel(clarificationScript.ourWine.Name);
                     clarificationScript.ClarificationState = GameMaster.ClarificationState.Clarificating;
-                    clarificationScript.Timer = 100;
+                    clarificationScript.Timer = 90;
                     didPlant = true;
                 }
                 else
@@ -277,7 +277,7 @@ public class SlotScript : MonoBehaviour
                     currentlySelectedItem.PopItem();
                     //guiScript.initializeInfoPanel(bottlingScript.ourWine.Name);
                     bottlingScript.BottlingState = GameMaster.BottlingState.Bottling;
-                    bottlingScript.Timer = 100;
+                    bottlingScript.Timer = 90;
                     didPlant = true;
                 }
                 else

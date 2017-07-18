@@ -45,7 +45,7 @@ public class FermentorScript : MonoBehaviour
                 NiceTime = string.Format("{0:0}:{1:00}", fermentTimeMinutes, fermentTimeSeconds);
             }
 
-            if (Timer < 50 && !wineTypeDecided && CollectedGrapes)
+            if (Timer < 30 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.RedWine;
                 ourWine.ourWine.tannin = Wine.Tannin.High;
@@ -54,7 +54,7 @@ public class FermentorScript : MonoBehaviour
                 Debug.Log(WineType);
             }
 
-            else if (Timer < 100 && !wineTypeDecided && CollectedGrapes)
+            else if (Timer < 60 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.RoseWine;
                 ourWine.ourWine.tannin = Wine.Tannin.Medium;
@@ -63,7 +63,7 @@ public class FermentorScript : MonoBehaviour
                 Debug.Log(WineType);
             }
 
-            else if (Timer < 150 && !wineTypeDecided && CollectedGrapes)
+            else if (Timer < 90 && !wineTypeDecided && CollectedGrapes)
             {
                 WineType = GameMaster.Winetype.WhiteWine;
                 ourWine.ourWine.tannin = Wine.Tannin.Low;
