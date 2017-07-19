@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class GetFinishedWines : MonoBehaviour {
 
-    public GameObject sellWinesList;
+    
+    public GameObject sellWinesPanel;
+
     GameObject gameManager;
 
-    private void Start()
+    private void Awake()
     {
-        sellWinesList = transform.Find("SellWinesPanel").Find("Viewport").Find("SellWinesList").gameObject;
+        //sellWinesPanel = transform.Find("SellWinesPanel").gameObject;
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
@@ -22,10 +24,8 @@ public class GetFinishedWines : MonoBehaviour {
             {
                 if ( ((ItemOurWine)item.Value).IsBottled == true)
                 {
-                    Debug.Log(item.Value.Name);
-
                     GameObject go = Instantiate(gameManager.GetComponent<Inventory>().InventorySlot);
-                    go.transform.SetParent(sellWinesList.transform);
+                    go.transform.SetParent(sellWinesPanel.transform);
                     go.transform.Find("ItemCount").GetComponent<Text>().text = item.Value.Stack.ToString();
                     go.name = item.Key;
 

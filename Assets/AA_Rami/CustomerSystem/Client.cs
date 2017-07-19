@@ -1,6 +1,4 @@
-﻿/// <summary>
-/// Inherited class for restaurant client and farm client
-/// </summary>
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Client : MonoBehaviour
@@ -13,15 +11,12 @@ public class Client : MonoBehaviour
     public string Explanation;
 
     // these can be either feedback from restaurant, or farmer reaction to the feedback the wine gets
-    public string GoodReview;
-    public string AverageReview;
-    public string BadReview;
+    public List<string> GoodReview = new List<string>();
+    public List<string> AverageReview = new List<string>();
+    public List<string> BadReview = new List<string>();
 
     // restaurant client
     public WinePrefab WineIWant;
-    public WinePrefab WineIGet;
-
-
 
     // farm client
     public int Budget;
