@@ -18,6 +18,7 @@ public class PlantGround : MonoBehaviour
     private bool spritesSet;
     private Item plantItem;
     private Inventory inventory;
+    SpriteRenderer renderer;
 
     public float Timer
     {
@@ -35,12 +36,14 @@ public class PlantGround : MonoBehaviour
     private void Awake()
     {
         inventory = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         isTimerRunning = false;
         spritesSet = false;
+        
     }
     // Update is called once per frame
     void Update()
@@ -65,19 +68,19 @@ public class PlantGround : MonoBehaviour
 
             else if (timer < 30)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[1];
+                renderer.sprite = Sprites[1];
                 PlantState = GameMaster.PlantState.Trimmed;
             }
 
             else if (timer < 60)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[3];
+                renderer.sprite = Sprites[3];
                 PlantState = GameMaster.PlantState.Overgrowth;
             }
 
             else if (timer < 90)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites[5];
+                renderer.sprite = Sprites[5];
                 PlantState = GameMaster.PlantState.JustPlanted;
                 
             }
@@ -109,22 +112,22 @@ public class PlantGround : MonoBehaviour
 
         if (plantItem.SpriteName == "White")
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites[7];
+            renderer.sprite = Sprites[7];
         }
 
         else if (plantItem.SpriteName == "Red")
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites[6];
+            renderer.sprite = Sprites[6];
         }
 
         else if (plantItem.SpriteName == "Black")
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites[0];
+            renderer.sprite = Sprites[0];
         }
 
         else if (plantItem.SpriteName == "Green")
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites[2];
+            renderer.sprite = Sprites[2];
         }
 
         spritesSet = true;

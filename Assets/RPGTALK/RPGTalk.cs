@@ -131,11 +131,15 @@ public class RPGTalk : MonoBehaviour {
 
     public bool dialogueFinished;
 
+    GameMaster gm;
+
 
 	void Awake(){
 		if (startOnAwake) {
 			NewTalk ();
 		}
+
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
 	}
 
 	/// <summary>
@@ -288,6 +292,7 @@ public class RPGTalk : MonoBehaviour {
 	void Update () {
 		if (!textUI.gameObject.activeInHierarchy) {
             dialogueFinished = false;
+            gm.dialogueOpen = false;
             return;
 		}
 
@@ -366,63 +371,69 @@ public class RPGTalk : MonoBehaviour {
 
 
 
-		//if we're currently showing dialog, then start scrolling it
-		if(textUI.enabled) {
-			// if there's still text left to show
-			if(currentChar < rpgtalkElements[cutscenePosition - 1].dialogText.Length) {
-				
-				//ensure that we don't accidentally blow past the end of the string
-				currentChar = Mathf.Min(
-					currentChar + textSpeed * Time.deltaTime,
-					rpgtalkElements[cutscenePosition - 1].dialogText.Length);
-				
-				textUI.text =
-					rpgtalkElements[cutscenePosition - 1].dialogText.Substring(0, (int)currentChar)
-					;
+        //if we're currently showing dialog, then start scrolling it
+        if (textUI.enabled)
+        {
+            // if there's still text left to show
+            gm.dialogueOpen = true;
+            if (currentChar < rpgtalkElements[cutscenePosition - 1].dialogText.Length)
+            {
+
+                //ensure that we don't accidentally blow past the end of the string
+                currentChar = Mathf.Min(
+                    currentChar + textSpeed * Time.deltaTime,
+                    rpgtalkElements[cutscenePosition - 1].dialogText.Length);
+
+                textUI.text =
+                    rpgtalkElements[cutscenePosition - 1].dialogText.Substring(0, (int)currentChar)
+                    ;
 
 
-				//if have an audio... playit
-				if (textAudio != null && !rpgAudioSorce.isPlaying) {
-					rpgAudioSorce.clip = textAudio;
-					rpgAudioSorce.Play ();
-				}
+                //if have an audio... playit
+                if (textAudio != null && !rpgAudioSorce.isPlaying)
+                {
+                    rpgAudioSorce.clip = textAudio;
+                    rpgAudioSorce.Play();
+                }
 
-			} 
-			
-			if(enableQuickSkip == true &&
-				(
-					(passWithMouse && Input.GetMouseButtonDown (0)) ||
-					(passWithInputButton != "" && Input.GetButtonDown(passWithInputButton))
-				)
-				&& currentChar > 3) {
-				textUI.text = rpgtalkElements[cutscenePosition - 1].dialogText;
-				currentChar = rpgtalkElements[cutscenePosition - 1].dialogText.Length;
-			}
+            }
 
-			if(currentChar >= rpgtalkElements[cutscenePosition - 1].dialogText.Length){
-				blink();
+            if (enableQuickSkip == true &&
+                (
+                    (passWithMouse && Input.GetMouseButtonDown(0)) ||
+                    (passWithInputButton != "" && Input.GetButtonDown(passWithInputButton))
+                )
+                && currentChar > 3)
+            {
+                textUI.text = rpgtalkElements[cutscenePosition - 1].dialogText;
+                currentChar = rpgtalkElements[cutscenePosition - 1].dialogText.Length;
+            }
 
-				//if we have an animator.. stop it
-				if (animatorWhenTalking != null) {
-					animatorWhenTalking.SetBool (animatorBooleanName, false);
-				}
+            if (currentChar >= rpgtalkElements[cutscenePosition - 1].dialogText.Length)
+            {
+                blink();
 
-				if(cutscenePosition >= rpgtalkElements.Count && callbackScript == null){
-					//Stop any blinking arrows that shouldn't appear
-					/*CancelInvoke ("blink");
+                //if we have an animator.. stop it
+                if (animatorWhenTalking != null)
+                {
+                    animatorWhenTalking.SetBool(animatorBooleanName, false);
+                }
+
+                if (cutscenePosition >= rpgtalkElements.Count && callbackScript == null)
+                {
+                    //Stop any blinking arrows that shouldn't appear
+                    /*CancelInvoke ("blink");
 					if (blinkWhenReady) {
 						blinkWhenReady.SetActive (false);
 					}*/
-				}
-			}
+                }
+            }
 
 
 
 
-			
-		}
 
-
+        }
 	}
 
 	void blink(){

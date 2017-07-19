@@ -18,6 +18,7 @@ public class GameMaster : MonoBehaviour
     // set and reset when inventory opens closes
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen;
+    public bool dialogueOpen;
 
     [HideInInspector] // only works for the next line below it.
     public GameObject lastSelectedUiObject;

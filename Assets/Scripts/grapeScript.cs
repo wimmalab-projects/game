@@ -13,12 +13,13 @@ public class grapeScript : MonoBehaviour
     private void Awake()
     {
         temp = GameObject.Find("CrushView");
-    }
-
-    private void Update()
-    {
         crushScriptFix = temp.GetComponent<CrushScriptFix>();
     }
+
+    //private void Update()
+    //{
+    //    crushScriptFix = temp.GetComponent<CrushScriptFix>();
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
