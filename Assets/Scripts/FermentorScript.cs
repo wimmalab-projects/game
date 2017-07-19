@@ -51,7 +51,7 @@ public class FermentorScript : MonoBehaviour
                 ourWine.ourWine.tannin = Wine.Tannin.High;
                 ourWine.ourWine.wineType = Wine.WineType.RedWine;
                 wineTypeDecided = true;
-                gameMaster.StartCoroutine(("ShowMessage"), "Your wine is now " + gameMaster.GetDescription(WineType));
+                gameMaster.StartCoroutine(("ShowMessage"), ourWine.wineName + " is now " + gameMaster.GetDescription(WineType));
             }
 
             else if (Timer < 60 && !wineTypeDecided && CollectedGrapes)
@@ -60,7 +60,7 @@ public class FermentorScript : MonoBehaviour
                 ourWine.ourWine.tannin = Wine.Tannin.Medium;
                 ourWine.ourWine.wineType = Wine.WineType.RoseWine;
                 wineTypeDecided = true;
-                gameMaster.StartCoroutine(("ShowMessage"), "Your wine is now " + gameMaster.GetDescription(WineType));
+                gameMaster.StartCoroutine(("ShowMessage"), ourWine.wineName + " is now " + gameMaster.GetDescription(WineType));
             }
 
             else if (Timer < 90 && !wineTypeDecided && CollectedGrapes)
@@ -69,7 +69,7 @@ public class FermentorScript : MonoBehaviour
                 ourWine.ourWine.tannin = Wine.Tannin.Low;
                 ourWine.ourWine.wineType = Wine.WineType.WhiteWine;
                 wineTypeDecided = true;
-                gameMaster.StartCoroutine(("ShowMessage"), "Your wine is now " + gameMaster.GetDescription(WineType));
+                gameMaster.StartCoroutine(("ShowMessage"), ourWine.wineName + " is now " + gameMaster.GetDescription(WineType));
             }
 
             if (Timer <= 0 && !wineTypeDecided)
@@ -77,7 +77,7 @@ public class FermentorScript : MonoBehaviour
                 FermentationState = GameMaster.FermentationState.Fermented;
                 WineType = GameMaster.Winetype.RedWine;
                 ourWine.ourWine.wineType = Wine.WineType.RedWine;
-                gameMaster.StartCoroutine(("ShowMessage"), "Your wine is now " + gameMaster.GetDescription(WineType));
+                gameMaster.StartCoroutine(("ShowMessage"), ourWine.wineName + " is now " + gameMaster.GetDescription(WineType));
             }
         }
         else

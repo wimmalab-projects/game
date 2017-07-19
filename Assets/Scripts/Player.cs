@@ -21,10 +21,13 @@ public static class Player
     public static void GainExperience(int amount)
     {
         Exp += amount;
-
-        if(Exp >= ExpNeeded)
+        if (Exp >= ExpNeeded)
         {
             LevelUp();
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().StartCoroutine("ShowMessage", "Experience gained:\n" + amount);
         }
     }
 
@@ -32,6 +35,7 @@ public static class Player
     {
         Level++;
         ExpNeeded = Math.Floor(Math.Pow((ExpConst * Level), 1.3));
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().StartCoroutine("ShowMessage", "Level up!\nYou're level " + Level + " now!");
     }
 
     public static void AddMoney(int amount)

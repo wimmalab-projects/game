@@ -229,8 +229,11 @@ public class SaveLoadScript : MonoBehaviour
             Player.Level = playerData.Level;
             Player.Money = playerData.Money;
 
-            dt = gm.GetComponent<DialogueTest>();
-            dt.tutorialcompleted = tutorialData.tutorialcompleted;
+            //if(gm.GetComponent<DialogueTest>() != null)
+            //{
+            //    dt = gm.GetComponent<DialogueTest>();
+            //    dt.tutorialcompleted = tutorialData.tutorialcompleted;
+            //}
 
             if(dt.tutorialcompleted)
             {

@@ -20,6 +20,10 @@ public class GameMaster : MonoBehaviour
     public bool IsInventoryOpen;
     public bool dialogueOpen;
 
+    public int exp;
+    public int expneed;
+    public int level;
+
     [HideInInspector] // only works for the next line below it.
     public GameObject lastSelectedUiObject;
 
@@ -34,11 +38,11 @@ public class GameMaster : MonoBehaviour
     //public Camera GrapeCrush; // Drag in editor
     //public GameObject PlayGrapeCrushGO; // Drag in editor
 
-    [Header("XP system")]
-    public Text exp;
-    public Text expneeded;
-    public Text level;
-    public Text playername;
+    //[Header("XP system")]
+    //public Text exp;
+    //public Text expneeded;
+    //public Text level;
+    //public Text playername;
 
     [Header("Evaluation system")]
     public float MatchPercentage;
@@ -120,6 +124,13 @@ public class GameMaster : MonoBehaviour
         CrushisActive = false;
         WineSold = false;
         IsInventoryOpen = false;
+    }
+
+    private void Update()
+    {
+        exp = Player.Exp;
+        expneed = (int)Player.ExpNeeded;
+        level = Player.Level;
     }
 
     void GoToTown()

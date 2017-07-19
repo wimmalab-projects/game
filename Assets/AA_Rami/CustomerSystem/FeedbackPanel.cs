@@ -17,14 +17,17 @@ public class FeedbackPanel : MonoBehaviour {
         if (test < 50) // bad wine
         {
             ReviewText.GetComponent<Text>().text = client.BadReview[Random.Range(0, 2)];
+            Player.GainExperience(500);
         }
         else if (test < 85) // good wine
         {
             ReviewText.GetComponent<Text>().text = client.AverageReview[Random.Range(0, 2)];
+            Player.GainExperience(700);
         }
         else // over 85% 
         {
             ReviewText.GetComponent<Text>().text = client.GoodReview[Random.Range(0, 2)];
+            Player.GainExperience(900);
         }
 
         ClientSprite.GetComponent<Image>().sprite = GetComponent<GameMaster>().CurrentClient.GetComponent<SpriteRenderer>().sprite;

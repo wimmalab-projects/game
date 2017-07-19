@@ -10,6 +10,7 @@ public class DialogueTest : MonoBehaviour
 
     private RPGTalk rpgTalk;
     private MainAltCamControls altCam;
+    private MainAltCamControls altCam2;
     private GameMaster gm;
     private CurtainControls cControls;
     private Shop shopScript;
@@ -21,7 +22,7 @@ public class DialogueTest : MonoBehaviour
     bool tutorial2done, tutorial3done, tutorial4done, tutorial5done, tutorial6done, tutorial7done, tutorial8done, tutorial9done,
          tutorial10done, tutorial11done, tutorial12done, tutorial13done, tutorial14done, tutorial15done, tutorial16done, tutorial17done,
          tutorial18done, tutorial19done, tutorial20done, tutorial21done, tutorial22done, tutorial23done, tutorial24done, tutorial25done,
-         tutorial26done, tutorial27done, tutorial28done, tutorial29done;
+         tutorial26done, tutorial27done, tutorial28done, tutorial29done, tutorial30done;
 
 
     public bool tutorialcompleted;
@@ -33,6 +34,7 @@ public class DialogueTest : MonoBehaviour
         shopScript = gm.GetComponent<Shop>();
         rpgTalk = gm.GetComponent<RPGTalk>();
         altCam = GameObject.Find("FarmViewCamera").GetComponent<MainAltCamControls>();
+        altCam2 = GameObject.Find("BreweryViewCamera").GetComponent<MainAltCamControls>();
         cControls = GameObject.Find("fadetoblacktile").GetComponent<CurtainControls>();
         guiScript = GameObject.Find("InventoryCanvas").GetComponent<GUIScript>();
         colliderHandler = gm.GetComponent<ColliderHandler>();
@@ -184,56 +186,62 @@ public class DialogueTest : MonoBehaviour
             tutorial21done = true;
         }
 
-        if (!tutorial22done && tutorial21done && colliderHandler.ParentGameObject.tag == "NotBottling" && gm.IsInventoryOpen)
+        if (!tutorial22done && tutorial21done && !altCam2.cam1)
         {
-            StartCoroutine(Wait(68, 68, 1f));
+            StartCoroutine(Wait(68, 68, 0.3f));
             tutorial22done = true;
         }
 
-        if (!tutorial23done && tutorial22done && guiScript.Button == "Bottle")
+        if (!tutorial23done && tutorial22done && colliderHandler.ParentGameObject.tag == "NotBottling" && gm.IsInventoryOpen)
         {
-            StartCoroutine(Wait(69, 69, 0.4f));
+            StartCoroutine(Wait(69, 69, 1f));
             tutorial23done = true;
         }
 
-        if (!tutorial24done && tutorial23done && colliderHandler.ParentGameObject.tag == "Bottling" && gm.IsInventoryOpen)
+        if (!tutorial24done && tutorial23done && guiScript.Button == "Bottle")
         {
             StartCoroutine(Wait(70, 70, 0.4f));
             tutorial24done = true;
         }
 
-        if (!tutorial25done && tutorial24done && guiScript.Button == "Collect")
+        if (!tutorial25done && tutorial24done && colliderHandler.ParentGameObject.tag == "Bottling" && gm.IsInventoryOpen)
         {
-            StartCoroutine(Wait(71, 73, 0.4f));
+            StartCoroutine(Wait(71, 71, 0.4f));
             tutorial25done = true;
         }
 
-        if (!tutorial26done && tutorial25done && GameState == GameMaster.GameState.Farm && !cControls.transition)
+        if (!tutorial26done && tutorial25done && guiScript.Button == "Collect")
         {
-            StartCoroutine(Wait(74, 74, 0.4f));
+            StartCoroutine(Wait(72, 74, 0.4f));
             tutorial26done = true;
         }
 
-        if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Town && !cControls.transition)
+        if (!tutorial27done && tutorial26done && GameState == GameMaster.GameState.Farm && !cControls.transition)
         {
             StartCoroutine(Wait(75, 75, 0.4f));
             tutorial27done = true;
         }
 
-        if (!tutorial28done && tutorial27done && GameObject.Find("CustomerPanel").gameObject.activeSelf)
+        if (!tutorial28done && tutorial27done && GameState == GameMaster.GameState.Town && !cControls.transition)
         {
             StartCoroutine(Wait(76, 76, 0.4f));
             tutorial28done = true;
         }
 
-        if (!tutorial29done && tutorial28done && gm.WineSold)
+        if (!tutorial29done && tutorial28done && GameObject.Find("CustomerPanel").gameObject.activeSelf)
         {
-            StartCoroutine(Wait(77, 79, 0.4f));
+            StartCoroutine(Wait(77, 77, 0.4f));
             tutorial29done = true;
+        }
+
+        if (!tutorial30done && tutorial29done && gm.WineSold)
+        {
+            StartCoroutine(Wait(78, 81, 0.4f));
+            tutorial30done = true;
             // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
         }
 
-        if (tutorial29done && rpgTalk.dialogueFinished)
+        if (tutorial30done && rpgTalk.dialogueFinished)
         {
             Destroy(gameObject.GetComponent<DialogueTest>());
             tutorialcompleted = true;
