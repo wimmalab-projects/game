@@ -10,6 +10,15 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
+    public bool CrushisActive;
+    public bool WineSold { get; set; }
+    // set and compare to this
+    public GameState State { get; set; }
+
+    // set and reset when inventory opens closes
+    // this is to stop colliders activating on mouse / touch clicks trough ui
+    public bool IsInventoryOpen;
+
     [HideInInspector] // only works for the next line below it.
     public GameObject lastSelectedUiObject;
 
@@ -33,18 +42,16 @@ public class GameMaster : MonoBehaviour
     [Header("Evaluation system")]
     public float MatchPercentage;
 
+    [Header("Message system")]
+    public Text Message;
+    public GameObject MessagePanel;
+
+
     // invisible in inspector
     private GUIScript guiScript;
     private CurtainControls curtainControls;
-    public bool CrushisActive;
-    public bool WineSold { get; set; }
-    // set and compare to this
-    public GameState State { get; set; }
-
-    // set and reset when inventory opens closes
-    // this is to stop colliders activating on mouse / touch clicks trough ui
-    public bool IsInventoryOpen;
-
+    private int showTime = 2;
+    private bool errorMessage;
     /// <summary>
     /// List our gamestates here
     /// set default state and inventory state
@@ -106,6 +113,7 @@ public class GameMaster : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         State = GameState.Farm;
         //CrushCamera.transform.parent.gameObject.SetActive(false);
         CrushisActive = false;
@@ -163,7 +171,7 @@ public class GameMaster : MonoBehaviour
     void ClientClick(GameObject go)
     {
         if (go.GetComponent<Client>().AtFarm == false)
-        { 
+        {
             CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
             CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
             CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
@@ -269,7 +277,7 @@ public class GameMaster : MonoBehaviour
         }
 
         // return percentage match (like 90% match or 50% match) // 6*100/18 matches * 100/total values in winea.comparsion
-        MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
+        MatchPercentage = similiarities * 100 / wineA.ComparisonMatrix.Count;
         Debug.Log(MatchPercentage + " " + similiarities * 100 / wineA.ComparisonMatrix.Count);
     }
 
@@ -293,5 +301,19 @@ public class GameMaster : MonoBehaviour
     }
 
     #endregion
+
+    public IEnumerator ShowMessage(string message)
+    {
+        if(!errorMessage)
+        {
+            errorMessage = true;
+            Message.text = message;
+            MessagePanel.SetActive(true);
+            yield return new WaitForSeconds(showTime);
+            Message.text = string.Empty;
+            MessagePanel.SetActive(false);
+            errorMessage = false;
+        }
+    }
 }
 

@@ -136,15 +136,6 @@ public class CrushScriptFix : MonoBehaviour
                 GameOverText.text = "You lost your grapes!";
                 gameOver();
             }
-
-            if(wineNameText.GetComponent<InputField>().isFocused)
-            {
-                
-            }
-            //if (GameObject.Find("GameManager").GetComponent<GameMaster>().CrushisActive = false && cc.transition == false)
-            //{
-            //    Destroy(gameObject);
-            //}
         }
     }
 
@@ -172,7 +163,7 @@ public class CrushScriptFix : MonoBehaviour
     void handleUI()
     {
         FillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        FillBar.fillAmount = (grapeScore * 1.5f) / 100;
+        FillBar.fillAmount = (grapeScore * 1.5f);
         MissedText.text = MissedGrapes + "/" + maxMissedGrapes;
     }
 

@@ -11,6 +11,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Image ItemImage; // Drag in editor
     public int itemCount;
     GameMaster gm;
+    bool spritesLoaded;
 
     private Inventory inventory;
 
@@ -18,6 +19,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
         inventory = gm.gameObject.GetComponent<Inventory>();
+        spritesLoaded = false;
     }
 
     // Update is called once per frame
@@ -25,10 +27,21 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         //Debug.Log(gameObject.name);
         // Update the items count text and sprites
-        itemCount = inventory.Items[gameObject.name].Stack;
-        UiItemCount.text = itemCount.ToString();
-        //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
-        ItemImage.sprite = Resources.Load<Sprite>(inventory.Items[gameObject.name].SpriteName);
+        if (gm.IsInventoryOpen)
+        {
+            if (!spritesLoaded)
+            {
+                ItemImage.sprite = Resources.Load<Sprite>(inventory.Items[gameObject.name].SpriteName);
+                spritesLoaded = true;
+            }
+            itemCount = inventory.Items[gameObject.name].Stack;
+            UiItemCount.text = itemCount.ToString();
+            //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();
+        }
+        else
+        {
+            spritesLoaded = false;
+        }
     }
 
     // Clear the highlight effect around the inventory block
