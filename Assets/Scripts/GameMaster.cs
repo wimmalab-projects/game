@@ -281,8 +281,8 @@ public class GameMaster : MonoBehaviour
         MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
 
         GetComponent<FeedbackPanel>().OpenFeedback();
-        MatchPercentage = similiarities * 100 / wineA.ComparisonMatrix.Count;
-        Debug.Log(MatchPercentage + " " + similiarities * 100 / wineA.ComparisonMatrix.Count);
+
+
     }
 
     #endregion

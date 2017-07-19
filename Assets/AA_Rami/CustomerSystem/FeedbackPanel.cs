@@ -10,6 +10,7 @@ public class FeedbackPanel : MonoBehaviour {
 
     public void OpenFeedback ()
     {
+        Debug.Log("open feedpack");
         client = GetComponent<GameMaster>().CurrentClient.GetComponent<Client>();
         int test = (int)GetComponent<GameMaster>().MatchPercentage;
 
@@ -26,12 +27,15 @@ public class FeedbackPanel : MonoBehaviour {
             ReviewText.GetComponent<Text>().text = client.GoodReview[Random.Range(0, 2)];
         }
 
-        ClientSprite.GetComponent<SpriteRenderer>().sprite = GetComponent<GameMaster>().CurrentClient.GetComponent<SpriteRenderer>().sprite;
+        ClientSprite.GetComponent<Image>().sprite = GetComponent<GameMaster>().CurrentClient.GetComponent<SpriteRenderer>().sprite;
+
+        
+        ClientSprite.transform.parent.gameObject.SetActive(true);
     }
 
     public void CloseFeedback()
     {
-        GetComponent<GameMaster>().IsInventoryOpen = false;
+        GameObject.Find("CustomerPanel").GetComponent<GetFinishedWines>().LoadWinesForSale();
         ClientSprite.transform.parent.gameObject.SetActive(false);
     }
 }
