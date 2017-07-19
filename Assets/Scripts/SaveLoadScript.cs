@@ -234,9 +234,10 @@ public class SaveLoadScript : MonoBehaviour
 
             if(dt.tutorialcompleted)
             {
-                Destroy(dt);   
+                Destroy(dt);
+                gm.StartCoroutine(("ShowMessage"), "Welcome back!");
             }
-
+            
             Debug.Log("Loading...");
         }
     }

@@ -88,7 +88,7 @@
             13,
             12
          ],
-         "CanBuy":false,
+         "CanBuy":true,
          "AromaIntensity": 1,
          "Value": 8000
       },
@@ -106,7 +106,7 @@
             13,
             12
          ],
-         "CanBuy":true,
+         "CanBuy":false,
          "AromaIntensity": 1,
          "Value": 8000,
 		 "Stack": 3
@@ -185,7 +185,7 @@
       },
       {
          "Name":"Chardonnay",
-         "SpriteName":"White",
+         "SpriteName":"Green",
          "Prefix":"VineGrape",
          "Id":7,
          "Description":"Chardonnay is a green-skinned grape variety used in the production of white wine. variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand",
@@ -209,7 +209,7 @@
       },
       {
          "Name":"Chardonnay",
-         "SpriteName":"White",
+         "SpriteName":"Green",
          "Prefix":"VineGrape",
          "Id":8,
          "Description":"Chardonnay is a green-skinned grape variety used in the production of white wine. The variety in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand",
@@ -690,7 +690,7 @@
       },
       {
          "Name":"Sauvignon Blanc",
-         "SpriteName":"White",
+         "SpriteName":"Green",
          "Prefix":"VineGrape",
          "Id":33,
          "Description":"Sauvignon blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The grape most likely gets its name from the French words sauvage ('wild') and blanc ('white') due to its early origins as an indigenous grape in South West France.",
@@ -712,7 +712,7 @@
       },
       {
          "Name":"Sauvignon Blanc",
-         "SpriteName":"White",
+         "SpriteName":"Green",
          "Prefix":"VineGrape",
          "Id":34,
          "Description":"Sauvignon blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The grape most likely gets its name from the French words sauvage ('wild') and blanc ('white') due to its early origins as an indigenous grape in South West France.",
@@ -941,7 +941,7 @@
       },
       {
          "Name":"Cabernet Sauvignon",
-         "SpriteName":"White",
+         "SpriteName":"Red",
          "Prefix":"VineGrape",
          "Id":45,
          "Description":"Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.",
@@ -960,7 +960,7 @@
       },
       {
          "Name":"Cabernet Sauvignon",
-         "SpriteName":"White",
+         "SpriteName":"Red",
          "Prefix":"VineGrape",
          "Id":46,
          "Description":"Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.",
@@ -1451,7 +1451,7 @@
       },
       {
          "Name":"Zinfandel",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":69,
          "Description":"Zinfandel is a variety of black-skinned wine grape. DNA analysis has revealed that it is genetically equivalent to the Croatian grapes Crljenak Kaštelanski and Tribidrag, as well as to the Primitivo variety traditionally grown in Apulia",
@@ -1471,7 +1471,7 @@
       },
       {
          "Name":"Zinfandel",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":70,
          "Description":"Zinfandel is a variety of black-skinned wine grape. DNA analysis has revealed that it is genetically equivalent to the Croatian grapes Crljenak Kaštelanski and Tribidrag, as well as to the Primitivo variety traditionally grown in Apulia",
@@ -1494,7 +1494,7 @@
          "SpriteName":"White",
          "Prefix":"VineGrape",
          "Id":71,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Pinot gris is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot noir variety, it normally has a grayish-blue fruit, accounting for its name but the grapes can have a brownish pink to black and even white appearance.",
          "ItemType":0,
          "GoV":0,
          "AcidLevel":2,
@@ -1513,7 +1513,7 @@
          "SpriteName":"White",
          "Prefix":"VineGrape",
          "Id":72,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Pinot gris is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot noir variety, it normally has a grayish-blue fruit, accounting for its name but the grapes can have a brownish pink to black and even white appearance.",
          "ItemType":0,
          "GoV":1,
          "AcidLevel":2,
@@ -1532,7 +1532,7 @@
          "SpriteName":"Red",
          "Prefix":"VineGrape",
          "Id":73,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Nebbiolo (Italian), or Nebieul (Piedmontese) is an Italian red wine grape variety predominantly associated with its native Piedmont region.",
          "ItemType":0,
          "GoV":0,
          "AcidLevel":2,
@@ -1556,7 +1556,7 @@
          "SpriteName":"Red",
          "Prefix":"VineGrape",
          "Id":74,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Nebbiolo (Italian), or Nebieul (Piedmontese) is an Italian red wine grape variety predominantly associated with its native Piedmont region.",
          "ItemType":0,
          "GoV":1,
          "AcidLevel":2,
@@ -1577,10 +1577,10 @@
       },
       {
          "Name":"Meunier",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":75,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Pinot Meunier, also known as Meunier or Schwarzriesling, is a variety of black wine grape most noted for being one of the three main varieties used in the production of Champagne.",
          "ItemType":0,
          "GoV":0,
          "AcidLevel":2,
@@ -1601,10 +1601,10 @@
       },
       {
          "Name":"Meunier",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":76,
-         "Description":"KALLAA TÄHÄN JOTIAN.",
+         "Description":"Pinot Meunier, also known as Meunier or Schwarzriesling, is a variety of black wine grape most noted for being one of the three main varieties used in the production of Champagne",
          "ItemType":0,
          "GoV":1,
          "AcidLevel":2,

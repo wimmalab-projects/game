@@ -15,8 +15,8 @@ public class GUIScript : MonoBehaviour
     public Text InfoPanelTimer; // Drag in editor
     public Button HarvestButton; // Drag in editor
     public Button PlantButton; // Drag in editor
-    public Button CollectGrapeButton;
-    public string Button; // Drag in editor
+    public Button CollectGrapeButton; // Drag in editor
+    public string Button; 
 
     private Animator animator; // Animate the Inventory, but scrap this.
     private SlotScript slotScript;

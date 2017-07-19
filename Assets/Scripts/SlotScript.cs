@@ -38,30 +38,37 @@ public class SlotScript : MonoBehaviour
         PlantGround groundScript = parent.GetComponent<PlantGround>();
 
         // If the item count is zero dont plant and show error
-        if (SeedName != null && inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
+        if (SeedName != null && inventory.Items[SeedName].Stack > 0)
         {
             // If the item is not a vine display error and dont plant
-
-            if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Vine)
+            if (inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
             {
-                // Set the groundscript, so that it is planted and remove the vine item
-                currentlySelectedItem = inventory.Items[SeedName];
-                parent.tag = "Planted";
-                groundScript.PlantState = GameMaster.PlantState.JustPlanted;
-                groundScript.PlantName = inventory.Items[SeedName].Name;
-                //guiScript.initializeInfoPanel(groundScript.PlantName);
-                currentlySelectedItem.PopItem();
-                didPlant = true;
+                if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Vine)
+                {
+                    // Set the groundscript, so that it is planted and remove the vine item
+                    currentlySelectedItem = inventory.Items[SeedName];
+                    parent.tag = "Planted";
+                    groundScript.PlantState = GameMaster.PlantState.JustPlanted;
+                    groundScript.PlantName = inventory.Items[SeedName].Name;
+                    //guiScript.initializeInfoPanel(groundScript.PlantName);
+                    currentlySelectedItem.PopItem();
+                    didPlant = true;
 
+                }
+                else
+                {
+                    gameMaster.StartCoroutine(("ShowMessage"), "Not a vine!");
+                    //gameMaster.ShowMessage("Not a vine!");
+                }
             }
             else
             {
-                Debug.Log("Not a seed");
+                gameMaster.StartCoroutine(("ShowMessage"), "Not a vine!");
             }
         }
         else
         {
-            Debug.Log("Not enough seeds");
+            gameMaster.StartCoroutine(("ShowMessage"), "Not a enough vines!");
         }
     }
 
@@ -90,33 +97,40 @@ public class SlotScript : MonoBehaviour
     // Selects the grape to be played in the Grape crush minigame.
     public void selectGrape()
     {
-        if (SeedName != null &&
-            inventory.Items[SeedName].Stack > 0 && inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
+        if (SeedName != null && inventory.Items[SeedName].Stack > 0)
         {
-            if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
-
+            if(inventory.Items[SeedName].ItemType == Item.IType.GrapeVine)
             {
-                GameObject parent = GetColliderParent();
-                CurrentlySelectedName = inventory.Items[SeedName].Name;
-                currentlySelectedItem = inventory.Items[SeedName];
-                currentlySelectedItem.PopItem();
-                GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
-                grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName); // Change the sprite accordingly to what was selected
-                parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush"; // set the methodname so that we can go to grapecrush view
-                parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod(); // Call the method PlayGrapeCrush
-                didPlant = true;
-                parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory"; // Set the methodname default so we can open inventory again after.
+                if (((VineGrape)inventory.Items[SeedName]).GoV == VineGrape.GrapeOrVine.Grape)
+
+                {
+                    GameObject parent = GetColliderParent();
+                    CurrentlySelectedName = inventory.Items[SeedName].Name;
+                    currentlySelectedItem = inventory.Items[SeedName];
+                    currentlySelectedItem.PopItem();
+                    GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
+                    grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName); // Change the sprite accordingly to what was selected
+                    parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush"; // set the methodname so that we can go to grapecrush view
+                    parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod(); // Call the method PlayGrapeCrush
+                    didPlant = true;
+                    parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "ViewInventory"; // Set the methodname default so we can open inventory again after.
+                }
+                else
+                {
+                    didPlant = false;
+                    gameMaster.StartCoroutine(("ShowMessage"), "Not a grape!");
+                }
             }
             else
             {
                 didPlant = false;
-                Debug.Log("Not grape");
+                gameMaster.StartCoroutine(("ShowMessage"), "Not a grape!");
             }
         }
         else
         {
             didPlant = false;
-            Debug.Log("Not enough");
+            gameMaster.StartCoroutine(("ShowMessage"), "Not enough grapes!");
         }
 
     }
@@ -241,19 +255,19 @@ public class SlotScript : MonoBehaviour
                 else
                 {
                     didPlant = false;
-                    Debug.Log("Homo viini");
+                    gameMaster.StartCoroutine(("ShowMessage"), "Already clarificated!");
                 }
             }
             else
             {
                 didPlant = false;
-                Debug.Log("Not wine");
+                gameMaster.StartCoroutine(("ShowMessage"), "Not a wine!");
             }
         }
         else
         {
             didPlant = false;
-            Debug.Log("Not enough");
+            gameMaster.StartCoroutine(("ShowMessage"), "Not enough wines!");
         }
     }
 
@@ -283,19 +297,19 @@ public class SlotScript : MonoBehaviour
                 else
                 {
                     didPlant = false;
-                    Debug.Log("Already bottled");
+                    gameMaster.StartCoroutine(("ShowMessage"), "Already bottled!");
                 }
             }
             else
             {
                 didPlant = false;
-                Debug.Log("Not wine");
+                gameMaster.StartCoroutine(("ShowMessage"), "Not a wine!");
             }
         }
         else
         {
             didPlant = false;
-            Debug.Log("Not enough");
+            gameMaster.StartCoroutine(("ShowMessage"), "Not enough wines!");
         }
     }
 
