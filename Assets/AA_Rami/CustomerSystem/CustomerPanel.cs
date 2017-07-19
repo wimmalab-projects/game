@@ -10,11 +10,14 @@ public class CustomerPanel : MonoBehaviour {
     public Client clientSender = null; // this is set by the gamemaster clientclick method
     GameObject InfoPanel;
 
+    GetFinishedWines fgw;
+
     public string SelectedWine { get; set; }
 
 
-    private void Start()
+    public void Start()
     {
+        fgw = GetComponent<GetFinishedWines>();
         InfoPanel = transform.Find("Info").gameObject;
     }
 
@@ -26,6 +29,7 @@ public class CustomerPanel : MonoBehaviour {
     {
         if (clientSender != null)
         {
+            
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = true;
 
             this.gameObject.transform.Find("Info").Find("Viewport").Find("Content").Find("CustomerExplanation").GetComponent<Text>().text = clientSender.Explanation;
@@ -41,6 +45,15 @@ public class CustomerPanel : MonoBehaviour {
             }
 
             gameObject.transform.Find("LeftSidePanel").Find("CustomerImage").GetComponent<Image>().sprite = clientSender.GetComponent<SpriteRenderer>().sprite;
+
+
+            //Debug.Log(fgw.sellWinesPanel);
+
+            if (fgw != null)
+            {
+                InfoPanel.SetActive(true);
+                fgw.sellWinesPanel.SetActive(false);
+            }
 
             gameObject.SetActive(true);
         }
@@ -75,36 +88,25 @@ public class CustomerPanel : MonoBehaviour {
             DeactivatePanel();
         }
     }
-    public void AcceptRestaurantClient () // placeholder
-    {
-        GetFinishedWines fgw = GetComponent<GetFinishedWines>();
 
-        if (fgw.sellWinesList.activeSelf == false) // check if the sell panel is open
+    public void AcceptRestaurantClient ()
+    {
+        Debug.Log(fgw.sellWinesPanel.activeSelf);
+        if (fgw.sellWinesPanel.activeSelf == false) // check if the sell panel is open
         {
             InfoPanel.SetActive(false);
-            fgw.sellWinesList.SetActive(true);
+            fgw.sellWinesPanel.SetActive(true);
             fgw.LoadWinesForSale();
         }
         else // sell the wine if the panel is open and wine is selected
         {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
+            //GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
             Wine wineA = clientSender.GetComponent<Client>().WineIWant.WineHolder;
-            Wine wineB = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).test();
+            Wine wineB = ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).GetAttributes();
             
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().CompareWines(wineA, wineB);
+
+            ((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).PopItem();
         }
-
-
-        //Item wine = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items["Bottle"];
-
-        //if (wine.Stack > 0)
-        //{
-        //    // 1. Avaa luettelon viineistä (sisältää pullotetut viinit)
-        //    // 2. Valitaan viini
-        //    // 3. painetaan myy
-        //    // 4. vertaus tapahtuu
-        //    // 5. vertaa palautetut yhtäläisyydet halutun viinin maksini attribuuttien määrään (esim. 10 yhtäläisyyttä 20 attribuuttia = 50%)
-        //    // 6. antaa XP perustuen yhtäläisyyksien määrään. Erinomainen > 85%, kohtalainen > 50%, Huono < 50%
-        //    // 7. loopin resetti.
     }
 }

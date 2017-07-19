@@ -5,32 +5,41 @@ using UnityEngine.UI;
 
 public class GetFinishedWines : MonoBehaviour {
 
-    public GameObject sellWinesList;
+    
+    public GameObject sellWinesPanel;
+
     GameObject gameManager;
 
-    private void Start()
+    private void Awake()
     {
-        sellWinesList = transform.Find("SellWinesPanel").Find("Viewport").Find("SellWinesList").gameObject;
+        //sellWinesPanel = transform.Find("SellWinesPanel").gameObject;
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     public void LoadWinesForSale()
     {
+        for (int i = 0; i < sellWinesPanel.transform.Find("Viewport").Find("SellWinesList").transform.childCount; i++)
+        {
+            Destroy(sellWinesPanel.transform.Find("Viewport").Find("SellWinesList").transform.GetChild(i).gameObject);
+
+        }
+
         foreach (KeyValuePair<string, Item> item in gameManager.GetComponent<Inventory>().Items)
         {
+            
+
             if (item.Value.GetType() == typeof(ItemOurWine))
             {
-                if ( ((ItemOurWine)item.Value).IsBottled == true)
+                if (((ItemOurWine)item.Value).IsBottled == true && ((ItemOurWine)item.Value).Stack > 0)
                 {
-                    Debug.Log(item.Value.Name);
-
                     GameObject go = Instantiate(gameManager.GetComponent<Inventory>().InventorySlot);
-                    go.transform.SetParent(sellWinesList.transform);
+                    go.transform.SetParent(sellWinesPanel.transform.Find("Viewport").Find("SellWinesList").transform);
                     go.transform.Find("ItemCount").GetComponent<Text>().text = item.Value.Stack.ToString();
                     go.name = item.Key;
 
                 }
             }
+
         }
     }
 }

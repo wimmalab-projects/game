@@ -14,7 +14,7 @@ public class MainAltCamControls : MonoBehaviour {
     public bool transition = false;
     public bool cam1 = true;
 
-    float transitionTime = 0.05f;
+    float transitionTime = 0.1f;
 
     private void Start()
     {

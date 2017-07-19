@@ -173,6 +173,7 @@ public class GameMaster : MonoBehaviour
     {
         if (go.GetComponent<Client>().AtFarm == false)
         {
+            CurrentClient = go;
             CustomerSystem.GetComponent<CustomerPanel>().clientSender = go.GetComponent<Client>();
             CustomerSystem.GetComponent<CustomerPanel>().ActivatePanel();
             CustomerSystem.GetComponent<CustomerPanel>().ScaleExplanationContent();
@@ -278,8 +279,11 @@ public class GameMaster : MonoBehaviour
         }
 
         // return percentage match (like 90% match or 50% match) // 6*100/18 matches * 100/total values in winea.comparsion
-        MatchPercentage = similiarities * 100 / wineA.ComparisonMatrix.Count;
-        Debug.Log(MatchPercentage + " " + similiarities * 100 / wineA.ComparisonMatrix.Count);
+        MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
+
+        GetComponent<FeedbackPanel>().OpenFeedback();
+
+
     }
 
     #endregion

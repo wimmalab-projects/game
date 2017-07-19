@@ -18,7 +18,7 @@ public class ItemOurWine : Item
     public Wine.Body body = Wine.Body.Medium;
     public List<Wine.AromaFlavor> aromasAndFlavors;
 
-    public Wine test()
+    public Wine GetAttributes()
     {
         Wine wine = new Wine();
 
