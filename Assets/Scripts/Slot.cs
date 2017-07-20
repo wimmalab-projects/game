@@ -53,6 +53,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     // Create hightlight effect around the inventory block
     public void OnPointerClick(PointerEventData data)
     {
+        // instantiate sound effect
+        gm.GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
+
         if (gm.lastSelectedUiObject != null)
         {
             clearHighlight(gm.lastSelectedUiObject);

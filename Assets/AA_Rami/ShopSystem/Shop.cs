@@ -79,6 +79,10 @@ public class Shop : MonoBehaviour {
     /// <param name="key"></param>
     public void SelectItem(string key)
     {
+        // instantiate sound effect
+        GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
+
         // set current item here
         currentlySelectedItem = items[key];
         //Debug.Log(currentlySelectedItem.returnName());
@@ -104,6 +108,9 @@ public class Shop : MonoBehaviour {
     /// </summary>
     public void BuyItem()
     {
+        // instantiate sound effect
+        GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
         gm.GetComponent<Inventory>().Items[currentlySelectedItem.Prefix + currentlySelectedItem.Id].AddItem();
         bought = true;
     }

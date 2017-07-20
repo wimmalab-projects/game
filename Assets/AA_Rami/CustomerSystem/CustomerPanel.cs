@@ -29,7 +29,9 @@ public class CustomerPanel : MonoBehaviour {
     {
         if (clientSender != null)
         {
-            
+            // instantiate sound effect
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = true;
 
             this.gameObject.transform.Find("Info").Find("Viewport").Find("Content").Find("CustomerExplanation").GetComponent<Text>().text = clientSender.Explanation;
@@ -76,6 +78,9 @@ public class CustomerPanel : MonoBehaviour {
     // self explanatory
     public void DeactivatePanel()
     {
+        // instantiate sound effect
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
         gameObject.SetActive(false);
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
@@ -91,6 +96,9 @@ public class CustomerPanel : MonoBehaviour {
 
     public void AcceptRestaurantClient ()
     {
+        // instantiate sound effect
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
+
         Debug.Log(fgw.sellWinesPanel.activeSelf);
         if (fgw.sellWinesPanel.activeSelf == false) // check if the sell panel is open
         {
@@ -98,7 +106,7 @@ public class CustomerPanel : MonoBehaviour {
             fgw.sellWinesPanel.SetActive(true);
             fgw.LoadWinesForSale();
         }
-        else // sell the wine if the panel is open and wine is selected
+        else if (((ItemOurWine)GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName]).Stack > 0) // sell the wine if the panel is open and wine is selected
         {
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().WineSold = true;
             Wine wineA = clientSender.GetComponent<Client>().WineIWant.WineHolder;

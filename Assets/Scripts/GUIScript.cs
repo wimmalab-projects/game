@@ -136,6 +136,9 @@ public class GUIScript : MonoBehaviour
     // Check what button was pressed and perform action accordingly to that button. didPlant hides the inventory / infopanel if the action was succesfully executed. If not the inventory/infopanel stays open.
     public void ButtonClicked()
     {
+        // instantiate sound effect
+        gameMaster.InstantiateSFX("sfx/TouchSFX");
+
         if (gameManager.GetComponent<GameMaster>().IsInventoryOpen)
         {
             Button = EventSystem.current.currentSelectedGameObject.name;

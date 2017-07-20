@@ -152,6 +152,8 @@ public class CrushScriptFix : MonoBehaviour
 
             if (hit && hit.tag == "Grape")
             {
+                gm.InstantiateSFX("sfx/TouchSFX");
+
                 Destroy(hit.gameObject);
                 Instantiate(grapeSplash, touchPos, Quaternion.identity);
                 grapeScore++;

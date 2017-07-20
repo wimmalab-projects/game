@@ -92,6 +92,8 @@ public class ColliderHandler : MonoBehaviour
             mch = ParentGameObject.GetComponent<MethodCallerHandler>();
             mch.CallMethod();
 
+            // instantiate sound effect
+            gm.InstantiateSFX("sfx/TouchSFX");
         }
     }
 }

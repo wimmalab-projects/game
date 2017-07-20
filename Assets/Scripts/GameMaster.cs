@@ -306,6 +306,10 @@ public class GameMaster : MonoBehaviour
     /// </summary>
     public void Shop()
     {
+        // instantiate sound effect
+        InstantiateSFX("sfx/TouchSFX");
+
+
         if (transform.GetComponent<Shop>().shop.activeSelf == false)
         {
             transform.GetComponent<Shop>().OpenShop();
@@ -330,6 +334,12 @@ public class GameMaster : MonoBehaviour
             MessagePanel.SetActive(false);
             errorMessage = false;
         }
+    }
+
+    public void InstantiateSFX (string ResourcesLocation)
+    {
+        GameObject go = Instantiate(Resources.Load(ResourcesLocation) as GameObject);
+        go.transform.position = GameObject.FindGameObjectWithTag("AudioManager").transform.position;
     }
 }
 
