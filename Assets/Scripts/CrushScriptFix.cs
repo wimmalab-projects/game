@@ -38,6 +38,8 @@ public class CrushScriptFix : MonoBehaviour
     private CurtainControls cc;
     private GameMaster gm;
     public GameObject wineNameText;
+    private int currentSpawnpoint;
+    private int previousSpawnpoint;
     // Use this for initialization
 
     void Awake()
@@ -111,8 +113,20 @@ public class CrushScriptFix : MonoBehaviour
             {
                 GameObject temp = Instantiate(Grape);
                 temp.transform.SetParent(gameObject.transform);
-                temp.transform.position = spawnpoint[Random.Range(0, spawnpoint.Length)].transform.position;
+                currentSpawnpoint = Random.Range(0, spawnpoint.Length);
+
+                if (currentSpawnpoint == previousSpawnpoint)
+                {
+                    do
+                    {
+                        currentSpawnpoint = Random.Range(0, spawnpoint.Length);
+                    } while (currentSpawnpoint == previousSpawnpoint);
+                }
+
+                temp.transform.position = spawnpoint[currentSpawnpoint].transform.position;
+                Physics2D.IgnoreCollision(temp.GetComponent<CircleCollider2D>(), temp.GetComponent<CircleCollider2D>());
                 startTime = Time.time;
+                previousSpawnpoint = currentSpawnpoint;
             }
 
             // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
@@ -165,7 +179,7 @@ public class CrushScriptFix : MonoBehaviour
     void handleUI()
     {
         FillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        FillBar.fillAmount = (grapeScore * 1.5f);
+        FillBar.fillAmount = (grapeScore * 1.5f) / 100;
         MissedText.text = MissedGrapes + "/" + maxMissedGrapes;
     }
 
@@ -202,7 +216,11 @@ public class CrushScriptFix : MonoBehaviour
                     MakeWine();
                     slotScript.Ferment();
                 }
-                else if (!DidWin)
+                else
+                {
+                    gm.StartCoroutine("ShowMessage", "Name can't be empty!");
+                }
+                if (!DidWin)
                 {
                     EndGame();
                 }
@@ -236,6 +254,7 @@ public class CrushScriptFix : MonoBehaviour
             if (fs.ourWine.ourWine.Prefix + fs.ourWine.wineName == key)
             {
                 isKeyUsed = true;
+                gm.StartCoroutine("ShowMessage", "Name is already used!");
                 break;
             }
             else

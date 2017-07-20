@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameMaster : MonoBehaviour
 {
@@ -19,10 +20,7 @@ public class GameMaster : MonoBehaviour
     // this is to stop colliders activating on mouse / touch clicks trough ui
     public bool IsInventoryOpen;
     public bool dialogueOpen;
-
-    public int exp;
-    public int expneed;
-    public int level;
+    public bool optionsOpen;
 
     [HideInInspector] // only works for the next line below it.
     public GameObject lastSelectedUiObject;
@@ -38,11 +36,13 @@ public class GameMaster : MonoBehaviour
     //public Camera GrapeCrush; // Drag in editor
     //public GameObject PlayGrapeCrushGO; // Drag in editor
 
-    //[Header("XP system")]
-    //public Text exp;
-    //public Text expneeded;
-    //public Text level;
-    //public Text playername;
+    [Header("XP system")]
+    public Text playerexp;
+    public Text playermoney;
+    public Text playerlevel;
+    public Text playername;
+    public GameObject optionscanvas;
+    public GameObject ShowOptions;
 
     [Header("Evaluation system")]
     public float MatchPercentage;
@@ -114,6 +114,8 @@ public class GameMaster : MonoBehaviour
     {
         curtainControls = GameObject.FindGameObjectWithTag("Curtain").GetComponent<CurtainControls>();
         guiScript = GameObject.FindGameObjectWithTag("InventoryCanvas").GetComponent<GUIScript>();
+        optionscanvas.SetActive(false);
+        ShowOptions = GameObject.Find("ShowOptions");
     }
 
     private void Start()
@@ -124,13 +126,6 @@ public class GameMaster : MonoBehaviour
         CrushisActive = false;
         WineSold = false;
         IsInventoryOpen = false;
-    }
-
-    private void Update()
-    {
-        exp = Player.Exp;
-        expneed = (int)Player.ExpNeeded;
-        level = Player.Level;
     }
 
     void GoToTown()
@@ -161,6 +156,24 @@ public class GameMaster : MonoBehaviour
     {
         guiScript.showInventory();
         IsInventoryOpen = true;
+    }
+
+    public void ViewOptions()
+    {
+        optionscanvas.SetActive(true);
+        playername.text = Player.Name;
+        playerlevel.text = Player.Level.ToString();
+        playerexp.text = Player.Exp + "/" + Player.ExpNeeded;
+        playermoney.text = Player.Money.ToString();
+        optionsOpen = true;
+        ShowOptions.SetActive(false);
+    }
+
+    public void HideOptions()
+    {
+        optionscanvas.SetActive(false);
+        ShowOptions.SetActive(true);
+        optionsOpen = false;
     }
 
     // Get fermentation state enums description for nicer name
