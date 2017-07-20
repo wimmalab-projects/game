@@ -1595,7 +1595,7 @@
            70,
            71
          ],
-         "CanBuy":true,
+         "CanBuy":false,
          "AromaIntensity": 1,
          "Value": 10000
       },
@@ -1619,7 +1619,7 @@
            70,
            71
          ],
-         "CanBuy":false,
+         "CanBuy":true,
          "AromaIntensity": 1,
          "Value": 10000
       }
