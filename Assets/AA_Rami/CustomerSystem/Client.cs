@@ -21,4 +21,8 @@ public class Client : MonoBehaviour
     // farm client
     public int Budget;
 
+    [Header("Canvas animations")]
+    public RuntimeAnimatorController ExcellentFeedback;
+    public RuntimeAnimatorController NormalFeedback;
+    public RuntimeAnimatorController BadFeedback;
 }
