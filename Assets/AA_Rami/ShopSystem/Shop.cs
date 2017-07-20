@@ -51,7 +51,7 @@ public class Shop : MonoBehaviour {
         }
 
         // set selecteditem as first item
-        SelectItem(items.Keys[0]);
+        //SelectItem(items.Keys[0]);
         refreshInfo();
 
         // scale content

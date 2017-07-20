@@ -56,7 +56,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         // instantiate sound effect
         gm.GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
 
-
         if (gm.lastSelectedUiObject != null)
         {
             clearHighlight(gm.lastSelectedUiObject);
