@@ -118,7 +118,7 @@ public class GameMaster : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
         State = GameState.Farm;
         //CrushCamera.transform.parent.gameObject.SetActive(false);
         CrushisActive = false;
