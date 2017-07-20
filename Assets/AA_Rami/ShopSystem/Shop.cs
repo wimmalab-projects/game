@@ -113,6 +113,7 @@ public class Shop : MonoBehaviour {
 
         gm.GetComponent<Inventory>().Items[currentlySelectedItem.Prefix + currentlySelectedItem.Id].AddItem();
         bought = true;
+        gm.GetComponent<GameMaster>().StartCoroutine(("ShowMessage"), currentlySelectedItem.Name + " bought!");
     }
 
     /// <summary>
