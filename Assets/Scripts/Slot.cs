@@ -47,7 +47,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     // Clear the highlight effect around the inventory block
     void clearHighlight(GameObject go)
     {
-        go.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset");
+        go.GetComponent<Image>().sprite = Resources.Load<Sprite>("itembox");
     }
 
     // Create hightlight effect around the inventory block
@@ -62,7 +62,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         }
         if (inventory.Items[gameObject.name] != null)
         {
-            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("inventory_block_tileset 1");
+            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("chosenitem");
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<SlotScript>().SeedName = gameObject.name;
             inventory.refreshInfo();
             gm.lastSelectedUiObject = data.selectedObject;
