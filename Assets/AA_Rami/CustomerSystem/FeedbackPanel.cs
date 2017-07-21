@@ -30,7 +30,7 @@ public class FeedbackPanel : MonoBehaviour {
         {
             ReviewText.GetComponent<Text>().text = client.GoodReview[Random.Range(0, 2)];
             Player.GainExperience(900);
-            // ClientSprite.GetComponent<Animator>().runtimeAnimatorController = client.ExcellentFeedback;
+            ClientSprite.GetComponent<Animator>().runtimeAnimatorController = client.ExcellentFeedback;
         }
 
         ClientSprite.GetComponent<Image>().sprite = GetComponent<GameMaster>().CurrentClient.GetComponent<SpriteRenderer>().sprite;

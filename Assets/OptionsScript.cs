@@ -43,6 +43,7 @@ public class OptionsScript : MonoBehaviour
                 Options.SetActive(true);
                 break;
             case "What":
+                Application.Quit();
                 break;
             case "Quit":
                 Application.Quit();
