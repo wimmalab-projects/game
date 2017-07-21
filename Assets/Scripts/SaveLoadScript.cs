@@ -22,7 +22,7 @@ public class SaveLoadScript : MonoBehaviour
 
 
     System.DateTime timeReturn; // Get the time when we returned to app
-    private bool wannaDelete; // Only for debugging, so we can delete the savefile in mobile
+    public bool wannaDelete; // Only for debugging, so we can delete the savefile in mobile
     private bool initialFocus; // This is used to recognize if we launched the app or we came back to the game without exiting
 
     private void Awake()
@@ -238,7 +238,6 @@ public class SaveLoadScript : MonoBehaviour
             if(dt.tutorialcompleted)
             {
                 Destroy(dt);
-                gm.StartCoroutine(("ShowMessage"), "Welcome back!");
             }
             
             Debug.Log("Loading...");

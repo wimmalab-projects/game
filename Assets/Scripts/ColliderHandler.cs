@@ -38,7 +38,7 @@ public class ColliderHandler : MonoBehaviour
             checkTouch(Input.mousePosition);
         }
 
-        if (gm.IsInventoryOpen || gm.dialogueOpen)
+        if (gm.IsInventoryOpen || gm.dialogueOpen || gm.optionsOpen)
         {
             layerMask.value = 5;
         }
