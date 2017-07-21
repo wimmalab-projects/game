@@ -45,6 +45,7 @@ public class SaveLoadScript : MonoBehaviour
         Load(); // Load all info
         inventory.CreateCustomSlots();
         wannaDelete = false;
+        Music.mute = false;
         if (PlayerPrefs.HasKey("Music") && PlayerPrefs.HasKey("MusicToggle"))
         {
             Music.mute = PlayerPrefs.GetInt("Music") > 0;
@@ -59,6 +60,7 @@ public class SaveLoadScript : MonoBehaviour
         if (wannaDelete)
         {
             DeleteFile();
+            PlayerPrefs.DeleteAll();
             return;
         }
         else
