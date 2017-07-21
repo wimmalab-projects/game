@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OptionsScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class OptionsScript : MonoBehaviour
     public GameObject ProfileMenu;
     public GameObject Options;
     public GameObject WannaDelete;
+    public Toggle MusicToggle;
     private GameObject AudioGO;
     private AudioSource Music;
 
@@ -20,6 +22,8 @@ public class OptionsScript : MonoBehaviour
         AudioGO = GameObject.Find("Audio");
         Music = AudioGO.GetComponent<AudioSource>();
         slScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SaveLoadScript>();
+        Music.mute = PlayerPrefs.GetInt("Music") > 0;
+        MusicToggle.isOn = PlayerPrefs.GetInt("MusicToggle") > 0;
     }
 
     // Use this for initialization
@@ -74,11 +78,17 @@ public class OptionsScript : MonoBehaviour
     {
         if(Music.mute == false)
         {
-            Music.mute = true;
+            Music.mute = true;   
+            PlayerPrefs.SetInt("Music", Music.mute ? 1 : 0);
+            PlayerPrefs.SetInt("MusicToggle", MusicToggle.isOn ? 1 : 0);
+            PlayerPrefs.Save();
         }
         else
         {
             Music.mute = false;
-        }
+            PlayerPrefs.SetInt("Music", Music.mute ? 1 : 0);
+            PlayerPrefs.SetInt("MusicToggle", MusicToggle.isOn ? 1 : 0);
+            PlayerPrefs.Save();
+        }       
     }
 }
