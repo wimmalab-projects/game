@@ -71,15 +71,7 @@ public class OptionsScript : MonoBehaviour
 
     public void MuteMusic()
     {
-        if (slScript.Music.mute == false)
-        {
-            slScript.Music.mute = true;   
-        }
-        else
-        {
-            slScript.Music.mute = false;   
-        }
-
+        slScript.Music.mute = !slScript.MusicToggle.isOn;
         PlayerPrefs.SetInt("Music", slScript.Music.mute ? 1 : 0);
         PlayerPrefs.SetInt("MusicToggle", slScript.MusicToggle.isOn ? 1 : 0);
         PlayerPrefs.Save();
