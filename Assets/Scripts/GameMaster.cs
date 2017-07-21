@@ -64,6 +64,19 @@ public class GameMaster : MonoBehaviour
     /// set default state and inventory state
     /// to prevent clicking trough ui
     /// </summary>
+
+    public void Update()
+    {
+        if (IsInventoryOpen == true)
+        {
+            ShowOptions.SetActive(false);
+        }
+        else
+        {
+            ShowOptions.SetActive(true);
+        }
+    }
+
     public enum GameState
     {
         Farm,

@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 7b41f5f4bb213c249bc26edebd1e8a08
-timeCreated: 1500554953
+timeCreated: 1500639836
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: exit_0
+    21300002: exit_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -100,6 +101,19 @@ TextureImporter:
         serializedVersion: 2
         x: 39
         y: 39
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: exit_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
         width: 22
         height: 22
       alignment: 0
