@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class Player
 {
-    public static string Name = "Player 1";
+    public static string Name;
     public static int Exp = 0;
     public const int ExpConst = 120;
     public static int Level = 1;

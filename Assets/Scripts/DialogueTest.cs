@@ -19,7 +19,7 @@ public class DialogueTest : MonoBehaviour
     private SlotScript slotScript;
     private FermentorScript fermentorScript;
 
-    bool tutorial2done, tutorial3done, tutorial4done, tutorial5done, tutorial6done, tutorial7done, tutorial8done, tutorial9done,
+    bool tutorial1done, tutorial2done, tutorial3done, tutorial4done, tutorial5done, tutorial6done, tutorial7done, tutorial8done, tutorial9done,
          tutorial10done, tutorial11done, tutorial12done, tutorial13done, tutorial14done, tutorial15done, tutorial16done, tutorial17done,
          tutorial18done, tutorial19done, tutorial20done, tutorial21done, tutorial22done, tutorial23done, tutorial24done, tutorial25done,
          tutorial26done, tutorial27done, tutorial28done, tutorial29done, tutorial30done;
@@ -39,6 +39,7 @@ public class DialogueTest : MonoBehaviour
         guiScript = GameObject.Find("InventoryCanvas").GetComponent<GUIScript>();
         colliderHandler = gm.GetComponent<ColliderHandler>();
         slotScript = gm.GetComponent<SlotScript>();
+        rpgTalk.variables[0].variableValue = Player.Name;
     }
 
     // Use this for initialization
@@ -49,7 +50,6 @@ public class DialogueTest : MonoBehaviour
         = tutorial17done = tutorial18done = tutorial19done = tutorial20done = tutorial21done = tutorial22done = tutorial23done = tutorial24done
         = tutorial25done = tutorial26done = tutorial27done = tutorial28done = false;
         // Start the tutorial when launching the game first time
-        //rpgTalk.variables[0].variableValue = Player.Name;
         StartCoroutine(Wait(1, 6, 1f));
     }
 
@@ -58,6 +58,13 @@ public class DialogueTest : MonoBehaviour
     {
         // Update the gamestate so we can use it
         GameMaster.GameState GameState = gm.State;
+
+        if(!tutorial1done)
+        {
+            rpgTalk.variables[0].variableValue = Player.Name;
+            StartCoroutine(Wait(1, 6, 1f));
+            tutorial1done = true;
+        }
 
         // Tutorial steps
         if (!tutorial2done && GameState == GameMaster.GameState.Town && !cControls.transition)
