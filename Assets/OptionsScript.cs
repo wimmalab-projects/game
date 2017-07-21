@@ -11,19 +11,13 @@ public class OptionsScript : MonoBehaviour
     public GameObject ProfileMenu;
     public GameObject Options;
     public GameObject WannaDelete;
-    public Toggle MusicToggle;
-    private GameObject AudioGO;
-    private AudioSource Music;
-
+    private GameObject gmGo;
     private SaveLoadScript slScript;
 
     private void Awake()
     {
-        AudioGO = GameObject.Find("Audio");
-        Music = AudioGO.GetComponent<AudioSource>();
-        slScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SaveLoadScript>();
-        Music.mute = PlayerPrefs.GetInt("Music") > 0;
-        MusicToggle.isOn = PlayerPrefs.GetInt("MusicToggle") > 0;
+        gmGo = GameObject.FindGameObjectWithTag("GameManager");
+        slScript = gmGo.GetComponent<SaveLoadScript>();
     }
 
     // Use this for initialization
@@ -76,19 +70,17 @@ public class OptionsScript : MonoBehaviour
 
     public void MuteMusic()
     {
-        if(Music.mute == false)
+        if (slScript.Music.mute == false)
         {
-            Music.mute = true;   
-            PlayerPrefs.SetInt("Music", Music.mute ? 1 : 0);
-            PlayerPrefs.SetInt("MusicToggle", MusicToggle.isOn ? 1 : 0);
-            PlayerPrefs.Save();
+            slScript.Music.mute = true;   
         }
         else
         {
-            Music.mute = false;
-            PlayerPrefs.SetInt("Music", Music.mute ? 1 : 0);
-            PlayerPrefs.SetInt("MusicToggle", MusicToggle.isOn ? 1 : 0);
-            PlayerPrefs.Save();
-        }       
+            slScript.Music.mute = false;   
+        }
+
+        PlayerPrefs.SetInt("Music", slScript.Music.mute ? 1 : 0);
+        PlayerPrefs.SetInt("MusicToggle", slScript.MusicToggle.isOn ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }

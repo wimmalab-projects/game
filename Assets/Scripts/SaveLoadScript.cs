@@ -18,6 +18,7 @@ public class SaveLoadScript : MonoBehaviour
     GameObject[] bottlings;
     Inventory inventory;
     DialogueTest dt;
+    public GameObject InputPlayername;
     GameMaster gm;
 
 
@@ -25,11 +26,18 @@ public class SaveLoadScript : MonoBehaviour
     public bool wannaDelete; // Only for debugging, so we can delete the savefile in mobile
     private bool initialFocus; // This is used to recognize if we launched the app or we came back to the game without exiting
 
+
+    public Toggle MusicToggle;
+    private GameObject AudioGO;
+    public AudioSource Music;
+
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>();
         dt = gm.GetComponent<DialogueTest>();
         inventory = gm.GetComponent<Inventory>();
+        AudioGO = GameObject.Find("Audio");
+        Music = AudioGO.GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -37,6 +45,11 @@ public class SaveLoadScript : MonoBehaviour
         Load(); // Load all info
         inventory.CreateCustomSlots();
         wannaDelete = false;
+        if (PlayerPrefs.HasKey("Music") && PlayerPrefs.HasKey("MusicToggle"))
+        {
+            Music.mute = PlayerPrefs.GetInt("Music") > 0;
+            MusicToggle.isOn = PlayerPrefs.GetInt("MusicToggle") > 0;
+        }
     }
 
     // This method is for saving the info
@@ -239,7 +252,7 @@ public class SaveLoadScript : MonoBehaviour
             {
                 Destroy(dt);
             }
-            
+
             Debug.Log("Loading...");
         }
     }
@@ -381,27 +394,16 @@ public class SaveLoadScript : MonoBehaviour
         initialFocus = initialFocus || hasFocus; // This is used to recognize if we launched the app or we came back to the game without exiting
     }
 
-    // This method doesnt work on mobile, but used for pc debugging
-    //private void OnApplicationQuit()
-    //{
-    //    Save(); // Save data
-    //}
+    //This method doesnt work on mobile, but used for pc debugging
+    private void OnApplicationQuit()
+    {
+        Save(); // Save data
+    }
 
     // Delete the savefile
     private void DeleteFile()
     {
         File.Delete(Application.persistentDataPath + "/SaveFile.dat");
         Debug.Log("Deleted");
-    }
-
-    // When pressed, the next time application exits we delete savefile
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(1100, 10, 100, 100));
-        if (GUILayout.Button("Delete savefile"))
-        {
-            wannaDelete = true;
-        }
-        GUILayout.EndArea();
     }
 }

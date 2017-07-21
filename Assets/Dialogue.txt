@@ -1,4 +1,4 @@
-Hello There!
+Hello There *PlayerName*
 Welcome to the journey of wine making!
 Now, lets make some wine!
 First we need to buy stuff.
@@ -78,4 +78,4 @@ Click sell and pick your wine and click sell again.
 Congratulations! You just sold your *WineName*!
 Here you can see your feedback.
 Now you're ready to make one by yourself.
-Good luck!
+Good luck *PlayerName*!

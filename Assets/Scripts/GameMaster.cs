@@ -11,6 +11,7 @@ using UnityEngine.EventSystems;
 
 public class GameMaster : MonoBehaviour
 {
+    private RPGTalk rpgTalk;
     public bool CrushisActive;
     public bool WineSold { get; set; }
     // set and compare to this
@@ -43,6 +44,7 @@ public class GameMaster : MonoBehaviour
     public Text playername;
     public GameObject optionscanvas;
     public GameObject ShowOptions;
+    public GameObject InputPlayername;
 
     [Header("Evaluation system")]
     public float MatchPercentage;
@@ -112,10 +114,12 @@ public class GameMaster : MonoBehaviour
 
     void Awake()
     {
+        rpgTalk = GetComponent<RPGTalk>();
         curtainControls = GameObject.FindGameObjectWithTag("Curtain").GetComponent<CurtainControls>();
         guiScript = GameObject.FindGameObjectWithTag("InventoryCanvas").GetComponent<GUIScript>();
         optionscanvas.SetActive(false);
         ShowOptions = GameObject.Find("ShowOptions");
+        GetComponent<DialogueTest>().enabled = false;
     }
 
     private void Start()
@@ -126,6 +130,15 @@ public class GameMaster : MonoBehaviour
         CrushisActive = false;
         WineSold = false;
         IsInventoryOpen = false;
+        if (Player.Name == null)
+        {
+            AskPlayerName();
+        }
+        else
+        {
+            Destroy(InputPlayername);
+            GetComponent<DialogueTest>().enabled = true;
+        }
     }
 
     void GoToTown()
@@ -174,6 +187,26 @@ public class GameMaster : MonoBehaviour
         optionscanvas.SetActive(false);
         ShowOptions.SetActive(true);
         optionsOpen = false;
+    }
+
+    public void AskPlayerName()
+    {
+        InputPlayername.SetActive(true);
+    }
+
+    public void SetPlayerName()
+    {
+        if (InputPlayername.GetComponentInChildren<InputField>().text != string.Empty)
+        {
+            Player.Name = InputPlayername.GetComponentInChildren<InputField>().text;
+            rpgTalk.variables[0].variableValue = Player.Name;
+            InputPlayername.SetActive(false);
+            GetComponent<DialogueTest>().enabled = true;
+        }
+        else
+        {
+            StartCoroutine(("ShowMessage"), "Name cant be empty!");
+        }
     }
 
     // Get fermentation state enums description for nicer name
@@ -303,7 +336,7 @@ public class GameMaster : MonoBehaviour
         }
 
         // return percentage match (like 90% match or 50% match) // 6*100/18 matches * 100/total values in winea.comparsion
-        MatchPercentage = similiarities*100/wineA.ComparisonMatrix.Count;
+        MatchPercentage = similiarities * 100 / wineA.ComparisonMatrix.Count;
 
         GetComponent<FeedbackPanel>().OpenFeedback();
 
@@ -337,7 +370,7 @@ public class GameMaster : MonoBehaviour
 
     public IEnumerator ShowMessage(string message)
     {
-        if(!errorMessage)
+        if (!errorMessage)
         {
             errorMessage = true;
             Message.text = message;
@@ -349,7 +382,7 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    public void InstantiateSFX (string ResourcesLocation)
+    public void InstantiateSFX(string ResourcesLocation)
     {
         GameObject go = Instantiate(Resources.Load(ResourcesLocation) as GameObject);
         go.transform.position = GameObject.FindGameObjectWithTag("AudioManager").transform.position;
