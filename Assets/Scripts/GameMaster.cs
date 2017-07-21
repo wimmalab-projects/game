@@ -23,7 +23,7 @@ public class GameMaster : MonoBehaviour
     public bool dialogueOpen;
     public bool optionsOpen;
 
-    [HideInInspector] // only works for the next line below it.
+    //[HideInInspector] // only works for the next line below it.
     public GameObject lastSelectedUiObject;
 
     [Header("Camera System")]
