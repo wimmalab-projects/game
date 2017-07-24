@@ -132,6 +132,7 @@ public class CrushScriptFix : MonoBehaviour
             // If the whole bar has been filled, the game is won. Else if the missedgrapes is equal to maxmissedgrapes you lose the game. Does the gameOver function
             if (FillBar.fillAmount == 1)
             {
+                FillText.text = "100%";
                 wineNameText.SetActive(true);
                 DidWin = true;
                 readyButton.name = "ExitGame";
@@ -178,8 +179,8 @@ public class CrushScriptFix : MonoBehaviour
     // Handles the fillbar filling and missed grapes count. Is being updated in Update().
     void handleUI()
     {
-        FillText.text = Mathf.FloorToInt(grapeScore * 1.5f) + "%";
-        FillBar.fillAmount = (grapeScore * 1.5f) / 100;
+        FillText.text = Mathf.FloorToInt(grapeScore * 3f) + "%";
+        FillBar.fillAmount = (grapeScore * 3f) / 100;
         MissedText.text = MissedGrapes + "/" + maxMissedGrapes;
     }
 
@@ -216,7 +217,7 @@ public class CrushScriptFix : MonoBehaviour
                     MakeWine();
                     slotScript.Ferment();
                 }
-                else
+                else if (wineNameText.GetComponent<InputField>().text != "")
                 {
                     gm.StartCoroutine("ShowMessage", "Name can't be empty!");
                 }

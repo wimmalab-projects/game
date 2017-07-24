@@ -109,7 +109,7 @@ public class SlotScript : MonoBehaviour
                     currentlySelectedItem = inventory.Items[SeedName];
                     currentlySelectedItem.PopItem();
                     GameObject grape = Resources.Load<GameObject>("Grape"); // Load the grape used in the game
-                    grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName); // Change the sprite accordingly to what was selected
+                    grape.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("CrushGame/" + currentlySelectedItem.SpriteName); // Change the sprite accordingly to what was selected
                     parent.gameObject.GetComponent<MethodCallerHandler>().MethodName = "PlayGrapeCrush"; // set the methodname so that we can go to grapecrush view
                     parent.gameObject.GetComponent<MethodCallerHandler>().CallMethod(); // Call the method PlayGrapeCrush
                     didPlant = true;
