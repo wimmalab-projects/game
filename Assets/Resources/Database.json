@@ -20,7 +20,7 @@
       },
       {
          "Name":"Fermented Wine",
-         "SpriteName":"WineBucket",
+         "SpriteName":"FermentedWine",
          "Prefix":"Item",
          "Id":6,
          "Description":"This wine has fermented.",
@@ -28,8 +28,8 @@
          "CanBuy":false
       },
 	  {
-         "Name":"Wine",
-         "SpriteName":"WineBucket",
+         "Name":"Clarificated Wine",
+         "SpriteName":"ClarificatedWine",
          "Prefix":"Item",
          "Id":7,
          "Description":"This wine has clarificated",
