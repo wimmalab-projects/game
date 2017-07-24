@@ -115,11 +115,6 @@ public class PlantGround : MonoBehaviour
             renderer.sprite = Sprites[7];
         }
 
-        else if (plantItem.SpriteName == "Red")
-        {
-            renderer.sprite = Sprites[6];
-        }
-
         else if (plantItem.SpriteName == "Black")
         {
             renderer.sprite = Sprites[0];
@@ -128,6 +123,10 @@ public class PlantGround : MonoBehaviour
         else if (plantItem.SpriteName == "Green")
         {
             renderer.sprite = Sprites[2];
+        }
+        else if (plantItem.SpriteName == "Purple")
+        {
+            renderer.sprite = Sprites[6];
         }
 
         spritesSet = true;
