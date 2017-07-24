@@ -250,6 +250,7 @@ public class SaveLoadScript : MonoBehaviour
             //    dt.tutorialcompleted = tutorialData.tutorialcompleted;
             //}
 
+            dt.tutorialcompleted = tutorialData.tutorialcompleted;
             if(dt.tutorialcompleted)
             {
                 Destroy(dt);

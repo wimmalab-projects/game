@@ -245,13 +245,12 @@ public class DialogueTest : MonoBehaviour
         {
             StartCoroutine(Wait(78, 81, 0.4f));
             tutorial30done = true;
-            // PITÄS TUHOTA TÄMÄ SAATANAN SCRIPTI, MUTTA MITEN!?!?!?!?!?!?!?!?!?!?!?
         }
 
         if (tutorial30done && rpgTalk.dialogueFinished)
         {
-            Destroy(gameObject.GetComponent<DialogueTest>());
             tutorialcompleted = true;
+            Destroy(gameObject.GetComponent<DialogueTest>());
         }
 
     }
