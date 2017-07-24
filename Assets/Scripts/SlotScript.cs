@@ -227,6 +227,7 @@ public class SlotScript : MonoBehaviour
             ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).IsBottled = true;
             bottlingScript.WineName = null;
             bottlingScript.Timer = 0;
+            ((ItemOurWine)inventory.Items["cw" + bottlingScript.ourWine.Name]).SpriteName = bottlingScript.ourWine.wineType + "bottle";
         }
     }
 

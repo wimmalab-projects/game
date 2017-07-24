@@ -120,7 +120,7 @@ public class GUIScript : MonoBehaviour
         }
         else if (parent.tag == "Clarificating")
         {
-            InfoPanelText.text = name + " is being clarificated";
+            InfoPanelText.text = name + " is clarificating";
             infoPanelSprite.sprite = Resources.Load<Sprite>("UI/" + spritename);
         }
         else if (parent.tag == "Bottling")
