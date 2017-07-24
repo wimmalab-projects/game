@@ -11,6 +11,7 @@ public class OptionsScript : MonoBehaviour
     public GameObject ProfileMenu;
     public GameObject Options;
     public GameObject WannaDelete;
+    public GameObject About;
     private GameObject gmGo;
     private SaveLoadScript slScript;
 
@@ -42,8 +43,10 @@ public class OptionsScript : MonoBehaviour
                 ProfileMenu.SetActive(false);
                 Options.SetActive(true);
                 break;
-            case "What":
-                Application.Quit();
+            case "About":
+                OptionsMenu.SetActive(false);
+                ProfileMenu.SetActive(false);
+                About.SetActive(true);
                 break;
             case "Quit":
                 Application.Quit();
@@ -52,6 +55,11 @@ public class OptionsScript : MonoBehaviour
                 OptionsMenu.SetActive(true);
                 ProfileMenu.SetActive(true);
                 Options.SetActive(false);
+                break;
+            case "Back2":
+                OptionsMenu.SetActive(true);
+                ProfileMenu.SetActive(true);
+                About.SetActive(false);
                 break;
             case "Delete":
                 Options.SetActive(false);
