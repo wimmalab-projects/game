@@ -1,8 +1,5 @@
 ﻿/* Scrip that calls the method called from another script */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>

@@ -85,7 +85,7 @@ public class CustomerPanel : MonoBehaviour {
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
     }
 
-    public void AcceptFarmer()
+    public void AcceptFarmer() // currently not used and the spawner is not in farm view.
     {
         if (clientSender != null)
         {
