@@ -55,6 +55,9 @@ public class CrushScript : MonoBehaviour
         MissedText.text = "0/10";
         startTime = Time.time;
         StartCoroutine("WaitInstructions");
+
+        // set the color of the grape
+        Grape.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("CrushGame/" + GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items[slotScript.CurrentlySelectedName].SpriteName);
     }
 
 
