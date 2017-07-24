@@ -31,9 +31,20 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             if (!spritesLoaded)
             {
-                ItemImage.sprite = Resources.Load<Sprite>(inventory.Items[gameObject.name].SpriteName);
+                if (inventory.Items[gameObject.name].GetType() == typeof(VineGrape))
+                {
+                    if (((VineGrape)inventory.Items[gameObject.name]).GoV == VineGrape.GrapeOrVine.Vine)
+                        ItemImage.sprite = Resources.Load<Sprite>("UI/Vine");
+                    else
+                        ItemImage.sprite = Resources.Load<Sprite>("UI/" + inventory.Items[gameObject.name].SpriteName);
+                }
+                else
+                {
+                    ItemImage.sprite = Resources.Load<Sprite>("UI/" + inventory.Items[gameObject.name].SpriteName);
+                }
                 spritesLoaded = true;
             }
+
             itemCount = inventory.Items[gameObject.name].Stack;
             UiItemCount.text = itemCount.ToString();
             //uiItemCount.text = inventory.items[uiItemName.text].itemCount.ToString();

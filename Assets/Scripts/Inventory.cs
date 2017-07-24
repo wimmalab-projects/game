@@ -133,7 +133,7 @@ public class Inventory : MonoBehaviour
 
         go1.GetComponent<Text>().text = currentlySelectedItem.Name;
         go2.GetComponent<Text>().text = currentlySelectedItem.Description;
-        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>(currentlySelectedItem.SpriteName);
+        go3.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/" + currentlySelectedItem.SpriteName);
     }
 }
 
