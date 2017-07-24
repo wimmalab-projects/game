@@ -191,6 +191,7 @@ public class SlotScript : MonoBehaviour
                 ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.wineName]).body = Wine.Body.Full;
             }
             ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.wineName]).wineType = fermentorScript.ourWine.ourWine.wineType;
+            ((ItemOurWine)inventory.Items["cw" + fermentorScript.ourWine.wineName]).SpriteName = "FermentedWine";
             fermentorScript.FermentationState = GameMaster.FermentationState.NotFermentating;
             fermentorScript.IsFermenting = false;
             fermentorScript.GrapeName = null;
@@ -215,6 +216,7 @@ public class SlotScript : MonoBehaviour
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
             Debug.Log(((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).condition);
+            ((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).SpriteName = "ClarificatedWine";
         }
         else if (parent.tag == "Bottling")
         {

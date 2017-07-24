@@ -67,7 +67,7 @@ public class GameMaster : MonoBehaviour
 
     public void Update()
     {
-        if (IsInventoryOpen == true)
+        if (IsInventoryOpen == true || CrushisActive || curtainControls.transition)
         {
             ShowOptions.SetActive(false);
         }
@@ -168,11 +168,13 @@ public class GameMaster : MonoBehaviour
     {
         curtainControls.FadeToBlack(Camera.main, BreweryCamera.transform.Find("MainCam").GetComponent<Camera>());
         State = GameState.Brewery;
+        ShowOptions.SetActive(true);
     }
 
     void PlayGrapeCrush()
     {
         State = GameState.GrapeCrush;
+        ShowOptions.SetActive(false);
         CrushCamera.transform.parent.gameObject.SetActive(true);
         curtainControls.FadeToBlack(Camera.main, CrushCamera.transform.Find("MainCam").GetComponent<Camera>());
         CrushisActive = true;

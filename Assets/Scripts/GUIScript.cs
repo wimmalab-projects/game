@@ -29,6 +29,7 @@ public class GUIScript : MonoBehaviour
     private ClarificationScript clarificationScript;
     private BottlingScript bottlingScript;
     private ColliderHandler colliderHandler;
+    private Inventory inventory;
 
     // Use this for initialization
 
@@ -37,6 +38,7 @@ public class GUIScript : MonoBehaviour
         // Get script/animator/sprite references
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         gameMaster = gameManager.GetComponent<GameMaster>();
+        inventory = gameManager.GetComponent<Inventory>();
         infoPanelSprite = InfoPanel.transform.Find("Plant sprite").GetComponent<Image>();
         slotScript = gameManager.GetComponent<SlotScript>();
         animator = GetComponent<Animator>();
@@ -103,28 +105,28 @@ public class GUIScript : MonoBehaviour
     }
 
     // Initialize the infopanel text and sprite to match the current state.
-    public void initializeInfoPanel(string name)
+    public void initializeInfoPanel(string name, string spritename)
     {
         if (parent.tag == "Planted")
         {
             InfoPanelText.text = name + " is growing!";
-            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+            infoPanelSprite.sprite = Resources.Load<Sprite>("UI/" + spritename);
         }
 
         else if (parent.tag == "Fermenting")
         {
             InfoPanelText.text = name + " is fermenting";
-            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+            infoPanelSprite.sprite = Resources.Load<Sprite>("UI/" + spritename);
         }
         else if (parent.tag == "Clarificating")
         {
             InfoPanelText.text = name + " is being clarificated";
-            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+            infoPanelSprite.sprite = Resources.Load<Sprite>("UI/" + spritename);
         }
         else if (parent.tag == "Bottling")
         {
             InfoPanelText.text = name + " is being bottled";
-            infoPanelSprite.sprite = Resources.Load<Sprite>("" + name);
+            infoPanelSprite.sprite = Resources.Load<Sprite>("UI/" + spritename);
         }
     }
 
@@ -246,7 +248,12 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Planted":
                 InfoPanel.alpha = 1;
-                initializeInfoPanel(groundScript.PlantName);
+                foreach (KeyValuePair<string, Item> pair in inventory.Items)
+                {
+                    if (pair.Value.Name == groundScript.PlantName && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
+                        groundScript.PlantName = pair.Key;
+                }
+                initializeInfoPanel(groundScript.PlantName, inventory.Items[groundScript.PlantName].SpriteName);
                 break;
             case "NotFermenting":
                 Inventory.alpha = 1;
@@ -256,7 +263,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Fermenting":
                 InfoPanel.alpha = 1;
-                initializeInfoPanel(fermentorScript.ourWine.wineName);
+                initializeInfoPanel(fermentorScript.ourWine.wineName, "FermentedWine");
                 HarvestButton.name = "Collect";
                 HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
@@ -268,7 +275,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Clarificating":
                 InfoPanel.alpha = 1;
-                initializeInfoPanel(clarificationScript.WineName);
+                initializeInfoPanel(clarificationScript.WineName, inventory.Items["cw" + clarificationScript.ourWine.Name].SpriteName);
                 HarvestButton.name = "Collect";
                 HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;
@@ -280,7 +287,7 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Bottling":
                 InfoPanel.alpha = 1;
-                initializeInfoPanel(bottlingScript.WineName);
+                initializeInfoPanel(bottlingScript.WineName, inventory.Items["cw" + bottlingScript.WineName].SpriteName);
                 HarvestButton.name = "Collect";
                 HarvestButton.GetComponentInChildren<Text>().text = "Collect";
                 break;

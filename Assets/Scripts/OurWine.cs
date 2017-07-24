@@ -17,7 +17,6 @@ public class OurWine
 
         ourWine.Prefix = "cw";
 
-        ourWine.SpriteName = "CustomWine";
         ourWine.Name = wineName;
 
         ourWine.Id = wineName;
