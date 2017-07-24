@@ -228,6 +228,7 @@ public class GUIScript : MonoBehaviour
         HarvestButton.GetComponentInChildren<Text>().text = "Harvest";
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().IsInventoryOpen = false;
         HarvestButton.interactable = false;
+        CollectGrapeButton.gameObject.SetActive(false);
     }
 
     // Shows the inventory or the infopanel depending on what was clicked. Also changes the button name and text so that the right action can be performed
@@ -248,12 +249,13 @@ public class GUIScript : MonoBehaviour
                 break;
             case "Planted":
                 InfoPanel.alpha = 1;
+                string name = groundScript.PlantName;
                 foreach (KeyValuePair<string, Item> pair in inventory.Items)
                 {
-                    if (pair.Value.Name == groundScript.PlantName && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
-                        groundScript.PlantName = pair.Key;
+                    if (pair.Value.Name == name && ((VineGrape)pair.Value).GoV == VineGrape.GrapeOrVine.Grape)
+                        name = pair.Key;
                 }
-                initializeInfoPanel(groundScript.PlantName, inventory.Items[groundScript.PlantName].SpriteName);
+                initializeInfoPanel(groundScript.PlantName, inventory.Items[name].SpriteName);
                 break;
             case "NotFermenting":
                 Inventory.alpha = 1;

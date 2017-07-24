@@ -270,7 +270,7 @@ public class SlotScript : MonoBehaviour
         else
         {
             didPlant = false;
-            gameMaster.StartCoroutine(("ShowMessage"), "Not enough wines!");
+            gameMaster.StartCoroutine(("ShowMessage"), "Not enough wine!");
         }
     }
 
