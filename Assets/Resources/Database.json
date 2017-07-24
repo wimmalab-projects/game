@@ -10,33 +10,6 @@
          "CanBuy":true
       },
       {
-         "Name":"Oak Chips",
-         "SpriteName":"Oak_Chips",
-         "Prefix":"Item",
-         "Id":2,
-         "Description":"Readily available in several types and toast levels. Easy to rack wine off of chips or beans. Used to add tannins to the wine during fermentation. +Tannin +oak taste",
-         "ItemType":4,
-         "CanBuy":true
-      },
-      {
-         "Name":"Oak Powder",
-         "SpriteName":"Oak_Powder",
-         "Prefix":"Item",
-         "Id":3,
-         "Description":"Because of the surface area that comes in contact with the wine, a little bit a long way. Used to add tannins to the wine during fermentation. ++Tannin +oak taste",
-         "ItemType":4,
-         "CanBuy":true
-      },
-      {
-         "Name":"Oak Barrels",
-         "SpriteName":"Oak_Barrels",
-         "Prefix":"Item",
-         "Id":4,
-         "Description":"Traditional time-proven method for oaking large quantities of wine. dish, ++Tannin ++Oak taste",
-         "ItemType":6,
-         "CanBuy":true
-      },
-      {
          "Name":"Bottle",
          "SpriteName":"Bottle",
          "Prefix":"Item",
@@ -47,7 +20,7 @@
       },
       {
          "Name":"Fermented Wine",
-         "SpriteName":"Wine",
+         "SpriteName":"WineBucket",
          "Prefix":"Item",
          "Id":6,
          "Description":"This wine has fermented.",
@@ -56,16 +29,16 @@
       },
 	  {
          "Name":"Wine",
-         "SpriteName":"Wine",
+         "SpriteName":"WineBucket",
          "Prefix":"Item",
          "Id":7,
-         "Description":"Clarificated Wine",
+         "Description":"This wine has clarificated",
          "ItemType":1,
          "CanBuy":false
       },
 	  {
          "Name":"Bottled Wine",
-         "SpriteName":"BottledWine",
+         "SpriteName":"Bottle",
          "Prefix":"Item",
          "Id":8,
          "Description":"Bottled Wine",
@@ -941,7 +914,7 @@
       },
       {
          "Name":"Cabernet Sauvignon",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":45,
          "Description":"Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.",
@@ -960,7 +933,7 @@
       },
       {
          "Name":"Cabernet Sauvignon",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":46,
          "Description":"Cabernet Sauvignon is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.",
@@ -979,7 +952,7 @@
       },
       {
          "Name":"Carmenère",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":47,
          "Description":"The Carménère grape is a wine grape variety originally planted in the Médoc region of Bordeaux, France, where it was used to produce deep red wines and occasionally used for blending purposes in the same manner as Petit Verdot.",
@@ -1001,7 +974,7 @@
       },
       {
          "Name":"Carmenère",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":48,
          "Description":"The Carménère grape is a wine grape variety originally planted in the Médoc region of Bordeaux, France, where it was used to produce deep red wines and occasionally used for blending purposes in the same manner as Petit Verdot.",
@@ -1023,7 +996,7 @@
       },
       {
          "Name":"Corvina",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":49,
          "Description":"Corvina is an Italian wine grape variety that is sometimes also referred to as Corvina Veronese or Cruina. It is mainly grown in the Veneto region of northeast Italy. Corvina is used with several other grapes to create the light red regional wines Bardolino and Valpolicella that have a mild fruity flavor with hints of almond.",
@@ -1042,7 +1015,7 @@
       },
       {
          "Name":"Corvina",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":50,
          "Description":"Corvina is an Italian wine grape variety that is sometimes also referred to as Corvina Veronese or Cruina. It is mainly grown in the Veneto region of northeast Italy. Corvina is used with several other grapes to create the light red regional wines Bardolino and Valpolicella that have a mild fruity flavor with hints of almond.",
@@ -1061,7 +1034,7 @@
       },
       {
          "Name":"Grenache",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":51,
          "Description":"Grenache is one of the most widely planted red wine grape varieties in the world. It ripens late, so it needs hot, dry conditions such as those found in Spain, where the grape most likely originated. It is also grown in the Italian isle of Sardinia, the south of France, Australia, and California's San Joaquin Valley.",
@@ -1083,7 +1056,7 @@
       },
       {
          "Name":"Grenache",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":52,
          "Description":"Grenache is one of the most widely planted red wine grape varieties in the world. It ripens late, so it needs hot, dry conditions such as those found in Spain, where the grape most likely originated. It is also grown in the Italian isle of Sardinia, the south of France, Australia, and California's San Joaquin Valley.",
@@ -1105,7 +1078,7 @@
       },
       {
          "Name":"Malbec",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":53,
          "Description":"Malbec is a purple grape variety used in making red wine. The grapes tend to have an inky dark color and robust tannins, and are known as one of the six grapes allowed in the blend of red Bordeaux wine. The French plantations of Malbec are now found primarily in Cahors in South West France. ",
@@ -1124,7 +1097,7 @@
       },
       {
          "Name":"Malbec",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":54,
          "Description":"Malbec is a purple grape variety used in making red wine. The grapes tend to have an inky dark color and robust tannins, and are known as one of the six grapes allowed in the blend of red Bordeaux wine. The French plantations of Malbec are now found primarily in Cahors in South West France. ",
@@ -1143,7 +1116,7 @@
       },
       {
          "Name":"Merlot",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":55,
          "Description":"Merlot is a dark blue-colored wine grape variety, that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and 'fleshiness', combined with its earlier ripening, makes Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.",
@@ -1165,7 +1138,7 @@
       },
       {
          "Name":"Merlot",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":56,
          "Description":"Merlot is a dark blue-colored wine grape variety, that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and 'fleshiness', combined with its earlier ripening, makes Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.",
@@ -1187,7 +1160,7 @@
       },
       {
          "Name":"Pinotage",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":57,
          "Description":"Pinotage is a red wine grape that is South Africa's signature variety. It was bred there in 1925 as a cross between Pinot noir and Cinsaut (Cinsaut was known as 'Hermitage' in South Africa during that time, hence the portmanteau name of Pinotage). It typically produces deep red varietal wines with smoky, bramble and earthy flavors, sometimes with notes of bananas and tropical fruit, but has been criticized for sometimes smelling of acetone.",
@@ -1208,7 +1181,7 @@
       },
       {
          "Name":"Pinotage",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":58,
          "Description":"Pinotage is a red wine grape that is South Africa's signature variety. It was bred there in 1925 as a cross between Pinot noir and Cinsaut (Cinsaut was known as 'Hermitage' in South Africa during that time, hence the portmanteau name of Pinotage). It typically produces deep red varietal wines with smoky, bramble and earthy flavors, sometimes with notes of bananas and tropical fruit, but has been criticized for sometimes smelling of acetone.",
@@ -1229,7 +1202,7 @@
       },
       {
          "Name":"Pinot Noir",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":59,
          "Description":"Pinot Noir is a red wine grape variety of the species Vitis Vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes. The name is derived from the French words for pine and black. The pine alluding to the grape variety having tightly clustered, pine cone-shaped bunches of fruit.",
@@ -1252,7 +1225,7 @@
       },
       {
          "Name":"Pinot Noir",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":60,
          "Description":"Pinot Noir is a red wine grape variety of the species Vitis Vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes. The name is derived from the French words for pine and black. The pine alluding to the grape variety having tightly clustered, pine cone-shaped bunches of fruit.",
@@ -1275,7 +1248,7 @@
       },
       {
          "Name":"Rondinella",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":61,
          "Description":"Rondinella is an Italian wine grape mainly grown in the Veneto region of Italy and used in wines such as Valpolicella and Bardolino. It is often blended with Corvina, which DNA evidence has shown to be a parent variety, and Molinara. The grape has rather neutral flavors but is favored by growers due to its prolific yields. The vine is very resistant to grape disease and produces grapes that, while they don't necessarily have high sugar levels, do dry out well for use in the production of straw wines and recioto blends.",
@@ -1296,7 +1269,7 @@
       },
       {
          "Name":"Rondinella",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":62,
          "Description":"Rondinella is an Italian wine grape mainly grown in the Veneto region of Italy and used in wines such as Valpolicella and Bardolino. It is often blended with Corvina, which DNA evidence has shown to be a parent variety, and Molinara. The grape has rather neutral flavors but is favored by growers due to its prolific yields. The vine is very resistant to grape disease and produces grapes that, while they don't necessarily have high sugar levels, do dry out well for use in the production of straw wines and recioto blends.",
@@ -1317,7 +1290,7 @@
       },
       {
          "Name":"Sangiovese",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":63,
          "Description":"Sangiovese is a red Italian wine grape variety. DNA profiling suggests that Sangiovese's ancestors are Ciliegiolo and Calabrese Montenuovo. The former is well known as an ancient variety in Tuscany, the latter is an almost-extinct relic from the Calabria, the toe of Italy.",
@@ -1339,7 +1312,7 @@
       },
       {
          "Name":"Sangiovese",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":64,
          "Description":"Sangiovese is a red Italian wine grape variety. DNA profiling suggests that Sangiovese's ancestors are Ciliegiolo and Calabrese Montenuovo. The former is well known as an ancient variety in Tuscany, the latter is an almost-extinct relic from the Calabria, the toe of Italy.",
@@ -1361,7 +1334,7 @@
       },
       {
          "Name":"Syrah (Shiraz)",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":65,
          "Description":"Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.",
@@ -1383,7 +1356,7 @@
       },
       {
          "Name":"Syrah (Shiraz)",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":66,
          "Description":"Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. In 1999, Syrah was found to be the offspring of two obscure grapes from southeastern France, Dureza and Mondeuse Blanche. Syrah should not be confused with Petite Sirah, a cross of Syrah with Peloursin dating from 1880.",
@@ -1405,7 +1378,7 @@
       },
       {
          "Name":"Tempranillo",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":67,
          "Description":"Tempranillo is a black grape variety widely grown to make full-bodied red wines in its native Spain. Its name is the diminutive of the Spanish temprano ('early'), a reference to the fact that it ripens several weeks earlier than most Spanish red grapes",
@@ -1428,7 +1401,7 @@
       },
       {
          "Name":"Tempranillo",
-         "SpriteName":"Red",
+         "SpriteName":"Black",
          "Prefix":"VineGrape",
          "Id":68,
          "Description":"Tempranillo is a black grape variety widely grown to make full-bodied red wines in its native Spain. Its name is the diminutive of the Spanish temprano ('early'), a reference to the fact that it ripens several weeks earlier than most Spanish red grapes",
@@ -1529,7 +1502,7 @@
       },
       {
          "Name":"Nebbiolo",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":73,
          "Description":"Nebbiolo (Italian), or Nebieul (Piedmontese) is an Italian red wine grape variety predominantly associated with its native Piedmont region.",
@@ -1553,7 +1526,7 @@
       },
       {
          "Name":"Nebbiolo",
-         "SpriteName":"Red",
+         "SpriteName":"Purple",
          "Prefix":"VineGrape",
          "Id":74,
          "Description":"Nebbiolo (Italian), or Nebieul (Piedmontese) is an Italian red wine grape variety predominantly associated with its native Piedmont region.",

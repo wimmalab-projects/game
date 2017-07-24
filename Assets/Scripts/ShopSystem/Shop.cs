@@ -46,7 +46,17 @@ public class Shop : MonoBehaviour {
             GameObject temp = Instantiate(ShopSlot);
             temp.transform.SetParent(ContentPanel.transform);
             temp.name = items.Keys[i];
-            temp.GetComponent<Image>().sprite = Resources.Load<Sprite>(items[temp.name].SpriteName);
+
+            if (items[temp.name].GetType() == typeof(VineGrape))
+            {
+                if (((VineGrape)items[temp.name]).GoV == VineGrape.GrapeOrVine.Vine )
+                    temp.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Vine");
+            }
+            else
+            {
+                temp.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/" + items[temp.name].SpriteName);
+            }
+
             slots.Add(temp);
         }
 
