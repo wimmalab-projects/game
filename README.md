@@ -1,3 +1,5 @@
+# [Installation guide](https://github.com/wimmalab-projects/wine-game/wiki/Installation-guide)
+
 # [Download APK](https://github.com/wimmalab-projects/wine-game/raw/master/Build/Build2/SoulOfWine.apk)
 
 # Soul of wine: The game
