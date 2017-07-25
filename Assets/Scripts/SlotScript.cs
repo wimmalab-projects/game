@@ -215,7 +215,7 @@ public class SlotScript : MonoBehaviour
             clarificationScript.ClarificationState = GameMaster.ClarificationState.NotClarificating;
             clarificationScript.WineName = null;
             clarificationScript.Timer = 0;
-            Debug.Log(((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).condition);
+
             ((ItemOurWine)inventory.Items["cw" + clarificationScript.ourWine.Name]).SpriteName = "ClarificatedWine";
         }
         else if (parent.tag == "Bottling")
@@ -245,7 +245,6 @@ public class SlotScript : MonoBehaviour
                 {
                     parent.tag = "Clarificating";
                     clarificationScript.ourWine = (ItemOurWine)inventory.Items[SeedName];
-                    Debug.Log(clarificationScript.ourWine.Name);
                     CurrentlySelectedName = inventory.Items[SeedName].Name;
                     currentlySelectedItem = inventory.Items[SeedName];
                     clarificationScript.WineName = CurrentlySelectedName;
@@ -322,8 +321,7 @@ public class SlotScript : MonoBehaviour
         {
             GameObject parent = GetColliderParent();
             FermentorScript fs = parent.GetComponent<FermentorScript>();
-
-            Debug.Log(inventory.Items["Item1"].Stack);
+            
 
             if ((int)fs.ourWine.ourWine.sweetness < 3)
             {

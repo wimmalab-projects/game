@@ -22,8 +22,8 @@ public class CustomerPanel : MonoBehaviour {
     }
 
     /// <summary>
-    /// This method here replaces the white boxes in customer panel to hold the sprite of the customer
-    /// this also sets the proper button for the ccustomer panel depending on client type pressed.
+    /// This method changes the white boxes in the customer panel to the sprite of the customer
+    /// this also sets the proper button for the customer panel depending on client type pressed.
     /// </summary>
     public void ActivatePanel () 
     {
@@ -47,9 +47,6 @@ public class CustomerPanel : MonoBehaviour {
             }
 
             gameObject.transform.Find("LeftSidePanel").Find("CustomerImage").GetComponent<Image>().sprite = clientSender.GetComponent<SpriteRenderer>().sprite;
-
-
-            //Debug.Log(fgw.sellWinesPanel);
 
             if (fgw != null)
             {
@@ -98,8 +95,7 @@ public class CustomerPanel : MonoBehaviour {
     {
         // instantiate sound effect
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameMaster>().InstantiateSFX("sfx/TouchSFX");
-
-        Debug.Log(fgw.sellWinesPanel.activeSelf);
+        
         if (fgw.sellWinesPanel.activeSelf == false) // check if the sell panel is open
         {
             InfoPanel.SetActive(false);

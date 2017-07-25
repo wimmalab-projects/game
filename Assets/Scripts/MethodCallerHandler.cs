@@ -1,10 +1,9 @@
-﻿/* Scrip that calls the method called from another script */
-
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// place this script inside gamescene objects you want to be able to click and have effects
 /// like camera transitions or open / close shop
+/// Scrip that calls the method called from another script
 /// </summary>
 public class MethodCallerHandler : MonoBehaviour
 {

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Place this script to customerpanel farm button.
+/// mix of a methodcallerhandler and colliderhandler, tailored for customerpanel
+/// </summary>
 public class cpFarmButton : MonoBehaviour, IPointerClickHandler
 {
     CustomerPanel cp;

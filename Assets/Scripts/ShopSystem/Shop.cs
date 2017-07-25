@@ -60,8 +60,6 @@ public class Shop : MonoBehaviour {
             slots.Add(temp);
         }
 
-        // set selecteditem as first item
-        //SelectItem(items.Keys[0]);
         refreshInfo();
 
         // scale content
@@ -95,7 +93,6 @@ public class Shop : MonoBehaviour {
 
         // set current item here
         currentlySelectedItem = items[key];
-        //Debug.Log(currentlySelectedItem.returnName());
         refreshInfo();
     }
 

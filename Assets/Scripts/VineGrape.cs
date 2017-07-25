@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
+/// <summary>
+/// Container for grape item or vine item.
+/// </summary>
 [System.Serializable]
 public class VineGrape : Item {
 

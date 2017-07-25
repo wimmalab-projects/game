@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-//using UnityEditor;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to make Wine prefabs out of excisting real wines.
+/// there are 20 or so wines made together with kimmo.
+/// there should be an excel file in github root / research folder. 
+/// </summary>
 public class WinePrefab : MonoBehaviour
 {
     private Wine wineHolder;

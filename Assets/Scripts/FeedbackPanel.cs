@@ -1,19 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// placed inside the gamemaster.
+/// </summary>
 public class FeedbackPanel : MonoBehaviour {
 
-    public GameObject ClientSprite, ReviewText;
+    public GameObject ClientSprite, ReviewText; // place these in editor, these are the children of FeedbackPanel gameobject
     Client client;
 
     public void OpenFeedback ()
     {
-        Debug.Log("open feedpack");
         client = GetComponent<GameMaster>().CurrentClient.GetComponent<Client>();
         int test = (int)GetComponent<GameMaster>().MatchPercentage;
 
+        // get the animation and the line for feedback panel
         if (test < 50) // bad wine
         {
             ReviewText.GetComponent<Text>().text = client.BadReview[Random.Range(0, 2)];

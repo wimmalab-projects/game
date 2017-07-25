@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+///  This is used together with wine attribute setting
+/// </summary>
 [System.Serializable]
 public class OurWine
 {
@@ -21,17 +20,12 @@ public class OurWine
 
         ourWine.Id = wineName;
 
-        //ourWine.AlcoholLevel = 
-
-
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>().Items.Add(ourWine.Prefix + ourWine.Id, ourWine);
-
 
         Inventory inv = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Inventory>();
         GameObject temp = MonoBehaviour.Instantiate(inv.InventorySlot);
         string s = "cw" + go.GetComponent<FermentorScript>().ourWine.ourWine.Name;
-        //go.transform.parent = temp.transform;
-       // go.name += "child";
+
         temp.transform.SetParent(inv.contentPanel.transform);
         temp.name = s;
         inv.Slots.Add(temp);

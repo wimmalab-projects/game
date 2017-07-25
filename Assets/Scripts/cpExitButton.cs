@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Place this script to customerpanel exit button.
+/// mix of a methodcallerhandler and colliderhandler, tailored for customerpanel
+/// </summary>
 public class cpExitButton : MonoBehaviour, IPointerClickHandler
 {
-    /// <summary>
-    /// Place this script to customerpanel exit button.
-    /// </summary>
     CustomerPanel cp;
     void Start()
     {

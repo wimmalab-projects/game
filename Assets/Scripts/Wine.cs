@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// This class holds all the information of wines.
+/// </summary>
 public class Wine
 {
-
     #region Enums
     
     public enum MainGategories { WineType, Clarity, Condition, Intensity, Sweetness, Acidity, Tannin, Body, AromaFlavor };

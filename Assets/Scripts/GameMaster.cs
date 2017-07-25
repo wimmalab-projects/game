@@ -314,10 +314,7 @@ public class GameMaster : MonoBehaviour
 
         wineA.ComparisonMatrix = wineA.CreateMatrix(); // make sure comparison wine matrix is not null
         wineB.ComparisonMatrix = wineB.CreateMatrix();
-
-        //Debug.Log(wineA.ComparisonMatrix.Count);
-
-
+        
         int similiarities = 0;
 
         // new comparsion loop wihtout LINQ (LINQ reportedly doesn't work properly with mobile)

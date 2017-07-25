@@ -121,7 +121,6 @@ public class SaveLoadScript : MonoBehaviour
             }
 
             timerData.timeExit = System.DateTime.Now; // Time we exited the app
-            //Debug.Log(data.timeExit);
 
             // Set player data
             PlayerData playerData = new PlayerData();

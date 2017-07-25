@@ -1,8 +1,8 @@
-﻿/* Script that handles the collision between touch/mouse position and colliders */
+﻿using UnityEngine;
 
-using UnityEngine;
-using System.Collections;
-
+/// <summary>
+/// Script that handles the collision between touch/mouse position and colliders
+/// </summary>
 public class ColliderHandler : MonoBehaviour
 {
     public GameObject ParentGameObject { get; set; }
@@ -62,6 +62,10 @@ public class ColliderHandler : MonoBehaviour
             layerMask.value = 0;
     }
 
+    /// <summary>
+    /// Checks collision based on touch position OR mouse position.
+    /// </summary>
+    /// <param name="pos"></param>
     void checkTouch(Vector2 pos)
     {
 

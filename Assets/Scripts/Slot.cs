@@ -25,7 +25,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(gameObject.name);
         // Update the items count text and sprites
         if (gm.IsInventoryOpen)
         {

@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Placed in the customerpanel parent object.
+/// </summary>
 public class GetFinishedWines : MonoBehaviour {
-
     
-    public GameObject sellWinesPanel;
+    public GameObject sellWinesPanel; // drag the scrollview content in editor.
 
     GameObject gameManager;
 
     private void Awake()
     {
-        //sellWinesPanel = transform.Find("SellWinesPanel").gameObject;
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
@@ -26,8 +26,6 @@ public class GetFinishedWines : MonoBehaviour {
 
         foreach (KeyValuePair<string, Item> item in gameManager.GetComponent<Inventory>().Items)
         {
-            
-
             if (item.Value.GetType() == typeof(ItemOurWine))
             {
                 if (((ItemOurWine)item.Value).IsBottled == true && ((ItemOurWine)item.Value).Stack > 0)
@@ -39,7 +37,6 @@ public class GetFinishedWines : MonoBehaviour {
 
                 }
             }
-
         }
     }
 }

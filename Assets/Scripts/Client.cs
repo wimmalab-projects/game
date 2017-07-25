@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Placed inside a gameobject together with collider2d and a methodcallerhandler that calls ClientClick method
+/// </summary>
 public class Client : MonoBehaviour
 {
     public bool AtFarm = false;
