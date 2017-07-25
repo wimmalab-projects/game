@@ -1,4 +1,4 @@
-**Copyright (C) 2017 PengWin Game**
+# [Download APK](https://github.com/wimmalab-projects/wine-game/raw/master/Build/Build2/SoulOfWine.apk)
 
 # Soul of wine: The game
 
@@ -11,3 +11,5 @@ Soulf of wine is an educational game for Hospitality Management students. In the
 
 **Graphics**
 - Carita Tammelin
+
+**Copyright (C) 2017 PengWin Game**
