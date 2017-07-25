@@ -1,0 +1,9 @@
+Scene Switching
+
+Documentation
+
+Scene switching currently works using unity's own layers. Each "scene" is it's own layer. This way we avoid annoying loading screens during gameplay. You need to add new layer inside unity for each new "scene" you want to have (in our case farmview, breweryview and townview). Each layer requires it's own main camera. You need to set culling masks on these cameras so that they see "Everything" minus the layers of other "scenes".
+
+Transition
+
+Transition uses a single black sprite scaled to cover the camera and then some for padding. CurtainControls script gets the sprite renderer of the sprite and sets it alpha gradually to 1 covering the screen. Once the view is hidden with the "Curtain" currently active camera gets set to inactive and immidiately after the camera from the scene we want is set to active. Lastly, the curtain sprite renderer color alpha is returned to 0, revealing the view once again.

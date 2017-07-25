@@ -1,0 +1,9 @@
+Asiakastarina
+
+Kimmo Aho haluaa restonomi opiskelijoiden viiniopintojen tueksi pelin, jolla voisi opettaa viinin valmistukseen ja makuun liittyviä asioita
+
+Idea:
+
+Prototyypiteltiin kimmolle idea jota jatkojalostetaan. Tehdään pixel art tyylinen 2d peli, jossa vaikutteita mm. Stardev Valleystä. Pelin ideana on manageroida viinitilallista asiakasta viini istutuksesta viinin myyntiin. Peli alkaa valitsemalla asiakkaan. Asiakkaan valittua pelaaja käy kaupungista ostamasta köynöksen taimia jotka istutetaan tilalla. Köynöksen kasvun aikana sitä hoidetaan eri tavoilla, kunnes rypäle on valmis poimittavaksi. Rypäleet poimitaan ja viedään panimoon käymisastiaan. Rypäleet murskataan ja käymisastiaan lisätään hiivaa. Se, kauanko rypälemurska ja mehu ovat kosketuksessa toisiinsa vaikuttavat viinin tyyppiin (valkoviini, rose viini, puna viini).
+Viinin käynnin jälkeen viini laitetaan kirkastumaan ja ikääntymään yleensä tammisiin tynnyreihin (tai joskus viini iäännytetään jossain toisessa astiassa jonne on sekaan palottu tammea antamaan makua). Tämän jälkeen viini laitetaan pullotukseen, jossa voidaan lisätä vielä hiivaa pullotuksen yhteydessä, jolloin saadaan kuohuviiniä. Tämän jälkeen pullotettu viini viedään kaupungille ja myydään vaatimusten mukaan oikealle ostajalle. Ostajalla on viinin ominaisuuksiin liittyviä vaatimuksia, jotka pelaajan pitää oppia tuntemaan omasta viininteko prosessistaan. Onnistunut myynti antaa hyvän arvosanan ja tyytyväisen asiakkaan ja nostaa manageri leveliä. Tämän jälkeen rulijanssi alkaa uudestaan. Levelin mukana aukeaa uusia ostajia kaupungilla ja erilaisia kasvatus käymis ja ikääntymistä auttavia laitoksia.
+
